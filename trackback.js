@@ -3,6 +3,7 @@ google.load("feeds", "1");
 runBookmark();
 
 function runBookmark() {
+  runTrackBack(null); 
   var entryUrl = document.location.href;
   var userScript = document.createElement('script');
   userScript.type="text/javascript";
@@ -27,9 +28,7 @@ function callbackBookmark(bookmark) {
                + '&URL=' + encodeURIComponent(relUrl)
                + '&blog=' + getBlogUrl();
     runTrackBack(relTrackbackRssUrl); 
-  } else {
-    runTrackBack(null); 
-  }
+  } 
 }
 
 function runTrackBack(relTrackbackRssUrl) { 
