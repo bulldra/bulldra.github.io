@@ -17,7 +17,6 @@ function runCategory() {
     var category_url = category_element.href.replace('/category','/rss/category');
     var category_title = category_element.text;
     category_title = category_title.replace(/.+-/,"");
-    console.log(category_url);
 
     header = header.replace("%CATEGROY%",'<a href="' + category_element.href.replace('/category/','/archive/category/')  + '">' + category_title + '</a>');
     category_relate.innerHTML = header;
@@ -35,8 +34,11 @@ function runCategory() {
       if (!result.error) {
         entries = result.feed.entries;
       } 
+      createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
     });
-  } 
-  createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
+  } else { 
+    createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
+  }
 }
+
 
