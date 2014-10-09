@@ -60,7 +60,7 @@ function createHtml(container, headerHtml, resultEntries, defaultHtml,fetchNum) 
   
   var resultHtml = "";
   if (resultEntries.length == 0) {
-    if(defaultUrl != null) {
+    if(defaultHtml != null) {
       resultHtml = defaultHtml;
     } 
   } else {
