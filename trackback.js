@@ -12,6 +12,7 @@ function runBookmark() {
 }
 
 function callbackBookmark(bookmark) {
+  console.log(bookmark);
   if(bookmark) {
     var eid = bookmark.eid;
     if(eid == '') {
@@ -24,6 +25,7 @@ function callbackBookmark(bookmark) {
                + '_id=da86ac3f59f0ff92c537c0d8d5952b94&_render=rss'
                + '&URL=' + encodeURIComponent(relUrl)
                + '&blog=' + getBlogUrl();
+    console.log(relTrackbackRssUrl);
     runTrackBack(relTrackbackRssUrl); 
   }
 }
