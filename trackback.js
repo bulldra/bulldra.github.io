@@ -34,23 +34,24 @@ function callbackBookmark(bookmark) {
 function runTrackBack(relTrackbackRssUrl) { 
   var header = '<h3>この記事への言及<a href="http://blog.hatena.ne.jp/my/edit?title=言及する&body=[' + document.location.href + ':embed]" target="_blank" style="float:right">＞＞言及する</a></h3>'
   var defaultHtml =  "<p>この記事への言及はありません。</p><br/>";
+  var fetchNum = 10;
 
   if(relTrackbackRssUrl != null) {
     console.log(relTrackbackRssUrl);
     var feed = new google.feeds.Feed(relTrackbackRssUrl);
   
-    feed.setNumEntries(10);
+    feed.setNumEntries(fetchNum);
     feed.load(function(result) {
       var r = new Array();
       if (!result.error) {
         r = result.feed.entries;
       } 
-      createHtml(trackback_entry, header, r, defaultHtml, 10);
+      createHtml(trackback_entry, header, r, defaultHtml, fetchNum);
     }); 
   } else {
     console.log("empty trackback");
     var r = new Array();
-    createHtml(trackback_entry, header, r, defaultHtml, 10);
+    createHtml(trackback_entry, header, r, defaultHtml, fetchNum);
   }
 }
 
