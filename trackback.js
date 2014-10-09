@@ -31,7 +31,7 @@ function callbackBookmark(bookmark) {
 }
 
 function runTrackBack(relTrackbackRssUrl) { 
-  var header = '<h3>‚±‚Ì‹L–‚Ö‚ÌŒ¾‹y<a href="http://blog.hatena.ne.jp/my/edit?title=ƒ‚ƒm\‚·&body=[' + document.locate.href + ':embed]" target="_blank" style="float:right">Œ¾‹y‚·‚é</a></h3>'
+  var header = '<h3>‚±‚Ì‹L–‚Ö‚ÌŒ¾‹y<a href="http://blog.hatena.ne.jp/my/edit?title=ƒ‚ƒm\‚·&body=[' + document.location.href + ':embed]" target="_blank" style="float:right">Œ¾‹y‚·‚é</a></h3>'
   var defaultHtml =  "<p>‚±‚Ì‹L–‚Ö‚ÌŒ¾‹y‚Í‚ ‚è‚Ü‚¹‚ñB</p><br/>";
 
   var feed = new google.feeds.Feed(relTrackbackRssUrl);
