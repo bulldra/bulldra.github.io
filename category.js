@@ -35,11 +35,9 @@ function runCategory() {
       } 
       createHtml(category_relate, headerTITLE_CATEGORY, entries, "<p>カテゴリの記事がありません。</p>", 3);
     });
-  }
-  
-  google.setOnLoadCallback(category_initialize);
-} else {
+  } else {
     var entries = new Array();
     createHtml(category_relate, headerTITLE_CATEGORY, entries, "<p>カテゴリの記事がありません。</p>", 3);
+  }
 }
 
