@@ -1,5 +1,5 @@
 google.load("feeds", "1");
-runBookmark();
+google.setOnLoadCallback(runBookmark);
 
 function runBookmark() {
   var entryUrl = document.location.href;
