@@ -11,6 +11,7 @@ function runCategory() {
     var idx = Math.floor(Math.random() * category_elements.length);
     category_element = category_elements[idx];
   }
+  console.log(category_element);
 
   if(category_element !== undefined && category_element != null) {
     var category_url = category_element.href.replace('/category','/rss/category');
@@ -26,7 +27,7 @@ function runCategory() {
               + '&MYURL='
     	      + document.location.href
               + '&_id=3d874be1ef642a87c852bd4a097d3f4c&_render=rss'
-    console.log(relRssUrl)
+    console.log(relRssUrl);
 
     var feed = new google.feeds.Feed(relRssUrl);
     feed.setNumEntries(7);
@@ -36,6 +37,6 @@ function runCategory() {
       } 
     });
   } 
-  createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。</p>", 3);
+  createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
 }
 
