@@ -25,7 +25,6 @@ function callbackBookmark(bookmark) {
                + '_id=da86ac3f59f0ff92c537c0d8d5952b94&_render=rss'
                + '&URL=' + encodeURIComponent(relUrl)
                + '&blog=' + getBlogUrl();
-    console.log(relTrackbackRssUrl);
     runTrackBack(relTrackbackRssUrl); 
   } else {
     runTrackBack(null); 
@@ -37,6 +36,7 @@ function runTrackBack(relTrackbackRssUrl) {
   var defaultHtml =  "<p>この記事への言及はありません。</p><br/>";
 
   if(relTrackbackRssUrl != null) {
+    console.log(relTrackbackRssUrl);
     var feed = new google.feeds.Feed(relTrackbackRssUrl);
   
     feed.setNumEntries(10);
