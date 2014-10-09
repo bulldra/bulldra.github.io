@@ -19,7 +19,7 @@ function runCategory() {
     console.log(category_url);
 
     header = header.replace("%CATEGROY%",'<a href="' + category_element.href.replace('/category/','/archive/category/')  + '">' + category_title + '</a>');
-    category_relate.innerHTML = headerTITLE_CATEGORY;
+    category_relate.innerHTML = header;
 
     var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?URL=' 
               + category_url
