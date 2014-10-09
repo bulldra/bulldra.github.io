@@ -31,7 +31,7 @@ function callbackBookmark(bookmark) {
 }
 
 function runTrackBack(relTrackbackRssUrl) { 
-  var header = '<h3>この記事への言及<a href="http://blog.hatena.ne.jp/my/edit?title=モノ申す&body=[' + document.location.href + ':embed]" target="_blank" style="float:right">言及する</a></h3>'
+  var header = '<h3>この記事への言及<a href="http://blog.hatena.ne.jp/my/edit?title=モノ申す&body=[' + document.location.href + ':embed]" target="_blank" style="float:right">＞＞言及する</a></h3>'
   var defaultHtml =  "<p>この記事への言及はありません。</p><br/>";
 
   var feed = new google.feeds.Feed(relTrackbackRssUrl);
