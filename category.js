@@ -4,6 +4,7 @@ runCategory();
 function runCategory() {
   //カテゴリヘッダとして表示する文字列（%CATEGROY%　で　カテゴリ名表示）
   var header = '<h3>カテゴリー「%CATEGROY%」の記事</h3>';
+  var entries = new Array();
   var category_elements = document.querySelectorAll('div.categories a');
   var category_element = null;
   if(category_elements != null && category_elements.length > 0) {
@@ -26,18 +27,15 @@ function runCategory() {
     	      + document.location.href
               + '&_id=3d874be1ef642a87c852bd4a097d3f4c&_render=rss'
     console.log(relRssUrl)
+
     var feed = new google.feeds.Feed(relRssUrl);
     feed.setNumEntries(7);
     feed.load(function(result) {
-      var entries = new Array();
       if (!result.error) {
-	    entries = result.feed.entries;
+        entries = result.feed.entries;
       } 
-      createHtml(category_relate, headerTITLE_CATEGORY, entries, "<p>カテゴリの記事がありません。</p>", 3);
     });
-  } else {
-    var entries = new Array();
-    createHtml(category_relate, headerTITLE_CATEGORY, entries, "<p>カテゴリの記事がありません。</p>", 3);
-  }
+  } 
+  createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。</p>", 3);
 }
 
