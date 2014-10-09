@@ -1,4 +1,5 @@
-google.setOnLoadCallback(runBookmark);
+runBookmark();
+
 google.load("feeds", "1");
 
 function runBookmark() {
@@ -48,9 +49,9 @@ function runTrackBack(relTrackbackRssUrl) {
       createHtml(trackback_entry, header, r, defaultHtml, 10);
     }); 
   } else {
-      console.log("empty trackback");
-      var r = new Array();
-      createHtml(trackback_entry, header, r, defaultHtml, 10);
+    console.log("empty trackback");
+    var r = new Array();
+    createHtml(trackback_entry, header, r, defaultHtml, 10);
   }
 }
 
