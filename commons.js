@@ -34,7 +34,7 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
     }
     return this;
   }
-  console.log(resultEntries); 
+
   var resultHtml = "";
   if (resultEntries.length == 0) {
     if(defaultHtml != null) {
@@ -42,6 +42,7 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
     } 
   } else {
     resultEntries.shuffle();
+    console.log(fetchNum)
     for(var x = 0; x < resultEntries.length && x < fetchNum; x++) { 
       resultHtml += createOwnEmbedFrame(resultEntries[x].link);
     }
