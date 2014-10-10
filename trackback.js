@@ -1,7 +1,7 @@
 google.load("feeds", "1");
+runTrackBack(null); 
 
 function runBookmark() {
-  runTrackBack(null); 
   var entryUrl = document.location.href;
   var userScript = document.createElement('script');
   userScript.type="text/javascript";
@@ -48,7 +48,6 @@ function runTrackBack(relTrackbackRssUrl) {
       createHtml(trackback_entry, header, r, defaultHtml, fetchNum);
     }); 
   } else {
-    console.log("empty trackback");
     var r = new Array();
     createHtml(trackback_entry, header, r, defaultHtml, fetchNum);
   }

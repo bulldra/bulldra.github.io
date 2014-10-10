@@ -1,5 +1,7 @@
 google.load("feeds", "1");
 
+runCategory();
+
 function runCategory() {
   var header = '<h3>カテゴリー「%CATEGROY%」の記事</h3>';
   var entries = new Array();
