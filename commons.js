@@ -57,6 +57,7 @@ function createOwnEmbedFrame (link) {
       + embedURL
       + '" width="100%" height="220px" scrolling="no" '
       + 'frameborder="0" style="margin:3px 0px;">'
+      + '</iframe></p>';
     return html;
 }
 

@@ -10,7 +10,6 @@ function runCategory() {
     var idx = Math.floor(Math.random() * category_elements.length);
     category_element = category_elements[idx];
   }
-  console.log(category_element);
 
   if(category_element !== undefined && category_element != null) {
     var category_url = category_element.href.replace('/category','/rss/category');
