@@ -21,6 +21,7 @@ function createHtml(container, headerHtml, resultEntries, defaultHtml,fetchNum) 
       resultHtml += createEmbedFrame(resultEntries[x].link);
     }
   }
+
   if(headerHtml != null) {
     container.innerHTML = headerHtml;
   } else {
