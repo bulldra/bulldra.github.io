@@ -55,7 +55,7 @@ function createOwnEmbedFrame (link) {
     var embedURL = link.replace(blogURL + '/entry/', blogURL + '/embed/');
     var html = '<p><iframe src="'
       + embedURL
-      + '" width="100%" height="220px" scrolling="no" '
+      + '" width="100%" height="200px" scrolling="no" '
       + 'frameborder="0" style="margin:3px 0px;">'
       + '</iframe></p>';
     return html;
