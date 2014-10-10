@@ -1,10 +1,22 @@
 function createHtml(container, headerHtml, resultEntries, defaultHtml,fetchNum) {
+  Array.prototype.shuffle = function() {
+    var i = this.length;
+    while(i){
+      var j = Math.floor(Math.random()*i);
+      var t = this[--i];
+      this[i] = this[j];
+      this[j] = t;
+    }
+    return this;
+  }
+
   var resultHtml = "";
   if (resultEntries.length == 0) {
     if(defaultHtml != null) {
       resultHtml = defaultHtml;
     } 
   } else {
+    resultEntries.shuffle();
     for(var x = 0; x < resultEntries.length && x < fetchNum; x++) { 
       resultHtml += createEmbedFrame(resultEntries[x].link);
     }

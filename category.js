@@ -32,10 +32,10 @@ function runCategory() {
       if (!result.error) {
         entries = result.feed.entries;
       } 
-      createOwnHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
+      createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
     });
   } else { 
-    createOwnHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
+    createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
   }
 }
 
