@@ -1,22 +1,10 @@
 function createHtml(container, headerHtml, resultEntries, defaultHtml,fetchNum) {
-  Array.prototype.shuffle = function() {
-    var i = this.length;
-    while(i){
-      var j = Math.floor(Math.random()*i);
-      var t = this[--i];
-      this[i] = this[j];
-      this[j] = t;
-    }
-    return this;
-  }
-  
   var resultHtml = "";
   if (resultEntries.length == 0) {
     if(defaultHtml != null) {
       resultHtml = defaultHtml;
     } 
   } else {
-    resultEntries.shuffle();
     for(var x = 0; x < resultEntries.length && x < fetchNum; x++) { 
       resultHtml += createEmbedFrame(resultEntries[x].link);
     }
@@ -46,7 +34,7 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
     }
     return this;
   }
-  
+  console.log(resultEntries); 
   var resultHtml = "";
   if (resultEntries.length == 0) {
     if(defaultHtml != null) {
@@ -61,13 +49,12 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
   container.innerHTML = headerHtml + resultHtml;
 }
 
-
 function createOwnEmbedFrame (link) {
     var blogURL = getBlogUrl();
     var embedURL = link.replace(blogURL + '/entry/', blogURL + '/embed/');
     var html = '<p><iframe src="'
       + embedURL
-      + '" width="100%" height="160px" scrolling="no" '
+      + '" width="100%" height="220px" scrolling="no" '
       + 'frameborder="0" style="margin:3px 0px;">'
     return html;
 }
