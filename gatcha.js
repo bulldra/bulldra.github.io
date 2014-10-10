@@ -22,7 +22,6 @@ function switchGatchButton(is) {
   btnNormalGatcha.disabled = !is;
 }
 
-
 function runRareGatcha() {
   switchGatchButton(false);
   var fetchNum = inGatchaNum.value;
@@ -41,6 +40,7 @@ function runRareGatcha() {
         entries = result.feed.entries;
       }
       console.log("result.length="+ entries.length);
+      entries = removeThisEntry(entries);
       createOwnHtml(sideGatcha, null,entries, null, fetchNum);
     });  
   switchGatchButton(true);
@@ -73,6 +73,7 @@ function runNormalGatcha() {
         }
 
 	if(++c == feeds.length){
+          entries = removeThisEntry(entries);
           createOwnHtml(sideGatcha, null,entries, null, fetchNum);
 	}
     });

@@ -94,3 +94,14 @@ function getBlogUrl() {
   return ret;
 }
 
+function removeThisEntry(entries) {
+	var ret = new Array();
+	var href = location.href;
+	for(var idx in entries) {
+		if(entries[idx].link != href) {
+			ret.push(entries[idx]);
+		}
+	}
+	return ret;
+}
+
