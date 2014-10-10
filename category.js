@@ -33,8 +33,6 @@ function runCategory() {
       } 
       createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
     });
-  } 
-
   }
 }
 
