@@ -5,7 +5,7 @@ function switchGatchButton(is) {
   btnNormalGatcha.disabled = !is;
 }
 
-fucnction writeGatcha() {
+function writeGatcha() {
   document.write('<option"=');
 
   document.write('<select id="inGatchaNum">');
