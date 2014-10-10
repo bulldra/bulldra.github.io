@@ -64,7 +64,7 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
 
 function createOwnEmbedFrame (link) {
     var blogURL = getBlogUrl();
-    var embedURL = entry.link.replace(blogURL + '/entry/', blogURL + '/embed/');
+    var embedURL = link.replace(blogURL + '/entry/', blogURL + '/embed/');
     var html = '<p><iframe src="'
       + embedURL
       + '" width="100%" height="160px" scrolling="no" '
