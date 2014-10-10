@@ -11,7 +11,7 @@ function writeGatcha(fetchMaxNum, startNum) {
   }
   document.write('</select>');
 			  
-  document.write('<input type="button" id="btnNormalGatcha" value=" 通常ガチャ " onClick="runNormalGatcha()" /> <input type="button" id="btnRareGatcha" value=" レアガチャ " onClick="runRareGatcha()" />');
+  document.write(' <input type="button" id="btnNormalGatcha" value=" 通常ガチャ " onClick="runNormalGatcha()" /> <input type="button" id="btnRareGatcha" value=" レアガチャ " onClick="runRareGatcha()" />');
 
   document.write('<span id="sideGatcha"></span>');
   switchGatchButton(false);
