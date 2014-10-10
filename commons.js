@@ -21,7 +21,12 @@ function createHtml(container, headerHtml, resultEntries, defaultHtml,fetchNum) 
       resultHtml += createEmbedFrame(resultEntries[x].link);
     }
   }
-  container.innerHTML = headerHtml + resultHtml;
+  if(headerHtml != null) {
+    container.innerHTML = headerHtml;
+  } else {
+    container.innerHTML = '';
+  }
+  container.innerHTML += resultHtml;
 }
 
 function createEmbedFrame(link) {
@@ -59,7 +64,12 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
       resultHtml += createOwnEmbedFrame(resultEntries[x].link);
     }
   }
-  container.innerHTML = headerHtml + resultHtml;
+  if(headerHtml != null) {
+    container.innerHTML = headerHtml;
+  } else {
+    container.innerHTML = '';
+  }
+  container.innerHTML += resultHtml;
 }
 
 function createOwnEmbedFrame (link) {
@@ -75,6 +85,10 @@ function createOwnEmbedFrame (link) {
 
 function getBlogUrl() {
   var href = document.location.href;
+  if(href.lastIndexOf('http', 0) !== 0) {
+    href = 'http://www.ikedakana.com';
+    console.log("Return test url.");
+  }
   var ret = href.replace(/(^http:\/\/[^\/]*).*/,"$1");
   return ret;
 }
