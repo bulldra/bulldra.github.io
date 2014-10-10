@@ -2,7 +2,6 @@ google.load("feeds", "1");
 runCategory();
 
 function runCategory() {
-  //カテゴリヘッダとして表示する文字列（%CATEGROY%　で　カテゴリ名表示）
   var header = '<h3>カテゴリー「%CATEGROY%」の記事</h3>';
   var entries = new Array();
   var category_elements = document.querySelectorAll('div.categories a');
@@ -34,10 +33,10 @@ function runCategory() {
       if (!result.error) {
         entries = result.feed.entries;
       } 
-      createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
+      createOwnHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
     });
   } else { 
-    createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
+    createOwnHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
   }
 }
 
