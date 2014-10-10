@@ -10,7 +10,7 @@ function writeGatcha() {
 
   document.write('<select id="inGatchaNum">');
   for(var i = 1; i <= 5; i++) {
-    document.write('<option value="' + i + '">' + i '</option>';
+    document.write('<option value="' + i + '">' + i + '</option>';
   }
   document.write('</select>');
 			  
