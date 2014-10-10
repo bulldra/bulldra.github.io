@@ -1,9 +1,29 @@
 google.load("feeds", "1");
 
+function switchGatchButton(is) {
+  btnRareGatcha.disabled = !is;
+  btnNormalGatcha.disabled = !is;
+}
+
+fucnction writeGatcha() {
+  document.write('<option"=');
+
+  document.write('<select id="inGatchaNum">');
+  for(int i = 1; i <= 5; i++) {
+    document.write('<option value="' + i + '">' + i '</option>';
+  }
+  document.write('</select>');
+			  
+  document.write('<input type="button" id="btnNormalGatch" value=" 過去記事ガチャ " onClick="runNormalGatcha()" /> <input type="button" id="btnRaregatcha" value=" レアガチャ " onClick="runRareGatcha()" />
+
+  document.write('<span id="sideGatcha"></span>');
+}
+
+switchGatchButton(false);
+
 function runSideRareGatcha() {
-  side_raregatcha_button.disabled = true;
-  side_gatcha_button.disabled = true;
-  var fetchNum = side_gatcha_num.value;
+  switchGatchButton(false);
+  var fetchNum = inGatchaNum.value;
 
   var relRssUrl = 'http://b.hatena.ne.jp/entrylist?'
     + 'sort=count'
@@ -18,16 +38,14 @@ function runSideRareGatcha() {
         entries = result.feed.entries;
       }
       console.log("result.length="+ entries.length);
-      createHtml(side_gatch, null,entries, null, fetchNum);
+      createOwnHtml(sideGatcha, null,entries, null, fetchNum);
     });  
-  side_raregatcha_button.disabled = false;
-  side_gatcha_button.disabled = false;
+  switchGatchButton(true);
 }
 
 function runSideGatcha() {
-  side_raregatcha_button.disabled = true;
-  side_gatcha_button.disabled = true;
-  var fetchNum = side_gatcha_num.value;
+  switchGatchButton(false);
+  var fetchNum = inGatchaNum.value;
   var maxNum = 10;
 
   var feeds = new Array();
@@ -49,13 +67,13 @@ function runSideGatcha() {
           entries = entries.concat(result.feed.entries);
           console.log("result[" + c + "].length="+ result.feed.entries.length);
         }
+
 	if(++c == feeds.length){
-          createHtml(side_gatch, null,entries, null, fetchNum);
+          createOwnHtml(sideGatcha, null,entries, null, fetchNum);
 	}
     });
   }
-  side_raregatcha_button.disabled = false;
-  side_gatcha_button.disabled = false;
+  switchGatchButton(true);
 }
 
 google.setOnLoadCallback(runSideRareGatcha);
