@@ -31,6 +31,9 @@ function createHtml(container, headerHtml, resultEntries, defaultHtml,fetchNum) 
 }
 
 function createEmbedFrame(link) {
+    if(link == null) {
+	    return "";
+    }
     var embedURL = "http://hatenablog.com/embed?url=" 
       + encodeURI(link);
     var html = '<p><iframe src="'
@@ -74,6 +77,9 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
 }
 
 function createOwnEmbedFrame (link) {
+    if(link == null) {
+	    return "";
+    }
     var blogURL = getBlogUrl();
     var embedURL = link.replace(blogURL + '/entry/', blogURL + '/embed/');
     var html = '<p><iframe src="'
