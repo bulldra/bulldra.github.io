@@ -3,6 +3,7 @@ google.load("feeds", "1");
 function writeGatcha(fetchNum) {
   document.write('<select id="inGatchaCategory" onchange="runGatcha()" style="width:150px"><select>');
   document.write(' <input type="button" id="btnNormalGatcha" value=" 更新 " onClick="runGatcha()" />');
+  document.write(' <input type="button" id="btnMoveGatcha" value=" 移動 " onClick="moveGatcha()" />');
   document.write('<input type="hidden" id="inGatchaNum", value="' + fetchNum + '" />');
   document.write('<span id="sideGatcha"></span>');
   switchGatchButton(false);
@@ -50,12 +51,31 @@ function writeGatchaCategory() {
 
 function switchGatchButton(is) {
   btnNormalGatcha.disabled = !is;
+  btnMoveGatcha.disabled = !is;
 }
+
+function moveGatcha() {
+  var href = '';
+  var blogUrl = getBlogUrl();
+  var s = inGatchaCategory;
+  var si = s.selectedIndex;
+  if(si == 0)	{
+    href = blogUrl + '/archive';
+  } else if(si== 1) {
+    href = 'http://b.hatena.ne.jp/entrylist?'
+      + 'sort=count'
+      + '&url=' + encodeURIComponent(blogUrl);
+  } else {
+    href = blogUrl + '/archive/category/' + s.value;
+  }
+  console.log(blogUrl);
+  location.href = href;
+}
+
 
 function runGatcha() {
   var s = inGatchaCategory;
   var si = s.selectedIndex;
-  console.log(si);
   if(si == 0)	{
 	  runNormalGatcha();
   } else if(si== 1) {
