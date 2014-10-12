@@ -36,6 +36,7 @@ function runCategory() {
     feed.load(function(result) {
       if (!result.error) {
         entries = result.feed.entries;
+        console.log(entries.length);
       } 
       createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
     });
