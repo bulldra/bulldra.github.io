@@ -1,16 +1,68 @@
 google.load("feeds", "1");
 
 function writeGatcha(fetchNum) {
-  document.write(' <input type="button" id="btnNormalGatcha" value=" 通常ガチャ " onClick="runNormalGatcha()" /> ');
-  document.write('<input type="button" id="btnRareGatcha" value=" レアガチャ " onClick="runRareGatcha()" />');
+  document.write('<select id="inGatchaCategory" onchange="runGatcha()"><select>');
+  document.write('<input type="button" id="btnNormalGatcha" value=" 更新 " onClick="runGatcha()" />');
   document.write('<input type="hidden" id="inGatchaNum", value="' + fetchNum + '" />');
   document.write('<span id="sideGatcha"></span>');
   switchGatchButton(false);
+
+  var s = inGatchaCategory;
+  s.appendChild(createOption('all','全て'));
+  s.appendChild(createOption('rare','人気'));
+  s.selectedIndex = 1;
+}
+
+function createOption(value, name) {
+    var option = document.createElement('option');
+    option.value = value;
+    option.innerText = name;
+    return option;
+}
+
+function writeGatchaCategory() {
+  var blogURL = getBlogUrl();
+  var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
+    + '&blog=' + blogURL
+    + '&_id=31da73e0525591d9dd0c0702856a3b5b&_render=rss';
+  console.log(relRssUrl);
+
+  var feed = new google.feeds.Feed(relRssUrl);
+  feed.setNumEntries(100);
+  feed.load(function(result) {
+    var s = inGatchaCategory;
+
+    var entries = new Array();
+    if (!result.error && result.feed.entries.length > 0) {
+      entries = result.feed.entries;
+    }
+
+    for(var idx = 0; idx < entries.length; idx++) {
+      var e = entries[idx];
+      if(e.link.indexOf('-') >= 0) {
+        continue;
+      }
+      var o = createOption(e.link.replace(blogURL + '/category/', ''), e.title);
+      s.appendChild(o);
+    }
+  });
 }
 
 function switchGatchButton(is) {
-  btnRareGatcha.disabled = !is;
   btnNormalGatcha.disabled = !is;
+}
+
+function runGatcha() {
+  var s = inGatchaCategory;
+  var si = s.selectedIndex;
+  console.log(si);
+  if(si == 0)	{
+	  runNormalGatcha();
+  } else if(si== 1) {
+	  runRareGatcha();
+  } else {
+	  runCategoryGatcha(s.value);
+  }
 }
 
 function runRareGatcha() {
@@ -22,6 +74,7 @@ function runRareGatcha() {
     + 'sort=count'
     + '&mode=rss'
     + '&url=' + encodeURIComponent(blogUrl);
+  console.log(relRssUrl);
     
     var feed = new google.feeds.Feed(relRssUrl);
     feed.setNumEntries(30);
@@ -32,7 +85,7 @@ function runRareGatcha() {
       }
       console.log("result.length="+ entries.length);
       entries = removeThisEntry(entries);
-      createOwnHtml(sideGatcha, null, entries, null, fetchNum);
+      createOwnHtml(sideGatcha, null,entries, null, fetchNum);
     });  
   switchGatchButton(true);
 }
@@ -65,12 +118,41 @@ function runNormalGatcha() {
 
 	if(++c == feeds.length){
           entries = removeThisEntry(entries);
-          createOwnHtml(sideGatcha, null, entries, null, fetchNum);
+          createOwnHtml(sideGatcha, null,entries, null, fetchNum);
 	}
     });
   }
   switchGatchButton(true);
 }
 
-google.setOnLoadCallback(runRareGatcha);
+function runCategoryGatcha(categoryName) {
+  switchGatchButton(false);
+  var fetchNum = inGatchaNum.value;
+  var blogUrl = getBlogUrl();
+
+  var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
+	      + 'blog=' + blogUrl
+	      + '&category=' + categoryName
+              + '&myurl=' + document.location.href
+              + '&_id=60ec48592b55d11f71206be81d7c0881'
+	      + '&_render=rss'
+  console.log(relRssUrl);
+    
+    var feed = new google.feeds.Feed(relRssUrl);
+    feed.setNumEntries(50);
+    feed.load(function(result) {
+      var entries = new Array();
+      if (!result.error && result.feed.entries.length > 0) {
+        entries = result.feed.entries;
+      }
+      console.log("result.length="+ entries.length);
+      entries = removeThisEntry(entries);
+      createOwnHtml(sideGatcha, null,entries, null, fetchNum);
+    });  
+  switchGatchButton(true);
+}
+
+
+google.setOnLoadCallback(writeGatchaCategory);
+google.setOnLoadCallback(runGatcha);
 
