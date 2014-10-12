@@ -52,9 +52,11 @@ function writeGatchaCategory() {
 function switchGatchButton(is) {
   btnNormalGatcha.disabled = !is;
   btnMoveGatcha.disabled = !is;
+  inGatchaCategory.disabled = !is;
 }
 
 function moveGatcha() {
+  switchGatchButton(false);
   var href = '';
   var blogUrl = getBlogUrl();
   var s = inGatchaCategory;
@@ -69,11 +71,13 @@ function moveGatcha() {
     href = blogUrl + '/archive/category/' + s.value;
   }
   console.log(blogUrl);
+  switchGatchButton(true);
   location.href = href;
 }
 
 
 function runGatcha() {
+  switchGatchButton(false);
   var s = inGatchaCategory;
   var si = s.selectedIndex;
   if(si == 0)	{
@@ -83,10 +87,10 @@ function runGatcha() {
   } else {
 	  runCategoryGatcha(s.value);
   }
+  switchGatchButton(true);
 }
 
 function runRareGatcha() {
-  switchGatchButton(false);
   var fetchNum = inGatchaNum.value;
   var blogUrl = getBlogUrl();
 
@@ -111,7 +115,6 @@ function runRareGatcha() {
 }
 
 function runNormalGatcha() {
-  switchGatchButton(false);
   var fetchNum = inGatchaNum.value;
   var maxNum = 10;
   var blogUrl = getBlogUrl();
@@ -142,11 +145,9 @@ function runNormalGatcha() {
 	}
     });
   }
-  switchGatchButton(true);
 }
 
 function runCategoryGatcha(categoryName) {
-  switchGatchButton(false);
   var fetchNum = inGatchaNum.value;
   var blogUrl = getBlogUrl();
 
@@ -169,7 +170,6 @@ function runCategoryGatcha(categoryName) {
       entries = removeThisEntry(entries);
       createOwnHtml(sideGatcha, null,entries, null, fetchNum);
     });  
-  switchGatchButton(true);
 }
 
 
