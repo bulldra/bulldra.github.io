@@ -2,7 +2,7 @@ google.load("feeds", "1");
 
 function writeGatcha(fetchNum) {
   document.write('<select id="inGatchaCategory" onchange="runGatcha()"><select>');
-  document.write('<input type="button" id="btnNormalGatcha" value=" 更新 " onClick="runGatcha()" />');
+  document.write(' <input type="button" id="btnNormalGatcha" value=" 更新 " onClick="runGatcha()" />');
   document.write('<input type="hidden" id="inGatchaNum", value="' + fetchNum + '" />');
   document.write('<span id="sideGatcha"></span>');
   switchGatchButton(false);
