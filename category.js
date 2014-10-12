@@ -3,18 +3,25 @@ google.load("feeds", "1");
 function runCategory() {
   var header = '<h3>カテゴリー「%CATEGROY%」の記事</h3>';
   var entries = new Array();
-  var category_elements = document.querySelectorAll('div.categories a');
-  var category_element = null;
-  if(category_elements != null && category_elements.length > 0) {
-    var idx = Math.floor(Math.random() * category_elements.length);
-    category_element = category_elements[idx];
+  var categoryElements = document.querySelectorAll('div.categories a');
+
+  var categoryElement = null;
+  if (categoryElements != null && categoryElements.length > 0) {
+    var rootCategoryElements = new Array();
+    for (var idx = 0; idx < categoryElements.length; idx++) {
+      if (categoryElements[idx].href.indexOf('-') < 0) {
+        rootCategoryElements.push(categoryElements[idx]);
+      }
+    }
+    var idx = Math.floor(Math.random() * rootCategoryElements.length);
+    categoryElement = rootCategoryElements[idx];
   }
 
-  if(category_element !== undefined && category_element != null) {
+  if(categoryElement !== undefined && categoryElement != null) {
     var blogUrl = getBlogUrl();
-    var categoryName = category_element.href.replace(blogUrl +'/category/','');
+    var categoryName = categoryElement.href.replace(blogUrl +'/category/','');
     var categoryLink = blogUrl + '/archive/category/' + categoryName 
-    var category_title = category_element.text;
+    var category_title = categoryElement.text;
     category_title = category_title.replace(/.+-/,"");
 
     header = header.replace("%CATEGROY%",'<a href="' + categoryLink + '">' 
