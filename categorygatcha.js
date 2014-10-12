@@ -1,12 +1,50 @@
 google.load("feeds", "1");
 
 function writeGatcha(fetchNum) {
+  //document.write('<select id="inGatchaCategory"><select>');
   document.write(' <input type="button" id="btnNormalGatcha" value=" 通常ガチャ " onClick="runNormalGatcha()" /> ');
   document.write('<input type="button" id="btnRareGatcha" value=" レアガチャ " onClick="runRareGatcha()" />');
   document.write('<input type="hidden" id="inGatchaNum", value="' + fetchNum + '" />');
   document.write('<span id="sideGatcha"></span>');
   switchGatchButton(false);
 }
+
+function writeGatchaCategory() {
+  var blogURL = getBlogUrl();
+  var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
+    + '&blog=' + blogURL
+    + '&_id=31da73e0525591d9dd0c0702856a3b5b&_render=rss';
+  console.log(relRssUrl);
+
+  var feed = new google.feeds.Feed(relRssUrl);
+  feed.setNumEntries(100);
+  feed.load(function(result) {
+    s = inGatchaCategory;
+    
+    var option = document.createElement('option');
+    option.value = 'all';
+    option.innerText = '全て'
+    s.appendChild(option);
+
+    var entries = new Array();
+    if (!result.error && result.feed.entries.length > 0) {
+      entries = result.feed.entries;
+    }
+
+    for(var idx = 0; idx < entries.length; idx++) {
+      var e = entries[idx];
+      if(e.link.indexOf('-') >= 0) {
+        continue;
+      }
+      var o = document.createElement('option');
+      o.value = e.link.replace(blogURL + '/category/', blogURL + '/archive/category/');
+      o.innerText = e.title;
+      s.appendChild(o);
+      console.log(o);
+    }
+  });
+}
+
 
 function switchGatchButton(is) {
   btnRareGatcha.disabled = !is;
@@ -32,7 +70,7 @@ function runRareGatcha() {
       }
       console.log("result.length="+ entries.length);
       entries = removeThisEntry(entries);
-      createOwnHtml(sideGatcha, null, entries, null, fetchNum);
+      createOwnHtml(sideGatcha, null,entries, null, fetchNum);
     });  
   switchGatchButton(true);
 }
@@ -65,7 +103,7 @@ function runNormalGatcha() {
 
 	if(++c == feeds.length){
           entries = removeThisEntry(entries);
-          createOwnHtml(sideGatcha, null, entries, null, fetchNum);
+          createOwnHtml(sideGatcha, null,entries, null, fetchNum);
 	}
     });
   }
