@@ -12,9 +12,7 @@ function runCategory() {
 
   if(category_element !== undefined && category_element != null) {
     var blogUrl = getBlogUrl();
-
     var categoryName = category_element.href.replace(blogUrl +'/category/','');
-    console.log(categoryName);
     var categoryLink = blogUrl + '/archive/category/' + categoryName 
     var category_title = category_element.text;
     category_title = category_title.replace(/.+-/,"");
@@ -32,7 +30,7 @@ function runCategory() {
     console.log(relRssUrl);
 
     var feed = new google.feeds.Feed(relRssUrl);
-    feed.setNumEntries(7);
+    feed.setNumEntries(50);
     feed.load(function(result) {
       if (!result.error) {
         entries = result.feed.entries;
@@ -44,5 +42,4 @@ function runCategory() {
 }
 
 google.setOnLoadCallback(runCategory);
-
 
