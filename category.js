@@ -11,18 +11,24 @@ function runCategory() {
   }
 
   if(category_element !== undefined && category_element != null) {
-    var category_url = category_element.href.replace('/category','/rss/category');
+    var blogUrl = getBlogUrl();
+
+    var categoryName = category_element.href.replace(blogUrl +'/category/','');
+    console.log(categoryName);
+    var categoryLink = blogUrl + '/archive/category/' + categoryName 
     var category_title = category_element.text;
     category_title = category_title.replace(/.+-/,"");
 
-    header = header.replace("%CATEGROY%",'<a href="' + category_element.href.replace('/category/','/archive/category/')  + '">' + category_title + '</a>');
+    header = header.replace("%CATEGROY%",'<a href="' + categoryLink + '">' 
+		    + category_title + '</a>');
     category_relate.innerHTML = header;
 
-    var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?URL=' 
-              + category_url
-              + '&MYURL='
-    	      + document.location.href
-              + '&_id=3d874be1ef642a87c852bd4a097d3f4c&_render=rss'
+    var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
+	      + 'blog=' + blogUrl
+	      + '&category=' + categoryName
+              + '&myurl=' + document.location.href
+              + '&_id=60ec48592b55d11f71206be81d7c0881'
+	      + '&_render=rss'
     console.log(relRssUrl);
 
     var feed = new google.feeds.Feed(relRssUrl);
