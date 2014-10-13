@@ -141,6 +141,7 @@ function runNormalGatcha() {
 
 	if(++c == feeds.length){
           entries = removeThisEntry(entries);
+          console.log("result.length="+ entries.length);
           createOwnHtml(sideGatcha, null,entries, null, fetchNum);
 	}
     });
@@ -171,7 +172,6 @@ function runCategoryGatcha(categoryName) {
       createOwnHtml(sideGatcha, null,entries, null, fetchNum);
     });  
 }
-
 
 google.setOnLoadCallback(writeGatchaCategory);
 google.setOnLoadCallback(runGatcha);

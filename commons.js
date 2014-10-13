@@ -63,7 +63,6 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
     } 
   } else {
     resultEntries.shuffle();
-    console.log(fetchNum)
     for(var x = 0; x < resultEntries.length && x < fetchNum; x++) { 
       resultHtml += createOwnEmbedFrame(resultEntries[x].link);
     }
@@ -78,6 +77,7 @@ function createOwnHtml(container, headerHtml, resultEntries, defaultHtml,fetchNu
 
 function createOwnEmbedFrame (link) {
     if(link == null) {
+	    console.log('link is null.');
 	    return "";
     }
     var blogURL = getBlogUrl();
@@ -103,11 +103,13 @@ function getBlogUrl() {
 function removeThisEntry(entries) {
 	var ret = new Array();
 	var href = location.href;
-	for(var idx in entries) {
-		if(entries[idx].link != href) {
-			ret.push(entries[idx]);
+	for(var i = 0; i < entries.length; i++) {
+		if(entries[i].link != href) {
+			ret.push(entries[i]);
 		}
 	}
+	console.log(entries.length + ' -> ' + ret.length);
+
 	return ret;
 }
 
