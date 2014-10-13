@@ -3,7 +3,7 @@ google.load("feeds", "1");
 function writeGatcha(fetchNum) {
   document.write('<select id="inGatchaCategory" onchange="runGatcha()" style="width:150px"><select>');
   document.write(' <input type="button" id="btnNormalGatcha" value=" 更新 " onClick="runGatcha()" />');
-  document.write(' <input type="button" id="btnMoveGatcha" value=" 移動 " onClick="moveGatcha()" />');
+  document.write(' <input type="button" id="btnMoveGatcha" value=" 一覧 " onClick="moveGatcha()" />');
   document.write('<input type="hidden" id="inGatchaNum", value="' + fetchNum + '" />');
   document.write('<span id="sideGatcha"></span>');
   switchGatchButton(false);
