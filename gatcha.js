@@ -11,6 +11,7 @@ function writeGatcha(fetchNum) {
   var s = inGatchaCategory;
   s.appendChild(createOption('all','全て'));
   s.appendChild(createOption('rare','人気'));
+  s.appendChild(createOption('new','最新'));
   s.selectedIndex = 1;
 }
 
@@ -61,7 +62,7 @@ function moveGatcha() {
   var blogUrl = getBlogUrl();
   var s = inGatchaCategory;
   var si = s.selectedIndex;
-  if(si == 0)	{
+  if(si == 0 || si == 2) {
     href = blogUrl + '/archive';
   } else if(si== 1) {
     href = 'http://b.hatena.ne.jp/entrylist?'
@@ -84,34 +85,50 @@ function runGatcha() {
 	  runNormalGatcha();
   } else if(si== 1) {
 	  runRareGatcha();
+  } else if(si == 2) {
+	  runNewGatcha();
   } else {
 	  runCategoryGatcha(s.value);
   }
   switchGatchButton(true);
 }
 
-function runRareGatcha() {
+function runCommonGatcha(rss) {
+  console.log(rss);
   var fetchNum = inGatchaNum.value;
-  var blogUrl = getBlogUrl();
+  var feed = new google.feeds.Feed(rss);
+  feed.setNumEntries(50);
+  feed.load(function(result) {
+    var entries = new Array();
+    if (!result.error && result.feed.entries.length > 0) {
+        entries = result.feed.entries;
+    } else {
+	console.log(result.error);
+    }
+    console.log("result.length="+ entries.length);
+    entries = removeThisEntry(entries);
+    createOwnHtml(sideGatcha, null,entries, null, fetchNum);
+  });  
+}
 
+function runNewGatcha() {
+  var blogUrl = getBlogUrl();
+  runCommonGatcha(blogUrl + '/rss');
+}
+
+function runRareGatcha() {
+  var blogUrl = getBlogUrl();
   var relRssUrl = 'http://b.hatena.ne.jp/entrylist?'
     + 'sort=count'
     + '&mode=rss'
     + '&url=' + encodeURIComponent(blogUrl);
-  console.log(relRssUrl);
-    
-    var feed = new google.feeds.Feed(relRssUrl);
-    feed.setNumEntries(30);
-    feed.load(function(result) {
-      var entries = new Array();
-      if (!result.error && result.feed.entries.length > 0) {
-        entries = result.feed.entries;
-      }
-      console.log("result.length="+ entries.length);
-      entries = removeThisEntry(entries);
-      createOwnHtml(sideGatcha, null,entries, null, fetchNum);
-    });  
-  switchGatchButton(true);
+  runCommonGatcha(relRssUrl);
+}
+
+function runCategoryGatcha(categoryName) {
+  var blogUrl = getBlogUrl();
+  var relRssUrl = blogUrl + '/rss/category/' + categoryName;
+  runCommonGatcha(relRssUrl);
 }
 
 function runNormalGatcha() {
@@ -148,30 +165,6 @@ function runNormalGatcha() {
   }
 }
 
-function runCategoryGatcha(categoryName) {
-  var fetchNum = inGatchaNum.value;
-  var blogUrl = getBlogUrl();
-
-  var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
-	      + 'blog=' + blogUrl
-	      + '&category=' + categoryName
-              + '&myurl=' + document.location.href
-              + '&_id=60ec48592b55d11f71206be81d7c0881'
-	      + '&_render=rss'
-  console.log(relRssUrl);
-    
-    var feed = new google.feeds.Feed(relRssUrl);
-    feed.setNumEntries(50);
-    feed.load(function(result) {
-      var entries = new Array();
-      if (!result.error && result.feed.entries.length > 0) {
-        entries = result.feed.entries;
-      }
-      console.log("result.length="+ entries.length);
-      entries = removeThisEntry(entries);
-      createOwnHtml(sideGatcha, null,entries, null, fetchNum);
-    });  
-}
 
 google.setOnLoadCallback(writeGatchaCategory);
 google.setOnLoadCallback(runGatcha);

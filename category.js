@@ -27,13 +27,7 @@ function runCategory() {
     header = header.replace("%CATEGROY%",'<a href="' + categoryLink + '">' 
 		    + category_title + '</a>');
     category_relate.innerHTML = header;
-
-    var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
-	      + 'blog=' + blogUrl
-	      + '&category=' + categoryName
-              + '&myurl=' + document.location.href
-              + '&_id=60ec48592b55d11f71206be81d7c0881'
-	      + '&_render=rss'
+    var relRssUrl = blogUrl + '/rss/category/' + categoryName;
     console.log(relRssUrl);
 
     var feed = new google.feeds.Feed(relRssUrl);
@@ -41,6 +35,7 @@ function runCategory() {
     feed.load(function(result) {
       if (!result.error) {
         entries = result.feed.entries;
+        entries = removeThisEntry(entries);
         console.log('categoryEntry.length=' + entries.length);
       } 
       createHtml(category_relate, header, entries, "<p>カテゴリの記事がありません。<br/></p>", 3);
