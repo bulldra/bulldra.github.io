@@ -2,10 +2,20 @@
 <body>
 <div style="margin-left:-5px; margin-top:0px; margin-right:-5px">
 
+<div class="categories"><a href="http://www.ikedakana.com/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">プログラミング</a></div>
+
 <script src="https://www.google.com/jsapi"></script>
 <script src="commons.js" charset="utf-8"></script>
 <script src="gatcha.js" charset="utf-8"></script>
-<script type="text/javascript">writeGatcha(2)</script>
+<script type="text/javascript">
+writeGatcha(3,'entryGatcha',true );
+google.setOnLoadCallback(function(){ writeGatchaCategory('entryGatcha') } );
+
+writeGatcha(2);
+
+
+</script>
+
 </div>
 
 </body>

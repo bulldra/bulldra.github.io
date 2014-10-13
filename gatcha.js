@@ -1,28 +1,59 @@
+/*
+ * http://www.ikedakana.com
+ *
+ */
+
 google.load("feeds", "1");
 
-function writeGatcha(fetchNum) {
-  document.write('<select id="inGatchaCategory" onchange="runGatcha()" style="width:150px"><select>');
-  document.write(' <input type="button" id="btnNormalGatcha" value=" 更新 " onClick="runGatcha()" />');
-  document.write(' <input type="button" id="btnMoveGatcha" value=" 一覧 " onClick="moveGatcha()" />');
-  document.write('<input type="hidden" id="inGatchaNum", value="' + fetchNum + '" />');
-  document.write('<span id="sideGatcha"></span>');
-  switchGatchButton(false);
+function writeGatcha(fetchNum, id, isCategory) {
+  if(id === undefined){ 
+    id = 'side-';
+  }
 
-  var s = inGatchaCategory;
+  var categoryElement = null;
+  if(isCategory) {
+     var categoryElements = document.querySelectorAll('div.categories a');
+     if (categoryElements != null && categoryElements.length > 0) {
+       var rootCategoryElements = new Array();
+       for (var idx = 0; idx < categoryElements.length; idx++) {
+         if (categoryElements[idx].href.indexOf('-') < 0) {
+           rootCategoryElements.push(categoryElements[idx]);
+         }
+       }
+       var idx = Math.floor(Math.random() * rootCategoryElements.length);
+       categoryElement = rootCategoryElements[idx];
+     } 
+       
+  }
+  console.log(id)
+  if(categoryElement === undefined || categoryElement == null) {
+	categoryElement = ''; 
+  }
+  console.log(categoryElement);
+
+  document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\"' + id + '\")" style="width:150px"><select>');
+  document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\"' + id + '\")" />');
+  document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\"' + id + '\")" />');
+  document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
+  document.write('<input type="hidden" id="'+ id + 'gatchaCategory" value="' + categoryElement.href + '" />');
+  document.write('<span id="' + id + 'gachaSpan"></span>');
+
+  switchGatchButton(false, id);
+
+  var s = document.getElementById(id + 'inGatchaCategory');
   s.appendChild(createOption('all','全て'));
   s.appendChild(createOption('rare','人気'));
   s.appendChild(createOption('new','最新'));
   s.selectedIndex = 1;
 }
 
-function createOption(value, name) {
-    var option = document.createElement('option');
-    option.value = value;
-    option.innerText = name;
-    return option;
-}
 
-function writeGatchaCategory() {
+function writeGatchaCategory(id) {
+  console.log(id)
+  if(id === undefined) {
+	id = 'side-';
+  }
+
   var blogURL = getBlogUrl();
   var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
     + '&blog=' + blogURL
@@ -32,8 +63,8 @@ function writeGatchaCategory() {
   var feed = new google.feeds.Feed(relRssUrl);
   feed.setNumEntries(100);
   feed.load(function(result) {
-    var s = inGatchaCategory;
-
+    console.log(id);
+    var s = document.getElementById(id + 'inGatchaCategory');
     var entries = new Array();
     if (!result.error && result.feed.entries.length > 0) {
       entries = result.feed.entries;
@@ -46,21 +77,35 @@ function writeGatchaCategory() {
       }
       var o = createOption(e.link.replace(blogURL + '/category/', ''), e.title);
       s.appendChild(o);
+      var gatchaCategory = document.getElementById(id + 'gatchaCategory');
+      if(e.link == gatchaCategory.value) {
+	o.selected = true;
+      }
     }
+    console.log(s.selectedIndex);
+    runGatcha(id);
   });
 }
 
-function switchGatchButton(is) {
-  btnNormalGatcha.disabled = !is;
-  btnMoveGatcha.disabled = !is;
-  inGatchaCategory.disabled = !is;
+function createOption(value, name) {
+    var option = document.createElement('option');
+    option.value = value;
+    option.innerText = name;
+    return option;
 }
 
-function moveGatcha() {
-  switchGatchButton(false);
+function switchGatchButton(is, id) {
+  console.log(id)
+  document.getElementById(id + 'btnNormalGatcha').disabled = !is;
+  document.getElementById(id + 'btnMoveGatcha').disabled = !is;
+  document.getElementById(id + 'inGatchaCategory').disabled = !is;
+}
+
+function moveGatcha(id) {
+  switchGatchButton(false, id);
   var href = '';
   var blogUrl = getBlogUrl();
-  var s = inGatchaCategory;
+  var s = document.getElementById(id + 'inGatchaCategory');
   var si = s.selectedIndex;
   if(si == 0 || si == 2) {
     href = blogUrl + '/archive';
@@ -72,30 +117,29 @@ function moveGatcha() {
     href = blogUrl + '/archive/category/' + s.value;
   }
   console.log(blogUrl);
-  switchGatchButton(true);
+  switchGatchButton(true, id);
   location.href = href;
 }
 
-
-function runGatcha() {
-  switchGatchButton(false);
-  var s = inGatchaCategory;
+function runGatcha(id) {
+  switchGatchButton(false, id);
+  var s = document.getElementById(id + 'inGatchaCategory');
   var si = s.selectedIndex;
   if(si == 0)	{
-	  runNormalGatcha();
+	  runNormalGatcha(id);
   } else if(si== 1) {
-	  runRareGatcha();
+	  runRareGatcha(id);
   } else if(si == 2) {
-	  runNewGatcha();
+	  runNewGatcha(id);
   } else {
-	  runCategoryGatcha(s.value);
+	  runCategoryGatcha(id, s.value);
   }
-  switchGatchButton(true);
+  switchGatchButton(true, id);
 }
 
-function runCommonGatcha(rss) {
+function runCommonGatcha(id, rss) {
   console.log(rss);
-  var fetchNum = inGatchaNum.value;
+  var fetchNum = document.getElementById(id +'inGatchaNum').value;
   var feed = new google.feeds.Feed(rss);
   feed.setNumEntries(50);
   feed.load(function(result) {
@@ -107,31 +151,32 @@ function runCommonGatcha(rss) {
     }
     console.log("result.length="+ entries.length);
     entries = removeThisEntry(entries);
-    createOwnHtml(sideGatcha, null,entries, null, fetchNum);
+    var span = document.getElementById(id + 'gachaSpan');
+    createOwnHtml(span, null,entries, null, fetchNum);
   });  
 }
 
-function runNewGatcha() {
+function runNewGatcha(id) {
   var blogUrl = getBlogUrl();
-  runCommonGatcha(blogUrl + '/rss');
+  runCommonGatcha(id, blogUrl + '/rss');
 }
 
-function runRareGatcha() {
+function runRareGatcha(id) {
   var blogUrl = getBlogUrl();
   var relRssUrl = 'http://b.hatena.ne.jp/entrylist?'
     + 'sort=count'
     + '&mode=rss'
     + '&url=' + encodeURIComponent(blogUrl);
-  runCommonGatcha(relRssUrl);
+  runCommonGatcha(id, relRssUrl);
 }
 
-function runCategoryGatcha(categoryName) {
+function runCategoryGatcha(id, categoryName) {
   var blogUrl = getBlogUrl();
   var relRssUrl = blogUrl + '/rss/category/' + categoryName;
-  runCommonGatcha(relRssUrl);
+  runCommonGatcha(id, relRssUrl);
 }
 
-function runNormalGatcha() {
+function runNormalGatcha(id) {
   var fetchNum = inGatchaNum.value;
   var maxNum = 10;
   var blogUrl = getBlogUrl();
@@ -159,13 +204,12 @@ function runNormalGatcha() {
 	if(++c == feeds.length){
           entries = removeThisEntry(entries);
           console.log("result.length="+ entries.length);
-          createOwnHtml(sideGatcha, null,entries, null, fetchNum);
+          var span = document.getElementById(id + 'gachaSpan');
+          createOwnHtml(span, null, entries, null, fetchNum);
 	}
     });
   }
 }
 
-
-google.setOnLoadCallback(writeGatchaCategory);
-google.setOnLoadCallback(runGatcha);
+google.setOnLoadCallback(function(){ writeGatchaCategory('side-') } );
 
