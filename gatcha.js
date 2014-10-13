@@ -31,12 +31,17 @@ function writeGatcha(fetchNum, id, isCategory) {
   }
   console.log(categoryElement);
 
-  document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\"' + id + '\")" style="width:150px"><select>');
-  document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\"' + id + '\")" />');
-  document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\"' + id + '\")" />');
+  document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:150px"><select>');
+  document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\'' + id + '\')" />');
+  document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\'' + id + '\')" />');
   document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
   document.write('<input type="hidden" id="'+ id + 'gatchaCategory" value="' + categoryElement.href + '" />');
   document.write('<span id="' + id + 'gachaSpan"></span>');
+  
+  console.log(document.getElementById(id + 'btnNormalGatcha'));
+  console.log(document.getElementById(id + 'btnMoveGatcha'));
+  console.log(document.getElementById(id + 'inGatchaCategory'));
+
 
   switchGatchButton(false, id);
 
@@ -47,12 +52,8 @@ function writeGatcha(fetchNum, id, isCategory) {
   s.selectedIndex = 1;
 }
 
-
 function writeGatchaCategory(id) {
-  console.log(id)
-  if(id === undefined) {
-	id = 'side-';
-  }
+  console.log(id);
 
   var blogURL = getBlogUrl();
   var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
@@ -99,6 +100,7 @@ function switchGatchButton(is, id) {
   document.getElementById(id + 'btnNormalGatcha').disabled = !is;
   document.getElementById(id + 'btnMoveGatcha').disabled = !is;
   document.getElementById(id + 'inGatchaCategory').disabled = !is;
+  
 }
 
 function moveGatcha(id) {
@@ -125,7 +127,7 @@ function runGatcha(id) {
   switchGatchButton(false, id);
   var s = document.getElementById(id + 'inGatchaCategory');
   var si = s.selectedIndex;
-  if(si == 0)	{
+  if(si == 0) {
 	  runNormalGatcha(id);
   } else if(si== 1) {
 	  runRareGatcha(id);
@@ -201,7 +203,7 @@ function runNormalGatcha(id) {
           console.log("result[" + c + "].length="+ result.feed.entries.length);
         }
 
-	if(++c == feeds.length){
+	if(++c == feeds.length) {
           entries = removeThisEntry(entries);
           console.log("result.length="+ entries.length);
           var span = document.getElementById(id + 'gachaSpan');
@@ -211,5 +213,5 @@ function runNormalGatcha(id) {
   }
 }
 
-google.setOnLoadCallback(function(){ writeGatchaCategory('side-') } );
+google.setOnLoadCallback(function(){ writeGatchaCategory('side-'); } );
 
