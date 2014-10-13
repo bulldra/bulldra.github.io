@@ -42,7 +42,6 @@ function writeGatcha(fetchNum, id, isCategory) {
   console.log(document.getElementById(id + 'btnMoveGatcha'));
   console.log(document.getElementById(id + 'inGatchaCategory'));
 
-
   switchGatchButton(false, id);
 
   var s = document.getElementById(id + 'inGatchaCategory');
@@ -179,7 +178,7 @@ function runCategoryGatcha(id, categoryName) {
 }
 
 function runNormalGatcha(id) {
-  var fetchNum = inGatchaNum.value;
+  var fetchNum = document.getElementById(id +'inGatchaNum').value;
   var maxNum = 10;
   var blogUrl = getBlogUrl();
 
