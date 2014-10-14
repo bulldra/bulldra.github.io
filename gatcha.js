@@ -5,7 +5,7 @@
 
 google.load("feeds", "1");
 
-function writeGatcha(fetchNum, id, isCategory) {
+function writeGatcha(fetchNum, id, isCategory, header) {
   if(id === undefined || id == null){ 
     id = 'side-';
   }
@@ -24,30 +24,38 @@ function writeGatcha(fetchNum, id, isCategory) {
        categoryElement = rootCategoryElements[idx];
      }
   }
+  
   console.log(id)
   if(categoryElement === undefined || categoryElement == null) {
 	categoryElement = ''; 
   }
   console.log(categoryElement);
-
-  document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:150px"><select>');
-  document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\'' + id + '\')" />');
-  document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\'' + id + '\')" />');
-  document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
-  document.write('<input type="hidden" id="'+ id + 'gatchaCategory" value="' + categoryElement.href + '" />');
-  document.write('<span id="' + id + 'gachaSpan"></span>');
   
-  console.log(document.getElementById(id + 'btnNormalGatcha'));
-  console.log(document.getElementById(id + 'btnMoveGatcha'));
-  console.log(document.getElementById(id + 'inGatchaCategory'));
+  if(header !== undefined && header != null) {
+    document.write('<h3>' + header);
+    document.write('<span style="float:right">');
+    writeForm(id, categoryElement, fetchNum);
+    document.write('</span></h3>');
+  } else {
+    writeForm(id, categoryElement, fetchNum);
+  }
+  document.write('<span id="' + id + 'gachaSpan"></span>');
 
   switchGatchButton(false, id);
+}
 
-  var s = document.getElementById(id + 'inGatchaCategory');
-  s.appendChild(createOption('all','全て'));
-  s.appendChild(createOption('rare','人気'));
-  s.appendChild(createOption('new','最新'));
-  s.selectedIndex = 1;
+function writeForm(id, categoryElement, fetchNum) {
+    document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:150px;"><select>');
+    document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\'' + id + '\')" />');
+    document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\'' + id + '\')" />');
+    document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
+    document.write('<input type="hidden" id="'+ id + 'gatchaCategory" value="' + categoryElement.href + '" />');
+    
+    var s = document.getElementById(id + 'inGatchaCategory');
+    s.appendChild(createOption('all','全て'));
+    s.appendChild(createOption('rare','人気'));
+    s.appendChild(createOption('new','最新'));
+    s.selectedIndex = 1;
 }
 
 function writeGatchaCategory(id) {
@@ -100,8 +108,7 @@ function switchGatchButton(is, id) {
   console.log(id)
   document.getElementById(id + 'btnNormalGatcha').disabled = !is;
   document.getElementById(id + 'btnMoveGatcha').disabled = !is;
-  document.getElementById(id + 'inGatchaCategory').disabled = !is;
-  
+  document.getElementById(id + 'inGatchaCategory').disabled = !is;  
 }
 
 function moveGatcha(id) {
