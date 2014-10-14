@@ -1,4 +1,4 @@
-/*
+﻿/*
  * http://www.ikedakana.com
  *
  */
@@ -211,6 +211,4 @@ function runNormalGatcha(id) {
     });
   }
 }
-
-google.setOnLoadCallback(function(){ writeGatchaCategory('side-'); } );
 
