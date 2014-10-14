@@ -25,14 +25,18 @@ function writeGatcha(fetchNum, id, mode, header) {
        categoryElement = rootCategoryElements[idx];
      }
   }
-  
-  console.log(id)
-  if(categoryElement === undefined || categoryElement == null) {
-	categoryHref = ''; 
+
+
+  var categoryHref = ''; 
+  if(categoryElement !== undefined && categoryElement != null) {
+	categoryHref = categoryElement.href.replace(getBlogUrl() + '/category/','');
+  } else if(mode == 'all') {
+	categoryHref = 'gatcha-all'; 
+  } else if(mode == 'recent') {
+	categoryHref = 'gatcha-new';
   } else {
-    categoryHref = categoryElement.href;
+	categoryHref = ''; 
   }
-  
   
   if(header !== undefined && header != null) {
     document.write('<span class="hatena-module-foot"><h3>' + header);
@@ -51,12 +55,12 @@ function writeForm(id, categoryHref, fetchNum) {
     document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\'' + id + '\')" />');
     document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\'' + id + '\')" />');
     document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
-    document.write('<input type="hidden" id="'+ id + 'gatchaCategory" value="' + categoryHref + '" />');
+    document.write('<input type="hidden" id="'+ id + 'mode" value="' + categoryHref + '" />');
     
     var s = document.getElementById(id + 'inGatchaCategory');
-    s.appendChild(createOption('all','全て'));
-    s.appendChild(createOption('rare','人気'));
-    s.appendChild(createOption('new','最新'));
+    s.appendChild(createOption('gatcha-all','全て'));
+    s.appendChild(createOption('gatcha-rare','人気'));
+    s.appendChild(createOption('gatcha-new','最新'));
     s.selectedIndex = 1;
 }
 
@@ -75,8 +79,9 @@ function writeGatchaCategory(id) {
   var feed = new google.feeds.Feed(relRssUrl);
   feed.setNumEntries(100);
   feed.load(function(result) {
-    console.log(id);
     var s = document.getElementById(id + 'inGatchaCategory');
+    console.log(s);
+    
     var entries = new Array();
     if (!result.error && result.feed.entries.length > 0) {
       entries = result.feed.entries;
@@ -88,12 +93,16 @@ function writeGatchaCategory(id) {
         continue;
       }
       var o = createOption(e.link.replace(blogURL + '/category/', ''), e.title);
-      s.appendChild(o);
-      var gatchaCategory = document.getElementById(id + 'gatchaCategory');
-      if(e.link == gatchaCategory.value) {
-	o.selected = true;
+      s.appendChild(o);      
+    }
+
+    var gatchaCategory = document.getElementById(id + 'mode');    
+    for (var idx = 0; idx < s.options.length; idx++) {
+      if (s.options[idx].value == gatchaCategory.value) {
+        s.options[idx].selected = true;
       }
     }
+    
     console.log(s.selectedIndex);
     runGatcha(id);
   });
