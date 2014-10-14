@@ -5,13 +5,13 @@
 
 google.load("feeds", "1");
 
-function writeGatcha(fetchNum, id, isCategory, header) {
+function writeGatcha(fetchNum, id, mode, header) {
   if(id === undefined || id == null){ 
     id = 'side-';
   }
-
+   
   var categoryElement = null;
-  if(isCategory) {
+  if(mode == 'category') {
      var categoryElements = document.querySelectorAll('div.categories a');
      if (categoryElements != null && categoryElements.length > 0) {
        var rootCategoryElements = new Array();
@@ -28,28 +28,30 @@ function writeGatcha(fetchNum, id, isCategory, header) {
   
   console.log(id)
   if(categoryElement === undefined || categoryElement == null) {
-	categoryElement = ''; 
+	categoryHref = ''; 
+  } else {
+    categoryHref = categoryElement.href;
   }
-  console.log(categoryElement);
+  
   
   if(header !== undefined && header != null) {
     document.write('<span class="hatena-module-foot"><h3>' + header);
     document.write('<span style="float:right">');
-    writeForm(id, categoryElement, fetchNum);
+    writeForm(id, categoryHref, fetchNum);
     document.write('</span></h3></span>');
   } else {
-    writeForm(id, categoryElement, fetchNum);
+    writeForm(id, categoryHref, fetchNum);
   }
   document.write('<span id="' + id + 'gachaSpan"></span>');
   switchGatchButton(false, id);
 }
 
-function writeForm(id, categoryElement, fetchNum) {
+function writeForm(id, categoryHref, fetchNum) {
     document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:150px;"><select>');
     document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\'' + id + '\')" />');
     document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\'' + id + '\')" />');
     document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
-    document.write('<input type="hidden" id="'+ id + 'gatchaCategory" value="' + categoryElement.href + '" />');
+    document.write('<input type="hidden" id="'+ id + 'gatchaCategory" value="' + categoryHref + '" />');
     
     var s = document.getElementById(id + 'inGatchaCategory');
     s.appendChild(createOption('all','全て'));
