@@ -40,7 +40,6 @@ function writeGatcha(fetchNum, id, isCategory, header) {
     writeForm(id, categoryElement, fetchNum);
   }
   document.write('<span id="' + id + 'gachaSpan"></span>');
-
   switchGatchButton(false, id);
 }
 
