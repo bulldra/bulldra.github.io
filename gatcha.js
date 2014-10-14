@@ -6,7 +6,7 @@
 google.load("feeds", "1");
 
 function writeGatcha(fetchNum, id, isCategory) {
-  if(id === undefined){ 
+  if(id === undefined || id == null){ 
     id = 'side-';
   }
 
@@ -22,8 +22,7 @@ function writeGatcha(fetchNum, id, isCategory) {
        }
        var idx = Math.floor(Math.random() * rootCategoryElements.length);
        categoryElement = rootCategoryElements[idx];
-     } 
-       
+     }
   }
   console.log(id)
   if(categoryElement === undefined || categoryElement == null) {
@@ -52,10 +51,11 @@ function writeGatcha(fetchNum, id, isCategory) {
 }
 
 function writeGatchaCategory(id) {
-  if(id === undefined){ 
+  if(id === undefined || id == null){ 
     id = 'side-';
   }
   console.log(id);
+
   var blogURL = getBlogUrl();
   var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
     + '&blog=' + blogURL
