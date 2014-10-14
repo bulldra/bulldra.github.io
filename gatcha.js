@@ -16,7 +16,8 @@ function writeGatcha(fetchNum, id, isCategory, header) {
      if (categoryElements != null && categoryElements.length > 0) {
        var rootCategoryElements = new Array();
        for (var idx = 0; idx < categoryElements.length; idx++) {
-         if (categoryElements[idx].href.indexOf('-') < 0) {
+         var href = categoryElements[idx].href;
+         if (href.indexOf('-') < 0 && href.indexOf(getBlogUrl() + '/category/') >= 0) {
            rootCategoryElements.push(categoryElements[idx]);
          }
        }
