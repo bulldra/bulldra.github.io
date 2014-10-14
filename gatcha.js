@@ -32,10 +32,10 @@ function writeGatcha(fetchNum, id, isCategory, header) {
   console.log(categoryElement);
   
   if(header !== undefined && header != null) {
-    document.write('<h3>' + header);
+    document.write('<span class="hatena-module-foot"><h3>' + header);
     document.write('<span style="float:right">');
     writeForm(id, categoryElement, fetchNum);
-    document.write('</span></h3>');
+    document.write('</span></h3></span>');
   } else {
     writeForm(id, categoryElement, fetchNum);
   }
