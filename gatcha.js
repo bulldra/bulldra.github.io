@@ -52,8 +52,10 @@ function writeGatcha(fetchNum, id, isCategory) {
 }
 
 function writeGatchaCategory(id) {
+  if(id === undefined){ 
+    id = 'side-';
+  }
   console.log(id);
-
   var blogURL = getBlogUrl();
   var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
     + '&blog=' + blogURL
