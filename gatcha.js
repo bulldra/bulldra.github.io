@@ -40,9 +40,15 @@ function writeGatcha(fetchNum, id, mode, header) {
   
   if(header !== undefined && header != null) {
     document.write('<span class="hatena-module-foot"><h3>' + header);
-    document.write('<span style="float:right">');
-    writeForm(id, categoryHref, fetchNum);
-    document.write('</span></h3></span>');
+    if (window.innerWidth > 500) {
+      document.write('<span style="float:right">');
+      writeForm(id, categoryHref, fetchNum);
+      document.write('</span></h3>');
+    } else {
+      document.write('</h3>');
+      writeForm(id, categoryHref, fetchNum);
+    }
+    document.write('</span>');
   } else {
     writeForm(id, categoryHref, fetchNum);
   }
@@ -51,7 +57,7 @@ function writeGatcha(fetchNum, id, mode, header) {
 }
 
 function writeForm(id, categoryHref, fetchNum) {
-    document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:140px;"><select>');
+    document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:150px;"><select>');
     document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\'' + id + '\')" />');
     document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\'' + id + '\')" />');
     document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
