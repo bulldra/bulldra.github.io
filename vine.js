@@ -1,7 +1,7 @@
 function runVineEmbed() {
   var as = document.getElementsByTagName('a');
   for(var idx in as) {
-    if(as[idx].indexOf('https://vine.co/v/') >= 0) {
+    if(as[idx].href.indexOf('https://vine.co/v/') >= 0) {
       var a = as[idx];
       console.log(a);
       a.outerHTML = '<iframe class="vine-embed" src="' + as[i].href + '/embed/simple?related=0" frameborder="0"></iframe>';
