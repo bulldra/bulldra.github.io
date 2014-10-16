@@ -6,15 +6,15 @@ function runVineEmbed() {
       console.log(a);
       a.outerHTML = '<iframe class="vine-embed" src="' + as[i].href + '/embed/simple?related=0" frameborder="0"></iframe>';
 
-    if(window.innerHeight <= 480) {
-      e[i].width = 300;
-      e[i].height = 300;
-    } else {
-      e[i].width = 480;
-      e[i].height = 480;
+      if(window.innerHeight <= 480) {
+        e[i].width = 300;
+        e[i].height = 300;
+      } else {
+        e[i].width = 480;
+        e[i].height = 480;
+      }
     }
   }
-	
 }
 google.setOnLoadCallback(runVineEmbed);
 
