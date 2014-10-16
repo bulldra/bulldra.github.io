@@ -1,5 +1,7 @@
 function runVineEmbed() {
-  var as = document.getElementsByTagName('a');
+  var as = document.querySelectorAll('a');
+  console.log(as);
+
   for(var i = 0; i < as.length; i++) {
     var a = as[i];
     if(a.href.indexOf('https://vine.co/v/') >= 0) {
