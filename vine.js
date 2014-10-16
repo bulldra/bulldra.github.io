@@ -1,5 +1,5 @@
 function runVineEmbed() {
-  var as = document.getElementsTagName('a');
+  var as = document.getElementsByTagName('a');
   for(var idx in as) {
     if(as[idx].indexOf('https://vine.co/v/') >= 0) {
       var a = as[idx];
