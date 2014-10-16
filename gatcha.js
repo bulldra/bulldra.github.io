@@ -51,7 +51,7 @@ function writeGatcha(fetchNum, id, mode, header) {
 }
 
 function writeForm(id, categoryHref, fetchNum) {
-    document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:150px;"><select>');
+    document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:140px;"><select>');
     document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\'' + id + '\')" />');
     document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\'' + id + '\')" />');
     document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
