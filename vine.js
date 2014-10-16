@@ -1,4 +1,4 @@
-function runVineEmbed() {
+function runVineEmbed(p, min, max) {
   var as = document.querySelectorAll('a');
   console.log(as);
 
@@ -11,16 +11,15 @@ function runVineEmbed() {
       iframe.src= a.href + '/embed/simple?related=0'
       iframe.frameborder = 0;
 
-      if(window.innerWidth <= 480) {
-        iframe.width = 300;
-        iframe.height = 300;
+      if(window.innerWidth <= p) {
+        iframe.width = min;
+        iframe.height = min;
       } else {
-        iframe.width = 480;
-        iframe.height = 480;
+        iframe.width = max;
+        iframe.height = max;
       }
       a.outerHTML = iframe.outerHTML
     }
   }
 }
-google.setOnLoadCallback(runVineEmbed);
 
