@@ -1,18 +1,22 @@
 function runVineEmbed() {
   var as = document.getElementsByTagName('a');
-  for(var idx in as) {
-    if(as[idx].href.indexOf('https://vine.co/v/') >= 0) {
-      var a = as[idx];
+  for(var i = 0; i < as.length; i++) {
+    var a = as[i];
+    if(a.href.indexOf('https://vine.co/v/') >= 0) {
       console.log(a);
-      a.outerHTML = '<iframe class="vine-embed" src="' + as[i].href + '/embed/simple?related=0" frameborder="0"></iframe>';
+      var iframe = document.createElement('iframe');
+      iframe.class = 'vine-embed';
+      iframe.src= a.href + '/embed/simple?related=0'
+      iframe.frameborder = 0;
 
-      if(window.innerHeight <= 480) {
-        e[i].width = 300;
-        e[i].height = 300;
+      if(window.innerWidth <= 480) {
+        iframe.width = 300;
+        iframe.height = 300;
       } else {
-        e[i].width = 480;
-        e[i].height = 480;
+        iframe.width = 480;
+        iframe.height = 480;
       }
+      a.outerHTML = iframe.outerHTML
     }
   }
 }
