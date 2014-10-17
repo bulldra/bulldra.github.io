@@ -6,7 +6,7 @@ function runVineEmbed(p, min, max) {
   var as = document.querySelectorAll('a');
   for(var i = 0; i < as.length; i++) {
     var a = as[i];
-    if(a.href.indexOf('https://vine.co/v/') >= 0) {
+    if(a.href.indexOf('https://vine.co/v/') == 0) {
       console.log(a);
       var iframe = document.createElement('iframe');
       iframe.class = 'vine-embed';
