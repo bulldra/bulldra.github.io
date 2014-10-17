@@ -1,7 +1,9 @@
+/* 
+ *  はてなブログvine埋め込みプラグイン by 池田仮名
+ *  http://www.ikedakana.com/entry/vine-plugin
+ */
 function runVineEmbed(p, min, max) {
   var as = document.querySelectorAll('a');
-  console.log(as);
-
   for(var i = 0; i < as.length; i++) {
     var a = as[i];
     if(a.href.indexOf('https://vine.co/v/') >= 0) {
