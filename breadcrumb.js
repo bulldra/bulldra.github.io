@@ -56,10 +56,13 @@ function writeCategoryBreadCrumb() {
   /* パンくずリスト書き出し */
   if(breadcrumbResult.length > 0 && categoryHTML != null) {
     categoryHTML.innerHTML = breadcrumbResult[0];
-    console.log(categoryHTML.innerHTML);
+    console.log(categoryHTML)
+    if(categoryHTML.className == 'notHierarchy') {
+	    return;
+    }
   
     var categories = document.querySelector("div.categories");
-    if(categoryResult.length > 0 && categories != null) {
+    if(categoryResult.length > 0 && categories != null) { 
       categories.innerHTML = '';
       for(var idx = 0; idx < categoryResult.length; idx++) {
       　if(categories !=null && categoryResult[idx] != null) {
@@ -72,6 +75,9 @@ function writeCategoryBreadCrumb() {
     }
   }
 }
+
+google.setOnLoadCallback(writeCategoryBreadCrumb);
+
 
 /* カテゴリモジュールでルートカテゴリのみ表示 */
 function categoryHierarchyModule() {
@@ -161,16 +167,12 @@ function createCategoryNode(categoryMap, key, pName) {
 
   if(pName != null) {
     categorySpan.appendChild(document.createTextNode(" > "));
-    var clone = categoryMap[pName].cloneNode(true);
-    console.log(clone);
-    categorySpan.appendChild(clone);
+    categorySpan.appendChild(categoryMap[pName].cloneNode(true));
   }
   categorySpan.appendChild(document.createTextNode(" > "));
-  categorySpan.appendChild(categoryMap[key]);
+  categorySpan.appendChild(categoryMap[key].cloneNode(true));
 
   return categorySpan;
 }
-
-google.setOnLoadCallback(writeCategoryBreadCrumb);
 
 
