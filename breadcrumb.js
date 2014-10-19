@@ -4,6 +4,7 @@ function writeCategoryBreadCrumb() {
   var flagMap= new Array();
   
   var categoryElements = document.querySelectorAll("div.categories a");
+  console.log(categoryElements);
   for(var idx = 0; idx < categoryElements.length; idx++) {
     var c = categoryElements[idx];
     if(c.text == null || c.text === undefined) {
@@ -16,6 +17,12 @@ function writeCategoryBreadCrumb() {
     if(es.length >= 2) {
       c.innerHTML = es[es.length - 1];
     }
+  }
+ 
+  /* 個別エントリじゃない場合はそこで終了 */
+  var categoryHTML = document.querySelector("div#breadcrumb");
+  if(categoryHTML == null) {
+    return;
   }
 
   var categoryResult = new Array();
@@ -47,7 +54,6 @@ function writeCategoryBreadCrumb() {
   }
 
   /* パンくずリスト書き出し */
-  var categoryHTML = document.querySelector("div#breadcrumb");
   if(breadcrumbResult.length > 0 && categoryHTML != null) {
     categoryHTML.innerHTML = breadcrumbResult[0];
   
