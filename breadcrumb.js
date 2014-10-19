@@ -56,6 +56,7 @@ function writeCategoryBreadCrumb() {
   /* パンくずリスト書き出し */
   if(breadcrumbResult.length > 0 && categoryHTML != null) {
     categoryHTML.innerHTML = breadcrumbResult[0];
+    console.log(categoryHTML.innerHTML);
   
     var categories = document.querySelector("div.categories");
     if(categoryResult.length > 0 && categories != null) {
@@ -160,7 +161,9 @@ function createCategoryNode(categoryMap, key, pName) {
 
   if(pName != null) {
     categorySpan.appendChild(document.createTextNode(" > "));
-    categorySpan.appendChild(categoryMap[pName]);
+    var clone = categoryMap[pName].cloneNode(true);
+    console.log(clone);
+    categorySpan.appendChild(clone);
   }
   categorySpan.appendChild(document.createTextNode(" > "));
   categorySpan.appendChild(categoryMap[key]);
