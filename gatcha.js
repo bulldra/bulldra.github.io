@@ -117,7 +117,7 @@ function writeGatchaCategory(id) {
 function createOption(value, name) {
     var option = document.createElement('option');
     option.value = value;
-    option.innerText = name;
+    option.text = name;
     return option;
 }
 
