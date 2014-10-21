@@ -1,7 +1,5 @@
-function writeCategoryBreadCrumb() {
+function categoryReplace() {
   var topUrl = getBlogUrl();
-  var categoryMap = new Array();
-  var flagMap= new Array();
   
   var categoryElements = document.querySelectorAll("div.categories a");
   console.log(categoryElements);
@@ -10,15 +8,28 @@ function writeCategoryBreadCrumb() {
     if(c.text == null || c.text === undefined) {
       continue;
     } 
-    flagMap[c.text] = false;
-    categoryMap[c.text] = c;
     c.href = c.href.replace(topUrl + '/category', topUrl + '/archive/category');
     var es = c.text.split('-');
     if(es.length >= 2) {
       c.innerHTML = es[es.length - 1];
     }
   }
+}
+categoryReplace();
  
+function writeCategoryBreadCrumb() {
+  var flagMap = new Array();
+  var categoryMap = new Array();
+  var categoryElements = document.querySelectorAll("div.categories a");
+  for(var idx = 0; idx < categoryElements.length; idx++) {
+    var c = categoryElements[idx];
+    if(c.text == null || c.text === undefined) {
+      continue;
+    } 
+    flagMap[c.href] = false;
+    categoryMap[c.href] = c;
+  }
+
   /* 個別エントリじゃない場合はそこで終了 */
   var categoryHTML = document.querySelector("div#breadcrumb");
   if(categoryHTML == null) {
@@ -137,7 +148,7 @@ function createBreadcrumbHtml(categoryMap, key, pName) {
     html += " > ";
     html += "<div itemscope='' itemtype='http://data-vocabulary.org/Breadcrumb'>";
     html += "<a href='" + categoryMap[pName].href + "' itemprop='url'>";
-    html += "<span itemprop = 'title'>" + pName + "</span>";
+    html += "<span itemprop = 'title'>" + categoryMap[pName].text + "</span>";
     html += "</a>";
     html += "</div>";
   }
