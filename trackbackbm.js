@@ -1,12 +1,25 @@
-﻿function runBookmark() {
-  var entryUrl = document.location.href;
-  var userScript = document.createElement('script');
-  userScript.type="text/javascript";
-  userScript.src='http://b.hatena.ne.jp/entry/jsonlite/?url='
+﻿(function(d, f) {
+  var s = d.createElement('script');
+  s.src = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js';
+  s.onload = function() {
+    f(jQuery.noConflict(true));
+  };
+  d.body.appendChild(s);
+})(document, function($) {
+  $.getScript('https://www.google.com/jsapi', function() {
+    google.load('feeds', '1', {
+      'callback': function() {
+        var entryUrl = document.location.href;
+        var userScript = document.createElement('script');
+        userScript.type="text/javascript";
+        userScript.src='http://b.hatena.ne.jp/entry/jsonlite/?url='
           + encodeURIComponent(entryUrl)
           + '&callback=callbackBookmark';
-  document.getElementsByTagName('head')[0].appendChild(userScript);
-}
+        document.getElementsByTagName('head')[0].appendChild(userScript);
+      }
+    });
+  });
+});
 
 function callbackBookmark(bookmark) {
   var relTrackbackRssUrl = null;
@@ -53,6 +66,4 @@ function runTrackBack(relTrackbackRssUrl) {
     createHtml(trackback_entry, header, r, defaultHtml, fetchNum);
   }
 }
-
-google.load("feeds", "1", {'callback' : function(){ runBookmark() }});
 
