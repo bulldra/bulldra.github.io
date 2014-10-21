@@ -33,7 +33,7 @@ function callbackBookmark(bookmark) {
 function runTrackBack(relTrackbackRssUrl) { 
   var isImpression = false;
   var s = document.querySelector("span#trackback_entry");
-  if(s != null && s.className == 'impression') {
+  if(s != null && s.className.indexOf('impression') >= 0) {
     isImpression = true;
   }
 
