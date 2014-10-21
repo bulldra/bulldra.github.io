@@ -43,8 +43,8 @@ function callbackBookmark(bookmark) {
 
 function runTrackBack(relTrackbackRssUrl) { 
   var title = document.querySelector("h1.entry-title a");
-  var header = '<h3>この記事への言及<a href="http://blog.hatena.ne.jp/my/edit?title=「' + title.text + '」に言及する&body=[' + document.location.href + ':embed]" target="_blank" style="float:right">＞＞言及する</a></h3>'
-  var defaultHtml =  "<p>この記事への言及はありません。</p><br/>";
+  var header = '<h3>この記事への感想<a href="http://blog.hatena.ne.jp/my/edit?title=「' + title.text + '」の感想&body=[' + document.location.href + ':embed]" target="_blank" style="float:right">＞＞感想を書く</a></h3>'
+  var defaultHtml =  "<p>この記事への感想はありません。</p><br/>";
   var fetchNum = 10;
   
   console.log(relTrackbackRssUrl);
