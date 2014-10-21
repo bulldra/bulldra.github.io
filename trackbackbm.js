@@ -52,4 +52,4 @@ function runTrackBack(relTrackbackRssUrl) {
 }
 
 runBookmark();
-google.load("feeds", "1", ['callback', function(){ runTrackBack(relTrackbackRssUrl) }]);
+google.load("feeds", "1", ['callback': function(){ runTrackBack(relTrackbackRssUrl) }]);
