@@ -87,7 +87,7 @@ function writeCategoryBreadCrumb() {
 }
 
 categoryReplace();
-google.setOnLoadCallback(writeCategoryBreadCrumb);
+writeCategoryBreadCrumb();
 
 
 /* カテゴリモジュールでルートカテゴリのみ表示 */
