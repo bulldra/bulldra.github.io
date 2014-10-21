@@ -15,7 +15,6 @@ function categoryReplace() {
     }
   }
 }
-categoryReplace();
  
 function writeCategoryBreadCrumb() {
   var flagMap = new Array();
@@ -87,6 +86,7 @@ function writeCategoryBreadCrumb() {
   }
 }
 
+google.setOnLoadCallback(categoryReplace);
 google.setOnLoadCallback(writeCategoryBreadCrumb);
 
 
