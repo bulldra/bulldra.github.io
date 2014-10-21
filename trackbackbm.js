@@ -1,5 +1,4 @@
-﻿google.load("feeds", "1");
-runTrackBack(null); 
+﻿runTrackBack(null); 
 
 function runBookmark() {
   var entryUrl = document.location.href;
@@ -10,6 +9,8 @@ function runBookmark() {
           + '&callback=callbackBookmark';
   document.getElementsByTagName('head')[0].appendChild(userScript);
 }
+
+google.load("feeds", "1", {callback, runTrackBack]);
 
 function callbackBookmark(bookmark) {
   console.log(bookmark);
