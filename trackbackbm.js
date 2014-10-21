@@ -10,8 +10,6 @@ function runBookmark() {
   document.getElementsByTagName('head')[0].appendChild(userScript);
 }
 
-google.load("feeds", "1", {callback, runTrackBack]);
-
 function callbackBookmark(bookmark) {
   console.log(bookmark);
   if(bookmark) {
@@ -26,7 +24,6 @@ function callbackBookmark(bookmark) {
                + '_id=da86ac3f59f0ff92c537c0d8d5952b94&_render=rss'
                + '&URL=' + encodeURIComponent(relUrl)
                + '&blog=' + getBlogUrl();
-    runTrackBack(relTrackbackRssUrl); 
   } 
 }
 
@@ -35,7 +32,7 @@ function runTrackBack(relTrackbackRssUrl) {
   var header = '<h3>この記事への言及<a href="http://blog.hatena.ne.jp/my/edit?title=「' + title.text + '」に言及する&body=[' + document.location.href + ':embed]" target="_blank" style="float:right">＞＞言及する</a></h3>'
   var defaultHtml =  "<p>この記事への言及はありません。</p><br/>";
   var fetchNum = 10;
-
+  
   if(relTrackbackRssUrl != null) {
     console.log(relTrackbackRssUrl);
     var feed = new google.feeds.Feed(relTrackbackRssUrl);
@@ -55,3 +52,4 @@ function runTrackBack(relTrackbackRssUrl) {
 }
 
 runBookmark();
+google.load("feeds", "1", ['callback', function(){ runTrackBack(relTrackbackRssUrl) }]);
