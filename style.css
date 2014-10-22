@@ -931,7 +931,14 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	right: 10px;
 }
 
+.hatena-module-entries-access-ranking .hatena-module-title a:after {
+	content: ">>MORE";
+	font-size: 80%;
+	position: absolute;
+	right: 10px;
+}
 
 /* <system section="background" selected="custom"> */
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
 /* </system> */
+
