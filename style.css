@@ -12,13 +12,19 @@
     font-style: normal;
 }
 
-.foot {
-  width:100%;
-  text-align:left;
+.hand-write {
+  font-family:HuiFontP109;
+  font-size:120%
 }
+
 
 .hatena-bookmark-bookmark-panel {
    z-index:10350001 !important;
+}
+
+.foot {
+  width:100%;
+  text-align:left;
 }
 
 .ninja_onebutton {
@@ -112,7 +118,7 @@ a:hover {
 }
 
 body {
-	font-family: "ƒqƒ‰ƒMƒmŠÛƒS ProN","Hiragino Maru Gothic ProN",Meiryo,sans-serif;
+	font-family: "ãƒ’ãƒ©ã‚®ãƒŽä¸¸ã‚´ ProN","Hiragino Maru Gothic ProN",Meiryo,sans-serif;
 	color: #333;
 	background: #ddd;
 }
@@ -322,7 +328,7 @@ ul, ol {
 .entry-content {
     font-size: 95%;
     padding: 0px 20px 20px;
-    line-height: 1.9; /* 1.5?2.0‚ç‚¢ */
+    line-height: 1.9; /* 1.5ã€œ2.0ã‚‰ã„ */
 }
 
 .entry-content p {
@@ -374,7 +380,7 @@ a.keyword:hover {
 }
 
 .entry-content h5:before {
-	content: "¡ ";
+	content: "â–  ";
 	color: #c0392b;
 }
 
@@ -383,7 +389,7 @@ a.keyword:hover {
 	background: rgba(245,245,245,0.8);
 	color: #333;
 	position: relative;
-	border: solid 1px #fff; /* ”wŒi‚ª”’ˆÈŠO‚ÌƒP[ƒX—p */
+	border: solid 1px #fff; /* èƒŒæ™¯ãŒç™½ä»¥å¤–ã®ã‚±ãƒ¼ã‚¹ç”¨ */
 	margin: 0.8em 0;
 }
 
@@ -392,7 +398,7 @@ a.keyword:hover {
 }
 
 .entry-content blockquote:before,.hatena-module-foot blockquote:before {
-	content: "g";
+	content: "â€œ";
 	font-family: serif;
 	position: absolute;
 	top:0;
@@ -404,7 +410,7 @@ a.keyword:hover {
 }
 
 .entry-content blockquote:after,.hatena-module-foot blockquote:after {
-	content: "h";
+	content: "â€";
 	font-family: serif;
 	position: absolute;
 	bottom:0;
@@ -583,6 +589,8 @@ a.keyword:hover {
 
 .hatena-module-foot {
     box-shadow: 0 0 5px #111;
+    font-family: 'HuiFontP109';
+    font-size:120%
 }
 
 .hatena-module-foot-inner {
@@ -616,12 +624,6 @@ a.keyword:hover {
    -webkit-border-radius: 5px 5px 0px 0px;
    box-shadow: 0 0 5px #111;
 }
-
-/* archiveƒŠƒ“ƒN‘Î‰ž 
-.hatena-module-recent-entries .hatena-module-title, .hatena-module-archive .hatena-module-title  {
-	padding: 0;
-}
-*/
 
 .hatena-module-body {
 	font-size: 100%;
@@ -761,21 +763,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	background: url(http://img.f.hatena.ne.jp/images/fotolife/p/platism/20130711/20130711002432.gif) no-repeat 50% 50%;
 }
 
-/*
-.hatena-module-recent-entries li a {
-	word-wrap: normal; /* for IE 
-	white-space: nowrap;
-	text-overflow: clip;
-	overflow: hidden;
-}
-
-.hatena-module-recent-entries li a:hover {
-	white-space: normal;
-	text-overflow: clip;
-	overflow: visible;
-}
-*/
-
 .archive-module-month {
 	list-style-type: none !important;
 }
@@ -786,37 +773,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
   border-bottom: 1px dashed #c7dce3;
   line-height: 1.5;
 }
-
-/*.hatena-module-category li  {
-	display: inline-block;
-	margin-bottom: -2px;
-    font-size:80%
-}
-
-.hatena-module-category li a {
-	display: inline-block;
-	display: block;
-	float: left;
-	color: #fff;
-	background: #c73140;
-	padding: 0 5px;
-	line-height: 25px;
-	height: 25px;
-	font-size: 85%;
-	max-width: 100%;
-	word-wrap: normal; /* for IE 
-	white-space: nowrap;
-	text-overflow: clip;
-	overflow: hidden;
-}
-
-.hatena-module-category li a:hover {
-	text-decoration: none;
-	background: #c73140;
-	-webkit-transform: scale(1.4,1.4);
-	transform: scale(1.4,1.4);
-	box-shadow: 0 0 3px 1px #999;
-}*/
 
 .hatena-module-archive .hatena-module-body {
 	font-size: 100%;
@@ -985,7 +941,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .page-about #main dt:before {
-	content: "¡ ";
+	content: "â–  ";
 	color: #ce0c0c;
 }
 
@@ -1019,7 +975,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	margin: 0.5em 0;
 }
 
-/* height‘Î‰ž */
+/* heightå¯¾å¿œ */
 #content:after {
 	content: " ";
 	display: block;
@@ -1089,13 +1045,12 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
 	opacity: 0.8;
 }
 
-
 .hatena-module-recent-entries .hatena-module-title a:after {
 	content: ">>ARCHIVE";
 	font-size: 80%;
 	position: absolute;
 	right: 10px;
-    font-family: "ƒqƒ‰ƒMƒmŠÛƒS ProN","Hiragino Maru Gothic ProN",Meiryo,sans-serif;
+    font-family: "ãƒ’ãƒ©ã‚®ãƒŽä¸¸ã‚´ ProN","Hiragino Maru Gothic ProN",Meiryo,sans-serif;
 }
 
 .hatena-module-title .hatena-archive:after {
@@ -1103,7 +1058,7 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
 	font-size: 80%;
 	position: absolute;
 	right: 10px;
-    font-family: "ƒqƒ‰ƒMƒmŠÛƒS ProN","Hiragino Maru Gothic ProN",Meiryo,sans-serif;
+    font-family: "ãƒ’ãƒ©ã‚®ãƒŽä¸¸ã‚´ ProN","Hiragino Maru Gothic ProN",Meiryo,sans-serif;
 }
 
 .hatena-module-title .hatena-more:after {
@@ -1111,6 +1066,6 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
 	font-size: 80%;
 	position: absolute;
 	right: 10px;
-	font-family: "ƒqƒ‰ƒMƒmŠÛƒS ProN","Hiragino Maru Gothic ProN",Meiryo,sans-serif;
+	font-family: "ãƒ’ãƒ©ã‚®ãƒŽä¸¸ã‚´ ProN","Hiragino Maru Gothic ProN",Meiryo,sans-serif;
 }
 
