@@ -1,13 +1,12 @@
 @charset "utf-8";
 @import url(http://fonts.googleapis.com/css?family=Simonetta:400);
-
 @font-face {
     font-family: 'HuiFontP109';
-    src: url('/fonts/public/HuiFont/HuiFontP109.eot');
-    src: url('/fonts/public/HuiFont/HuiFontP109.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/public/HuiFont/HuiFontP109.woff') format('woff'),
-         url('/fonts/public/HuiFont/HuiFontP109.ttf') format('truetype'),
-         url('/fonts/public/HuiFont/HuiFontP109.svg#HuiFontP109') format('svg');
+    src: url('http://www.hatenablog.com/fonts/public/HuiFont/HuiFontP109.eot');
+    src: url('http://www.hatenablog.com/fonts/public/HuiFont/HuiFontP109.eot?#iefix') format('embedded-opentype'),
+         url('http://www.hatenablog.com/fonts/public/HuiFont/HuiFontP109.woff') format('woff'),
+         url('http://www.hatenablog.com/fonts/public/HuiFont/HuiFontP109.ttf') format('truetype'),
+         url('http://www.hatenablog.com/fonts/public/HuiFont/HuiFontP109.svg#HuiFontP109') format('svg');
     font-weight: normal;
     font-style: normal;
 }
