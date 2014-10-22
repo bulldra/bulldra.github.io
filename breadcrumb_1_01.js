@@ -86,8 +86,8 @@ function writeCategoryBreadCrumb() {
   }
 }
 
-google.setOnLoadCallback(categoryReplace);
-google.setOnLoadCallback(writeCategoryBreadCrumb);
+categoryReplace();
+writeCategoryBreadCrumb();
 
 
 /* カテゴリモジュールでルートカテゴリのみ表示 */
