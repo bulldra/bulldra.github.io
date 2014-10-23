@@ -925,7 +925,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .hatena-module-recent-entries .hatena-module-title a:after {
-	font-weight:bold;
 	content: ">>ARCHIVE";
 	font-size: 100%;
 	position: absolute;
@@ -933,7 +932,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .hatena-module-entries-access-ranking .hatena-module-title a:after {
-	font-weight:bold;
 	content: ">>RANKING";
 	font-size: 100%;
 	position: absolute;
