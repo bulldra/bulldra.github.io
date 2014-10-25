@@ -12,8 +12,9 @@
   }
   url += '/' + asosiateid;
   var text = '<a href="' + url + '" target="_blank" rel="nofollow"><img src="' + img + '" /></a>';
-  document.write(text);
+  twotabsearchtextbox.value = text;
   console.log(text);
+
 }
 
 
