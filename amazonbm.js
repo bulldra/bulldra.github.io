@@ -21,8 +21,9 @@ function amazonLink(associateid, width) {
 
   console.log(url.indexOf(associateid)  + ' ' + url.length + ' '+ associateid.length);
   if(url.indexOf(associateid) != url.length - associateid.length) {
-    url += associateid;
+    url += '/' + associateid;
   }
+
 
   var text = '<a href="' + url + '" target="_blank" rel="nofollow"><img src="' + img + '" /></a>';
   twotabsearchtextbox.value = text;
