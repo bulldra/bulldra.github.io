@@ -222,7 +222,8 @@ ul, ol {
 }
 
 .breadcrumb {
-	width: 985px;
+	display:none;
+	width: 0;
 	margin: 0px auto;
 	height: 35px;
 }
@@ -682,8 +683,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	margin: 0.8em 0;
 	text-align: left;
 	line-height: 1.3;
-}
-
 }
 
 .archive-module-month {
