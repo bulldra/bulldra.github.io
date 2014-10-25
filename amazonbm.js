@@ -2,7 +2,7 @@
   var p = document.getElementById('prodImage');
   var img = p.src.replace(/\.[^\.]+\.jpg/,'.SX400.jpg');
 
-  var l = document.getElementsByTagName("link"),
+  var l = document.getElementsByTagName("link");
   var url = location.href; 
 
   for (var i = 0; i < l.length; i++) {
