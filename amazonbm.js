@@ -2,6 +2,11 @@
 
 function amazonLink(asosiateid, width) {
   var p = document.getElementById('prodImage');
+  if(p == null) {
+	  p = document.querySelector('.imageThumb img');
+  }
+  console.log(p);
+
   var img = p.src.replace(/\.[^\.]+\.jpg/,'.SX' + width + '.jpg');
   var url = location.href; 
 
