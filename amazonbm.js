@@ -19,8 +19,8 @@ function amazonLink(associateid, width) {
     }
   }
 
-  console.log(!url.indexOf(associateid)  + ' ' + url.length + ' '+ associateid.length);
-  if(!url.indexOf(associateid) == url.length - associateid.length) {
+  console.log(url.indexOf(associateid)  + ' ' + url.length + ' '+ associateid.length);
+  if(url.indexOf(associateid) != url.length - associateid.length) {
     url += associateid;
   }
 
