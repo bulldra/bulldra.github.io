@@ -10,8 +10,8 @@
       break;
     }
   }
-  url += '&tag=' + asosiateid;
-  var text = '<a href="' + url + '"><img src="' + img + '" /></a>';
+  url += '/' + asosiateid;
+  var text = '<a href="' + url + '" target="_blank" rel="nofollow"><img src="' + img + '" /></a>';
   document.write(text);
   console.log(text);
 }
