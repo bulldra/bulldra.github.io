@@ -1,4 +1,6 @@
-﻿function amazonLink(asosiateid, width) {
+﻿amaonLink(aid, imageWidth);
+
+function amazonLink(asosiateid, width) {
   var p = document.getElementById('prodImage');
   var img = p.src.replace(/\.[^\.]+\.jpg/,'.SX' + width + '.jpg');
   var url = location.href; 
