@@ -23,11 +23,11 @@ function amazonLink(associateid, width) {
     url += '/' + associateid;
   }
 
-
-  var text = '<a href="' + url + '" target="_blank" rel="nofollow"><img src="' + img + '" /></a>';
-  twotabsearchtextbox.value = text;
+  var text = '<a href="' + url + '" rel="nofollow" target="_blank"><img src="' + img + '" /></a>';
+  document.write('<input value="' + text + '"');
+  document.write(text);
+  
   console.log(text);
 
 }
-
 
