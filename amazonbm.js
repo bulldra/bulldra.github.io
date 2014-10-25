@@ -15,7 +15,7 @@ function amazonLink(associateid, width) {
     if (l[i].rel === "canonical") {
       url = l[i].href;
       url = url.replace(/\/[^\/]*\/dp\/(.*)/,'/exec/obidos/ASIN/$1');
-      console.log(url.length + ' '+ associatedid.length);
+      console.log(url.length + ' '+ associateid.length);
       
       if(!url.indexOf(associateid) == url.length - associateid.length) {
 	url += associateid;
