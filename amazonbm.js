@@ -1,4 +1,4 @@
-﻿amaonLink(aid, imageWidth);
+﻿amazonLink(aid, imageWidth);
 
 function amazonLink(asosiateid, width) {
   var p = document.getElementById('prodImage');
