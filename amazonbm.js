@@ -17,13 +17,14 @@ function amazonLink(associateid, width) {
       url = url.replace(/\/[^\/]*\/dp\/(.*)/,'/exec/obidos/ASIN/$1');
       console.log(url.length + ' '+ associateid.length);
       
-      if(!url.indexOf(associateid) == url.length - associateid.length) {
-	url += associateid;
-      }
       break;
     }
   }
-  url += '/' + asosiateid;
+
+  if(!url.indexOf(associateid) == url.length - associateid.length) {
+    url += associateid;
+  }
+
   var text = '<a href="' + url + '" target="_blank" rel="nofollow"><img src="' + img + '" /></a>';
   twotabsearchtextbox.value = text;
   console.log(text);
