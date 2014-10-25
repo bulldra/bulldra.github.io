@@ -14,7 +14,10 @@ function amazonLink(asosiateid, width) {
   for (var i = 0; i < l.length; i++) {
     if (l[i].rel === "canonical") {
       url = l[i].href;
-      url = url.replace(/\/[^\/]*\/dp\/(.*)/,'/exec/obidos/ASIN/$1/' + asosiateid)
+      url = url.replace(/\/[^\/]*\/dp\/(.*)/,'/exec/obidos/ASIN/$1');
+      if(!url.endWidth(assosiateid)) {
+	url += asosiateid;
+      }
       break;
     }
   }
