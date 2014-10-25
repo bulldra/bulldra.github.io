@@ -12,7 +12,9 @@
     }
   }
   url += '&tag=' + asosiateid;
-  document.write('<a href="' + url + '"><img src="' + img + '" /></a>');
+  var text = '<a href="' + url + '"><img src="' + img + '" /></a>';
+  document.write(text);
+  console.log(text);
 }
 
 
