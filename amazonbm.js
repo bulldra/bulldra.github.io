@@ -24,9 +24,7 @@ function amazonLink(associateid, width) {
   }
 
   var text = '<a href="' + url + '" rel="nofollow" target="_blank"><img src="' + img + '" /></a>';
-  document.write('<input value="' + text + '"');
-  document.write(text);
-  
+  twotabsearchtextbox.value = text;
   console.log(text);
 
 }
