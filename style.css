@@ -61,6 +61,31 @@
 	background: url(http://img.f.hatena.ne.jp/images/fotolife/p/platism/20130711/20130711002432.gif) no-repeat 50% 50%;
 }
 
+#global-menu {
+  padding:0px 0px 10px 0px;
+  text-align:center;
+}
+
+#global-menu ul li {
+  width: 110px;
+  float: left;
+}
+
+#global-menu ul li a {
+  font-size:120%;
+  font-family:HuiFontP109;
+  text-decoration: none;
+  font-weight:bold;
+  display: block;
+  color: #000;
+}
+
+#global-menu ul li a:hover {
+  text-decoration: none;
+  color: #ddd;
+  text-shadow:  0 0 2px #000;
+}
+
 
 * {
     margin: 0;
@@ -156,6 +181,11 @@ ul, ol {
 
 #title a {
 	color: #333;
+}
+
+#title a:hover {
+  color: #ddd;
+  text-shadow:  0 0 2px #000;
 }
 
 #blog-description {
