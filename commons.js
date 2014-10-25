@@ -80,6 +80,8 @@ function shuffleArray(array) {
     return array;
 }
 
+
+
 function removeThisEntry(entries) {
 	var ret = new Array();
 	var href = location.href;
@@ -91,5 +93,16 @@ function removeThisEntry(entries) {
 	console.log(entries.length + ' -> ' + ret.length);
 
 	return ret;
+}
+
+function addLinkProfile(url) {
+  var d = document.querySelector('.hatena-module-profile .hatena-module-title');
+  if(d != null) {
+    var a = document.createElement('a');
+    a.innerHTML = d.innerHTML;
+    a.href = url;
+    d.removeChild(d.firstChild);
+    d.appendChild(a);
+  }
 }
 

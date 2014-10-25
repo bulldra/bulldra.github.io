@@ -933,7 +933,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 
-.hatena-module, .entry-inner, .pager-next a, .pager-prev a, .page-archive #main-inner, .header-image-enable #blog-title-inner, .header-image-only #blog-title-inner, .breadcrumb div, .erg {
+.hatena-module, .entry-inner, .pager-next a, .pager-prev a, .page-archive #main-inner, .header-image-enable #blog-title-inner, .header-image-only #blog-title-inner {
    border-radius: 5px 5px 5px 5px;
    -moz-border-radius: 5px 5px 5px 5px;
    -webkit-border-radius: 5px 5px 5px 5px;
@@ -958,6 +958,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	font-size: 100%;
 	position: absolute;
 	right: 10px;
+	color: #fff;
 }
 
 .hatena-module-entries-access-ranking .hatena-module-title a:after {
@@ -965,7 +966,18 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	font-size: 100%;
 	position: absolute;
 	right: 10px;
+	color: #fff;
 }
+
+.hatena-module-profile .hatena-module-title a:after {
+	content: ">>MORE";
+	font-size: 100%;
+	position: absolute;
+	right: 10px;
+	color: #fff;
+}
+
+
 
 /* <system section="background" selected="custom"> */
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
