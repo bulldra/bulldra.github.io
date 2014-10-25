@@ -1,6 +1,6 @@
 ﻿amazonLink(aid, imageWidth);
 
-function amazonLink(asosiateid, width) {
+function amazonLink(associateid, width) {
   var p = document.getElementById('prodImage');
   if(p == null) {
 	  p = document.querySelector('.imageThumb img');
@@ -15,8 +15,8 @@ function amazonLink(asosiateid, width) {
     if (l[i].rel === "canonical") {
       url = l[i].href;
       url = url.replace(/\/[^\/]*\/dp\/(.*)/,'/exec/obidos/ASIN/$1');
-      if(!url.endWidth(assosiateid)) {
-	url += asosiateid;
+      if(!url.endWidth(associateid)) {
+	url += associateid;
       }
       break;
     }
