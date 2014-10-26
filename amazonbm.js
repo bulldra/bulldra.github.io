@@ -7,7 +7,7 @@ function amazonLink(associateid, width) {
   } 
 
   if(p == null) {
-	  p = document.querySelector('a-dynamic-image');
+	  p = document.querySelector('.a-dynamic-image');
   }
 
 
