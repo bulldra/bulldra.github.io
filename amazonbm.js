@@ -1,19 +1,23 @@
 ﻿amazonLink(aid, imageWidth);
 
 function amazonLink(associateid, width) {
+
   var p = document.getElementById('prodImage');
+  var image = p.src;
+
   if(p == null) {
 	  p = document.querySelector('.imageThumb img');
+          image = p.src;
   } 
 
   if(p == null) {
 	  p = document.querySelector('.a-dynamic-image');
+          image = p.data-old-hires;;
   }
-
-
   console.log(p);
+  console.log(image);
 
-  var img = p.src.replace(/\.[^\.]+\.jpg/,'.SX' + width + '.jpg');
+  var img = image.replace(/\.[^\.]+\.jpg/,'.SX' + width + '.jpg');
   var url = location.href; 
 
   var l = document.getElementsByTagName("link");
