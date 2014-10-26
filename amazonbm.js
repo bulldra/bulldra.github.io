@@ -25,6 +25,7 @@ function amazonLink(associateid, width) {
 
   var text = '<a href="' + url + '" rel="nofollow" target="_blank"><img src="' + img + '" /></a>';
   twotabsearchtextbox.value = text;
+  window.clipboardData.setData('Text', text);
   console.log(text);
 }
 
