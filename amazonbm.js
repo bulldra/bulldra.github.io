@@ -4,7 +4,13 @@ function amazonLink(associateid, width) {
   var p = document.getElementById('prodImage');
   if(p == null) {
 	  p = document.querySelector('.imageThumb img');
+  } 
+
+  if(p == null) {
+	  p = document.querySelector('a-dynamic-image');
   }
+
+
   console.log(p);
 
   var img = p.src.replace(/\.[^\.]+\.jpg/,'.SX' + width + '.jpg');
