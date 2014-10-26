@@ -8,14 +8,17 @@ function amazonLink(associateid, width) {
     image = p.src;
   } else {
      p = document.querySelector('.imageThumb img');
+     console.log(p);
      if(p != null) {
        image = p.src;
      } else {
        p = document.querySelector('.a-dynamic-image');
-       image = p.data-old-hires;;
+       console.log(p);
+       if(p != null) {
+         image = p.getAttribute('data-old-hires');
+       }
      }
   }
-  console.log(p);
   console.log(image);
 
   var img = image.replace(/\.[^\.]+\.jpg/,'.SX' + width + '.jpg');
