@@ -3,16 +3,17 @@
 function amazonLink(associateid, width) {
 
   var p = document.getElementById('prodImage');
-  var image = p.src;
-
-  if(p == null) {
-	  p = document.querySelector('.imageThumb img');
-          image = p.src;
-  } 
-
-  if(p == null) {
-	  p = document.querySelector('.a-dynamic-image');
-          image = p.data-old-hires;;
+  var image = "";
+  if (p != null) {
+    image = p.src;
+  } else {
+     p = document.querySelector('.imageThumb img');
+     if(p != null) {
+       image = p.src;
+     } else {
+       p = document.querySelector('.a-dynamic-image');
+       image = p.data-old-hires;;
+     }
   }
   console.log(p);
   console.log(image);
