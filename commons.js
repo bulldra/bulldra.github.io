@@ -115,7 +115,7 @@ function setEmbedWidth(width) {
     var url = iframes[i].src;
     if(url.match(/http:\/\/.+\/embed[\/\?].*/)) {
       console.log(url);
-      iframes[i].style.maxWidth = width;  
+      iframes[i].style.maxWidth = width + 'px';  
     }
   }
 }
