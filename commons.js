@@ -106,3 +106,17 @@ function addLinkProfile(url) {
   }
 }
 
+function setEmbedWidth(width) {
+  var iframes = document.querySelectorAll('iframe');
+  for (var i = 0; i < iframes.length; i++) {
+    if(iframes[i] == null || iframes[i].src == null) {
+      continue;
+    }
+    var url = iframes[i].src;
+    if(url.match(/http:\/\/.+\/embed[\/\?].*/)) {
+      console.log(url);
+      iframes[i].style.maxWidth = width;  
+    }
+  }
+}
+
