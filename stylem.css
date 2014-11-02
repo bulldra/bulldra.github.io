@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.hand-write {
+  font-family:HuiFontP109;
+  font-size:120%
+}
+
+#top-editarea { margin-left:-10px; }
+.hatena-module-title{display:none;}
+.profile-wrapper{display:none;}
+.footer-action-wrapper{display:none;}
+.touch-item-list{display:none;}
+body {font-family:"Avenir Next", sans-serif;}
+
+.entry-content h3, .entry-content h1, .entry-content h2, .hatena-module-foot h3 {
+	font-size: 110%;
+	font-weight: bold;
+	margin: 1em 0 0.5em 0;
+	padding: 4px 10px;
+	border-left: solid 10px #c0392b;
+	background: #eee;
+}
+
+.entry-title {
+  background: #850505;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.entry-title a {
+  color: #ffffff;
+}
+
