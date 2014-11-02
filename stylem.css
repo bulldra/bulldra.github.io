@@ -12,7 +12,7 @@
 .touch-item-list{display:none;}
 body {font-family:"Avenir Next", sans-serif;}
 
-.entry-content h3, .entry-content h1, .entry-content h2, .hatena-module-foot h3 {
+.entry-content h3, .hatena-module-foot h3 {
   font-size: 110%;
   font-weight: bold;
   margin: 1em 0 0.5em 0;
@@ -26,6 +26,8 @@ body {font-family:"Avenir Next", sans-serif;}
   font-size: 120%;
   font-weight: bold;
   color: #fff;
+  margin:3px -10px 3px -10px;
+  padding: 0 10px 0 10px;
 }
 
 .entry-title a {
