@@ -31,3 +31,32 @@ body {font-family:"Avenir Next", sans-serif;}
   color: #ffffff;
 }
 
+#title {
+	font-size: 230%;
+	display: inline-block;
+    font-family: HuiFontP109;
+    font-weight: bold;
+}
+
+#title a {
+	color: #333;
+}
+
+#title a:hover {
+  color: #ddd;
+  text-shadow:  0 0 2px #000;
+}
+
+#blog-description {
+	margin-top: 5px;
+	margin-left: 10px;
+	font-size: 120%;
+	display: inline-block;
+    font-family: HuiFontP109;
+}
+
+#blog-description a {
+    color: #333;
+}
+
+
