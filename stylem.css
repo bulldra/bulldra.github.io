@@ -13,39 +13,34 @@
 body {font-family:"Avenir Next", sans-serif;}
 
 .entry-content h3, .entry-content h1, .entry-content h2, .hatena-module-foot h3 {
-	font-size: 110%;
-	font-weight: bold;
-	margin: 1em 0 0.5em 0;
-	padding: 4px 10px;
-	border-left: solid 10px #c0392b;
-	background: #eee;
+  font-size: 110%;
+  font-weight: bold;
+  margin: 1em 0 0.5em 0;
+  padding: 4px 10px;
+  border-left: solid 10px #c0392b;
+  background: #eee;
 }
 
 .entry-title {
   background: #850505;
   font-size: 120%;
   font-weight: bold;
-  color: #ffffff;
+  color: #fff;
 }
 
 .entry-title a {
-  color: #ffffff;
+  color: #fff;
 }
 
 #title {
-	font-size: 230%;
-	display: inline-block;
-    font-family: HuiFontP109;
-    font-weight: bold;
+   font-size: 230%;
+   display: inline-block;
+   font-family: HuiFontP109;
+   font-weight: bold;
 }
 
 #title a {
 	color: #333;
-}
-
-#title a:hover {
-  color: #ddd;
-  text-shadow:  0 0 2px #000;
 }
 
 #blog-description {
