@@ -102,11 +102,21 @@ function writeGatchaCategory(id) {
       s.appendChild(o);      
     }
 
+    var flag = false;
     var gatchaCategory = document.getElementById(id + 'mode');    
     for (var idx = 0; idx < s.options.length; idx++) {
       if (s.options[idx].value == gatchaCategory.value) {
         s.options[idx].selected = true;
+	flag =true;
+	break;
       }
+    }
+
+    if(!flag && gatchaCategory.value != null && gatchaCategory.value != '') {
+      var value = gatchaCategory.value.replace(blogURL + '/category/', '')
+      var o = createOption(value, decodeURI(value));
+      s.appendChild(o);      
+      o.selected = true;
     }
     
     console.log(s.selectedIndex);
