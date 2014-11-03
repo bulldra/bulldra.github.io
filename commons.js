@@ -124,13 +124,11 @@ function addLinkHatenaModule(title, href, className) {
   var modules = document.querySelectorAll('.hatena-module-title');
   for(var i = 0; i < modules.length; i++) {
     if(modules[i].innerText == title) {
-      modules[i].class = className;
-      console.log(modules[i])
+      modules[i].className += ' '+ className;
       modules[i].innerText = '';
       var a = document.createElement('a');
       a.href = href;
       a.innerText = title; 
-      console.log(a)
       modules[i].appendChild(a);
     }
   }
