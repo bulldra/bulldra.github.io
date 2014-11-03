@@ -981,7 +981,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .book-store a:after {
-	content: ">>書店を見る";
+	content: ">>来店する";
 	font-size: 90%;
 	position: absolute;
 	right: 10px;
