@@ -980,7 +980,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	color: #fff;
 }
 
-.book-sotre a:after {
+.book-store a:after {
 	content: ">>書店を見る";
 	font-size: 90%;
 	position: absolute;
