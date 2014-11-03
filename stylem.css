@@ -24,6 +24,10 @@ div.adzone {
   margin-left:-20px; 
 }
 
+.my_adslot { width: 320px; height: 100px; }
+@media(min-width: 500px) { .my_adslot { width: 320px; height: 100px; } }
+@media(min-width: 800px) { .my_adslot { width: 336px; height: 280px; } }
+
 
 .footer-action-wrapper{
   display:none;
