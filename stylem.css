@@ -21,11 +21,11 @@
 
 div.adzone { 
   font-size:12px;
-  margin-left:-10px; 
+  margin-left:0px; 
 }
 
-.my_adslot { width: 320px; height: 100px; }
-@media(min-width: 500px) { .my_adslot { width: 320px; height: 100px; } }
+.my_adslot { width: 300px; height: 250px; }
+@media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
 @media(min-width: 800px) { .my_adslot { width: 336px; height: 280px; } }
 
 
