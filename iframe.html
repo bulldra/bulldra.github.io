@@ -1,0 +1,802 @@
+
+
+ <!DOCTYPE html>
+<html
+  lang="ja"
+  data-avail-langs="ja en"
+
+  data-page="entry"
+  data-admin-domain="http://blog.hatena.ne.jp"
+  data-static-domain="http://hatenablog.com"
+  data-blog="bulldra.hatenablog.com"
+  data-blogs-uri-base="http://www.ikedakana.com"
+  data-globalheader-color="b"
+  data-globalheader-type="pc"
+  data-author="bulldra"
+  data-version="9c4009a31c1bb265f1cc30b49691df8e"
+  data-blog-comments-top-is-new=""
+  data-device="pc"
+
+  
+   data-hide-header="1"
+  
+
+  data-brand="hatenablog"
+
+
+  data-has-touch-view="1"
+  
+
+  itemscope
+   itemtype="http://schema.org/Article"
+
+  >
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    
+    
+    
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7; IE=9; IE=10; IE=11" />
+    <title>はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする - 太陽がまぶしかったから</title>
+
+    
+
+    
+      <link rel="canonical" href="http://www.ikedakana.com/entry/sp-design"/>
+    
+
+    <meta itemprop="name" content="はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする - 太陽がまぶしかったから"/>
+    
+      <meta itemprop="image" content="http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141102/20141102120050.jpg"/>
+    
+
+    <meta property="og:title" content="はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする - 太陽がまぶしかったから"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://www.ikedakana.com/entry/sp-design"/>
+    
+      <meta property="og:image" content="http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141102/20141102120050.jpg"/>
+    
+      <meta property="og:description" content="スマートフォンデザインを外部CSSで行う 以下の記事を参考にスマートフォンでのデザインを行いました。はてなブログPROに加入していると行えるスマートフォンのヘッダタイトル下にStyleタグを書いていくという方法です。 はてなブログのスマホデザインCSSをカスタマイズして、簡単にオシャレに見せる方法 - Literally この方法でも手軽にできてよいのですが、外部CSSで設定する事にしました。外部CSSを配置するには別途有料のレンタルサーバーが必要だと思いがちですが、僕の場合は『GitHub Pages』を利用していますし、Dropboxの公開機能を使っても無料で実現できます。 Dropbox…" />
+    <meta property="og:site_name" content="http://www.ikedakana.com/"/>
+      <meta property="article:published_time" content="1414901732" />
+        <meta property="article:author" content="100008080773904" />
+        <meta property="article:tag" content="プログラミング" />
+        <meta property="article:tag" content="プログラミング-はてなブログカスタマイズ" />    <meta name="twitter:card" content="summary" />      <meta name="twitter:app:name:iphone" content="はてなブログアプリ" />
+      <meta name="twitter:app:id:iphone" content="583299321" />
+      <meta name="twitter:app:url:iphone" content="hatenablog:///open?uri=http%3A%2F%2Fwww.ikedakana.com%2Fentry%2Fsp-design" />      <meta name="twitter:site" content="@bulldra" />        <meta name="google-site-verification" content="HaZnSUSxGUzfkbayVnLx7K9szldwVDjGBgQToJvx-wU">        <meta name="msvalidate.01" content="1246CA7C21D75C68820EB3A10B8D7F50">
+      <link rel="author" href="https://plus.google.com/106264520077407812079">
+    
+      <meta name="description" content="スマートフォンデザインを外部CSSで行う 以下の記事を参考にスマートフォンでのデザインを行いました。はてなブログPROに加入していると行えるスマートフォンのヘッダタイトル下にStyleタグを書いていくという方法です。 はてなブログのスマホデザインCSSをカスタマイズして、簡単にオシャレに見せる方法 - Literall…">
+    
+<script type="text/javascript">
+// <!--
+
+if (~navigator.userAgent.indexOf('Mac OS X')) {
+  document.write('<style type="text/css">html, body { font-family: \x27Helvetica\x27, \x27Arial\x27, \x27ヒラギノ角ゴ Pro W3\x27, \x27Hiragino Kaku Gothic Pro\x27, sans-serif; } </style>');
+} else {
+  document.write('<style type="text/css">html, body { font-family: \x27Helvetica\x27, \x27Arial\x27, \x27メイリオ\x27, \x27Meiryo\x27, \x27MS PGothic\x27, sans-serif; } </style>');
+}
+
+// -->
+</script>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript" src="/js/vendor/excanvas/excanvas.js"></script>
+<![endif]-->
+
+
+    <link rel="shortcut icon" href="http://cdn.image.st-hatena.com/image/favicon/6c72a2b1ebd908ff7577fc660b0c5c50368774e0/version=1/http%3A%2F%2Fcdn.mogile.archive.st-hatena.com%2Fv1%2Fimage%2Fbulldra%2F302450856549793518.jpg">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="http://www.ikedakana.com/feed"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS2.0" href="http://www.ikedakana.com/rss"/>
+    <link rel="alternate" type="application/json+oembed" href="http://hatenablog.com/oembed?url=http%3A%2F%2Fwww.ikedakana.com%2Fentry%2Fsp-design&format=json" title="oEmbed Profile of はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする"/>
+    <link rel="alternate" type="text/xml+oembed" href="http://hatenablog.com/oembed?url=http%3A%2F%2Fwww.ikedakana.com%2Fentry%2Fsp-design&format=xml" title="oEmbed Profile of はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする"/>    <link rel="author" href="http://www.hatena.ne.jp/bulldra/">
+
+      <link rel="stylesheet" type="text/css" href="http://hatenablog.com/.shared.css:9c4009a31c1bb265f1cc30b49691df8e:/css/theme/base.css,/css/prettify.css,/css/globalheader.css?version=9c4009a31c1bb265f1cc30b49691df8e"/>
+      <link rel="stylesheet" type="text/css" href="http://hatenablog.com/-/blog_style/12704830469097403785/60547ef73bb31e39634a28ccbe579a8dbe786dfd"/>    <script>    </script>
+
+    
+    <style>
+      div#google_afc_user,
+      div#google_afc_user_container_0,
+      div#google_afc_user_container_1,
+      div#google_afc_user_container_2,
+      div#google_afc_user_container_3,
+      div#google_afc_user_container_4,
+      div#google_afc_user_container_5,
+      div.google_afc_image,
+      div.google_afc_blocklink {
+          display: block !important;
+      }
+    </style>
+
+    <meta name="pocket-site-verification" content="4325201a53efc4a8be361d48498fe9" />
+  </head>
+
+  <body class="page-entry  enable-top-editarea enable-bottom-editarea customized-background-image  category-プログラミング category-プログラミング-はてなブログカスタマイズ globalheader-off ">
+    <!-- Google Universal Analytics -->
+<!-- End Google Universal Analytics -->
+
+    
+    <div id="header-container">
+     <div id="sp-suggest" style="display: none;"><a id="sp-suggest-link" href="#">スマートフォン用の表示で見る</a></div>
+    </div>
+
+    <div class="select_star_button_container" style="display: none;">
+      <img src="http://hatenablog.com/images/theme/hatena-star-quote-box.png?version=9c4009a31c1bb265f1cc30b49691df8e" title="引用スターをつける" class="select_star_button" />
+      <img src="http://hatenablog.com/images/theme/hatena-star-quote-star.png?version=9c4009a31c1bb265f1cc30b49691df8e" title="引用スターをつける" class="select_star_button select_star_star">
+    </div>
+
+    <div class="message-box" id="select-star-message-box" style="display: none;">
+      スターをつけました
+    </div>
+
+    <div id="globalheader-container" style="display: none">
+  <iframe id="globalheader" height="37" frameborder="0" allowTransparency="true"></iframe>
+</div>
+
+
+    <div id="container">
+      <div id="container-inner">
+        <header id="blog-title" data-brand="hatenablog">
+  <div id="blog-title-inner" >
+    <h1 id="title"><a href="http://www.ikedakana.com/">太陽がまぶしかったから</a></h1>
+    
+      <h2 id="blog-description">C&#39;etait a cause du soleil.</h2>
+    
+  </div>
+</header>
+
+        
+          <div id="top-editarea">
+            <link href="http://bulldra.github.io/style.css" rel="stylesheet" type="text/css">
+
+<div id='global-menu'>
+<ul>
+   <li><a href='http://www.ikedakana.com'>Home</a></li>
+   <li><a href='http://www.ikedakana.com/archive/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0'>Program</a></li>
+   <li><a href='http://www.ikedakana.com/archive/category/%E8%AA%AD%E6%9B%B8'>Book</a></li>
+   <li><a href='http://www.ikedakana.com/archive/category/%E8%87%AA%E6%84%8F%E8%AD%98'>Mind</a></li>
+   <li><a href='http://www.ikedakana.com/archive/category/%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3'>Event</a></li>
+   <li><a href='http://www.ikedakana.com/entry/about'>About</a></li>
+   <li><a href='mailto:bulldra@gmail.com'>Mail</a></li>
+</ul>
+</div>
+
+
+          </div>
+        
+        
+
+
+
+
+<div id="content" class="hfeed"
+  
+  >
+  <div id="content-inner">
+    <div id="wrapper">
+      <div id="main">
+        <div id="main-inner">
+          
+            
+            <!-- google_ad_section_start -->
+            <!-- rakuten_ad_target_begin -->
+            
+              
+                <article class="entry hentry js-entry-article date-first autopagerize_page_element chars-3600 words-200 mode-markdown entry-odd" id="entry-8454420450071859953" data-keyword-campaign="" data-uuid="8454420450071859953">
+  <div class="entry-inner">
+    <header class="entry-header">
+      <div class="date first">
+        <a href="http://www.ikedakana.com/entries/2014/11/02" rel="nofollow">
+          <time pubdate datetime="2014-11-02T04:15:32Z" title="2014-11-02T04:15:32Z">
+            <span class="date-year">2014</span><span class="hyphen">-</span><span class="date-month">11</span><span class="hyphen">-</span><span class="date-day">02</span>
+          </time>
+        </a>
+      </div>
+      <h1 class="entry-title">
+        <a href="http://www.ikedakana.com/entry/sp-design" class="entry-title-link bookmark">はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする</a>
+      </h1>
+      
+      <div class="categories ">
+        
+        <a href="http://www.ikedakana.com/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">プログラミング</a>
+        
+        <a href="http://www.ikedakana.com/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">プログラミング-はてなブログカスタマイズ</a>
+        
+      </div>
+      
+    </header>
+    <div class="entry-content">
+
+<iframe src="http://astore.amazon.co.jp/bulldra-22" style="min-width:300px; width:100%; height:1020px; border-top: none; border-left:none; border-right:none; border-bottom: solid 1px #ccc" id="mystore" onLoad="adjustFrame(this.id)"></iframe>
+
+<script type="text/javascript">
+function adjustFrame(frame) {
+  var myF = document.getElementById(frame);
+  var myC = myF.contentWindow.document.documentElement;
+  var height = myC.offsetHeight;
+  myF.style.height = (height + 10)+ 'px';
+  console.log(myF.style.height);
+}
+</script>
+
+      
+    </div>
+    <footer class="entry-footer">
+      <p class="entry-footer-section">
+        <span class="author vcard"><span class="fn" data-load-nickname="1" data-user-name="bulldra">bulldra</span></span>
+        <span class="entry-footer-time"><a href="http://www.ikedakana.com/entry/sp-design"><time data-relative datetime="2014-11-02T04:15:32Z" title="2014-11-02T04:15:32Z" pubdate class="updated">2014-11-02 13:15</time></a></span>
+      </p>
+      <div class="hatena-star-container">
+      </div>
+      <div class="hatena-star-metadata" style="display: none">
+        <a class="hatena-star-permalink" href="http://www.ikedakana.com/entry/sp-design">はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする</a>
+      </div>
+
+      
+<div class="social-buttons">
+  
+  
+    <a href="http://b.hatena.ne.jp/entry/http://www.ikedakana.com/entry/sp-design" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="この記事をはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="この記事をはてなブックマークに追加" width="20" height="20" style="border: none;" /></a>
+  
+  
+    <div class="fb-share-button" data-layout="button_count" data-href="http://www.ikedakana.com/entry/sp-design"></div>
+  
+  
+    <iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fwww.ikedakana.com%2Fentry%2Fsp-design&text=%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%81%AE%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%83%95%E3%82%A9%E3%83%B3%E8%A1%A8%E7%A4%BA%E3%81%AE%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%82%84WEB%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88%E8%A8%AD%E5%AE%9A%E3%82%92%E5%A4%96%E9%83%A8CSS%E3%81%A7%E8%A1%8C%E3%81%A3%E3%81%A6%E3%82%AA%E3%82%B7%E3%83%A3%E3%83%AC%E3%81%AB%E3%81%99%E3%82%8B%20-%20%E5%A4%AA%E9%99%BD%E3%81%8C%E3%81%BE%E3%81%B6%E3%81%97%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%8B%E3%82%89&lang=ja" class="twitter-share-button" style="width:130px; height:20px;"></iframe>
+  
+  
+    <div class="g-plusone" data-size="medium" data-href="http://www.ikedakana.com/entry/sp-design"></div>
+  
+  
+  
+  
+</div>
+
+
+      
+
+      <div class="customized-footer">
+
+        
+
+          
+
+          
+
+          
+            <div class="entry-footer-html"><style>
+.my_adslot { width: 300px; height: 250px; }
+@media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
+@media(min-width: 800px) { .my_adslot { width: 728px; height: 90px; } }
+</style>
+
+スポンサーリンク
+<ins class="adsbygoogle my_adslot"
+     style="display:inline-block"
+     data-ad-client="ca-pub-7530392025880753"
+     data-ad-slot="9514741734"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<span id="trackback_entry" class="impression hatena-module-foot"></span>
+
+<script src="https://www.google.com/jsapi"></script>
+<script src="http://bulldra.github.io/commons.js" charset="utf-8"></script>
+<script src="http://bulldra.github.io/trackback.js" charset="utf-8"></script>
+<script src="gatcha.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+writeGatcha(3,'entryGatcha','category','あわせて読みたい' );
+google.setOnLoadCallback(function(){ writeGatchaCategory('entryGatcha') } );
+</script>
+
+スポンサーリンク
+<ins class="adsbygoogle my_adslot"
+     style="display:inline-block"
+     data-ad-client="ca-pub-7530392025880753"
+     data-ad-slot="5224142933"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<span class="hatena-module-foot"><h3>このブログのコンセプト／ブログパーツ／著者について</h3></span>
+<iframe src="http://www.ikedakana.com/embed/about" width="100%" height="200px" scrolling="no" frameborder="0" style="margin:3px 0px;"></iframe>
+
+<p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00OYSW0JS/bulldra-22/"><img src="http://ecx.images-amazon.com/images/I/51nqmPNqlqL._SL160_.jpg" class="hatena-asin-detail-image" alt="レールの外ってこんな景色: 若手ブロガーから見える新しい生き方" title="レールの外ってこんな景色: 若手ブロガーから見える新しい生き方"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B00OYSW0JS/bulldra-22/">レールの外ってこんな景色: 若手ブロガーから見える新しい生き方</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> イケダハヤト,タクスズキ,鳥井弘文,けいろー,ツベルクリン良平,下津曲浩,池田仮名,金野和磨,中里祐次</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> WOODY</li><li><span class="hatena-asin-detail-label">発売日:</span> 2014/11/14</li><li><span class="hatena-asin-detail-label">メディア:</span> Kindle版</li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+<style>
+div #breadcrumb div {
+	display: inline;
+	font-size: 13px;
+}
+</style>
+<div id="breadcrumb"></div>
+<br/>
+
+
+<div class="ninja_onebutton1">
+<script type="text/javascript">
+//<![CDATA[
+(function(d){
+if(typeof(window.NINJA_CO_JP_ONETAG_BUTTON_7f3993fb77172cf7c5166841cad84729)=='undefined'){
+    document.write("<sc"+"ript type='text\/javascript' src='http:\/\/omt.shinobi.jp\/b\/7f3993fb77172cf7c5166841cad84729'><\/sc"+"ript>");
+}else{
+    window.NINJA_CO_JP_ONETAG_BUTTON_7f3993fb77172cf7c5166841cad84729.ONETAGButton_Load();}
+})(document);
+//]]>
+</script><span class="ninja_onebutton_hidden" style="display:none;"></span><span style="display:none;" class="ninja_onebutton_hidden"></span>
+</div>
+
+</div>
+          
+        
+      </div>
+
+    </footer>
+  </div>
+</article>
+
+                
+
+                
+                  
+                  
+                  <div class="permalink pager">
+                    
+                    
+                      
+                      <span class="pager-next">
+                        <a href="http://www.ikedakana.com/entry/embed-plugin" rel="next">
+                          はてなブログの埋め込み記法で表示される…
+                          <span class="pager-arrow"> »</span>
+                        </a>
+                      </span>
+                    
+                  </div>
+                
+
+              
+            
+            <!-- rakuten_ad_target_end -->
+            <!-- google_ad_section_end -->
+
+            
+          
+        </div>
+      </div>
+
+      
+      <aside id="box1">
+        <div id="box1-inner">
+        </div>
+      </aside>
+
+    </div><!-- #wrapper -->
+
+    <aside id="box2">
+  <div id="box2-inner">
+    
+      
+
+<div class="hatena-module hatena-module-profile">
+  <div class="hatena-module-title">
+    プロフィール
+  </div>
+  <div class="hatena-module-body">
+    
+    <a href="http://www.ikedakana.com/about" class="profile-icon-link">
+      <img src="http://cdn1.www.st-hatena.com/users/bu/bulldra/profile.gif"
+      alt="id:bulldra" class="profile-icon" />
+    </a>
+    
+
+    
+    <span class="id">
+      <a href="http://www.ikedakana.com/about" class="hatena-id-link"><span data-load-nickname="1" data-user-name="bulldra">id:bulldra</span></a>
+      
+  
+    
+    
+      <a href="http://blog.hatena.ne.jp/guide/pro" title="はてなブログPro"><i class="icon-pro" /></i></a>
+    
+  
+
+
+    </span>
+    
+
+    
+    <div class="profile-description">
+      <p>Le Cahier du Étranger<br />
+<a href="mailto:bulldra@gmail.com">bulldra@gmail.com</a><br />
+<a href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fwww.ikedakana.com%2Ffeed'  target='blank'><img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-small_2x.png' alt='follow us in feedly' width='66' height='20'></a> <a href='http://b.hatena.ne.jp/bulldra/follow.follow' target='_blank'><img src=' http://cdn-ak.f.st-hatena.com/images/fotolife/k/kouas1100/20131102/20131102201930.png ' alt='はてブ' width='66'></a> <br />
+<a href="http://www.ikedakana.com/entry/about" class="hatena-profile-button"> 詳細プロフィールを見る</a></p>
+
+    </div>
+    
+
+    
+    <div class="hatena-follow-button-box btn-subscribe">
+      <a href="#" class="hatena-follow-button">
+        <span class="subscribing">
+          <span class="foreground">購読中です</span>
+          <span class="background">読者をやめる</span>
+        </span>
+        <span class="unsubscribing" data-track-name="profile-widget-subscribe-button" data-track-once>
+          <span class="foreground">読者になる</span>
+          <span class="background">読者になる</span>
+        </span>
+      </a>
+      <div class="subscription-count-box">
+        <i></i>
+        <u></u>
+        <span class="subscription-count">
+        </span>
+      </div>
+    </div>
+    
+
+    
+    <div class="hatena-follow-button-box btn-facebook-follow">
+      <a href="https://www.facebook.com/addfriend.php?id=100008080773904" class="facebook-follow-button">
+        友達になる
+      </a>
+    </div>
+    
+
+    
+
+    
+    <div class="hatena-follow-button-box btn-twitter">
+      <a href="https://twitter.com/bulldra" class="twitter-follow-button" data-show-count="false" data-lang="ja">
+        @bulldraをフォロー
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+    
+      
+<div class="hatena-module hatena-module-html">
+    <div class="hatena-module-title">スポンサーリンク</div>
+  <div class="hatena-module-body">
+    <div style="margin-left:-5px; margin-top:0px; margin-right:-5px">
+
+<script type="text/javascript" src="http://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="http://www.google.com/cse/api/partner-pub-7530392025880753/cse/7790594937/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-recent-entries ">
+  <div class="hatena-module-title">
+    <a href="http://www.ikedakana.com/archive">
+      最新記事
+    </a>
+  </div>
+  <div class="hatena-module-body">
+    <ul class="recent-entries hatena-urllist urllist-with-thumbnails">
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://www.ikedakana.com/entry/sp-design">            <img alt="はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする" src="http://cdn.image.st-hatena.com/image/square/a6c416589611f2aa25136f0084571fad1bf0e9dd/backend=imagemagick;height=115;version=1;width=115/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141102%2F20141102120050.jpg" class="urllist-image recent-entries-image" title="はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする" width="115">
+          </a>
+        
+        <a href="http://www.ikedakana.com/entry/sp-design" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">はてなブログのスマートフォン表示のスタイルやWEBフォント設定を外部CSSで行ってオシャレにする        </a>
+        
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://www.ikedakana.com/entry/embed-plugin">            <img alt="はてなブログの埋め込み記法で表示されるブログカード幅を一括指定するプラグインを作りました" src="http://cdn.image.st-hatena.com/image/square/39d886af4c3b2d3bb3b67238568c138e1def527d/backend=imagemagick;height=115;version=1;width=115/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141101%2F20141101204223.jpg" class="urllist-image recent-entries-image" title="はてなブログの埋め込み記法で表示されるブログカード幅を一括指定するプラグインを作りました" width="115">
+          </a>
+        
+        <a href="http://www.ikedakana.com/entry/embed-plugin" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">はてなブログの埋め込み記法で表示されるブログカード幅を一括指定するプラグインを作りました        </a>
+        
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://www.ikedakana.com/entry/archive-gatcha-rakugo">            <img alt="ネタ切れを感じたら過去記事カードガチャで「らくごのご」" src="http://cdn.image.st-hatena.com/image/square/d72a3efd8c6f12addf591be23abfa38950e2b713/backend=imagemagick;height=115;version=1;width=115/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141101%2F20141101070427.jpg" class="urllist-image recent-entries-image" title="ネタ切れを感じたら過去記事カードガチャで「らくごのご」" width="115">
+          </a>
+        
+        <a href="http://www.ikedakana.com/entry/archive-gatcha-rakugo" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">ネタ切れを感じたら過去記事カードガチャで「らくごのご」        </a>
+        
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://www.ikedakana.com/entry/blog-201410">            <img alt="月刊まぶしかったから2014年10月号〜邪な心を忙しさで亡くしたい" src="http://cdn.image.st-hatena.com/image/square/d8bf2eac839317e4db737166b6c317578ba81223/backend=imagemagick;height=115;version=1;width=115/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51FdHi-8SPL.SX400.jpg" class="urllist-image recent-entries-image" title="月刊まぶしかったから2014年10月号〜邪な心を忙しさで亡くしたい" width="115">
+          </a>
+        
+        <a href="http://www.ikedakana.com/entry/blog-201410" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">月刊まぶしかったから2014年10月号〜邪な心を忙しさで亡くしたい        </a>
+        
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://www.ikedakana.com/entry/out-rail">            <img alt="「新しい生き方」を追求するブロガーのアンソロジー本『レールの外ってこんな景色』予約開始＆出版記念パーティのお知らせ" src="http://cdn.image.st-hatena.com/image/square/d410070ef5efabe72c0acd5af0a1132999341cbb/backend=imagemagick;height=115;version=1;width=115/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51nqmPNqlqL.SX400.jpg" class="urllist-image recent-entries-image" title="「新しい生き方」を追求するブロガーのアンソロジー本『レールの外ってこんな景色』予約開始＆出版記念パーティのお知らせ" width="115">
+          </a>
+        
+        <a href="http://www.ikedakana.com/entry/out-rail" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">「新しい生き方」を追求するブロガーのアンソロジー本『レールの外ってこんな景色』予約開始＆出版記念パーティのお知らせ        </a>
+        
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://www.ikedakana.com/entry/city-media-tatsuru">            <img alt="内田樹『街場のメディア論』〜贈与と反対給付義務の「前借り」で読み解くメディア論" src="http://cdn.image.st-hatena.com/image/square/167a091d7860837a063ad8addcad4990227f6c3d/backend=imagemagick;height=115;version=1;width=115/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F41D3jZagrcL.SX400.jpg" class="urllist-image recent-entries-image" title="内田樹『街場のメディア論』〜贈与と反対給付義務の「前借り」で読み解くメディア論" width="115">
+          </a>
+        
+        <a href="http://www.ikedakana.com/entry/city-media-tatsuru" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">内田樹『街場のメディア論』〜贈与と反対給付義務の「前借り」で読み解くメディア論        </a>
+        
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://www.ikedakana.com/entry/blog-image-getter">            <img alt="ブログ用の写真検索さんがサービス停止したので任意の大きさのAmazon画像を表示してアフィリエイトリンクを作成する簡易代替ツールを作成" src="http://cdn.image.st-hatena.com/image/square/fcbc109a73958e12e76bd5ad66b0e7adf687716c/backend=imagemagick;height=115;version=1;width=115/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F71Zv0EXowgL.SX400.jpg" class="urllist-image recent-entries-image" title="ブログ用の写真検索さんがサービス停止したので任意の大きさのAmazon画像を表示してアフィリエイトリンクを作成する簡易代替ツールを作成" width="115">
+          </a>
+        
+        <a href="http://www.ikedakana.com/entry/blog-image-getter" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">ブログ用の写真検索さんがサービス停止したので任意の大きさのAmazon画像を表示してアフィリエイトリンクを作成する簡易代替ツールを作成        </a>
+        
+        
+
+              </div>
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+    
+      
+<div class="hatena-module hatena-module-entries-access-ranking"
+     data-count="7"
+     data-display_entry_category="0"
+     data-display_entry_image="1"
+     data-display_entry_image_size_width="115"
+     data-display_entry_image_size_height="115"
+     data-display_entry_body_length="0"
+     data-display_entry_date="0"
+     data-display_bookmark_count="1"
+     data-source="total_bookmark"
+>
+  <div class="hatena-module-title">
+    
+      <a href="http://b.hatena.ne.jp/entrylist?url=http%3A%2F%2Fwww.ikedakana.com%2F&amp;sort=count">人気記事</a>
+    
+  </div>
+  <div class="hatena-module-body">
+    
+  </div>
+</div>
+
+    
+      
+<div class="hatena-module hatena-module-html">
+    <div class="hatena-module-title">スポンサーリンク</div>
+  <div class="hatena-module-body">
+    <div style="margin-left:-5px; margin-top:0px; margin-right:-5px">
+<script type="text/javascript" src="http://rot2.a8.net/jsa/0a39dbe53b1621380bb5da7536f034cf/9e94b15ed312fa42232fd87a55db0d39.js"></script>
+</div>
+  </div>
+</div>
+
+    
+    
+  </div>
+</aside>
+
+  </div>
+</div>
+
+
+
+
+
+
+        
+          <div id="bottom-editarea">
+
+
+          </div>
+        
+      </div>
+    </div>
+
+    
+
+    
+
+    
+      <script src="http://s.hatena.ne.jp/js/HatenaStar.js"></script>
+    
+
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {"parsetags": "explicit"}
+</script>
+<script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+
+<script type="text/javascript" src="http://hatenablog.com/js?version=9c4009a31c1bb265f1cc30b49691df8e"></script>
+
+<script type="text/javascript" src="http://hatenablog.com/js/texts-ja.js?version=9c4009a31c1bb265f1cc30b49691df8e"></script>
+
+
+  <script type="text/javascript">Hatena.Diary.loadGlobalHeader()</script>
+
+
+
+
+
+    
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=719729204785177&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    
+
+    
+       <script id="google-analytics-script" type="text/javascript">
+var _gaq = _gaq || [];
+
+(function($){
+
+  // 現在のドメイン
+  
+    
+    
+      
+      var current_domain = "www.ikedakana.com".split(":")[0];
+    
+  
+
+  
+    _gaq.push(['_setAccount', 'UA-33256981-2']);
+    _gaq.push(['_trackPageview']);
+  
+
+  
+
+   
+   _gaq.push(['all._setAccount', 'UA-7855606-1']);
+   _gaq.push(['all._setDomainName', current_domain]);
+   _gaq.push(['all._setSampleRate', '10']);
+   _gaq.push(['all._trackPageview']);
+
+  
+    _gaq.push(['a._setAccount', 'UA-29716941-5']);
+    _gaq.push(['a._setDomainName', current_domain]);
+    _gaq.push(['a._setCustomVar', 1, 'PageId', document.documentElement.getAttribute('data-page'), 3 /* page-level */]);
+      var keywordCampaigns = [];
+      $('.js-entry-article').each(function (index, element) {
+        var keywords = $(element).data('keywordCampaign').split(' ');
+        keywords = _.filter(keywords, function (keyword) { return keyword.length > 0 });
+        keywordCampaigns = keywordCampaigns.concat(keywords);
+      });
+      if (keywordCampaigns.length > 0) {
+        _gaq.push(['a._setCustomVar', 3, 'KeywordCampaign', keywordCampaigns[0], 3 /* page-level */]);
+      }
+      _gaq.push(['a._trackPageview']);
+  
+    _gaq.push(['b._setAccount', 'UA-29716941-2']);
+    _gaq.push(['b._setDomainName', current_domain]);
+    _gaq.push(['b._setCustomVar', 1, 'PageId', document.documentElement.getAttribute('data-page'), 3 /* page-level */]);
+      var keywordCampaigns = [];
+      $('.js-entry-article').each(function (index, element) {
+        var keywords = $(element).data('keywordCampaign').split(' ');
+        keywords = _.filter(keywords, function (keyword) { return keyword.length > 0 });
+        keywordCampaigns = keywordCampaigns.concat(keywords);
+      });
+      if (keywordCampaigns.length > 0) {
+        _gaq.push(['b._setCustomVar', 3, 'KeywordCampaign', keywordCampaigns[0], 3 /* page-level */]);
+      }
+      _gaq.push(['b._trackPageview']);
+  
+
+  $(function () {
+      $(document).delegate('[data-track-event="click"]', 'click', function () {
+          
+          _gaq.push([ 'a._trackEvent', 'Blogs', 'Click', this.getAttribute('data-track-key') ]);
+          
+          _gaq.push([ 'b._trackEvent', 'Blogs', 'Click', this.getAttribute('data-track-key') ]);
+          
+      });
+  });
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  var available_domains = ["blog.hatena.ne.jp"];
+  
+    available_domains.push("hatenablog.com".split(":")[0]);
+  
+    available_domains.push("hatenablog.jp".split(":")[0]);
+  
+    available_domains.push("hateblo.jp".split(":")[0]);
+  
+    available_domains.push("hatenadiary.com".split(":")[0]);
+  
+    available_domains.push("hatenadiary.jp".split(":")[0]);
+  
+  $('a').on('click', function() {
+    // 同じドメインならスキップ
+    if ( !this.hostname || this.hostname.indexOf(current_domain) != -1 ) return;
+
+    var cross_domain = false;
+    for (var i = 0, len = available_domains.length; i < len; i++) {
+      if (this.hostname.indexOf(available_domains[i]) != -1) cross_domain = true;
+    }
+    if ( cross_domain ) {
+      
+      _gaq.push(['a._link', this.href]);
+      
+      _gaq.push(['b._link', this.href]);
+      
+    }
+  });
+
+})(jQuery);
+</script>
+
+       
+  <script id="hatena-counter-script" type="text/javascript"><!--
+      hatena_counter_name = "bulldra";
+      hatena_counter_id = "101";
+      hatena_counter_ref = document.referrer+"";
+      hatena_counter_screen = screen.width + "x" + screen.height+","+screen.colorDepth;
+  //--></script>
+  <script type="text/javascript" src="http://counter.hatena.ne.jp/js/counter.js"></script>
+  <noscript><img src="http://counter.hatena.ne.jp/bulldra/101" border="0" alt="counter"></noscript>
+
+
+    
+
+  </body>
+</html>
+
+
+
