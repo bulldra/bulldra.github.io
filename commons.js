@@ -134,7 +134,7 @@ function addLinkHatenaModule(title, href, className) {
   }
 }
 
-function addAdsenseArchive(client, headSlot, footSlot,className)  {
+function addAdsenseArchive(client, headSlot, footSlot,className,pr)  {
   var es = document.querySelector('.archive-entries');
   if(es == null) {
 	  es = document.querySelector('.entry-list');
@@ -156,8 +156,8 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
 
   var insHead = createIns("adsbygoogle " + className, client, headSlot);
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
-  var s1 = createPrSpan();
-  var s2 = createPrSpan();
+  var s1 = createPrSpan(pr);
+  var s2 = createPrSpan(pr);
 	  
   es.insertBefore(insHead, es.firstChild);
   es.insertBefore(s1, es.firstChild);
@@ -178,10 +178,10 @@ function createIns(className, client, slot) {
   return ins;
 }
 
-function createPrSpan(){
+function createPrSpan(pr){
   var s = document.createElement('span');
   s.setAttribute('class', 'archive-pr');
-  s.innerText = 'スポンサーリンク';
+  s.innerText = pr;
   return s;
 }
 
