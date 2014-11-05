@@ -150,6 +150,8 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
   var insHead = createIns("adsbygoogle " + className, client, headSlot);
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
 
+
+  console.log(es.firstChild);
   if (es.firstChild === undefined) {
     es.appendChild(script);
     es.appendChild(insHead);
