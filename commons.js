@@ -150,7 +150,7 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
   var insHead = createIns("adsbygoogle " + className, client, headSlot);
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
  
-  if(es.firstChild != null) {
+  if (es.firstChild != null) {
     es.insertBefore(insHead, es.firstChild);
     es.insertBefore(script, es.firstChild);
     (adsbygoogle = window.adsbygoogle || []).push({});
