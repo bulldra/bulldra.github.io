@@ -160,8 +160,8 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
 
   var prClassName = 'archive_pr';
-  var s1 = createPrSpan(pr);
-  var s2 = createPrSpan(pr);
+  var s1 = createPrSpan(pr, prClassName);
+  var s2 = createPrSpan(pr, prClassName);
 	  
   es.insertBefore(insHead, es.firstChild);
   es.insertBefore(s1, es.firstChild);
