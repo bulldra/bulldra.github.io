@@ -150,19 +150,11 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
   var insHead = createIns("adsbygoogle " + className, client, headSlot);
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
 
-
-  console.log(es.childNodes.length);
-  if (es.childNodes.length == 0) {
-    es.appendChild(script);
-    es.appendChild(insHead);
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  } else {
-    es.insertBefore(insHead, es.firstChild);
-    es.insertBefore(script, es.firstChild);
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    es.appendChild(insFoot);
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  } 
+  es.insertBefore(insHead, es.firstChild);
+  es.insertBefore(script, es.firstChild);
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  es.appendChild(insFoot);
+  (adsbygoogle = window.adsbygoogle || []).push({});
 }
 
 function createIns(className, client, slot) {
