@@ -134,7 +134,7 @@ function addLinkHatenaModule(title, href, className) {
   }
 }
 
-function addAdsenseArchive(client, headSlot, footSlot,className,pr)  {
+function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 
   var es = document.querySelector('.archive-entries');
   if(es == null) {
