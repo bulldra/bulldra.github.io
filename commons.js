@@ -139,10 +139,17 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
   if(es == null) {
 	  es = document.querySelector('.entry-list');
   }
+
+  if(es == null) {
+	  if(locattion.href == getBlogUrl() + "/about") {
+		es = document.querySelector('.entry-content');
+	  }
+  }
   
   if(es == null) {
 	  return;
   }
+
   
   var script = document.createElement('script');
   script.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
