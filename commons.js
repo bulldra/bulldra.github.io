@@ -135,6 +135,7 @@ function addLinkHatenaModule(title, href, className) {
 }
 
 function addAdsenseArchive(client, headSlot, footSlot,className,pr)  {
+
   var es = document.querySelector('.archive-entries');
   if(es == null) {
 	  es = document.querySelector('.entry-list');
@@ -154,8 +155,11 @@ function addAdsenseArchive(client, headSlot, footSlot,className,pr)  {
   var script = document.createElement('script');
   script.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
 
+  var className = 'archive_adslot';
   var insHead = createIns("adsbygoogle " + className, client, headSlot);
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
+
+  var prClassName = 'archive_pr';
   var s1 = createPrSpan(pr);
   var s2 = createPrSpan(pr);
 	  
@@ -178,9 +182,9 @@ function createIns(className, client, slot) {
   return ins;
 }
 
-function createPrSpan(pr){
+function createPrSpan(pr, className){
   var s = document.createElement('span');
-  s.setAttribute('class', 'archive-pr');
+  s.setAttribute('class', className);
   s.innerText = pr;
   return s;
 }
