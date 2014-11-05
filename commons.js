@@ -141,7 +141,7 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
   }
 
   if(es == null) {
-	  if(locattion.href == getBlogUrl() + "/about") {
+	  if(location.href == getBlogUrl() + "/about") {
 		es = document.querySelector('.entry-content');
 	  }
   }
