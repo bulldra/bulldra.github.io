@@ -759,7 +759,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 .page-archive #main-inner:before {
 	content: "Archive";
 	display: block;
-	width: 740px;
+	width: 720px;
 	margin-left: -20px;
 	margin-top: -10px;
 	padding: 10px 20px;
@@ -767,6 +767,10 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	color: #fff;
 	font-size: 120%;
 	font-family: 'Simonetta',meiryo,sans-serif;
+   border-radius: 5px 5px 0px 0px;
+   -moz-border-radius: 5px 5px 0px 0px;
+   -webkit-border-radius: 5px 5px 0px 0px;
+   box-shadow: 0 0 5px #111;
 }
 
 
@@ -1019,4 +1023,8 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
 .my_adslot { width: 300px; height: 250px; }
 @media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
 @media(min-width: 800px) { .my_adslot { width: 336px; height: 280px; } }
+
+.archive_adslot { width: 300px; height: 250px; }
+@media(min-width: 500px) { .archive_adslot { width: 320px; height: 100px; margin-left:-10px; } }
+@media(min-width: 800px) { .archive_adslot { width: 728px; height: 90px; margin-top:10px; } }
 
