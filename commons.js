@@ -149,6 +149,8 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
 
   var insHead = createIns("adsbygoogle " + className, client, headSlot);
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
+
+  console.log(es.firsChild);
  
   if (es.firstChild != null) {
     es.insertBefore(insHead, es.firstChild);
@@ -156,10 +158,12 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
     (adsbygoogle = window.adsbygoogle || []).push({});
     es.appendChild(insFoot);
     (adsbygoogle = window.adsbygoogle || []).push({});
+    console.log(es);
   } else {
     es.appendChild(script);
     es.appendChild(insHead);
     (adsbygoogle = window.adsbygoogle || []).push({});
+    console.log(es);
   }
 }
 
