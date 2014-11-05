@@ -181,7 +181,7 @@ function createIns(className, client, slot) {
 function createPrSpan(){
   var s = document.createElement('span');
   s.setAttribute('class', 'archive-pr');
-  s.setAttribute('innerText', 'スポンサーリンク');
+  s.innerText = 'スポンサーリンク';
   return s;
 }
 
