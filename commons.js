@@ -134,3 +134,42 @@ function addLinkHatenaModule(title, href, className) {
   }
 }
 
+function addAdsenseArchive(client, headSlot, footSlot,className)  {
+  var es = document.querySelector('.archive-entries');
+  if(es == null) {
+	  es = document.querySelector('.entry-list');
+  }
+  
+  if(es == null) {
+	  return;
+  }
+  
+  var script = document.createElement('script');
+  script.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+
+  var insHead = createIns("adsbygoogle " + className, client, headSlot);
+  var insFoot = createIns("adsbygoogle " + className, client, footSlot);
+ 
+  if(es.firstChild != null) {
+    es.insertBefore(insHead, es.firstChild);
+    es.insertBefore(script, es.firstChild);
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    es.appendChild(insFoot);
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  } else {
+    es.appendChild(script);
+    es.appendChild(insHead);
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }
+}
+
+function createIns(className, client, slot) {
+  var ins = document.createElement('ins');
+  ins.setAttribute('class',className);
+  ins.setAttribute('style',"display:inline-block");
+  ins.setAttribute('data-ad-client', client);
+  ins.setAttribute('data-ad-slot', slot);
+  return ins;
+}
+
+
