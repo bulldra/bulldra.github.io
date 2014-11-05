@@ -28,9 +28,7 @@ div.adzone {
 @media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
 @media(min-width: 800px) { .my_adslot { width: 336px; height: 280px; } }
 
-.archive_adslot { width: 320px; height: 100px; }
-@media(min-width: 500px) { .archive_adslot { width: 320px; height: 100px; margin-left:-10px; } }
-@media(min-width: 800px) { .archive_adslot { width: 728px; height: 90px; margin-top:10px; } }
+
 
 
 
