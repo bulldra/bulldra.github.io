@@ -156,15 +156,15 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
 
   var insHead = createIns("adsbygoogle " + className, client, headSlot);
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
-  var s = document.createElement('span');
-  s.setAttribute('class', 'archive-pr');
-  s.setAttribute('innerText', 'スポンサーリンク');
-
+  var s1 = createPrSpan();
+  var s2 = createPrSpan();
+	  
   es.insertBefore(insHead, es.firstChild);
-  es.insertBefore(s, es.firstChild);
+  es.insertBefore(s1, es.firstChild);
   es.insertBefore(script, es.firstChild);
   (adsbygoogle = window.adsbygoogle || []).push({});
-  es.appendCild(s.cloneNode(true));
+
+  es.appendCild(s2);
   es.appendChild(insFoot);
   (adsbygoogle = window.adsbygoogle || []).push({});
 }
@@ -176,6 +176,13 @@ function createIns(className, client, slot) {
   ins.setAttribute('data-ad-client', client);
   ins.setAttribute('data-ad-slot', slot);
   return ins;
+}
+
+function createPrSpan(){
+  var s = document.createElement('span');
+  s.setAttribute('class', 'archive-pr');
+  s.setAttribute('innerText', 'スポンサーリンク');
+  return s;
 }
 
 
