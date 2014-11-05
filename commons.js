@@ -156,8 +156,11 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
 
   var insHead = createIns("adsbygoogle " + className, client, headSlot);
   var insFoot = createIns("adsbygoogle " + className, client, footSlot);
+  var s = document.createElement('span');
+  s.innerText = 'スポンサーリンク';
 
   es.insertBefore(insHead, es.firstChild);
+  es.insertBefore(s, es.firstChild);
   es.insertBefore(script, es.firstChild);
   (adsbygoogle = window.adsbygoogle || []).push({});
   es.appendChild(insFoot);
