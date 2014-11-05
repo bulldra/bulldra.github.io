@@ -152,7 +152,7 @@ function addAdsenseArchive(client, headSlot, footSlot,className)  {
 
 
   console.log(es.childNodes);
-  if (es.childNodes == 0) {
+  if (es.childNodes.length == 0) {
     es.appendChild(script);
     es.appendChild(insHead);
     (adsbygoogle = window.adsbygoogle || []).push({});
