@@ -150,10 +150,16 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 	  	  es = ss[1];
 	          es.setAttribute('style', 'min-witdh:320px;');
 	          
-                  var dt = document.querySelectorAll('dt,dd');
+                  var dt = document.querySelectorAll('dt');
                   for(var idx = 0; idx < dt.length; idx++) {
 	            dt[idx].setAttribute('style', 'margin-left:10px;');
                   }
+                  
+                  var dd = document.querySelectorAll('dd');
+                  for(var idx = 0; idx < dd.length; idx++) {
+	            dd[idx].setAttribute('style', 'margin-left:20px;');
+                  }
+
 	        } else {
 	          es = document.querySelector('.entry-content');
 	        }
