@@ -876,7 +876,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .page-about #main .entry-content {
-	padding: 10px 0px;
+	padding: 10px 20px;
 }
 
 .page-about #main .entry-content:before {
@@ -897,8 +897,11 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .no-entry .entry-content {
-	padding: 10px 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 10px;
 }
+
 
 .no-entry .entry-content h1 {
 	margin: 0.5em 0;
