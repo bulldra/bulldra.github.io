@@ -147,7 +147,7 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 	  	var ss = document.querySelectorAll('.section');
 	  	console.log(ss);
 	        
-	  	if(ss != null && ss.length >= 2) {
+	  	if (ss != null && ss.length >= 2) {
 	          es = ss[1];
 	          es.style = 'width:100%;';
 	        } else {
@@ -164,20 +164,15 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   script.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
 
   var className = 'archive_adslot';
-  var insHead = createIns('adsbygoogle ' + className, style, client, headSlot);
-  var insFoot = createIns('adsbygoogle ' + className, style, client, footSlot);
-
   var prClassName = 'archive_pr';
-  var s1 = createPrSpan(pr, prClassName);
-  var s2 = createPrSpan(pr, prClassName);
-	  
-  es.insertBefore(insHead, es.firstChild);
-  es.insertBefore(s1, es.firstChild);
+
+  es.insertBefore(createIns('adsbygoogle ' + className, style, client, headSlot), es.firstChild);
+  es.insertBefore(createPrSpan(pr, prClassName), es.firstChild);
   es.insertBefore(script, es.firstChild);
   (adsbygoogle = window.adsbygoogle || []).push({});
-
-  es.appendChild(s2);
-  es.appendChild(insFoot);
+  
+  es.appendChild(createPrSpan(pr, prClassName));
+  es.appendChild(createIns('adsbygoogle ' + className, style, client, footSlot));
   (adsbygoogle = window.adsbygoogle || []).push({});
 }
 
