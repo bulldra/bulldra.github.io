@@ -148,7 +148,7 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 
 	  	if (ss != null && ss.length >= 2) {
 	  	  es = ss[1];
-	          es.setAttribute('style', 'witdh:320px;');
+	          es.setAttribute('style', 'min-witdh:320px;');
 	          
                   var dt = document.querySelectorAll('dt');
                   for(var idx = 0; idx < dt.length; idx++) {
