@@ -136,7 +136,7 @@ function addLinkHatenaModule(title, href, className) {
 
 function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   var es = document.querySelector('.archive-entries');
-  var style = "display:inline-block";
+  var style = "display:inline-block;";
   
   if(es == null) {
 	  es = document.querySelector('.entry-list');
@@ -145,7 +145,7 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   if(es == null) {
 	  if(location.href == getBlogUrl() + "/about") {
 	        es = document.querySelector('.entry-content');
-	        style += ' margine:-10px';
+	        style += ' margine:-10px;';
 	  }
   }
   
