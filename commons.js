@@ -135,15 +135,34 @@ function addLinkHatenaModule(title, href, className) {
 }
 
 function addAdsenseArchive(client, headSlot, footSlot, pr)  {
-
   var es = document.querySelector('.archive-entries');
+  var style = "display:inline-block;";
+  
   if(es == null) {
 	  es = document.querySelector('.entry-list');
   }
 
   if(es == null) {
 	  if(location.href == getBlogUrl() + "/about") {
-		es = document.querySelector('.entry-content');
+	  	var ss = document.querySelectorAll('.section');
+
+	  	if (ss != null && ss.length >= 2) {
+	  	  es = ss[1];
+	          es.setAttribute('style', 'min-witdh:320px;');
+	          
+                  var dt = document.querySelectorAll('dt');
+                  for(var idx = 0; idx < dt.length; idx++) {
+	            dt[idx].setAttribute('style', 'margin-left:10px;');
+                  }
+                  
+                  var dd = document.querySelectorAll('dd');
+                  for(var idx = 0; idx < dd.length; idx++) {
+	            dd[idx].setAttribute('style', 'margin-left:20px;');
+                  }
+
+	        } else {
+	          es = document.querySelector('.entry-content');
+	        }
 	  }
   }
   
@@ -151,32 +170,26 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 	  return;
   }
 
-  
   var script = document.createElement('script');
   script.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
 
   var className = 'archive_adslot';
-  var insHead = createIns("adsbygoogle " + className, client, headSlot);
-  var insFoot = createIns("adsbygoogle " + className, client, footSlot);
-
   var prClassName = 'archive_pr';
-  var s1 = createPrSpan(pr, prClassName);
-  var s2 = createPrSpan(pr, prClassName);
-	  
-  es.insertBefore(insHead, es.firstChild);
-  es.insertBefore(s1, es.firstChild);
+
+  es.insertBefore(createIns('adsbygoogle ' + className, style, client, headSlot), es.firstChild);
+  es.insertBefore(createPrSpan(pr, prClassName), es.firstChild);
   es.insertBefore(script, es.firstChild);
   (adsbygoogle = window.adsbygoogle || []).push({});
-
-  es.appendChild(s2);
-  es.appendChild(insFoot);
+  
+  es.appendChild(createPrSpan(pr, prClassName));
+  es.appendChild(createIns('adsbygoogle ' + className, style, client, footSlot));
   (adsbygoogle = window.adsbygoogle || []).push({});
 }
 
-function createIns(className, client, slot) {
+function createIns(className, style, client, slot) {
   var ins = document.createElement('ins');
-  ins.setAttribute('class',className);
-  ins.setAttribute('style',"display:inline-block");
+  ins.setAttribute('class', className);
+  ins.setAttribute('style', style);
   ins.setAttribute('data-ad-client', client);
   ins.setAttribute('data-ad-slot', slot);
   return ins;
@@ -188,5 +201,4 @@ function createPrSpan(pr, className){
   s.innerText = pr;
   return s;
 }
-
 
