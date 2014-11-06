@@ -176,11 +176,11 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   var prClassName = 'archive_pr';
 
   es.insertBefore(createIns('adsbygoogle ' + className, style, client, headSlot), es.firstChild);
-  es.insertBefore(createPrSpan(pr, prClassName), es.firstChild);
+  es.insertBefore(createPrDiv(pr, prClassName), es.firstChild);
   es.insertBefore(script, es.firstChild);
   (adsbygoogle = window.adsbygoogle || []).push({});
   
-  es.appendChild(createPrSpan(pr, prClassName));
+  es.appendChild(createPrDiv(pr, prClassName));
   es.appendChild(createIns('adsbygoogle ' + className, style, client, footSlot));
   (adsbygoogle = window.adsbygoogle || []).push({});
 }
@@ -194,7 +194,7 @@ function createIns(className, style, client, slot) {
   return ins;
 }
 
-function createPrSpan(pr, className){
+function createPrDiv(pr, className){
   var s = document.createElement('div');
   s.setAttribute('class', className);
   s.innerText = pr;
