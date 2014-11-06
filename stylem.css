@@ -74,7 +74,7 @@ div.adzone {
     color: #333;
 }
 
-.hatena-module-title,.search-box,.profile-wrapper, .footer-action-wrapper, 
+.hatena-module-title,.search-box, .footer-action-wrapper, 
   .touch-item-list {
   display:none;
 }
