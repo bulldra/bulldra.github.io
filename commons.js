@@ -151,12 +151,12 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 	  	  
 	  	  var dd = document.querySelectorAll('dd');
 	  	  for(var i=0; i<dd.length; i++) {
-	  	  	dd[i].setAttribute('style','margin-left:20px;');
+	  	  	dd[i].setAttribute('style','margin-left:20px;margin-right:20px;');
 	  	  }
 	  	  
 	  	  var dt = document.querySelectorAll('dt');
 	  	  for(var i=0; i<dt.length; i++) {
-	  	  	dt[i].setAttribute('style','margin-left:10px;');
+	  	  	dt[i].setAttribute('style','margin-left:10px;margin-right:10px;');
 	  	  }
 
 	        } else {
