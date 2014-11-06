@@ -414,6 +414,10 @@ ul, ol {
     margin: 0;
 }
 
+.entry-content p {
+	margin-bottom: 0.8em;
+}
+
 .entry-content pre {
 	color: #333;
 	border: solid 1px #ddd;
