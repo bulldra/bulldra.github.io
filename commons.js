@@ -195,7 +195,7 @@ function createIns(className, style, client, slot) {
 }
 
 function createPrSpan(pr, className){
-  var s = document.createElement('span');
+  var s = document.createElement('div');
   s.setAttribute('class', className);
   s.innerText = pr;
   return s;
