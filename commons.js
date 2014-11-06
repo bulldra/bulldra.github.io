@@ -145,27 +145,26 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   if(es == null) {
 	  if(location.href == getBlogUrl() + "/about") {
 	  	var ss = document.querySelectorAll('.section');
-
 	  	if (ss != null && ss.length >= 2) {
 	  	  es = ss[1];
-	          es.setAttribute('style', 'min-witdh:320px;');
-	          
-                  var dt = document.querySelectorAll('dt');
-                  for(var idx = 0; idx < dt.length; idx++) {
-	            dt[idx].setAttribute('style', 'margin-left:10px;');
-                  }
-                  
-                  var dd = document.querySelectorAll('dd');
-                  for(var idx = 0; idx < dd.length; idx++) {
-	            dd[idx].setAttribute('style', 'margin-left:20px;');
-                  }
+	  	  es.setAttribute('style','min-width:320px;');
+	  	  
+	  	  var dd = document.querySelectorAll('dd');
+	  	  for(var i=0; i<dd.length; i++) {
+	  	  	dd[i].setAttribute('style','margin-left:20px;margin-right:20px;');
+	  	  }
+	  	  
+	  	  var dt = document.querySelectorAll('dt');
+	  	  for(var i=0; i<dt.length; i++) {
+	  	  	dt[i].setAttribute('style','margin-left:10px;margin-right:10px;');
+	  	  }
 
 	        } else {
 	          es = document.querySelector('.entry-content');
 	        }
 	  }
   }
-  
+ 
   if(es == null) {
 	  return;
   }
@@ -177,11 +176,11 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   var prClassName = 'archive_pr';
 
   es.insertBefore(createIns('adsbygoogle ' + className, style, client, headSlot), es.firstChild);
-  es.insertBefore(createPrSpan(pr, prClassName), es.firstChild);
+  es.insertBefore(createPrDiv(pr, prClassName), es.firstChild);
   es.insertBefore(script, es.firstChild);
   (adsbygoogle = window.adsbygoogle || []).push({});
   
-  es.appendChild(createPrSpan(pr, prClassName));
+  es.appendChild(createPrDiv(pr, prClassName));
   es.appendChild(createIns('adsbygoogle ' + className, style, client, footSlot));
   (adsbygoogle = window.adsbygoogle || []).push({});
 }
@@ -195,8 +194,8 @@ function createIns(className, style, client, slot) {
   return ins;
 }
 
-function createPrSpan(pr, className){
-  var s = document.createElement('span');
+function createPrDiv(pr, className){
+  var s = document.createElement('div');
   s.setAttribute('class', className);
   s.innerText = pr;
   return s;
