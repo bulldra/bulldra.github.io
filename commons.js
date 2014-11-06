@@ -148,6 +148,17 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 	  	if (ss != null && ss.length >= 2) {
 	  	  es = ss[1];
 	  	  es.setAttribute('style','min-width:320px;');
+	  	  
+	  	  var dd = document.querySelectorAll('dd');
+	  	  for(var i=0; i<dd.length; i++) {
+	  	  	dd[i].setAttribute('style','margin-left:10px;');
+	  	  }
+	  	  
+	  	  var dt = document.querySelectorAll('dt');
+	  	  for(var i=0; i<dt.length; i++) {
+	  	  	dt[i].setAttribute('style','margin-left:20px;');
+	  	  }
+
 	        } else {
 	          es = document.querySelector('.entry-content');
 	        }
