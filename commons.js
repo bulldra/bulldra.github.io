@@ -144,8 +144,9 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 
   if(es == null) {
 	  if(location.href == getBlogUrl() + "/about") {
-	        var es = document.querySelector('.section');
-	        if (es != null) {
+	  	var ss = document.querySelectorAll('.section');
+	  	if(ss != null && ss >= 2) {
+	          es = ss[1];
 	          es.style = 'width:100%;';
 	        } else {
 	          es = document.querySelector('.entry-content');
