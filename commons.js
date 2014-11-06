@@ -150,7 +150,7 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 	  	  es = ss[1];
 	          es.setAttribute('style', 'min-witdh:320px;');
 	          
-                  var dt = document.querySelectorAll('dt');
+                  var dt = document.querySelectorAll('dt,dd');
                   for(var idx = 0; idx < dt.length; idx++) {
 	            dt[idx].setAttribute('style', 'margin-left:10px;');
                   }
