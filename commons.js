@@ -146,7 +146,8 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 	  if(location.href == getBlogUrl() + "/about") {
 	  	var ss = document.querySelectorAll('.section');
 	  	if (ss != null && ss.length >= 2) {
-	  	  es = document.querySelectorAll('.top-editarea,.bottom-editarea');
+	  	  es = ss[1];
+	  	  es.setAttribute('style','min-width:320px;');
 	        } else {
 	          es = document.querySelector('.entry-content');
 	        }
