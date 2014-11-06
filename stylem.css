@@ -27,13 +27,6 @@ div.adzone {
 @media(min-width: 800px) { .my_adslot { width: 336px; height: 280px; } }
 
 
-.footer-action-wrapper{
-  display:none;
-}
-
-.touch-item-list{
-  display:none;
-}
 
 .entry-content h3, .entry-content h1, 
   .entry-content h2, .hatena-module-foot h3 {
@@ -81,6 +74,9 @@ div.adzone {
     color: #333;
 }
 
-.hatena-module-title,.search-box,.profile-wrapper,.hatena-module-entries-access-ranking{display:none;}
+.hatena-module-title,.search-box,.profile-wrapper, .footer-action-wrapper, 
+  .touch-item-list {
+  display:none;
+}
 
 
