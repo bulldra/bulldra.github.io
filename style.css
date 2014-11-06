@@ -509,7 +509,7 @@ ul, ol {
 }
 
 .entry-footer {
-	padding: 10px 20px;
+	padding: 10px 0px;
 }
 
 .entry-footer a {
@@ -528,7 +528,7 @@ ul, ol {
 .hatena-star-container {
 	margin-left: 10px;
 	margin-bottom: 0px;
-	display: inline-block;
+	display: none;
 }
 
 .social-buttons {
