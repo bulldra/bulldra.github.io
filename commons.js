@@ -145,10 +145,11 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   if(es == null) {
 	  if(location.href == getBlogUrl() + "/about") {
 	  	var ss = document.querySelectorAll('.section');
+	  	console.log(ss);
+	        
 	  	if(ss != null && ss.length >= 2) {
 	          es = ss[1];
 	          es.style = 'width:100%;';
-	          console.log(es);
 	        } else {
 	          es = document.querySelector('.entry-content');
 	        }
