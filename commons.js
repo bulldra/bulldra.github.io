@@ -135,15 +135,17 @@ function addLinkHatenaModule(title, href, className) {
 }
 
 function addAdsenseArchive(client, headSlot, footSlot, pr)  {
-
   var es = document.querySelector('.archive-entries');
+  var style = "display:inline-block";
+  
   if(es == null) {
 	  es = document.querySelector('.entry-list');
   }
 
   if(es == null) {
 	  if(location.href == getBlogUrl() + "/about") {
-		es = document.querySelector('.entry-content');
+	        es = document.querySelector('.entry-content');
+	        style += ' margine:-10px';
 	  }
   }
   
@@ -151,13 +153,12 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
 	  return;
   }
 
-  
   var script = document.createElement('script');
   script.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
 
   var className = 'archive_adslot';
-  var insHead = createIns("adsbygoogle " + className, client, headSlot);
-  var insFoot = createIns("adsbygoogle " + className, client, footSlot);
+  var insHead = createIns('adsbygoogle ' + className, style, client, headSlot);
+  var insFoot = createIns('adsbygoogle ' + className, style, client, footSlot);
 
   var prClassName = 'archive_pr';
   var s1 = createPrSpan(pr, prClassName);
@@ -173,10 +174,10 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   (adsbygoogle = window.adsbygoogle || []).push({});
 }
 
-function createIns(className, client, slot) {
+function createIns(className, style, client, slot) {
   var ins = document.createElement('ins');
-  ins.setAttribute('class',className);
-  ins.setAttribute('style',"display:inline-block");
+  ins.setAttribute('class', className);
+  ins.setAttribute('style', style);
   ins.setAttribute('data-ad-client', client);
   ins.setAttribute('data-ad-slot', slot);
   return ins;
@@ -188,5 +189,3 @@ function createPrSpan(pr, className){
   s.innerText = pr;
   return s;
 }
-
-
