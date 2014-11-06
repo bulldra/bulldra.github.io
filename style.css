@@ -509,6 +509,10 @@ ul, ol {
 	font-size: 100%;
 }
 
+.footnote {
+	margin-top 5px;
+}
+
 .entry-footer {
 	padding-left:20px;
 	padding-right:20px;
