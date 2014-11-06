@@ -161,8 +161,8 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   var insFoot = createIns('adsbygoogle ' + className, style, client, footSlot);
 
   var prClassName = 'archive_pr';
-  var s1 = createPrSpan(pr, prClassName);
-  var s2 = createPrSpan(pr, prClassName);
+  var s1 = createPrSpan(pr, prClassName, style);
+  var s2 = createPrSpan(pr, prClassName, style);
 	  
   es.insertBefore(insHead, es.firstChild);
   es.insertBefore(s1, es.firstChild);
@@ -183,9 +183,10 @@ function createIns(className, style, client, slot) {
   return ins;
 }
 
-function createPrSpan(pr, className){
+function createPrSpan(pr, className, style){
   var s = document.createElement('span');
   s.setAttribute('class', className);
+  s.setAttribute('style', style);
   s.innerText = pr;
   return s;
 }
