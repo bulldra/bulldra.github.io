@@ -337,10 +337,6 @@ ul, ol {
     line-height: 1.8;
 }
 
-.entry-content p {
-	margin: 0.8em 0;
-}
-
 .entry-content a {
 	color: #880000;
 }
@@ -501,7 +497,7 @@ ul, ol {
 .entry-content .hatena-asin-detail {
 	background: #fff;
 	border: solid 1px #ddd;
-	padding: 10px 10px;
+	padding: 10px 15px;
 }
 
 .entry-content .hatena-asin-detail li {
