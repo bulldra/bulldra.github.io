@@ -509,7 +509,7 @@ ul, ol {
 }
 
 .entry-footer {
-	padding: 10px 0px;
+	padding: 0px 20px;
 }
 
 .entry-footer a {
@@ -875,7 +875,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .page-about #main .entry-content {
-	padding: 10px 20px;
+	padding: 10px 0px;
 }
 
 .page-about #main .entry-content:before {
