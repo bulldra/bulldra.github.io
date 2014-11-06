@@ -509,7 +509,8 @@ ul, ol {
 }
 
 .entry-footer {
-	margin-left:10px
+	padding-left:20px;
+	padding-right:20px;
 }
 
 .entry-footer a {
