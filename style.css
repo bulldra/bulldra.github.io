@@ -813,11 +813,16 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	display: inline-block;
 	color: #fff;
 	background: #880000;
+	margin-top:0px;
 }
 
 .page-archive .date {
 	color: #fff;
 	background: #880000;
+}
+
+.page-archive .date a {
+	color: #fff;
 }
 
 .page-archive #main .entry-title a {
