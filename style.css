@@ -816,7 +816,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	margin-top:0px;
 	padding-left:10px;
 	padding-right:10px;
-        box-shadow: 0 0 5px #111;
 }
 
 .page-archive .date {
@@ -827,7 +826,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	border-radius: 5px 5px 0px 0px;
         -moz-border-radius: 5px 5px 0px 0px;
         -webkit-border-radius: 5px 5px 0px 0px;
-        box-shadow: 0 0 5px #111;
 }
 
 .page-archive .entry-description {
@@ -836,8 +834,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .page-archive .entry-thumb {
-	padding-left:10px;
-	padding-right:10px;
+	margin-left:10px;
 }
 
 .page-archive .date a time {
@@ -854,7 +851,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	border-radius: 5px 5px 5px 5px;
         -moz-border-radius: 5px 5px 5px 5px;
         -webkit-border-radius: 5px 5px 5px 5px;
-        box-shadow: 0 0 5px #111;
 }
 
 .page-archive #main section h1 {
