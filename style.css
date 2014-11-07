@@ -816,19 +816,15 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	background: #880000;
 }
 
-.page-archive .date {
-	position: absolute;
-	right: 20px;
-	bottom: 10px;
-}
-
 .page-archive #main .entry-title a {
 	color: #fff;
 }
 
 .page-archive section {
 	margin-bottom: 10px;
-	font-family: sans-serif;
+	padding-left:10px;
+	padding-right:10px;
+	border: solid #ccc 1px;
 }
 
 .page-archive #main section h1 {
