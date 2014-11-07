@@ -415,7 +415,7 @@ ul, ol {
 }
 
 .entry-content p {
-	padding-bottom: 0.8em;
+	margin-bottom: 24px;
 }
 
 .entry-content pre {
