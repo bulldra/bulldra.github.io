@@ -828,14 +828,16 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
         -webkit-border-radius: 5px 5px 0px 0px;
 }
 
-.page-archive .entry-description {
+.page-entry .entry-description {
 	padding-left:10px;
 	padding-right:10px;
 }
 
-.page-archive .entry-thumb {
+.archive-entry .entry-thumb, .archive-entry .bookmark-widget-counter {
 	margin-left:10px;
 }
+
+
 
 .page-archive .date a time {
 	color: #fff;
