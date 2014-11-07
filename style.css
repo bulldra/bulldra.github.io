@@ -816,11 +816,24 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	margin-top:0px;
 	padding-left:10px;
 	padding-right:10px;
+	border-radius: 5px 5px 0px 0px;
+        -moz-border-radius: 5px 5px 0px 0px;
+        -webkit-border-radius: 5px 5px 0px 0px;
+        box-shadow: 0 0 5px #111;
 }
 
 .page-archive .date {
 	color: #fff;
 	background: #880000;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+.page-archive .entry-description {
+	color: #fff;
+	background: #880000;
+	padding-left:10px;
+	padding-right:10px;
 }
 
 .page-archive .date a time {
