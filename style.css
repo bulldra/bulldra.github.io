@@ -816,6 +816,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	margin-top:0px;
 	padding-left:10px;
 	padding-right:10px;
+        box-shadow: 0 0 5px #111;
 }
 
 .page-archive .date {
@@ -850,6 +851,10 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 .page-archive section {
 	margin-bottom: 10px;
 	border: solid #ccc 1px;
+	border-radius: 5px 5px 5px 5px;
+        -moz-border-radius: 5px 5px 5px 5px;
+        -webkit-border-radius: 5px 5px 5px 5px;
+        box-shadow: 0 0 5px #111;
 }
 
 .page-archive #main section h1 {
