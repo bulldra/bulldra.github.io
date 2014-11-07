@@ -816,6 +816,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	margin-top:0px;
 	padding-left:10px;
 	padding-right:10px;
+	width:100%;
 }
 
 .page-archive .date {
