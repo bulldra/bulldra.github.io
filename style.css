@@ -810,9 +810,8 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 
 .page-archive #main .entry-title {
 	font-size: 120%;
-	font-weight: bold;
 	display: inline-block;
-	margin-top: 10px;
+	margin-top: 5px;
 	color: #fff;
 	background: #880000;
 }
