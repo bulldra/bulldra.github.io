@@ -848,6 +848,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .page-archive section {
+	margin-top:10px;
 	margin-bottom: 10px;
 	border: solid #ccc 1px;
 	border-radius: 5px 5px 5px 5px;
