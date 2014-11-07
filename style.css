@@ -510,7 +510,7 @@ ul, ol {
 }
 
 .footnote {
-	margin-top:5px;
+	margin-top:0px;
 }
 
 .entry-footer {
@@ -532,7 +532,7 @@ ul, ol {
 }
 
 .hatena-star-container {
-	margin-left: 10px;
+	margin-left: 0px;
 	margin-bottom: 10px;
 	display: block;
 }
