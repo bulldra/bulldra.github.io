@@ -516,10 +516,10 @@ ul, ol {
 .entry-footer {
 	padding-left:15px;
 	padding-right:15px;
+	padding-bottom: 15px;
 }
 
 .entry-footer a {
-	color: #3489bd;
 	font-size: 100%;
 }
 
@@ -1032,5 +1032,15 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
 .my_adslot { width: 300px; height: 250px; }
 @media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
 @media(min-width: 800px) { .my_adslot { width: 336px; height: 280px; } }
+
+div #breadcrumb div {
+	display: inline;
+	font-size: 13px;
+}
+
+div #breadcrumb div a {
+    color:#880000;
+}
+
 
 
