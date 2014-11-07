@@ -811,7 +811,11 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 .page-archive #main .entry-title {
 	font-size: 120%;
 	display: inline-block;
-	margin-top: 5px;
+	color: #fff;
+	background: #880000;
+}
+
+.page-archive .date {
 	color: #fff;
 	background: #880000;
 }
