@@ -534,7 +534,7 @@ ul, ol {
 .hatena-star-container {
 	margin-left: 10px;
 	margin-bottom: 0px;
-	display: none;
+	display: inline-block;
 }
 
 .social-buttons {
