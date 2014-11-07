@@ -816,6 +816,12 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	background: #880000;
 }
 
+.page-arvhive .date {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+}
+
 .page-archive #main .entry-title a {
 	color: #fff;
 }
