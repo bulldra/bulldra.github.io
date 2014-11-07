@@ -498,16 +498,22 @@ ul, ol {
 	border: solid 1px #de741e;
 }
 
-.entry-content .hatena-asin-detail {
+.hatena-asin-detail {
 	background: #fff;
 	border: solid 1px #ddd;
 	padding: 10px 15px;
 	font-size: 70%;
 }
 
-.entry-content .hatena-asin-detail li {
+.hatena-asin-detail li {
 	list-style: none;
 }
+
+.hatena-asin-detail li a {
+	color: #880000;
+}
+
+
 
 .footnote {
 	margin-top:0px;
