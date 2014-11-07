@@ -814,6 +814,8 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	color: #fff;
 	background: #880000;
 	margin-top:0px;
+	padding-left:10px;
+	padding-right:10px;
 }
 
 .page-archive .date {
@@ -821,7 +823,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	background: #880000;
 }
 
-.page-archive .date a {
+.page-archive .date a time {
 	color: #fff;
 }
 
@@ -831,8 +833,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 
 .page-archive section {
 	margin-bottom: 10px;
-	padding-left:10px;
-	padding-right:10px;
 	border: solid #ccc 1px;
 }
 
