@@ -809,11 +809,12 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .page-archive #main .entry-title {
-	font-size: 100%;
+	font-size: 120%;
 	font-weight: normal;
 	display: inline-block;
 	margin-top: 10px;
-	color: #3489bd;
+	color: #fff;
+	background: #880000;
 }
 
 .page-archive section {
@@ -836,8 +837,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 
 .page-archive #main .categories a {
 	display: inline-block;
-	color: #fff;
-	background: #8f0000;
+	color: #888;
 	padding: 0 5px;
 	line-height: 23px;
 	height: 23px;
