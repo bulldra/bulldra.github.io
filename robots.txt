@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /gatcha.js
+Disallow: /vine.js
+Disallow: /trackback.js
