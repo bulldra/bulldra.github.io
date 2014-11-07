@@ -502,11 +502,7 @@ ul, ol {
 	background: #fff;
 	border: solid 1px #ddd;
 	padding: 10px 15px;
-}
-
-.entry-content .hatena-asin-detail li {
-	list-style-type: none;
-	font-size: 100%;
+	font-size:80%;
 }
 
 .footnote {
