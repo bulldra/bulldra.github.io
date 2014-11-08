@@ -74,30 +74,3 @@ div.adzone {
     color: #333;
 }
 
-.hatena-module-title,.search-box, .footer-action-wrapper, 
-  .touch-item-list, .profile {
-  display:none;
-}
-
-
-#global-menu {
-  width:100%;	
-}
-
-#global-menu ul li {
-  width: 85px;
-  float: left;
-  list-style-type: none;
-}
-
-#global-menu ul li a {
-  font-size:130%;
-  font-family:HuiFontP109;
-  text-decoration: none;
-  font-weight:bold;
-  display: block;
-  color: #880000;
-}
-
-
-
