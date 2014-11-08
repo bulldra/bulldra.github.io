@@ -81,22 +81,19 @@ div.adzone {
 
 
 #global-menu ul li {
-  width: 95px;
+  width: 85px;
   float: left;
+  list-style-type: none;
 }
 
 #global-menu ul li a {
-  font-size:120%;
+  font-size:130%;
   font-family:HuiFontP109;
   text-decoration: none;
   font-weight:bold;
   display: block;
-  color: #000;
+  color: #880000;
 }
 
-#global-menu ul li a:hover {
-  text-decoration: none;
-  color: #ddd;
-  text-shadow:  0 0 2px #000;
-}
+
 
