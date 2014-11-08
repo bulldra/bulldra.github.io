@@ -81,8 +81,7 @@ div.adzone {
 }
 
 .page-about .subscription-count {
-	width:100%;
-	margin-bottom:32px;
+	display:block;
 
 }
 
