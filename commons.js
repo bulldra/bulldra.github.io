@@ -144,7 +144,7 @@ function addLinkHatenaModule(title, href, className) {
 
 function nofollowAboutIcon() {
   if(isAboutPage()) {
-	  var imgs = document.querySelectorAll('.page-about .entry-content .info .img.profile-icon');
+	  var imgs = document.querySelectorAll('.page-about .entry-content .info .profile-icon');
 	  if(imgs != null) {
 		  for (var i = 0; i < imgs.length; i++) {
 			  var a = imgs[i].parentNode;
