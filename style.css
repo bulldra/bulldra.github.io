@@ -772,10 +772,9 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	margin-left: -20px;
 	margin-top: -10px;
 	padding: 10px 20px;
-	background: #8f0000;
+	background: #880000;
 	color: #fff;
 	font-size: 120%;
-	font-family: 'Simonetta',meiryo,sans-serif;
    border-radius: 5px 5px 0px 0px;
    -moz-border-radius: 5px 5px 0px 0px;
    -webkit-border-radius: 5px 5px 0px 0px;
@@ -809,13 +808,14 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .page-archive #main .entry-title {
-	font-size: 120%;
+	font-size: 110%;
 	display: inline-block;
 	color: #fff;
 	background: #880000;
 	margin-top:0px;
 	padding-left:10px;
 	padding-right:10px;
+	padding-bottom:5px;
 	width:100%;
 }
 
