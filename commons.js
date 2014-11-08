@@ -149,7 +149,6 @@ function nofollowAboutIcon() {
 		  for (var i = 0; i < imgs.length; i++) {
 			  var a = imgs[i].parentNode;
 			  a.rel = 'nofollow';
-			  console.log(a.outerHTML);
 		  }
 	  }
   }
