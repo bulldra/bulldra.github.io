@@ -1,23 +1,26 @@
 function createHtml(container, headerHtml, resultEntries, 
-		defaultHtml,fetchNum) {
+		defaultHtml,fetchNum , rand) {
   createCommonHtml(createEmbedFrame, container, headerHtml, 
-		  resultEntries, defaultHtml,fetchNum);
+		  resultEntries, defaultHtml,fetchNum, rand);
 }
 
 function createOwnHtml(container, headerHtml, resultEntries, 
-                defaultHtml,fetchNum) {
+                defaultHtml,fetchNum, rand) {
   createCommonHtml(createOwnEmbedFrame, container, headerHtml, 
-		  resultEntries, defaultHtml,fetchNum);
+		  resultEntries, defaultHtml, fetchNum, rand);
 }  
 
-function createCommonHtml(func, container, headerHtml, resultEntries, defaultHtml,fetchNum) {
+function createCommonHtml(func, container, headerHtml, resultEntries, defaultHtml,fetchNum, rand) {
   var resultHtml = "";
   if (resultEntries.length == 0) {
     if(defaultHtml != null) {
       resultHtml = defaultHtml;
     } 
   } else {
-    resultEntries = shuffleArray(resultEntries);
+    if(rand != false) {
+      resultEntries = shuffleArray(resultEntries);
+    }
+
     for(var x = 0; x < resultEntries.length && x < fetchNum; x++) { 
       resultHtml += func(resultEntries[x].link);
     }
@@ -45,10 +48,14 @@ function createOwnEmbedFrame (link) {
     return html;
 }
 
-function getBlogUrl() {
+function getBlogUrl(url) {
+  if(url != null) {
+	  return url;
+  }
+
   var href = document.location.href;
   if(href.lastIndexOf('http', 0) !== 0) {
-    href = 'http://www.ikedakana.com';
+    href = 'http://stardust.hatenadiary.com';
     console.log("Return test url.");
   }
   var ret = href.replace(/(^http:\/\/[^\/]*).*/,"$1");
