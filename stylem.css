@@ -87,3 +87,7 @@ div.adzone {
 }
 
 
+#header .header-blog-icon img {
+	display: none;
+}
+
