@@ -74,3 +74,10 @@ div.adzone {
     color: #333;
 }
 
+.page-about .entry-content img.profile-icon {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+}
+
+
