@@ -150,7 +150,7 @@ function addAdsenseArchive(client, headSlot, footSlot, pr)  {
   }
 
   if(es == null) {
-	  if(location.href == getBlogUrl() + "/about") {
+	  if(isAbountPage()) {
 	  	var ss = document.querySelectorAll('.section');
 	  	if (ss != null && ss.length >= 2) {
 	  	  es = ss[1];
@@ -206,5 +206,26 @@ function createPrDiv(pr, className){
   s.setAttribute('class', className);
   s.innerText = pr;
   return s;
+}
+
+function nofollowAboutIcon() {
+  if(isAbountPage()) {
+	  var imgs = document.querySelectorAll('.page-about .entry-content img.profile-icon');
+	  if(imgs != null) {
+		  for (var i = 0; i < imgs.length; i++) {
+			  var a = imgs[i].parentNode;
+			  a.rel = 'nofollow';
+			  console.log(a.outerHTML);
+		  }
+	  }
+  }
+}
+
+function isAboutPage() {
+	if (location.href == getBlogUrl() + "/about") {
+		return true;
+	} else {
+		return false;
+	}
 }
 
