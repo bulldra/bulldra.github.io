@@ -80,6 +80,10 @@ div.adzone {
 }
 
 
+#global-menu {
+  width:100%;	
+}
+
 #global-menu ul li {
   width: 85px;
   float: left;
