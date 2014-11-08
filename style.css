@@ -870,7 +870,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 .page-archive #main .categories a {
 	display: inline-block;
 	color: #888;
-	padding: 0 5px;
+	padding: 0 10px;
 	line-height: 23px;
 	height: 23px;
 	font-size: 75%;
