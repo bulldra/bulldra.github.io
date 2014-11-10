@@ -128,6 +128,7 @@ function setEmbedWidth(width) {
 
 function setBookmarkEmbedWidth(width) {
   var embeds = document.querySelectorAll('.hatena-bookmark-comment-embed');
+  console.log(embeds);
   if(embeds != null) {
     for (var i = 0; i < embeds.length; i++) {
       embeds[i].style.maxWidth = width;
