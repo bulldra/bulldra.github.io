@@ -126,6 +126,14 @@ function setEmbedWidth(width) {
   }
 }
 
+function setBookmarkEmbedWidth(width) {
+  var embeds = document.querySelectorAll('.hatena-bookmark-comment-embed');
+  if(embeds != null) {
+    for (var i = 0; i < embeds.length; i++) {
+      embeds[i].style.maxWidth = width;
+    }
+  }
+}
 
 function addLinkHatenaModule(title, href, className) {
   var modules = document.querySelectorAll('.hatena-module-title');
