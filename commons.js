@@ -132,12 +132,12 @@ function adjustBookmarkEmbedWidth() {
   if(embeds != null) {
     var size = window.innerWidth;
     console.log(size);
-    console.log(size <= 500);
     for (var i = 0; i < embeds.length; i++) {
       if(size <= 500) {
         embeds[i].setAttribute('style', 'maxWidth:300px;');
       } else {
-        embeds[i].setAttribute('style', 'maxWidth:100%;');
+        embeds[i].setAttribute('style', 'maxWidth:728px;');
+        console.log(size <= 500);
       }
     }
   }
