@@ -131,12 +131,11 @@ function setBookmarkEmbedWidth(width) {
   console.log(embeds);
   if(embeds != null) {
     for (var i = 0; i < embeds.length; i++) {
-      if(window.parent.screen.width > width) {
-        embeds[i].style.maxWidth = width + "px";
+      if(window.parent.screen.width > 500) {
+        embeds[i].style.setAttribute('maxWidth', width + 'px');
       } else {
-        embeds[i].style.maxWidth = "300px";
+        embeds[i].style.setAttribute('maxWidth', '300px');
       }
-      
     }
   }
 }
