@@ -132,6 +132,7 @@ function setBookmarkEmbedWidth(width) {
   if(embeds != null) {
     for (var i = 0; i < embeds.length; i++) {
       embeds[i].style.maxWidth = width + "px";
+      embeds[i].style.margin = "0px";
     }
   }
 }
