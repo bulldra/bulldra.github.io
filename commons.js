@@ -133,7 +133,7 @@ function adjustBookmarkEmbedWidth() {
     var size = window.innerWidth;
     for (var i = 0; i < embeds.length; i++) {
       if(size <= 500) {
-        embeds[i].setAttribute('style', 'maxWidth:300px;');
+        embeds[i].style.maxWidth = '300px';
       } 
     }
   }
