@@ -130,8 +130,9 @@ function adjustBookmarkEmbedWidth() {
   var embeds = document.querySelectorAll('.hatena-bookmark-comment-embed');
   console.log(embeds);
   if(embeds != null) {
+    var size = window.innerWidth;
+    console.log(size);
     for (var i = 0; i < embeds.length; i++) {
-      var size = window.innerWidth;
       if(size <= 500) {
         embeds[i].setAttribute('style', 'maxWidth:300px;');
       } else {
