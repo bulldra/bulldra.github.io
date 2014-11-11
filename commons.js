@@ -131,6 +131,7 @@ function adjustBookmarkEmbedWidth() {
   console.log(embeds);
   if(embeds != null) {
     for (var i = 0; i < embeds.length; i++) {
+      console.log(window.innerWidth);
       if(window.innerWidth > 500) {
         embeds[i].setAttribute('style', 'maxWidth:100%;');
       } else {
