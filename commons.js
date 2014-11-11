@@ -132,9 +132,9 @@ function setBookmarkEmbedWidth(width) {
   if(embeds != null) {
     for (var i = 0; i < embeds.length; i++) {
       if(window.parent.screen.width > 500) {
-        embeds[i].style.setAttribute('maxWidth', width + 'px');
+        embeds[i].setAttribute('style', 'maxWidth:' + width + 'px;');
       } else {
-        embeds[i].style.setAttribute('maxWidth', '300px');
+        embeds[i].setAttribute('style', 'maxWidth:300px;');
       }
     }
   }
