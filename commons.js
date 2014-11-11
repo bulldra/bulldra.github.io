@@ -126,19 +126,6 @@ function setEmbedWidth(width) {
   }
 }
 
-function adjustBookmarkEmbedWidth() {
-  var embeds = document.querySelectorAll('.hatena-bookmark-comment-embed');
-  console.log(embeds);
-  if(embeds != null) {
-    var size = window.innerWidth;
-    for (var i = 0; i < embeds.length; i++) {
-      if(size <= 500) {
-        embeds[i].style.maxWidth = '300px';
-      } 
-    }
-  }
-}
-
 function addLinkHatenaModule(title, href, className) {
   var modules = document.querySelectorAll('.hatena-module-title');
   for(var i = 0; i < modules.length; i++) {
