@@ -131,7 +131,7 @@ function setBookmarkEmbedWidth(width) {
   console.log(embeds);
   if(embeds != null) {
     for (var i = 0; i < embeds.length; i++) {
-      embeds[i].style.maxWidth = width;
+      embeds[i].style.maxWidth = width + "px";
     }
   }
 }
