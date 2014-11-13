@@ -3,9 +3,9 @@
   if(table != null) {
       var tr = table.rows[table.rows.length - 1];
       console.log(tr);
-      console.log(tr.length);
+      console.log(tr.cells.length);
       
-      for(var i = tr.length - 1; i < 7; i++) {
+      for(var i = tr.cells.length - 1; i < 7; i++) {
         var td = document.createElement('td');
         td.className = 'calendar-day';
         tr.appendChild(td);
