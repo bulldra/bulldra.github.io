@@ -2,9 +2,7 @@
   var ws = document.querySelectorAll('.archive-module-calendar-week');   
   if(ws != null) {
       var w = ws[ws.length - 1];
-      var c = w.childNodes;
-      console.log(c.length);
-      console.log(c);
+      console.log(w.length);
 /*
       for(var i = c.length - 1; i <= 7; i++) {
         var td = document.createElement('td');
