@@ -23,9 +23,15 @@
         tr.appendChild(td);
       }
   }
+}
 
+function addSelectCalenderCategory() {
+  var c = document.querySelector('.archive-module-calendar');
+  if(c != null) {
 
+  }
 }
 
 google.setOnLoadCallback(transformCalender);
+google.setOnLoadCallback(addSelectCalenderCategory);
 
