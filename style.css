@@ -1121,6 +1121,13 @@ div #breadcrumb div a {
   -moz-transform: scale(1.3);
 }
 
+.hatena-module-archive .hatena-module-title a:after {
+	content: ">>一覧を見る";
+	font-size: 90%;
+	position: absolute;
+	right: 10px;
+	color: #fff;
+}
 
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
 
