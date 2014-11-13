@@ -2,7 +2,7 @@
 
   var d = document.querySelectorAll('.calendar-day span');
   for (var i = 0; i < d.length; i++) {
-	  if(d[i].innerText.match(/[0-9]/) {
+	  if(d[i].innerText.match(/[0-9]/)) {
 		  d[i].innerText = '0' + d[i].innerText;
 	  }
   }
