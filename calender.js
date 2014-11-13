@@ -2,15 +2,15 @@
 
   var d = document.querySelectorAll('.calendar-day span');
   for (var i = 0; i < d.length; i++) {
-	  if(d[i].innerText.match(/^[0-9]$/)) {
-		  d[i].innerText = '0' + d[i].innerText;
-	  }
+    if(d[i].innerText.match(/^[0-9]$/)) {
+      d[i].innerText = '0' + d[i].innerText;
+    }
   }
   
   var ed = document.querySelectorAll('.calendar-day a');
+  console.log(ed);
   for (var i = 0; i < ed.length; i++) {
     ed[i].parentNode.className += ' calendar-day-entry'
-    console.log(ed[i]);
   }
 
   /* 末尾セル追加 */
