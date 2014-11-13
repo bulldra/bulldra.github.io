@@ -1073,8 +1073,9 @@ div #breadcrumb div a {
     color:#880000;
 }
 
+
 .hatena-module .calendar-day a {
-   text-decoration:underline;
+   text-decoration:none;
 }
 
 .hatena-module .calendar-day a:hover {
@@ -1083,6 +1084,7 @@ div #breadcrumb div a {
 
 .hatena-module .calendar-day {
    border:1px solid #999;
+   padding: 3px;
 }
 
 .calendar-day:hover {
@@ -1111,6 +1113,15 @@ div #breadcrumb div a {
 .archive-module-calendar {
     padding:5px;
 }
+
+.hatena-module .calendar-day-entry {
+  background: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141114/20141114071203.png') no-repeat 0,0;
+  background-position: center;
+  background-size: contain;
+}
+
+
+
 
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
 
