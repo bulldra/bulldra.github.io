@@ -8,7 +8,6 @@
   }
   
   var ed = document.querySelectorAll('.calendar-day a');
-  console.log(ed);
   for (var i = 0; i < ed.length; i++) {
     ed[i].parentNode.className += ' calendar-day-entry'
   }
