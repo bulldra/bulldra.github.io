@@ -1074,7 +1074,7 @@ div #breadcrumb div a {
 }
 
 .hatena-module .calendar-day a {
-   text-decoration:underline;
+   font-weight:bold;
 }
 
 .hatena-module .calendar-day a:hover {
