@@ -1,15 +1,15 @@
 ﻿function transformCalender() {
-  var ws = document.querySelectorAll('.archive-module-calendar-week');   
-  if(ws != null) {
-      var w = ws[ws.length - 1];
-      console.log(w.length);
-/*
-      for(var i = c.length - 1; i <= 7; i++) {
+  var table = document.querySelector('.js-archive-module-calendar-container table');   
+  if(table != null) {
+      var tr = table.rows[table.rows.length - 1];
+      console.log(tr);
+      console.log(tr.length);
+      
+      for(var i = tr.length - 1; i < 7; i++) {
         var td = document.createElement('td');
         td.className = 'calendar-day';
-        w.appendChild(td);
+        tr.appendChild(td);
       }
-      */
   }
 }
 
