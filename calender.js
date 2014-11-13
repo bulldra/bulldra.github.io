@@ -6,7 +6,12 @@
 		  d[i].innerText = '0' + d[i].innerText;
 	  }
   }
-
+  
+  var ed = document.querySelectorAll('.calendar-day span a');
+  for (var i = 0; i < ed.length; i++) {
+    ed[i].parentNode.className += ' calendar-day-entry'
+    console.log(ed[i]);
+  }
 
   /* 末尾セル追加 */
   var table = document.querySelector('.js-archive-module-calendar-container table');   
