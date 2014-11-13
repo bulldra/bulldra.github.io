@@ -10,6 +10,7 @@
         td.className = 'calendar-day';
         w.appendChild(td);
       }
+      console.log(w);
   }
 }
 
