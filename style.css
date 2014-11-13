@@ -8,8 +8,6 @@
     font-style: normal;
 }
 
-
-
 .hand-write {
   font-family:HuiFontP109;
   font-size:120%
@@ -795,6 +793,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 
 .page-archive #main-inner .page-archive-section {
 	position: relative;
+}
 
 .page-archive #main-inner a {
 	color: #333;
@@ -1060,8 +1059,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 .hatena-profile-button:hover {
     text-decoration: none !important;
 }
-
-
 
 .my_adslot { width: 300px; height: 250px; }
 @media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
