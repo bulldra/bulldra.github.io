@@ -1075,6 +1075,7 @@ div #breadcrumb div a {
 
 .hatena-module .calendar-day a {
    font-weight:bold;
+   font-size:110%;
 }
 
 .hatena-module .calendar-day a:hover {
