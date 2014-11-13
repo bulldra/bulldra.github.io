@@ -3,3 +3,6 @@ Disallow: /gatcha.js
 Disallow: /vine.js
 Disallow: /trackback.js
 Disallow: /adsensearchive.js
+Disallow: /calender.js
+
+
