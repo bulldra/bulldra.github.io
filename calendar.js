@@ -26,7 +26,7 @@
 
 function addTransformCalendar() {
 	transformCalendar();
-	var s = document.querySelector('.archive-module-calendar-selector')
+	var s = document.querySelector('.js-archive-module-calendar-selector')
 	if(s != null) {
 	   s.addEventListener('change',  transformCalendar, false);
 	   console.log(s);
