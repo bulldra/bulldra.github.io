@@ -31,7 +31,7 @@ function addTransformCalendar() {
   var $selector = $('select.js-archive-module-calendar-selector');
   console.log($selector);
   if($selector == null) {
-	  return;
+    return;
   }
 
   var updateMyCalendar = function () {
@@ -47,46 +47,46 @@ function addTransformCalendar() {
          $('.js-archive-module-calendar-container').html(res);
          transformCalendar();
       });
-    };
-    $selector.change(function () { updateMyCalendar(); });
+  };
+
+  $selector.change(function () { updateMyCalendar(); });
       
-    var c = document.querySelector('.archive-module-calendar');
-    if(c == null) {
-      return;
-    }
-
-    var input = document.createElement('input');
-    input.type = 'button';
-    input.value = '移動';
-    input.addEventListener('click',function() {
-      var $selector = $('select.js-archive-module-calendar-selector');
-      var $date = $selector.find('option:selected');
-      var year = $date.data('year');
-      var month = $date.data('month');
-      var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + month);
-      location.href = url;
-    } , false);
-
-    var cb = document.querySelector('.js-archive-module-calendar-container');
-    c.insertBefore(input, cb);
-    consol.log(c);
-
-    var img = document.createElement('img');
-    var url = document.querySelector('.calendar-day-entry a').href;
-    img.src = 'http://capture.heartrails.com/300x250/shadow?' + url
-    img.id = 'calender-image';
-
-    var sel = document.querySelector('select.js-archive-module-calendar-selector');
-    c.insertBefore(img, sel); 
-      
-    $(function() {
-      $(".calendar-day-entry").hover(function(e) {
-          var url = $(this).find('a').attr("href");
-          var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url
-          $('#image-image').src = imgurl;
-      });
-    });
+  var c = document.querySelector('.archive-module-calendar');
+  if(c == null) {
+    return;
   }
+
+  var input = document.createElement('input');
+  input.type = 'button';
+  input.value = '移動';
+  input.addEventListener('click',function() {
+    var $selector = $('select.js-archive-module-calendar-selector');
+    var $date = $selector.find('option:selected');
+    var year = $date.data('year');
+    var month = $date.data('month');
+    var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + month);
+    location.href = url;
+  }, false);
+
+  var cb = document.querySelector('.js-archive-module-calendar-container');
+  c.insertBefore(input, cb);
+  consol.log(c);
+
+  var img = document.createElement('img');
+  var url = document.querySelector('.calendar-day-entry a').href;
+  img.src = 'http://capture.heartrails.com/300x250/shadow?' + url
+  img.id = 'calender-image';
+
+  var sel = document.querySelector('select.js-archive-module-calendar-selector');
+  c.insertBefore(img, sel); 
+      
+  $(function() {
+    $(".calendar-day-entry").hover(function(e) {
+        var url = $(this).find('a').attr("href");
+        var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url
+        $('#image-image').src = imgurl;
+      }, function(e) { } );
+  });
 }
 
 
