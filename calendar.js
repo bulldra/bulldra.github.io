@@ -1,6 +1,25 @@
 ﻿google.load("jquery", "1.7.1");
 
 function transformCalendar() {
+  var c = document.querySelector('archive-module-calendar');
+  if(c == null) {
+	  return;
+  }
+  var input = document.createElement('input');
+  input.type = 'button';
+  input.value = '移動';
+  input.addEventListenner('click',function() {
+      var $selector = $('select.js-archive-module-calendar-selector');
+      if($selector != null) {
+        var $date = $selector.find('option:selected');
+        var year = $date.data('year');
+        var month = $date.data('month');
+        var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + date),
+	location.href = url;
+      } 
+    }
+  , false);
+  c.appendChild(input);
 
   var d = document.querySelectorAll('.calendar-day span');
   for (var i = 0; i < d.length; i++) {
