@@ -60,7 +60,6 @@ function addTransformCalendar() {
           var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + date);
           location.href = url;
         } 
-      }
       , false);
       var cb = document.querySelector('js-archive-module-calendar-selector');
       c.insertBefore(input, cb);
