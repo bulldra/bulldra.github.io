@@ -1,5 +1,66 @@
 ﻿google.load("jquery", "1.7.1");
-google.setOnLoadCallback(addTransformCalendar);
+google.setOnLoadCallback(initTransformCalendar);
+
+window.addEventListener("DOMContentLoaded", function(){
+  setTimeout("transformNotify();", 200);
+}, false);
+
+function transformNotify(){
+  // 対象ノードを選択
+  var target = document.querySelector('div.js-archive-module-calendar-container');
+  // オブザーバインスタンスを作成
+  var observer = new MutationObserver(function(mutations){
+	mutations.forEach(function(mutation){
+		console.log(mutation.type);
+		transformCalendar();
+	  });
+	});
+
+   // オブザーバの設定
+    var config = { attributes: true, childList: true, characterData: true}
+
+    // 対象ノードとオブザーバの設定を渡す
+    observer.observe(target, config);
+}
+
+function initTransformCalendar() {
+  var $selector = $('select.js-archive-module-calendar-selector');
+  if($selector == null) {
+    return;
+  }
+  $selector.change(function () { transformNotify(); });
+      
+  var c = document.querySelector('.archive-module-calendar');
+  if(c == null) {
+    return;
+  }
+
+  var input = document.createElement('input');
+  input.type = 'button';
+  input.value = '一覧表示';
+  input.addEventListener('click',function() {
+    var $selector = $('select.js-archive-module-calendar-selector');
+    var $date = $selector.find('option:selected');
+    var year = $date.data('year');
+    var month = $date.data('month');
+    var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + month);
+    location.href = url;
+  }, false);
+
+  var cb = document.querySelector('.js-archive-module-calendar-container');
+  var sel = document.querySelector('select.js-archive-module-calendar-selector');
+  var img = document.createElement('img');
+  var a = document.createElement('a');
+  
+  img.id = 'image-calendar';
+  a.id = 'image-calendar-url';
+
+  c.insertBefore(input, cb);
+  c.insertBefore(a, sel); 
+  a.appendChild(img);
+  
+  transformCalendar();
+}
 
 function transformCalendar() {
   var d = document.querySelectorAll('.calendar-day span');
@@ -26,81 +87,21 @@ function transformCalendar() {
 
   var img = document.querySelector('#image-calendar');
   var a = document.querySelector('#image-calendar-url');
-	  
   var ca = document.querySelector('.calendar-day-entry a');
-  console.log(ca);
 
   a.href = ca.href;
   img.src =imgurl = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
   
   $(function() {
     $(".calendar-day-entry").hover(function(e) {
-        var url = $(this).find('a').attr("href");
-        var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
-        var img = document.querySelector('#image-calendar');
         var a = document.querySelector('#image-calendar-url');
-	
-	img.src = imgurl;
+        var url = $(this).find('a').attr("href");
 	a.href = url;
+
+        var img = document.querySelector('#image-calendar');
+        var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
+	img.src = imgurl;
       }, function(e) { } );
   });
 }
-
-function addTransformCalendar() {
-  var $selector = $('select.js-archive-module-calendar-selector');
-  if($selector == null) {
-    return;
-  }
-
-  var updateMyCalendar = function () {
-    var $date = $selector.find('option:selected');
-    var year = $date.data('year');
-    var month = $date.data('month');
-
-    $.ajax({
-        type: 'get',
-        url: Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'),
-        data: { month : month, year: year }
-      }).done(function(res) { 
-         $('.js-archive-module-calendar-container').html(res);
-         transformCalendar();
-      });
-  };
-
-  $selector.change(function () { updateMyCalendar(); });
-      
-  var c = document.querySelector('.archive-module-calendar');
-  if(c == null) {
-    return;
-  }
-
-  var input = document.createElement('input');
-  input.type = 'button';
-  input.value = '移動';
-  input.addEventListener('click',function() {
-    var $selector = $('select.js-archive-module-calendar-selector');
-    var $date = $selector.find('option:selected');
-    var year = $date.data('year');
-    var month = $date.data('month');
-    var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + month);
-    location.href = url;
-  }, false);
-
-  var cb = document.querySelector('.js-archive-module-calendar-container');
-  c.insertBefore(input, cb);
-
-  var sel = document.querySelector('select.js-archive-module-calendar-selector');
-  
-  var img = document.createElement('img');
-  img.id = 'image-calendar';
-  
-  var a = document.createElement('a');
-  a.id = 'image-calendar-url';
-
-  c.insertBefore(a, sel); 
-  a.appendChild(img);
-  
-  transformCalendar();
-}
-
 
