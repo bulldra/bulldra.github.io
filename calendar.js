@@ -1,4 +1,6 @@
-﻿function transformCalendar() {
+﻿google.load("jquery", "2.1.1");
+
+function transformCalendar() {
 
   var d = document.querySelectorAll('.calendar-day span');
   for (var i = 0; i < d.length; i++) {
