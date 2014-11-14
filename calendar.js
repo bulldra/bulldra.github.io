@@ -57,10 +57,11 @@ function initTransformCalendar() {
 }
 
 function transformCalendar() {
-  /* 現在のURLのスクリーンキャプチャ表示 */
+  /* 指定月の最初の更新日のスクリーンキャプチャを表示 */
   var img = document.querySelector('#image-calendar');
   var a = document.querySelector('#image-calendar-url');
-  a.href = location.href;
+  var ea = document.querySelector('.calendar-day a');
+  a.href = ea.href;
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
 
   /* 枠線埋め */
