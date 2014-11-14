@@ -1,11 +1,6 @@
 ﻿google.load("jquery", "1.7.1");
 
 function transformCalendar() {
-  var c = document.querySelector('.archive-module-calendar');
-  if(c == null) {
-	  return;
-  }
-
   var d = document.querySelectorAll('.calendar-day span');
   for (var i = 0; i < d.length; i++) {
     if(d[i].innerText.match(/^[0-9]$/)) {
@@ -50,6 +45,11 @@ function addTransformCalendar() {
       };
       $selector.change(function () { updateMyCalendar(); });
       
+      var c = document.querySelector('.archive-module-calendar');
+      if(c == null) {
+	  return;
+      }
+
       var input = document.createElement('input');
       input.type = 'button';
       input.value = '移動';
