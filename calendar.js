@@ -62,6 +62,7 @@ function transformCalendar() {
   var a = document.querySelector('#image-calendar-url');
   var ea = document.querySelector('.calendar-day a');
   a.href = ea.href;
+  a.rel = 'nofollow';
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
 
   /* 枠線埋め */
