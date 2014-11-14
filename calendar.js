@@ -24,7 +24,7 @@
   }
 }
 
-addTrasFormCalendar() {
+function addTrasFormCalendar() {
 	var s = document.querySelector('.archive-module-calendar-selector')
 	if(s != null) {
 		s.addEventListener('change',  trasformCalendar, false);
