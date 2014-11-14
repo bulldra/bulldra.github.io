@@ -35,10 +35,6 @@ function initTransformCalendar() {
   img.id = 'image-calendar';
   a.id = 'image-calendar-url';
 
-  c.insertBefore(input, cb);
-  c.insertBefore(a, sel); 
-  a.appendChild(img);
-
   var input = document.createElement('input');
   input.type = 'button';
   input.value = '一覧表示';
@@ -50,6 +46,10 @@ function initTransformCalendar() {
     var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + month);
     location.href = url;
   }, false);
+
+  c.insertBefore(input, cb);
+  c.insertBefore(a, sel); 
+  a.appendChild(img);
 
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
