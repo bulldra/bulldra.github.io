@@ -80,6 +80,7 @@ function addTransformCalendar() {
 
 	$(function() {
 	  $(".calendar-day-entry").hover(function(e) {
+	    console.log(e)
             var annotation = $(this).attr("title");
 	      $(this).removeAttr("title");
 	      if (annotation != undefined) {
