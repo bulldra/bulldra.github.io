@@ -83,7 +83,7 @@ function addTransformCalendar() {
         var url = $(this).find('a').attr("href");
 	console.log(url);
         var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url
-        $('#image-image').src = imgurl;
+        var image-calender.src = imgurl;
       }, function(e) { } );
   });
 }
