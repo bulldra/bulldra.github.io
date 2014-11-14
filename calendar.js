@@ -80,11 +80,11 @@ function addTransformCalendar() {
 
 	$(function() {
 	  $(".calendar-day-entry").hover(function(e) {
-	    console.log(e)
-            var annotation = $(this).attr("title");
-	      $(this).removeAttr("title");
-	      if (annotation != undefined) {
-		  popupObj.html(annotation)
+            var url = $(this).find('a').attr("href");
+	    console.log(url);
+
+	      if (url != undefined) {
+		  popupObj.html(url)
 		    .css({
 			'top' : e.pageY,
 			'left' : e.pageX + 20,
