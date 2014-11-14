@@ -86,7 +86,7 @@ function addTransformCalendar() {
 	    
 
 	      if (url != undefined) {
-		  popupObj.html('<div style="width:150px">title</div><img src="' + imgurl + '"/>' )
+		  popupObj.html('<div style="width:150px">' + title + '</div><img src="' + imgurl + '"/>' )
 		    .css({
 			'top' : e.pageY,
 			'left' : e.pageX - 50,
