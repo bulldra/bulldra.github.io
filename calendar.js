@@ -28,8 +28,7 @@ function addTransformCalendar() {
 	transformCalendar();
 	var s = document.querySelector('.js-archive-module-calendar-selector')
 	if(s != null) {
-	   s.removeEmeventListner('change', updateCalnedar,false);
-	   s.addEventListener('change',  function() { updateCalendar(); transformCalendar; }, false);
+	   s.addEventListener('change',  transformCalendar, false);
 	   console.log(s);
 	}
 }
