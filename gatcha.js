@@ -74,19 +74,16 @@ function writeGatchaCategory(id) {
   if(id === undefined || id == null){ 
     id = 'side-';
   }
-  console.log(id);
 
   var blogURL = getBlogUrl();
   var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
     + '&blog=' + blogURL
     + '&_id=31da73e0525591d9dd0c0702856a3b5b&_render=rss';
-  console.log(relRssUrl);
 
   var feed = new google.feeds.Feed(relRssUrl);
   feed.setNumEntries(100);
   feed.load(function(result) {
     var s = document.getElementById(id + 'inGatchaCategory');
-    console.log(s);
     
     var entries = new Array();
     if (!result.error && result.feed.entries.length > 0) {
@@ -119,7 +116,6 @@ function writeGatchaCategory(id) {
       o.selected = true;
     }
     
-    console.log(s.selectedIndex);
     runGatcha(id);
   });
 }
@@ -132,7 +128,6 @@ function createOption(value, name) {
 }
 
 function switchGatchButton(is, id) {
-  console.log(id)
   document.getElementById(id + 'btnNormalGatcha').disabled = !is;
   document.getElementById(id + 'btnMoveGatcha').disabled = !is;
   document.getElementById(id + 'inGatchaCategory').disabled = !is;  
@@ -153,7 +148,6 @@ function moveGatcha(id) {
   } else {
     href = blogUrl + '/archive/category/' + s.value;
   }
-  console.log(blogUrl);
   switchGatchButton(true, id);
   location.href = href;
 }
@@ -175,7 +169,6 @@ function runGatcha(id) {
 }
 
 function runCommonGatcha(id, rss) {
-  console.log(rss);
   var fetchNum = document.getElementById(id +'inGatchaNum').value;
   var feed = new google.feeds.Feed(rss);
   feed.setNumEntries(50);
@@ -184,9 +177,7 @@ function runCommonGatcha(id, rss) {
     if (!result.error && result.feed.entries.length > 0) {
         entries = result.feed.entries;
     } else {
-	console.log(result.error);
     }
-    console.log("result.length="+ entries.length);
     entries = removeThisEntry(entries);
     var span = document.getElementById(id + 'gachaSpan');
     createOwnHtml(span, null,entries, null, fetchNum);
@@ -235,12 +226,10 @@ function runNormalGatcha(id) {
           ;
         } else {
           entries = entries.concat(result.feed.entries);
-          console.log("result[" + c + "].length="+ result.feed.entries.length);
         }
 
 	if(++c == feeds.length) {
           entries = removeThisEntry(entries);
-          console.log("result.length="+ entries.length);
           var span = document.getElementById(id + 'gachaSpan');
           createOwnHtml(span, null, entries, null, fetchNum);
 	}
