@@ -83,9 +83,10 @@ function addTransformCalendar() {
             var title = $(this).attr("title");
             var url = $(this).find('a').attr("href");
             var imgurl = 'http://capture.heartrails.com/150x130/shadow?' + url
+	    
 
 	      if (url != undefined) {
-		  popupObj.html('<img src="' + imgurl + '"/>' )
+		  popupObj.html('<div style="width:150px">title</div><img src="' + imgurl + '"/>' )
 		    .css({
 			'top' : e.pageY,
 			'left' : e.pageX - 50,
