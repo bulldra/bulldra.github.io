@@ -14,7 +14,7 @@ function transformCalendar() {
         var $date = $selector.find('option:selected');
         var year = $date.data('year');
         var month = $date.data('month');
-        var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + date),
+        var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + date);
 	location.href = url;
       } 
     }
