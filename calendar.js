@@ -73,7 +73,7 @@ function addTransformCalendar() {
   var img = document.createElement('img');
   var url = document.querySelector('.calendar-day-entry a').href;
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + url
-  img.id = 'calender-image';
+  img.id = 'image-calendar';
 
   var sel = document.querySelector('select.js-archive-module-calendar-selector');
   c.insertBefore(img, sel); 
@@ -83,7 +83,7 @@ function addTransformCalendar() {
         var url = $(this).find('a').attr("href");
 	console.log(url);
         var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
-        document.querySelector('#image-calender').src = imgurl;
+        document.querySelector('#image-calendar').src = imgurl;
       }, function(e) { } );
   });
 }
