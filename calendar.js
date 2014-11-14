@@ -82,7 +82,8 @@ function addTransformCalendar() {
             var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url
             $('#image-image').src = imgurl
 	  });
-    }
+      }
+   }
 }
 
 
