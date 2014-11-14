@@ -25,20 +25,6 @@ function transformCalendar() {
   }
   
 
-  var c = document.querySelector('.archive-module-calendar');
-  var cb = document.querySelector('.js-archive-module-calendar-container');
-  var img = document.createElement('img');
-  var url = document.querySelector('.calendar-day-entry a').href;
-  img.src = 'http://capture.heartrails.com/300x250/shadow?' + url
-  img.id = 'image-calendar';
-
-  var a = document.createElement('a');
-  a.href = url;
-  a.id = 'image-calendar-url';
-  a.appendChild(img);
-
-  var sel = document.querySelector('select.js-archive-module-calendar-selector');
-  c.insertBefore(a, sel); 
   
   $(function() {
     $(".calendar-day-entry").hover(function(e) {
@@ -97,6 +83,19 @@ function addTransformCalendar() {
 
   var cb = document.querySelector('.js-archive-module-calendar-container');
   c.insertBefore(input, cb);
+  
+  var img = document.createElement('img');
+  var url = document.querySelector('.calendar-day-entry a').href;
+  img.src = 'http://capture.heartrails.com/300x250/shadow?' + url
+  img.id = 'image-calendar';
+
+  var a = document.createElement('a');
+  a.href = url;
+  a.id = 'image-calendar-url';
+  a.appendChild(img);
+
+  var sel = document.querySelector('select.js-archive-module-calendar-selector');
+  c.insertBefore(a, sel); 
 }
 
 
