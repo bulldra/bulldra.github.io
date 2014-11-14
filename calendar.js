@@ -83,18 +83,11 @@ function addTransformCalendar() {
 	    
             var url = $(this).find('a').attr("href");
             var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url
-	    popupObj.html('<img src="' + imgurl + '"/>' )
-		    .css({
-			'top' : e.pageY,
-			'left' : e.pageX - 50,
-	             });
+	    popupObj.html('<img src="' + imgurl + '"/>');
 	    $(popupObj).show();
 	   }, function() {
-		if ($(popupObj).text()) {
-	          $(this).attr("title", $(popupObj).text());
 	          $(popupObj).hide();
-                  $(popupObj).html('');
-		}
+        	}
 	   });
 	});
 
