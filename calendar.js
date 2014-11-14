@@ -6,21 +6,19 @@ window.addEventListener("DOMContentLoaded", function(){
 }, false);
 
 function transformNotify(){
-  // 対象ノードを選択
-  var target = document.querySelector('div.js-archive-module-calendar-container');
   // オブザーバインスタンスを作成
   var observer = new MutationObserver(function(mutations){
-	mutations.forEach(function(mutation){
-		console.log(mutation.type);
-		transformCalendar();
-	  });
-	});
+    mutations.forEach(function(mutation){ transformCalendar(); });
+  });
 
-   // オブザーバの設定
-    var config = { attributes: true, childList: true, characterData: true}
+  // オブザーバの設定
+  var config = { attributes: true, childList: true, characterData: true};
 
-    // 対象ノードとオブザーバの設定を渡す
-    observer.observe(target, config);
+  // 対象ノードを選択
+  var cb = document.querySelector('.js-archive-module-calendar-container');
+
+  // 対象ノードとオブザーバの設定を渡す
+  observer.observe(cb, config);
 }
 
 function initTransformCalendar() {
