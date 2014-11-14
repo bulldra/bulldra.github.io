@@ -1,7 +1,7 @@
 ﻿google.load("jquery", "1.7.1");
 
 function transformCalendar() {
-  var c = document.querySelector('archive-module-calendar');
+  var c = document.querySelector('.archive-module-calendar');
   if(c == null) {
 	  return;
   }
