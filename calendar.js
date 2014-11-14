@@ -79,10 +79,10 @@ function transformCalendar() {
       }
   }
 
+  /* 現在のURLのスクリーンキャプチャ作成 */
   var img = document.querySelector('#image-calendar');
   var a = document.querySelector('#image-calendar-url');
-  var ca = document.querySelector('.calendar-day-entry a');
-  a.href = ca.href;
+  a.href = location.href;
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
   
   $(function() {
