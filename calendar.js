@@ -82,7 +82,7 @@ function addTransformCalendar() {
 	  $(".calendar-day-entry").hover(function(e) {
 	    
             var url = $(this).find('a').attr("href");
-            var imgurl = 'http://capture.heartrails.com/150x130/shadow?' + url
+            var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url
 	    popupObj.html('<img src="' + imgurl + '"/>' )
 		    .css({
 			'top' : e.pageY,
