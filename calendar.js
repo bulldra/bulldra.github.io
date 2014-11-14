@@ -26,10 +26,12 @@ function transformCalendar() {
 
   var img = document.querySelector('#image-calendar');
   var a = document.querySelector('#image-calendar-url');
+	  
+  var ca = document.querySelector('.calendar-day-entry a');
+  console.log(ca);
 
-  a.href = document.querySelector('.calendar-day-entry a').href;
-  img.src =imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
-	
+  a.href = ca.href;
+  img.src =imgurl = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
   
   $(function() {
     $(".calendar-day-entry").hover(function(e) {
