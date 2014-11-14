@@ -29,7 +29,6 @@ function addTransformCalendar() {
   transformCalendar();
 
   var $selector = $('select.js-archive-module-calendar-selector');
-  console.log($selector);
   if($selector == null) {
     return;
   }
@@ -70,7 +69,6 @@ function addTransformCalendar() {
 
   var cb = document.querySelector('.js-archive-module-calendar-container');
   c.insertBefore(input, cb);
-  consol.log(c);
 
   var img = document.createElement('img');
   var url = document.querySelector('.calendar-day-entry a').href;
@@ -79,6 +77,8 @@ function addTransformCalendar() {
 
   var sel = document.querySelector('select.js-archive-module-calendar-selector');
   c.insertBefore(img, sel); 
+  
+  console.log(c);
       
   $(function() {
     $(".calendar-day-entry").hover(function(e) {
