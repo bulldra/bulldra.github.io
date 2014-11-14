@@ -86,19 +86,18 @@ function transformCalendar() {
   var img = document.querySelector('#image-calendar');
   var a = document.querySelector('#image-calendar-url');
   var ca = document.querySelector('.calendar-day-entry a');
-
   a.href = ca.href;
-  img.src =imgurl = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
+  img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
   
   $(function() {
     $(".calendar-day-entry").hover(function(e) {
-        var a = document.querySelector('#image-calendar-url');
         var url = $(this).find('a').attr("href");
+
+        var a = document.querySelector('#image-calendar-url');
 	a.href = url;
 
         var img = document.querySelector('#image-calendar');
-        var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
-	img.src = imgurl;
+	img.src = 'http://capture.heartrails.com/300x250/shadow?' + url;
       }, function(e) { } );
   });
 }
