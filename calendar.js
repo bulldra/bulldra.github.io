@@ -65,32 +65,20 @@ function addTransformCalendar() {
       var cb = document.querySelector('.js-archive-module-calendar-container');
       c.insertBefore(input, cb);
 
-      var popupObj = $('<span></span>');
-	popupObj.css({
-		'position' : 'absolute',
-		'padding' : '5px',
-		'background-color' : '#eaeaea',
-		'border' : '1px solid #999999',
-		'border-radius' : '3px',
-		'max-width' : '500px',
-		'z-index' : '9999',
-	});
-	$('body').prepend(popupObj);
-	$(popupObj).hide();
+      var img = document.createElement('img');
+      var url = document.querySelector('.calendar-day-entry a').href;
+      img.src = 'http://capture.heartrails.com/300x250/shadow?' + url
+      img.id = 'calender-image';
 
-	$(function() {
+      var sel = document.querySelector('select.js-archive-module-calendar-selector');
+      c.insertBefore(img, sel); 
+      
+      $(function() {
 	  $(".calendar-day-entry").hover(function(e) {
-	    
             var url = $(this).find('a').attr("href");
             var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url
-	    popupObj.html('<img src="' + imgurl + '"/>');
-	    $(popupObj).show();
-	   }, function() {
-	          $(popupObj).hide();
-        	}
-	   });
-	});
-
+            $('#image-image').src = imgurl
+	  });
     }
 }
 
