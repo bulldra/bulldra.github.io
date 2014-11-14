@@ -45,7 +45,7 @@ function addTransformCalendar() {
           });
        };
 
-       $selector.addEventListener('change',  updateCalendar, false);
+       document.querySelector('.js-archive-module-calendar-selector').addEventListener('change',  updateCalendar, false);
     }
 }
 
