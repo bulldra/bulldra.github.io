@@ -28,10 +28,10 @@ function transformCalendar() {
 
 function addTransformCalendar() {
   transformCalendar();
-  var s = document.querySelector('.js-archive-module-calendar-selector')
-    if(s != null) {
+  var $selector = $archive.find('.js-archive-module-calendar-selector');
+  if(s != null) {
       var updateCalendar = function () {
-      var $date = s.find('option:selected');
+      var $date = $selector.find('option:selected');
       var year = $date.data('year');
       var month = $date.data('month');
 
@@ -46,7 +46,6 @@ function addTransformCalendar() {
        };
 
        s.addEventListener('change',  updateCalendar, false);
-       console.log(s);
     }
 }
 
