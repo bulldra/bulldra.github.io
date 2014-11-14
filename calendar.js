@@ -1,4 +1,4 @@
-﻿google.load("jquery", "2.1.1");
+﻿google.load("jquery", "1.7.1");
 
 function transformCalendar() {
 
