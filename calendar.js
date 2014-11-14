@@ -31,21 +31,23 @@ function addTransformCalendar() {
   var $selector = $('select').find('.js-archive-module-calendar-selector');
   console.log($selector);
   if($selector != null) {
-      var updateMyCalendar = function () {
-        var $date = $selector.find('option:selected');
-        var year = $date.data('year');
-        var month = $date.data('month');
+    console.log($selector);
 
-	console.log(date);
-        console.log(Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'));
+    var updateMyCalendar = function () {
+      var $date = $selector.find('option:selected');
+      var year = $date.data('year');
+      var month = $date.data('month');
 
-        $.ajax({
+      console.log(date);
+      console.log(Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'));
+
+      $.ajax({
           type: 'get',
           url: Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'),
           data: { month : month, year: year }
         }).done(function(res) { 
-            $.find('.js-archive-module-calendar-container').html(res);
-            transformCalendar();
+          $.find('.js-archive-module-calendar-container').html(res);
+          transformCalendar();
         });
       };
       $selector.change(function () { updateMyCalendar(); });
