@@ -29,16 +29,11 @@ function transformCalendar() {
 function addTransformCalendar() {
   transformCalendar();
   var $selector = $('select.js-archive-module-calendar-selector');
-  console.log($selector);
   if($selector != null) {
-    console.log($selector);
-
     var updateMyCalendar = function () {
       var $date = $selector.find('option:selected');
       var year = $date.data('year');
       var month = $date.data('month');
-
-      console.log(Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'));
 
       $.ajax({
           type: 'get',
