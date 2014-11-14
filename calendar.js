@@ -28,6 +28,9 @@ function transformCalendar() {
 
 function addTransformCalendar() {
   transformCalendar();
+  var $archives = $('.hatena-module-archive');
+  if ( $archives.length === 0 ) return;
+
   var $selector = $archive.find('.js-archive-module-calendar-selector');
   if($selector != null) {
       var updateCalendar = function () {
