@@ -64,6 +64,43 @@ function addTransformCalendar() {
       , false);
       var cb = document.querySelector('.js-archive-module-calendar-container');
       c.insertBefore(input, cb);
+
+      var popupObj = $('<span></span>');
+	popupObj.css({
+		'position' : 'absolute',
+		'padding' : '5px',
+		'background-color' : '#eaeaea',
+		'border' : '1px solid #999999',
+		'border-radius' : '3px',
+		'max-width' : '500px',
+		'z-index' : '9999',
+	});
+	$('body').prepend(popupObj);
+	$(popupObj).hide();
+
+
+
+	$(function() {
+		$(".calendar-day-entry").hover(function(e) {
+			var annotation = $(this).attr("title");
+			$(this).removeAttr("title");
+			if (annotation != undefined) {
+				popupObj.html(annotation)
+						.css({
+							'top' : e.pageY,
+							'left' : e.pageX + 20,
+						});
+				$(popupObj).show();
+			}
+		},
+		function() {
+			if ($(popupObj).text()) {
+				$(this).attr("title", $(popupObj).text());
+				$(popupObj).hide();
+				$(popupObj).html('');
+			}
+		});
+
     }
 }
 
