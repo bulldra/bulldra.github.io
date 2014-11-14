@@ -39,13 +39,13 @@ function addTransformCalendar() {
          type: 'get',
          url: Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'),
          data: { month : month, year: year }
-       }).done(function(res) { // days object
+       }).done(function(res) { 
             $.find('.js-archive-module-calendar-container').html(res);
             transformCalendar();
           });
        };
 
-       s.addEventListener('change',  updateCalendar, false);
+       $selector.addEventListener('change',  updateCalendar, false);
     }
 }
 
