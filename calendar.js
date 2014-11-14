@@ -31,7 +31,6 @@ function addTransformCalendar() {
 	   s.addEventListener('change',  transformCalendar, false);
 	   console.log(s);
 	}
-	console.log(s);
 }
 
 google.setOnLoadCallback(addTransformCalendar);
