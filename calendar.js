@@ -25,26 +25,27 @@
 }
 
 function addTransformCalendar() {
-	transformCalendar();
-	var s = document.querySelector('.js-archive-module-calendar-selector')
-	if(s != null) {
-            var updateCalendar = function () {
-              var $date = s.find('option:selected');
-              var year = $date.data('year');
-              var month = $date.data('month');
+  transformCalendar();
+  var s = document.querySelector('.js-archive-module-calendar-selector')
+    if(s != null) {
+      var updateCalendar = function () {
+      var $date = s.find('option:selected');
+      var year = $date.data('year');
+      var month = $date.data('month');
 
-            $.ajax({
-               type: 'get',
-               url: Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'),
-               data: { month : month, year: year }
-           }).done(function(res) { // days object
-               $archive.find('.js-archive-module-calendar-container').html(res);
-	        transformCalendar();
-            });
-          };
-	   s.addEventListener('change',  updateCalneder, false);
-	   console.log(s);
-	}
+      $.ajax({
+         type: 'get',
+         url: Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'),
+         data: { month : month, year: year }
+       }).done(function(res) { // days object
+            $archive.find('.js-archive-module-calendar-container').html(res);
+            transformCalendar();
+          });
+       };
+
+       s.addEventListener('change',  updateCalender, false);
+       console.log(s);
+    }
 }
 
 google.setOnLoadCallback(addTransformCalendar);
