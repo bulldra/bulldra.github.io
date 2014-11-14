@@ -82,8 +82,8 @@ function addTransformCalendar() {
     $(".calendar-day-entry").hover(function(e) {
         var url = $(this).find('a').attr("href");
 	console.log(url);
-        var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url
-        var $('#image-calender').src = imgurl;
+        var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
+        $('#image-calender').src = imgurl;
       }, function(e) { } );
   });
 }
