@@ -23,6 +23,33 @@ function transformCalendar() {
         tr.appendChild(td);
       }
   }
+  
+
+  var cb = document.querySelector('.js-archive-module-calendar-container');
+  var img = document.createElement('img');
+  var url = document.querySelector('.calendar-day-entry a').href;
+  img.src = 'http://capture.heartrails.com/300x250/shadow?' + url
+  img.id = 'image-calendar';
+
+  var a = document.createElement('a');
+  a.href = url;
+  a.id = 'image-calendar-url';
+  a.appendChild(img);
+
+  var sel = document.querySelector('select.js-archive-module-calendar-selector');
+  c.insertBefore(a, sel); 
+  
+  $(function() {
+    $(".calendar-day-entry").hover(function(e) {
+        var url = $(this).find('a').attr("href");
+        var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
+        var img = document.querySelector('#image-calendar');
+	img.src = imgurl;
+
+        var a = document.querySelector('#image-calendar-url');
+	a.href = url;
+      }, function(e) { } );
+  });
 }
 
 function addTransformCalendar() {
@@ -69,23 +96,6 @@ function addTransformCalendar() {
 
   var cb = document.querySelector('.js-archive-module-calendar-container');
   c.insertBefore(input, cb);
-
-  var img = document.createElement('img');
-  var url = document.querySelector('.calendar-day-entry a').href;
-  img.src = 'http://capture.heartrails.com/300x250/shadow?' + url
-  img.id = 'image-calendar';
-
-  var sel = document.querySelector('select.js-archive-module-calendar-selector');
-  c.insertBefore(img, sel); 
-  
-  $(function() {
-    $(".calendar-day-entry").hover(function(e) {
-        var url = $(this).find('a').attr("href");
-        var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
-        var img = document.querySelector('#image-calendar');
-	img.src = imgurl;
-      }, function(e) { } );
-  });
 }
 
 
