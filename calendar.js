@@ -25,6 +25,7 @@
 }
 
 function addTransformCalendar() {
+	transformCalendar();
 	var s = document.querySelector('.archive-module-calendar-selector')
 	if(s != null) {
 		s.addEventListener('change',  trasformCalendar, false);
@@ -32,6 +33,5 @@ function addTransformCalendar() {
 	console.log(s);
 }
 
-google.setOnLoadCallback(transformCalendar);
 google.setOnLoadCallback(addTransformCalendar);
 
