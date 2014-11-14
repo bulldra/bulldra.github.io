@@ -81,17 +81,14 @@ function addTransformCalendar() {
 	$(function() {
 	  $(".calendar-day-entry").hover(function(e) {
 	    
-	    var $title = $(this).find('span').removeAttr("title");
             var url = $(this).find('a').attr("href");
             var imgurl = 'http://capture.heartrails.com/150x130/shadow?' + url
-	    if (anotation != undefined) {
-		  popupObj.html('<img src="' + imgurl + '"/>' )
+	    popupObj.html('<img src="' + imgurl + '"/>' )
 		    .css({
 			'top' : e.pageY,
 			'left' : e.pageX - 50,
 	             });
-	          $(popupObj).show();
-	       }
+	    $(popupObj).show();
 	   }, function() {
 		if ($(popupObj).text()) {
 	          $(this).attr("title", $(popupObj).text());
