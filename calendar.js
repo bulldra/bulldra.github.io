@@ -81,14 +81,11 @@ function addTransformCalendar() {
 	$(function() {
 	  $(".calendar-day-entry").hover(function(e) {
 	    
-	    var $title = $(this).find('span');
-	    var anotation = $title.attr("title");
-            $title.removeAttr("title");
-
+	    var $title = $(this).find('span').removeAttr("title");
             var url = $(this).find('a').attr("href");
             var imgurl = 'http://capture.heartrails.com/150x130/shadow?' + url
 	    if (anotation != undefined) {
-		  popupObj.html('<div style="width:150px">' + anotation + '</div><img src="' + imgurl + '"/>' )
+		  popupObj.html('<img src="' + imgurl + '"/>' )
 		    .css({
 			'top' : e.pageY,
 			'left' : e.pageX - 50,
