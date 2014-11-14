@@ -57,6 +57,16 @@ function initTransformCalendar() {
 }
 
 function transformCalendar() {
+  var table = document.querySelector('.js-archive-module-calendar-container table');   
+  if(table != null) {
+      var tr = table.rows[table.rows.length - 1];
+      for(var i = tr.cells.length; i < 7; i++) {
+        var td = document.createElement('td');
+        td.className = 'calendar-day';
+        tr.appendChild(td);
+      }
+  }
+
   var d = document.querySelectorAll('.calendar-day span');
   for (var i = 0; i < d.length; i++) {
     if(d[i].innerText.match(/^[0-9]$/)) {
@@ -69,17 +79,7 @@ function transformCalendar() {
     ed[i].parentNode.className += ' calendar-day-entry'
   }
 
-  var table = document.querySelector('.js-archive-module-calendar-container table');   
-  if(table != null) {
-      var tr = table.rows[table.rows.length - 1];
-      for(var i = tr.cells.length; i < 7; i++) {
-        var td = document.createElement('td');
-        td.className = 'calendar-day';
-        tr.appendChild(td);
-      }
-  }
-
-  /* 現在のURLのスクリーンキャプチャ作成 */
+  /* 現在のURLのスクリーンキャプチャ表示 */
   var img = document.querySelector('#image-calendar');
   var a = document.querySelector('#image-calendar-url');
   a.href = location.href;
@@ -87,11 +87,10 @@ function transformCalendar() {
   
   $(function() {
     $(".calendar-day-entry").hover(function(e) {
+	/* 選択した日付のスクリーンキャプチャ表示 */
         var url = $(this).find('a').attr("href");
-
         var a = document.querySelector('#image-calendar-url');
 	a.href = url;
-
         var img = document.querySelector('#image-calendar');
 	img.src = 'http://capture.heartrails.com/300x250/shadow?' + url;
       }, function(e) { } );
