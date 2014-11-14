@@ -1,4 +1,5 @@
 ﻿google.load("jquery", "1.7.1");
+google.setOnLoadCallback(addTransformCalendar);
 
 function transformCalendar() {
   var d = document.querySelectorAll('.calendar-day span');
@@ -13,7 +14,6 @@ function transformCalendar() {
     ed[i].parentNode.className += ' calendar-day-entry'
   }
 
-  /* 末尾セル追加 */
   var table = document.querySelector('.js-archive-module-calendar-container table');   
   if(table != null) {
       var tr = table.rows[table.rows.length - 1];
@@ -85,5 +85,4 @@ function addTransformCalendar() {
     }
 }
 
-google.setOnLoadCallback(addTransformCalendar);
 
