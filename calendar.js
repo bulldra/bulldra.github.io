@@ -1,4 +1,4 @@
-﻿function transformCalender() {
+﻿function transformCalendar() {
 
   var d = document.querySelectorAll('.calendar-day span');
   for (var i = 0; i < d.length; i++) {
@@ -24,13 +24,14 @@
   }
 }
 
-function addSelectCalenderCategory() {
-  var c = document.querySelector('.archive-module-calendar');
-  if(c != null) {
+addTrasFormCalendar() {
+	var s = document.querySelector('.archive-module-calendar-selector')
+	if(s != null) {
+		s.addEventListener('change',  trasformCalendar, false);
 
-  }
+	}
 }
 
-google.setOnLoadCallback(transformCalender);
-google.setOnLoadCallback(addSelectCalenderCategory);
+google.setOnLoadCallback(transformCalendar);
+google.setOnLoadCallback(addTransformCalendar);
 
