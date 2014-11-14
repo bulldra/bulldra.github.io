@@ -8,7 +8,7 @@ function transformCalendar() {
   var input = document.createElement('input');
   input.type = 'button';
   input.value = '移動';
-  input.addEventListenner('click',function() {
+  input.addEventListener('click',function() {
       var $selector = $('select.js-archive-module-calendar-selector');
       if($selector != null) {
         var $date = $selector.find('option:selected');
