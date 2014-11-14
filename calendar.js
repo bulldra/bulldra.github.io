@@ -28,7 +28,7 @@ function transformCalendar() {
 
 function addTransformCalendar() {
   transformCalendar();
-  var $selector = $('select').find('.js-archive-module-calendar-selector');
+  var $selector = $('select.js-archive-module-calendar-selector');
   console.log($selector);
   if($selector != null) {
     console.log($selector);
