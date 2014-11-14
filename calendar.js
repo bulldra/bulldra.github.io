@@ -22,16 +22,22 @@ function transformNotify(){
 }
 
 function initTransformCalendar() {
-  var $selector = $('select.js-archive-module-calendar-selector');
-  if($selector == null) {
-    return;
-  }
-  $selector.change(function () { transformNotify(); });
-      
   var c = document.querySelector('.archive-module-calendar');
   if(c == null) {
     return;
   }
+  
+  var cb = document.querySelector('.js-archive-module-calendar-container');
+  var sel = document.querySelector('select.js-archive-module-calendar-selector');
+  var img = document.createElement('img');
+  var a = document.createElement('a');
+  
+  img.id = 'image-calendar';
+  a.id = 'image-calendar-url';
+
+  c.insertBefore(input, cb);
+  c.insertBefore(a, sel); 
+  a.appendChild(img);
 
   var input = document.createElement('input');
   input.type = 'button';
@@ -45,18 +51,8 @@ function initTransformCalendar() {
     location.href = url;
   }, false);
 
-  var cb = document.querySelector('.js-archive-module-calendar-container');
-  var sel = document.querySelector('select.js-archive-module-calendar-selector');
-  var img = document.createElement('img');
-  var a = document.createElement('a');
-  
-  img.id = 'image-calendar';
-  a.id = 'image-calendar-url';
-
-  c.insertBefore(input, cb);
-  c.insertBefore(a, sel); 
-  a.appendChild(img);
-  
+  var $selector = $('select.js-archive-module-calendar-selector');
+  $selector.change(function () { transformNotify(); });
   transformCalendar();
 }
 
