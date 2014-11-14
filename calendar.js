@@ -25,15 +25,20 @@ function transformCalendar() {
   }
   
 
+  var img = document.querySelector('#image-calendar');
+  var a = document.querySelector('#image-calendar-url');
+  a.href = document.querySelector('.calendar-day-entry a').href;
+  img.src =imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
+	
   
   $(function() {
     $(".calendar-day-entry").hover(function(e) {
         var url = $(this).find('a').attr("href");
         var imgurl = 'http://capture.heartrails.com/300x250/shadow?' + url;
         var img = document.querySelector('#image-calendar');
-	img.src = imgurl;
-
         var a = document.querySelector('#image-calendar-url');
+	
+	img.src = imgurl;
 	a.href = url;
       }, function(e) { } );
   });
