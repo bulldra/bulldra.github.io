@@ -28,10 +28,7 @@ function transformCalendar() {
 
 function addTransformCalendar() {
   transformCalendar();
-  var $archives = $('.hatena-module-archive');
-  if ( $archives.length === 0 ) return;
-
-  var $selector = $archive.find('.js-archive-module-calendar-selector');
+  var $selector = $.find('.js-archive-module-calendar-selector');
   if($selector != null) {
       var updateCalendar = function () {
       var $date = $selector.find('option:selected');
@@ -43,7 +40,7 @@ function addTransformCalendar() {
          url: Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'),
          data: { month : month, year: year }
        }).done(function(res) { // days object
-            $archive.find('.js-archive-module-calendar-container').html(res);
+            $.find('.js-archive-module-calendar-container').html(res);
             transformCalendar();
           });
        };
