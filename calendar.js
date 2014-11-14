@@ -78,29 +78,26 @@ function addTransformCalendar() {
 	$('body').prepend(popupObj);
 	$(popupObj).hide();
 
-
-
 	$(function() {
-		$(".calendar-day-entry").hover(function(e) {
-			var annotation = $(this).attr("title");
-			$(this).removeAttr("title");
-			if (annotation != undefined) {
-				popupObj.html(annotation)
-						.css({
-							'top' : e.pageY,
-							'left' : e.pageX + 20,
-						});
-				$(popupObj).show();
-			}
-		},
-		function() {
-			if ($(popupObj).text()) {
-				$(this).attr("title", $(popupObj).text());
-				$(popupObj).hide();
-				$(popupObj).html('');
-			}
-		});
-	}
+	  $(".calendar-day-entry").hover(function(e) {
+            var annotation = $(this).attr("title");
+	      $(this).removeAttr("title");
+	      if (annotation != undefined) {
+		  popupObj.html(annotation)
+		    .css({
+			'top' : e.pageY,
+			'left' : e.pageX + 20,
+	             });
+	          $(popupObj).show();
+	       }
+	   }, function() {
+		if ($(popupObj).text()) {
+	          $(this).attr("title", $(popupObj).text());
+	          $(popupObj).hide();
+                  $(popupObj).html('');
+		}
+	   });
+	});
 
     }
 }
