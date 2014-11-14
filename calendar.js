@@ -38,7 +38,6 @@ function addTransformCalendar() {
       var year = $date.data('year');
       var month = $date.data('month');
 
-      console.log(date);
       console.log(Hatena.Diary.URLGenerator.user_blog_url('/archive_module_calendar'));
 
       $.ajax({
