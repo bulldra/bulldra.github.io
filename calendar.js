@@ -54,6 +54,7 @@ function addTransformCalendar() {
       input.type = 'button';
       input.value = '移動';
       input.addEventListener('click',function() {
+          var $selector = $('select.js-archive-module-calendar-selector');
           var $date = $selector.find('option:selected');
           var year = $date.data('year');
           var month = $date.data('month');
@@ -61,7 +62,7 @@ function addTransformCalendar() {
           location.href = url;
         } 
       , false);
-      var cb = document.querySelector('js-archive-module-calendar-selector');
+      var cb = document.querySelector('.js-archive-module-calendar-container');
       c.insertBefore(input, cb);
     }
 }
