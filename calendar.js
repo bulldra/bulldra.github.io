@@ -25,6 +25,7 @@ function transformCalendar() {
   }
   
 
+  var c = document.querySelector('.archive-module-calendar');
   var cb = document.querySelector('.js-archive-module-calendar-container');
   var img = document.createElement('img');
   var url = document.querySelector('.calendar-day-entry a').href;
