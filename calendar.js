@@ -59,12 +59,12 @@ function initTransformCalendar() {
 function transformCalendar() {
   /* 指定月の最初の更新日のスクリーンキャプチャを表示 */
   var a = document.querySelector('#image-calendar-url');
-  a.href = $(".calendar-day a").find('a').attr("href");
+  a.href = $(".calendar-day a").attr("href");
   a.rel = 'nofollow';
 
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
-  img.alt = $(".calenar-day a").find('span').attr("title");
+  = $(".calenar-day a").find('span').attr("title");
 
   /* 枠線埋め */
   var table = document.querySelector('.js-archive-module-calendar-container table');   
