@@ -58,12 +58,13 @@ function initTransformCalendar() {
 
 function transformCalendar() {
   /* 指定月の最初の更新日のスクリーンキャプチャを表示 */
-  var img = document.querySelector('#image-calendar');
   var a = document.querySelector('#image-calendar-url');
-  var ea = document.querySelector('.calendar-day a');
-  a.href = ea.href;
+  a.href = $(".calendar-day a").find('a').attr("href");
   a.rel = 'nofollow';
+
+  var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
+  img.alt = $(".calenar-day a").find('span').attr("title");
 
   /* 枠線埋め */
   var table = document.querySelector('.js-archive-module-calendar-container table');   
@@ -95,10 +96,12 @@ function transformCalendar() {
     $(".calendar-day-entry").hover(function(e) {
 	/* 選択した日付のスクリーンキャプチャ表示 */
         var url = $(this).find('a').attr("href");
+        var title = $(this).find('span').attr("title");
         var a = document.querySelector('#image-calendar-url');
 	a.href = url;
         var img = document.querySelector('#image-calendar');
 	img.src = 'http://capture.heartrails.com/300x250/shadow?' + url;
+	img.alt = title;
       }, function(e) { } );
   });
 }
