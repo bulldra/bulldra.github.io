@@ -59,9 +59,9 @@ function initTransformCalendar() {
 function transformCalendar() {
   /* 指定月の最初の更新日のスクリーンキャプチャを表示 */
   var a = document.querySelector('#image-calendar-url');
-  a.href = $('.calendar-day a').attr("href");
+  a.href = $('.calendar-day a').attr('href');
   a.rel = 'nofollow';
-  a.title = $('.calenar-day a').find('span').attr('title');
+  a.title = $('.calendar-day a').find('span').attr('title');
 
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
