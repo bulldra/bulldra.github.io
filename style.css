@@ -344,7 +344,7 @@ ul, ol {
 	opacity: 0.8;
 }
 
-.entry-content h3, .entry-content h1, .entry-content h2, .hatena-module-foot h3 {
+.entry-content h3, .entry-content h1, .entry-content h2, .hatena-module-foot h3 ,.ssLimitedContainerHeader {
 	font-size: 130%;
 	font-weight: bold;
 	margin: 1em 0 0.5em 0;
