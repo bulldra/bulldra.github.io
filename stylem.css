@@ -71,6 +71,10 @@ div.adzone {
 
 }
 
+div.snsshare {
+  height: 208px !important;
+}
+
 .snsshare a {
   width: 100% !important;
 }
