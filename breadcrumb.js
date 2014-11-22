@@ -59,8 +59,8 @@ function writeCategoryBreadCrumb() {
   for(var key in flagMap) {
     if(flagMap[key] == false) {
       console.log(key);
-      categoryResult.push(createCategoryNode(categoryMap, topUrl + key, null));
-      breadcrumbResult.push(createBreadcrumbHtml(categoryMap, topUrl + key, null));
+      categoryResult.push(createCategoryNode(categoryMap, key, null));
+      breadcrumbResult.push(createBreadcrumbHtml(categoryMap, key, null));
       /*  使用済みフラグ */
       flagMap[key] = true;
     }
