@@ -1060,10 +1060,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
     text-decoration: none !important;
 }
 
-.my_adslot { width: 300px; height: 250px; }
-@media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
-@media(min-width: 800px) { .my_adslot { width: 336px; height: 280px; } }
-
 div #breadcrumb div {
 	display: inline;
 	font-size: 13px;
