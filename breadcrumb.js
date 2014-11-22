@@ -175,6 +175,7 @@ function createBreadcrumbHtml(categoryMap, key, pName) {
 
 function createCategoryNode(categoryMap, key, pName) {
   var topUrl = getBlogUrl();
+  console.log(key);
 
   var categorySpan =  document.createElement("span");
   appendCategoryLink(categorySpan, "TOP", topUrl);
