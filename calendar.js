@@ -1,10 +1,6 @@
 ﻿google.load("jquery", "1.7.1");
 google.setOnLoadCallback(initTransformCalendar);
 
-window.addEventListener("DOMContentLoaded", function(){
-  setTimeout("transformNotify();", 200);
-}, false);
-
 function transformNotify(){
   // オブザーバインスタンスを作成
   var observer = new MutationObserver(function(mutations){
@@ -26,6 +22,11 @@ function initTransformCalendar() {
   if(c == null) {
 	  return;
   }
+
+  window.addEventListener("DOMContentLoaded", function(){
+    setTimeout("transformNotify();", 200);
+  }, false);
+
   var cb = document.querySelector('.js-archive-module-calendar-container');
   var sel = document.querySelector('select.js-archive-module-calendar-selector');
   var img = document.createElement('img');
