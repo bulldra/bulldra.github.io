@@ -13,9 +13,8 @@
   font-size:120%
 }
 
-.snsshare {
+div.snsshare {
   width: 100%;
-  height:100px;
   margin-bottom:8px;
 }
 
@@ -28,7 +27,6 @@
   font-weight: bold;
   color: #ffffff !important;
   text-align: center;
-  letter-spacing: 0.1em;
   display: inline-block;
   text-decoration: none;
 }
@@ -38,21 +36,11 @@
   text-decoration: none;
   opacity: 0.6 !important;
 }
-.snsshare a.share_fb {
-  background-color: #3B5998;
-}
 
-.snsshare a.share_tw {
-  background-color: #00ACEE;
-}
-
-.snsshare a.share_bookmark {
-  background-color: #008FDE;
-}
-
-.snsshare a.share_rss {
-  background-color: #70CA3B;
-}
+.snsshare a.share_fb { background-color: #3B5998; }
+.snsshare a.share_tw { background-color: #00ACEE; }
+.snsshare a.share_bookmark { background-color: #008FDE; }
+.snsshare a.share_rss { background-color: #70CA3B; }
 
 div #breadcrumb div {
 	display: inline;
