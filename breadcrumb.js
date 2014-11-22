@@ -17,6 +17,7 @@ function categoryReplace() {
 }
  
 function writeCategoryBreadCrumb() {
+  var topUrl = getBlogUrl();
   var flagMap = new Array();
   var categoryMap = new Array();
   var categoryElements = document.querySelectorAll("div.categories a");
@@ -58,8 +59,8 @@ function writeCategoryBreadCrumb() {
   for(var key in flagMap) {
     if(flagMap[key] == false) {
       console.log(key);
-      categoryResult.push(createCategoryNode(categoryMap, key, null));
-      breadcrumbResult.push(createBreadcrumbHtml(categoryMap, key, null));
+      categoryResult.push(createCategoryNode(categoryMap, topUrl + key, null));
+      breadcrumbResult.push(createBreadcrumbHtml(categoryMap, topUrl + key, null));
       /*  使用済みフラグ */
       flagMap[key] = true;
     }
