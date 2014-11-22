@@ -47,8 +47,8 @@ function writeCategoryBreadCrumb() {
     var es = key.split('-');
     if(es.length >= 2 && categoryMap[es[0]] != null) {
       var pName = es[0];
-      categoryResult.push(createCategoryNode(categoryMap, topUrl + key, pName));
-      breadcrumbResult.push(createBreadcrumbHtml(categoryMap, topUrl + key, pName));
+      categoryResult.push(createCategoryNode(categoryMap, key, pName));
+      breadcrumbResult.push(createBreadcrumbHtml(categoryMap, key, pName));
       /* 親も子も使用済みフラグを立てる*/
       flagMap[key] = true;
       flagMap[pName] = true;
