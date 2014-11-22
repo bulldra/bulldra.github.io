@@ -13,8 +13,6 @@ div.adzone {
 @media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
 @media(min-width: 800px) { .my_adslot { width: 336px; height: 280px; } }
 
-
-
 .entry-content h3, .entry-content h1, 
   .entry-content h2, .hatena-module-foot h3 {
   font-size: 110%;
@@ -23,6 +21,7 @@ div.adzone {
   padding: 4px 10px;
   border-left: solid 10px #c0392b;
   background: #eee;
+  margin-top: 5px;
 }
 
 .entry-title {
@@ -76,3 +75,4 @@ div.adzone {
 .snsshare a {
   width: 100% !important;
 }
+
