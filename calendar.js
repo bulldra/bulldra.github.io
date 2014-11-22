@@ -23,10 +23,6 @@ function transformNotify(){
 
 function initTransformCalendar() {
   var c = document.querySelector('.archive-module-calendar');
-  if(c == null) {
-    return;
-  }
-  
   var cb = document.querySelector('.js-archive-module-calendar-container');
   var sel = document.querySelector('select.js-archive-module-calendar-selector');
   var img = document.createElement('img');
@@ -59,6 +55,10 @@ function initTransformCalendar() {
 function transformCalendar() {
   /* 指定月の最初の更新日のスクリーンキャプチャを表示 */
   var a = document.querySelector('#image-calendar-url');
+  if(a == null) {
+    setTimeout("transformNotify();", 500);
+    return;
+  }
   a.href = $('.calendar-day a').attr('href');
   a.rel = 'nofollow';
   a.title = $('.calendar-day a').find('span').attr('title');
