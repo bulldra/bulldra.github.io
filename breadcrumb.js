@@ -25,8 +25,9 @@ function writeCategoryBreadCrumb() {
     if(c.text == null || c.text === undefined) {
       continue;
     } 
-    flagMap[c.href] = false;
-    categoryMap[c.href] = c;
+    var key = c.href.replace(topUrl, '');
+    flagMap[key] = false;
+    categoryMap[key] = c;
   }
 
   /* 個別エントリじゃない場合はそこで終了 */
@@ -41,11 +42,12 @@ function writeCategoryBreadCrumb() {
   /* 階層化カテゴリ用 */
   for(var key in flagMap) {
     /* 親カテゴリがある場合のみ処理を実行 */
+   
     var es = key.split('-');
     if(es.length >= 2 && categoryMap[es[0]] != null) {
       var pName = es[0];
-      categoryResult.push(createCategoryNode(categoryMap, key, pName));
-      breadcrumbResult.push(createBreadcrumbHtml(categoryMap, key, pName));
+      categoryResult.push(createCategoryNode(categoryMap, topUrl + key, pName));
+      breadcrumbResult.push(createBreadcrumbHtml(categoryMap, topUrl + key, pName));
       /* 親も子も使用済みフラグを立てる*/
       flagMap[key] = true;
       flagMap[pName] = true;
