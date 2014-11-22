@@ -23,6 +23,9 @@ function transformNotify(){
 
 function initTransformCalendar() {
   var c = document.querySelector('.archive-module-calendar');
+  if(c == null) {
+	  return;
+  }
   var cb = document.querySelector('.js-archive-module-calendar-container');
   var sel = document.querySelector('select.js-archive-module-calendar-selector');
   var img = document.createElement('img');
