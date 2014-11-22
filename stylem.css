@@ -87,3 +87,43 @@ div.adzone {
 }
 
 
+.snsshare {
+  width: 100%;
+  height: 100px;
+}
+
+.snsshare a {
+  width: 100%;
+  margin-bottom: 0px;
+  padding: 8px 0;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff !important;
+  text-align: center;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.snsshare a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.6 !important;
+}
+.snsshare a.share_fb {
+  background-color: #3B5998;
+}
+
+.snsshare a.share_tw {
+  background-color: #00ACEE;
+}
+
+.snsshare a.share_bookmark {
+  background-color: #008FDE;
+}
+
+.snsshare a.share_blog {
+  background-color: #00CCCC;
+}
+

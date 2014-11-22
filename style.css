@@ -1127,3 +1127,44 @@ div #breadcrumb div a {
 
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
 
+.snsshare {
+  width: 100%;
+  height:100px;
+}
+
+.snsshare a {
+  width: 50%;
+  height: 50%;
+  margin-bottom: 0px;
+  padding: 8px 0;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff !important;
+  text-align: center;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.snsshare a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.6 !important;
+}
+.snsshare a.share_fb {
+  background-color: #3B5998;
+}
+
+.snsshare a.share_tw {
+  background-color: #00ACEE;
+}
+
+.snsshare a.share_bookmark {
+  background-color: #008FDE;
+}
+
+.snsshare a.share_blog {
+  background-color: #00CCCC;
+}
+
