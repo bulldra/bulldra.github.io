@@ -1,15 +1,14 @@
-﻿/*
- * http://www.ikedakana.com
- *
- */
+﻿google.load("feeds", "1");
 
-google.load("feeds", "1");
-
-function writeGatcha(fetchNum, id, mode, header) {
+function writeGatcha(fetchNum, id, mode, header, isFeed) {
   if(id === undefined || id == null){ 
     id = 'side-';
   }
-   
+  
+  if(isFeed === undefined || isFeed == null || isFeed != true){ 
+    isFeed = false;
+  }
+
   var categoryElement = null;
   if(mode == 'category') {
      var categoryElements = document.querySelectorAll('div.categories a');
@@ -17,7 +16,9 @@ function writeGatcha(fetchNum, id, mode, header) {
        var rootCategoryElements = new Array();
        for (var idx = 0; idx < categoryElements.length; idx++) {
          var href = categoryElements[idx].href;
-         if (href.indexOf('-') < 0 && href.indexOf(getBlogUrl() + '/category/') >= 0) {
+	 var hrefc = href.replace(getBlogUrl(),'');
+	 console.log(hrefc);
+         if (hrefc.indexOf('-') < 0 && href.indexOf(getBlogUrl() + '/category/') >= 0) {
            rootCategoryElements.push(categoryElements[idx]);
          }
        }
@@ -25,7 +26,6 @@ function writeGatcha(fetchNum, id, mode, header) {
        categoryElement = rootCategoryElements[idx];
      }
   }
-
 
   var categoryHref = ''; 
   if(categoryElement !== undefined && categoryElement != null) {
@@ -42,7 +42,7 @@ function writeGatcha(fetchNum, id, mode, header) {
     document.write('<span class="hatena-module-foot"><h3>' + header);
     if (window.innerWidth > 500) {
       document.write('<span style="float:right">');
-      writeForm(id, categoryHref, fetchNum);
+      writeForm(id, categoryHref, fetchNum, isFeed);
       document.write('</span></h3>');
     } else {
       document.write('</h3>');
@@ -56,10 +56,14 @@ function writeGatcha(fetchNum, id, mode, header) {
   switchGatchButton(false, id);
 }
 
-function writeForm(id, categoryHref, fetchNum) {
+function writeForm(id, categoryHref, fetchNum, isFeed) {
     document.write('<select id="' + id + 'inGatchaCategory" onchange="runGatcha(\'' + id + '\')" style="width:150px;"><select>');
     document.write(' <input type="button" id="' + id + 'btnNormalGatcha" value=" 更新 " onClick="runGatcha(\'' + id + '\')" />');
     document.write(' <input type="button" id="' + id + 'btnMoveGatcha" value=" 一覧 " onClick="moveGatcha(\'' + id + '\')" />');
+
+    if(isFeed) {
+      document.write(' <input type="button" id="' + id + 'btnFeedlyGatcha" value=" 購読 " onClick="feedGatcha(\'' + id + '\')" />');
+    }
     document.write('<input type="hidden" id="' + id + 'inGatchaNum" value="' + fetchNum + '" />');
     document.write('<input type="hidden" id="'+ id + 'mode" value="' + categoryHref + '" />');
     
@@ -131,6 +135,30 @@ function switchGatchButton(is, id) {
   document.getElementById(id + 'btnNormalGatcha').disabled = !is;
   document.getElementById(id + 'btnMoveGatcha').disabled = !is;
   document.getElementById(id + 'inGatchaCategory').disabled = !is;  
+  var f = document.getElementById(id + 'btnFeedlyGatcha');
+  if(f != null) {
+    f.disabled = !is;
+  }
+}
+
+function feedGatcha(id) {
+  switchGatchButton(false, id);
+  var href = '';
+  var blogUrl = getBlogUrl();
+  var s = document.getElementById(id + 'inGatchaCategory');
+  var si = s.selectedIndex;
+  if(si == 0 || si == 2) {
+    href = blogUrl + '/feed';
+  } else if(si== 1) {
+    href = 'http://b.hatena.ne.jp/entrylist?'
+      + 'sort=count'
+      + '&mode=rss'
+      + '&url=' + encodeURIComponent(blogUrl);
+  } else {
+    href = blogUrl + '/rss/category/' + s.value;
+  }
+  switchGatchButton(true, id);
+  window.open('http://cloud.feedly.com/#subscription%2Ffeed%2F' + encodeURIComponent(href));
 }
 
 function moveGatcha(id) {

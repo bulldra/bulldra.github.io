@@ -55,8 +55,8 @@ function getBlogUrl(url) {
 
   var href = document.location.href;
   if(href.lastIndexOf('http', 0) !== 0) {
-    href = 'http://stardust.hatenadiary.com';
-    console.log("Return test url.");
+    href = 'http://bulldra.hatenablog.com';
+    console.log("Return test url. " + href);
   }
   var ret = href.replace(/(^http:\/\/[^\/]*).*/,"$1");
   return ret;
