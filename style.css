@@ -1039,6 +1039,8 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .hatena-profile-button { 
+    text-align:left;
+    font-size:12px;
     clear: both;
     font-size: 10px;
     height: 20px;
@@ -1054,7 +1056,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
     color: #555 !important; 
     float: left; 
     background:-webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dddddd));
-    background-position: 0% 50%;
 }
 
 .hatena-profile-button:hover {
