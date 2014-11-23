@@ -1043,8 +1043,8 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
     clear: both;
     font-size: 11px;
     height: 20px;
-    margin: 4px 5px 8px 5px;
-    padding: 4px 0px 2px 5px;
+    margin: 4px 0px 8px 0px;
+    padding: 4px 5px 2px 5px;
     display: block; 
     border: 1px solid #bbb !important; 
     border-radius: 3px; 
