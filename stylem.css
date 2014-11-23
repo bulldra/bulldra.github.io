@@ -23,8 +23,15 @@ div.adzone {
   background: #eee;
 }
 
-.entry-title {
-  background: #850505;
+header.entry-header {
+  background: #811;
+  color: #fff;
+  margin:3px -10px 3px 0px;
+  padding: 0 10px 0 10px;
+}
+
+.entry-title  {
+  background: #811;
   font-size: 120%;
   font-weight: bold;
   color: #fff;
@@ -32,9 +39,12 @@ div.adzone {
   padding: 0 10px 0 10px;
 }
 
-.entry-title a {
+.entry-title a,.categories, .categories a {
+  font-weight: bold;
   color: #fff;
 }
+
+
 
 #title {
    font-size: 230%;
