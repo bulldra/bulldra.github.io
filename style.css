@@ -1053,8 +1053,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
     text-decoration: none; 
     color: #555 !important; 
     float: left; 
-    background: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141025/20141025215841.png') no-repeat 0 0, -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dddddd));
-    background-position: 0% 50%;
 }
 
 .hatena-profile-button:hover {
