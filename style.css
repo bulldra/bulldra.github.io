@@ -514,9 +514,7 @@ ul, ol {
 }
 
 .entry-footer {
-	padding-left:15px;
-	padding-right:15px;
-	padding-bottom: 15px;
+	padding-left:0px 15px;
 }
 
 
