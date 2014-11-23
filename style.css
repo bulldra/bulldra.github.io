@@ -1053,6 +1053,8 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
     text-decoration: none; 
     color: #555 !important; 
     float: left; 
+    background:-webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#dddddd));
+    background-position: 0% 50%;
 }
 
 .hatena-profile-button:hover {
