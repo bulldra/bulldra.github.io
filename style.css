@@ -1040,12 +1040,11 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 
 .hatena-profile-button { 
     text-align:left;
-    font-size:12px;
     clear: both;
-    font-size: 10px;
+    font-size: 12px;
     height: 20px;
-    margin: 4px 0px 9px 0;
-    padding: 4px 10px 0px 20px;
+    margin: 4px 0px 8px 0;
+    padding: 4px 0px 2px 5px;
     display: block; 
     border: 1px solid #bbb !important; 
     border-radius: 3px; 
