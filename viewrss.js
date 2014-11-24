@@ -1,6 +1,6 @@
 ﻿google.load("feeds", "1");
 
-function runViewRss(id, rss, fetchNum) {
+function runViewRss(id, rss, fetchNum, isOwn) {
     var feed = new google.feeds.Feed(rss);
     feed.setNumEntries(fetchNum);
       feed.load(function(result) {
@@ -11,8 +11,11 @@ function runViewRss(id, rss, fetchNum) {
 	console.log(result.error);
       }
       var span = document.getElementById(id);
-
-      createHtml(span, null, entries, null, fetchNum, false);
+      if(isOwn === undefined || isOwn == null || !isOwn) {
+        createHtml(span, null, entries, null, fetchNum, false);
+      } else {
+        createOwnHtml(span, null, entries, null, fetchNum, false);
+      }
   });  
 }
 
