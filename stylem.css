@@ -79,7 +79,6 @@ div.snsshare {
 }
 
 .background { 
-  background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png');
   background-color: transparent; 
   background-repeat: repeat;
   position: fixed;
@@ -89,8 +88,4 @@ div.snsshare {
   left: 0;
   z-index: -1;
 }
-
-
-body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
-
 
