@@ -1144,8 +1144,8 @@ div #breadcrumb div a {
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
 
 #title-calendar-url {
-  background: rgba(0, 0, 0, 0.0);
-  color: rgba(0, 0, 0, 0.0);
+  background: rgba(15, 15, 15, 0.9);
+  color: rgba(255, 255, 255, 1);
   font-size:18px;
   font-weight:bold;
   position: absolute;
@@ -1159,12 +1159,11 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
 }
 
 #title-calendar-url:hover {
-  background: rgba(15, 15, 15, 0.9);
-  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.0);
+  color: rgba(0, 0, 0, 0.0);
 }
 
 #img-calendar-url { 
     position: relative; 
 }
-
 
