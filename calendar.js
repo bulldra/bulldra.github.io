@@ -29,6 +29,10 @@ function initTransformCalendar() {
 
   var cb = document.querySelector('.js-archive-module-calendar-container');
   var sel = document.querySelector('select.js-archive-module-calendar-selector');
+
+  var div = document.createElment('div');
+  div.id = 'div-calendar';
+
   var img = document.createElement('img');
   img.id = 'image-calendar';
 
@@ -51,8 +55,9 @@ function initTransformCalendar() {
   }, false);
 
   c.insertBefore(input, cb);
-  c.insertBefore(a, sel); 
-  c.insertBefore(a2, a); 
+  c.insertBefore(div, sel);
+  div.appendChild(a2); 
+  div.appendChild(a); 
   a.appendChild(img);
 
   var $selector = $('select.js-archive-module-calendar-selector');
