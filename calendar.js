@@ -33,6 +33,10 @@ function initTransformCalendar() {
   var img = document.createElement('img');
   img.id = 'image-calendar';
 
+  var bookmark = document.createElement('img');
+  bookmark.id = 'bookmark-calendar';
+  bookmark.className = 'bookmark-calendar';
+
   var a = document.createElement('a');
   a.id = 'title-calendar-url';
 
@@ -51,7 +55,8 @@ function initTransformCalendar() {
   c.insertBefore(input, cb);
   c.insertBefore(img, sel); 
   c.insertBefore(a, img); 
-
+  c.insertBefore(a, bookmark); 
+  
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
   transformCalendar();
@@ -74,6 +79,9 @@ function transformCalendar() {
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
   img.alt = a.title;
+
+  var bookmark = document.querySector('#bookmark-calendar');
+  bookmark.src = 'http://api.b.st-hatena.com/entry/image/' + a.href;
 
   /* 枠線埋め */
   var table = document.querySelector('.js-archive-module-calendar-container table');   
@@ -112,6 +120,10 @@ function transformCalendar() {
         var img = document.querySelector('#image-calendar');
         img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
 	img.alt = a.title;
+
+	var bookmark = document.querySector('#bookmark-calendar');
+        bookmark.src = 'http://api.b.st-hatena.com/entry/image/' + a.href;
+
       }, function(e) { } );
   });
 }
