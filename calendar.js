@@ -104,7 +104,7 @@ function transformCalendar() {
     $(".calendar-day-entry").hover(function(e) {
 	/* 選択した日付のスクリーンキャプチャ表示 */
 	var a = document.querySelector('#title-calendar-url');
-        a.href = $(this).find('span a').attr("href");
+        a.href = $(this).find('a').attr("href");
         a.innerHTML = $(this).find('span').attr("title").replace(',','<br /><br />');
 
         var img = document.querySelector('#image-calendar');
