@@ -1235,7 +1235,7 @@ margin: 0px;
 
 }
 
-a.bookmark-widget-counter img {
+a.bookmark-widget-counter img, #bookmark-calendar {
 position: absolute;
 right: 5px;
 bottom: 5px;
