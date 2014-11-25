@@ -37,6 +37,7 @@ function initTransformCalendar() {
   
   var a2 = document.createElement('a');
   a2.id = 'title-calendar-url';
+  a2.style.textAlign = 'left'
 
   var input = document.createElement('input');
   input.type = 'button';
@@ -113,6 +114,11 @@ function transformCalendar() {
         var a = document.querySelector('#image-calendar-url');
 	a.href = $(this).find('a').attr("href");
 	a.title = $(this).find('span').attr("title");
+  
+	var a2 = document.querySelector('#title-calendar-url');
+        a2.href = a.href;
+        a2.title = a.tite;
+        a2.innerText = a.title;
 
         var img = document.querySelector('#image-calendar');
 	img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
