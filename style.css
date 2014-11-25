@@ -1022,7 +1022,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .hatena-module-recent-entries .hatena-module-title a:after {
-	content: ">>一覧を見る";
+	content: ">>一覧ページ";
 	font-size: 90%;
 	position: absolute;
 	right: 10px;
@@ -1030,7 +1030,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .hatena-module-profile .hatena-module-title a:after {
-	content: ">>詳細を見る";
+	content: ">>詳細ページ";
 	font-size: 90%;
 	position: absolute;
 	right: 10px;
@@ -1038,7 +1038,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .book-store a:after {
-	content: ">>来店する";
+	content: ">>来店";
 	font-size: 90%;
 	position: absolute;
 	right: 10px;
