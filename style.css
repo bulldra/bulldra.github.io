@@ -1144,7 +1144,7 @@ div #breadcrumb div a {
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
 
 #title-calendar-url {
-  background: rgba(15, 15, 15, 0.7);
+  background: rgba(15, 15, 15, 0.6);
   color: rgba(255, 255, 255, 1);
   font-size:18px;
   font-weight:bold;
