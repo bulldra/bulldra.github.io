@@ -38,7 +38,7 @@ div.entry_action {
   text-decoration: none;
 }
 
-.snsshare a:hover, .entry_action a {
+.snsshare a:hover, .entry_action a:hover {
   color: #ffffff;
   text-decoration: none;
   opacity: 0.6 !important;
