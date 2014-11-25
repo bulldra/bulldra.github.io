@@ -28,8 +28,6 @@ function initTransformCalendar() {
   }, false);
 
 
-  var div = document.createElment('div');
-  div.id = 'div-calendar';
 
   var img = document.createElement('img');
   img.id = 'image-calendar';
@@ -56,6 +54,9 @@ function initTransformCalendar() {
   caldendar.insertBefore(input, cb);
 
   a.appendChild(img);
+  
+  var div = document.createElment('div');
+  div.id = 'div-calendar';
   div.appendChild(a2); 
   div.appendChild(a); 
 
