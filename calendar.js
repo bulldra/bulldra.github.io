@@ -80,6 +80,7 @@ function transformCalendar() {
   img.alt = a.title;
 
   var bookmark = document.querySector('#bookmark-calendar');
+  bookmark.alt = a.title;
   bookmark.src = 'http://api.b.st-hatena.com/entry/image/' + a.href;
 
   /* 枠線埋め */
