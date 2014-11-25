@@ -48,8 +48,8 @@ function initTransformCalendar() {
   }, false);
 
   c.insertBefore(input, cb);
-  c.insertBefore(a, sel); 
-  c.insertBefore(img, a); 
+  c.insertBefore(img, sel); 
+  c.insertBefore(a, img); 
 
 
   var $selector = $('select.js-archive-module-calendar-selector');
