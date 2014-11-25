@@ -76,7 +76,7 @@ function transformCalendar() {
   var a2 = document.querySelector('#title-calendar-url');
   a2.href = a.href;
   a2.title = a.title;
-  a2.innerText = a.title;
+  a2.innerText = a.title.replace(',','<br />');
 
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
@@ -118,7 +118,7 @@ function transformCalendar() {
 	var a2 = document.querySelector('#title-calendar-url');
         a2.href = a.href;
         a2.title = a.title;
-        a2.innerText = a.title;
+        a2.innerText = a.title.replace(',','<br />');
 
         var img = document.querySelector('#image-calendar');
 	img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
