@@ -66,7 +66,6 @@ function transformCalendar() {
   $day = $('.calendar-day a:last');
   a.href = $day.attr('href');
   a.title = $day.find('span').attr('title');
-  a.text = $day.find('span').attr('title');
   a.rel = 'nofollow';
 
   var img = document.querySelector('#image-calendar');
