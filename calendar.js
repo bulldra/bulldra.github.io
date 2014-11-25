@@ -29,6 +29,7 @@ function initTransformCalendar() {
 
   var cb = document.querySelector('.js-archive-module-calendar-container');
   var sel = document.querySelector('select.js-archive-module-calendar-selector');
+
   var img = document.createElement('img');
   img.id = 'image-calendar';
 
@@ -51,7 +52,6 @@ function initTransformCalendar() {
   c.insertBefore(img, sel); 
   c.insertBefore(a, img); 
 
-
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
   transformCalendar();
@@ -68,7 +68,7 @@ function transformCalendar() {
 
   a.href = $day.attr('href');
   a.rel = 'nofollow';
-  a.innerHTML = $(this).find('span').attr("title").replace(',','<br /><br />');
+  a.innerHTML = $day.find('span').attr("title").replace(',','<br /><br />');
 
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
