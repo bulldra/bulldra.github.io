@@ -1151,7 +1151,7 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
 #title-calendar-url {
   background: rgba(15, 15, 15, 0.6);
   color: rgba(255, 255, 255, 1);
-  font-size:18px;
+  font-size:16px;
   font-weight:bold;
   position: absolute;
   overflow: hidden;
