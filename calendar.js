@@ -54,11 +54,12 @@ function initTransformCalendar() {
     location.href = url;
   }, false);
 
-  c.insertBefore(input, cb);
-  c.insertBefore(div, sel);
+  a.appendChild(img);
   div.appendChild(a2); 
   div.appendChild(a); 
-  a.appendChild(img);
+
+  c.insertBefore(input, cb);
+  c.insertBefore(div, sel);
 
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
