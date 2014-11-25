@@ -33,11 +33,7 @@ function initTransformCalendar() {
   img.id = 'image-calendar';
 
   var a = document.createElement('a');
-  a.id = 'image-calendar-url';
-  
-  var a2 = document.createElement('a');
-  a2.id = 'title-calendar-url';
-  a2.className = 'tilte-calendar';
+  a.id = 'title-calendar-url';
 
   var input = document.createElement('input');
   input.type = 'button';
@@ -53,8 +49,8 @@ function initTransformCalendar() {
 
   c.insertBefore(input, cb);
   c.insertBefore(a, sel); 
-  c.insertBefore(a2, a); 
-  a.appendChild(img);
+  c.insertBefore(img, a); 
+
 
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
@@ -63,20 +59,17 @@ function initTransformCalendar() {
 
 function transformCalendar() {
   /* 指定月の最後のスクリーンキャプチャを表示 */
-  var a = document.querySelector('#image-calendar-url');
+  var a = document.querySelector('#title-calendar-url');
   if(a == null) {
     setTimeout("transformNotify();", 500);
     return;
   }
   $day = $('.calendar-day a:last');
+
   a.href = $day.attr('href');
   a.title = $day.find('span').attr('title');
   a.rel = 'nofollow';
-  
-  var a2 = document.querySelector('#title-calendar-url');
-  a2.href = a.href;
-  a2.title = a.title;
-  a2.innerHTML = a.title.replace(',','<br />');
+  a.innerHTML = a.title.replace(',','<br />');
 
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
@@ -112,14 +105,9 @@ function transformCalendar() {
   $(function() {
     $(".calendar-day-entry").hover(function(e) {
 	/* 選択した日付のスクリーンキャプチャ表示 */
-        var a = document.querySelector('#image-calendar-url');
-	a.href = $(this).find('a').attr("href");
-	a.title = $(this).find('span').attr("title");
-  
-	var a2 = document.querySelector('#title-calendar-url');
-        a2.href = a.href;
-        a2.title = a.title;
-        a2.innerHTML = a.title.replace(',','<br />');
+	var a = document.querySelector('#title-calendar-url');
+        a.href = a.href;
+        a.innerHTML = $(this).find('span').attr("title").replace(',','<br />');
 
         var img = document.querySelector('#image-calendar');
 	img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
