@@ -76,8 +76,8 @@ function transformCalendar() {
   a.innerHTML = a.title.replace(',','<br /><br />');
 
   var img = document.querySelector('#image-calendar');
-  img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
   img.alt = a.title;
+  img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
 
   var bookmark = document.querySector('#bookmark-calendar');
   bookmark.alt = a.title;
