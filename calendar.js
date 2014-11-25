@@ -57,15 +57,16 @@ function initTransformCalendar() {
 }
 
 function transformCalendar() {
-  /* 指定月の最初の更新日のスクリーンキャプチャを表示 */
+  /* 指定月の最後のスクリーンキャプチャを表示 */
   var a = document.querySelector('#image-calendar-url');
   if(a == null) {
     setTimeout("transformNotify();", 500);
     return;
   }
-  a.href = $('.calendar-day a').attr('href');
+  $day = $('.calendar-day a:last');
+  a.href = $day.attr('href');
+  a.title = $day.find('span').attr('title');
   a.rel = 'nofollow';
-  a.title = $('.calendar-day a').find('span').attr('title');
 
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
