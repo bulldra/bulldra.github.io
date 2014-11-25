@@ -48,8 +48,8 @@ div.entry_action {
 .snsshare a.share_tw { background-color: #00ACEE; }
 .snsshare a.share_bookmark { background-color: #008FDE; }
 .snsshare a.share_rss { background-color: #70CA3B; }
-.entry_action a.action_ranking { background-color: #008FDE; }
-.entry_action a.action_random { background-color: #70CA3B; }
+.entry_action a.action_ranking { background-color: #cc2222; }
+.entry_action a.action_random { background-color: #cccc22; }
 
 div #breadcrumb div {
 	display: inline;
