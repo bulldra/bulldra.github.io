@@ -35,7 +35,6 @@ function initTransformCalendar() {
 
   var bookmark = document.createElement('img');
   bookmark.id = 'bookmark-calendar';
-  bookmark.className = 'bookmark-calendar';
 
   var a = document.createElement('a');
   a.id = 'title-calendar-url';
