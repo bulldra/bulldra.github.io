@@ -30,10 +30,13 @@ function initTransformCalendar() {
   var cb = document.querySelector('.js-archive-module-calendar-container');
   var sel = document.querySelector('select.js-archive-module-calendar-selector');
   var img = document.createElement('img');
-  var a = document.createElement('a');
-  
   img.id = 'image-calendar';
+
+  var a = document.createElement('a');
   a.id = 'image-calendar-url';
+  
+  var a2 = document.createElement('a');
+  a2.id = 'title-calendar-url';
 
   var input = document.createElement('input');
   input.type = 'button';
@@ -49,6 +52,7 @@ function initTransformCalendar() {
 
   c.insertBefore(input, cb);
   c.insertBefore(a, sel); 
+  c.insertBefore(a2, a); 
   a.appendChild(img);
 
   var $selector = $('select.js-archive-module-calendar-selector');
@@ -67,6 +71,11 @@ function transformCalendar() {
   a.href = $day.attr('href');
   a.title = $day.find('span').attr('title');
   a.rel = 'nofollow';
+  
+  var a2 = document.querySelector('#title-calendar-url');
+  a2.href = a.href;
+  a2.title = a.tite;
+  a2.innerText = a.title;
 
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
