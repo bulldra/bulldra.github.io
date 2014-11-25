@@ -1171,6 +1171,7 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
     position: relative; 
 }
 
+/*
 .entries-access-ranking {
   position: relative;
   background: #ddd;
@@ -1234,10 +1235,11 @@ margin: 0px;
   margin: 0px;
 
 }
+*/
 
-a.bookmark-widget-counter img, #bookmark-calendar {
-position: absolute;
-right: 5px;
-bottom: 5px;
+#bookmark-calendar {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
