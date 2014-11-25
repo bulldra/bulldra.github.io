@@ -15,8 +15,12 @@
 
 div.snsshare {
   width: 100%;
-  height: 156px;
+  height: 108px;
   margin-bottom:10px;
+}
+
+div.snsshare_foot {
+  height: 156px !important;
 }
 
 .snsshare a {
