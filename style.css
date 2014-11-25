@@ -1014,7 +1014,7 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .hatena-module-entries-access-ranking .hatena-module-title a:after {
-	content: ">>ランキングページ";
+	content: ">>ランキング";
 	font-size: 90%;
 	position: absolute;
 	right: 10px;
