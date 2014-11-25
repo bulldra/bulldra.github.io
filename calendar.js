@@ -51,7 +51,6 @@ function initTransformCalendar() {
   c.insertBefore(input, cb);
   c.insertBefore(img, sel); 
   c.insertBefore(a, img); 
-  c.insertBefore(bookmark, img); 
   
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
