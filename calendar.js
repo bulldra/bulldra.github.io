@@ -67,14 +67,12 @@ function transformCalendar() {
   $day = $('.calendar-day a:last');
 
   a.href = $day.attr('href');
-  a.title = $day.find('span').attr('title');
   a.rel = 'nofollow';
-  a.innerHTML = a.title.replace(',','<br />');
+  a.innerHTML = a.title.replace(',','<br /><br />');
 
   var img = document.querySelector('#image-calendar');
   img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
   img.alt = a.title;
-
 
   /* 枠線埋め */
   var table = document.querySelector('.js-archive-module-calendar-container table');   
@@ -107,7 +105,7 @@ function transformCalendar() {
 	/* 選択した日付のスクリーンキャプチャ表示 */
 	var a = document.querySelector('#title-calendar-url');
         a.href = a.href;
-        a.innerHTML = $(this).find('span').attr("title").replace(',','<br />');
+        a.innerHTML = $(this).find('span').attr("title").replace(',','<br /><br />');
 
         var img = document.querySelector('#image-calendar');
 	img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
