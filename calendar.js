@@ -38,6 +38,8 @@ function initTransformCalendar() {
   var a2 = document.createElement('a');
   a2.id = 'title-calendar-url';
   a2.style.textAlign = 'left'
+  a2.sytle.position = 'absolute'
+  a2.style.background= 'rgba(15, 15, 15, 0.55)'
 
   var input = document.createElement('input');
   input.type = 'button';
@@ -75,7 +77,7 @@ function transformCalendar() {
   
   var a2 = document.querySelector('#title-calendar-url');
   a2.href = a.href;
-  a2.title = a.tite;
+  a2.title = a.title;
   a2.innerText = a.title;
 
   var img = document.querySelector('#image-calendar');
@@ -117,7 +119,7 @@ function transformCalendar() {
   
 	var a2 = document.querySelector('#title-calendar-url');
         a2.href = a.href;
-        a2.title = a.tite;
+        a2.title = a.title;
         a2.innerText = a.title;
 
         var img = document.querySelector('#image-calendar');
