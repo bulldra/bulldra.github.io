@@ -1159,8 +1159,9 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
 }
 
 #title-calendar-url:hover {
-  background: rgba(0, 0, 0, 0.0);
-  color: rgba(0, 0, 0, 0.0);
+  /*background: rgba(0, 0, 0, 0.0);
+  color: rgba(0, 0, 0, 0.0);*/
+  padding-top: 250px;
 }
 
 #img-calendar-url { 
