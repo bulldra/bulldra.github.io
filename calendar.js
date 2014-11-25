@@ -18,8 +18,8 @@ function transformNotify(){
 }
 
 function initTransformCalendar() {
-  var calendar = document.querySelector('.archive-module-calendar');
-  if(calendar == null) {
+  var c = document.querySelector('.archive-module-calendar');
+  if(c == null) {
 	  return;
   }
 
@@ -27,8 +27,8 @@ function initTransformCalendar() {
     setTimeout("transformNotify();", 200);
   }, false);
 
-
-
+  var cb = document.querySelector('.js-archive-module-calendar-container');
+  var sel = document.querySelector('select.js-archive-module-calendar-selector');
   var img = document.createElement('img');
   img.id = 'image-calendar';
 
@@ -37,6 +37,7 @@ function initTransformCalendar() {
   
   var a2 = document.createElement('a');
   a2.id = 'title-calendar-url';
+  a2.className = 'tilte-calendar';
 
   var input = document.createElement('input');
   input.type = 'button';
@@ -49,19 +50,11 @@ function initTransformCalendar() {
     var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + month);
     location.href = url;
   }, false);
-  
-  var cb = document.querySelector('.js-archive-module-calendar-container');
-  caldendar.insertBefore(input, cb);
 
+  c.insertBefore(input, cb);
+  c.insertBefore(a, sel); 
+  c.insertBefore(a2, a); 
   a.appendChild(img);
-  
-  var div = document.createElment('div');
-  div.id = 'div-calendar';
-  div.appendChild(a2); 
-  div.appendChild(a); 
-
-  var sel = document.querySelector('select.js-archive-module-calendar-selector');
-  calendar.insertBefore(div, sel);
 
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
@@ -126,6 +119,7 @@ function transformCalendar() {
         a2.href = a.href;
         a2.title = a.title;
         a2.innerText = a.title.replace(',','<br />');
+        a2.innerText = a.title;
 
         var img = document.querySelector('#image-calendar');
 	img.src = 'http://capture.heartrails.com/300x250/shadow?' + a.href;
