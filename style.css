@@ -1122,7 +1122,7 @@ div #breadcrumb div a {
 .hatena-module .calendar-day-entry:hover {
   -webkit-transform: scale(1.4);  
   -moz-transform: scale(1.4);
-  background-color:#080;
+  background-color:#aa0;
 }
 
 .hatena-module-archive .hatena-module-title a:after {
