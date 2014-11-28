@@ -1,27 +1,27 @@
 google.load("jquery", "1.7.1");
 
-function jumpFirstEntry(){
+function jumpFirstEntry(isNewWindow){
   var func = function($locs) { 
     return $locs.get(0);
   };
-  jumpEntry(func, func);
+  jumpEntry(func, func, isNewWindow);
 }
 
-function jumpLastEntry(){
+function jumpLastEntry(isNewWindow){
   var func = function($locs) { 
     return $locs.get($locs.size() - 1);
   };
-  jumpEntry(func, func);
+  jumpEntry(func, func, isNewWindow);
 }
 
-function jumpRandomEntry(){
+function jumpRandomEntry(isNewWindow){
   var func = function($locs) { 
     return $locs.get(Math.floor($locs.size() * Math.random()));
   };
-  jumpEntry(func, func);
+  jumpEntry(func, func, isNewWindow);
 }
 
-function jumpEntry(func1, func2){
+function jumpEntry(func1, func2, isNewWindow){
    var siteMapUrl = getBlogUrl() + "/"+ 'sitemap.xml';
    $.ajax({ url: siteMapUrl, type:'GET', dataType:'xml', timeout:1000,
      error:function() { console.log(siteMapUrl + "の取得に失敗しました"); }, 
@@ -35,7 +35,12 @@ function jumpEntry(func1, func2){
            var $locs = $(xml).find("loc");
            var loc = func2($locs);
            var url = $(loc).text();
-           location.href = url;
+
+	   if(isNewWindow == null || isNewWindow === undefined || isNewWindow == false) {
+             location.href = url;
+	   }else {
+	     window.open(url);
+	   }
          }
        });
      }
