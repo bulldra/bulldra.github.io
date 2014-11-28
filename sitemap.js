@@ -14,7 +14,7 @@ function jumpRandomEntry(){
            var $locs = $(xml).find("loc");
            var loc = $locs.get(Math.floor($locs.size() * Math.random()));
            var url = $(loc).text();
-           location.href(url);
+           location.href = url;
          }
        });
      }
