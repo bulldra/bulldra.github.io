@@ -9,7 +9,6 @@ function setParallax() {
     var scrolled = $(window).scrollTop();
     var $bg = $('.background');
     $bg.css('top', -(scrolled * 0.1) + 'px');
-    console.log($bg.css('top'));
   });
 }
 
