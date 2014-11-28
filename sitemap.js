@@ -2,7 +2,7 @@ google.load("jquery", "1.7.1");
 google.setOnLoadCallback(sitemap);
 
 function sitemap(){
-   var siteMapUrl = getBlogUrl() + 'sitemap.xml';
+   var siteMapUrl = getBlogUrl() + "/"+ 'sitemap.xml';
 
     $.ajax({ url: siteMapUrl, type:'GET', dataType:'xml', timeout:1000,
         error:function() { console.log(siteMapUrl + "の取得に失敗しました"); }, 
