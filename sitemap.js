@@ -14,7 +14,6 @@ function jumpLastEntry(isNewWindow){
 	       return true; 
        }
     });
-    console.log($locss);
     return $locss.get(0);
   }
   jumpEntry(func1, func2, isNewWindow);
@@ -29,18 +28,18 @@ function jumpFirstEntry(isNewWindow){
 
 function jumpRandomEntry(isNewWindow){
   var func = function($locs) { 
-    $resut = $locs.get(0);
-    $locs.each(function(){
+    var $locss = $locs.filter(function(){
        var url = $(this).text();
        if(url == getBlogUrl() + '/' || url == getBlogUrl() + '/about' || url == location.href) {
-         $(this).remove();
+	       return false;
+       } else { 
+	       return true; 
        }
     });
-
-    if($locs.size() == 0) {
-      return $result; 
+    if($locss.size() == 0) {
+      return $locs.get(0); 
     } else {
-      return $locs.get(Math.floor($locs.size() * Math.random()));
+      return $locss.get(Math.floor($locss.size() * Math.random()));
     }
   };
   jumpEntry(func, func, isNewWindow);
