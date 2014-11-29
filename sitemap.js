@@ -8,7 +8,7 @@ function jumpLastEntry(isNewWindow){
   var func2 = function($locs) {
     $locs.each(function(){
        var url = $(this).text();
-       if(url == getBlogUrl() || url == getBlogUrl() + '/about') {
+       if(url == getBlogUrl() + '/'|| url == getBlogUrl() + '/about') {
          $(this).remove();
        }
     });
@@ -29,7 +29,7 @@ function jumpRandomEntry(isNewWindow){
     $resut = $locs.get(0);
     $locs.each(function(){
        var url = $(this).text();
-       if(url == getBlogUrl() || url == getBlogUrl() + '/about' || url == location.href) {
+       if(url == getBlogUrl() + '/' || url == getBlogUrl() + '/about' || url == location.href) {
          $(this).remove();
        }
     });
