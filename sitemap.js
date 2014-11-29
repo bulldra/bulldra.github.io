@@ -8,9 +8,10 @@ function jumpLastEntry(isNewWindow){
   var func2 = function($locs) {
     $locs.each(function(){
        var url = $(this).text();
-       console.log(url);
+       console.log(url + ' ' +getBlogUrl() + '/');
        if(url == getBlogUrl() + '/'|| url == getBlogUrl() + '/about') {
          $(this).remove();
+         console.log('remove');
        }
     });
     return $locs.get(0);
