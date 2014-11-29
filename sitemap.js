@@ -15,8 +15,7 @@ function jumpLastEntry(isNewWindow){
        }
     });
     console.log($locss);
-
-    $locss.get(0);
+    return $locss.get(0);
   }
   jumpEntry(func1, func2, isNewWindow);
 }
