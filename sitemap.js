@@ -11,10 +11,10 @@ function jumpLastEntry(isNewWindow){
        if(url == getBlogUrl() + '/'|| url == getBlogUrl() + '/about') {
 	       return false;
        } else { 
+	       console.log(url);
 	       return true; 
        }
-    });
-    return $locs.get(0);
+    }).get(0);
   }
   jumpEntry(func1, func2, isNewWindow);
 }
