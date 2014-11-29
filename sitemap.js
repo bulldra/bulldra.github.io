@@ -6,15 +6,15 @@ function jumpLastEntry(isNewWindow){
   };
 
   var func2 = function($locs) {
-    $locs.filter(function(){
+    var $locss = $locs.filter(function(){
        var url = $(this).text();
        if(url == getBlogUrl() + '/'|| url == getBlogUrl() + '/about') {
 	       return false;
        } else { 
-	       console.log(url);
 	       return true; 
        }
-    }).get(0);
+    });
+    $locss.get(0);
   }
   jumpEntry(func1, func2, isNewWindow);
 }
