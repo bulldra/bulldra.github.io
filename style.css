@@ -1247,3 +1247,13 @@ margin: 0px;
   bottom: 5px;
 }
 
+.headad {
+ position:absolute;
+ top:5px;
+}
+
+.entry-header {
+    padding-top:20px;
+}
+
+
