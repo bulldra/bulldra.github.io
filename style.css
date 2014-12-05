@@ -1246,7 +1246,17 @@ margin: 0px;
 }
 
 
+.hatena-module-recent-entries .hatena-urllist .recent-entries-allow {
+  text-align:center;
+  color:#800;
+  background-color:#ccc;
+  border: solid 1px #000;
+}
 
+.hatena-module-recent-entries .hatena-urllist .recent-entries-allow:hover {
+  color:#600;
+  background-color:#aaa;
+}
 
 
 
