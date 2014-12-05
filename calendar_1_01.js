@@ -1,22 +1,12 @@
-﻿google.load("jquery", "1.7.1");
-google.setOnLoadCallback(initTransformCalendar);
-
-function transformNotify(){
-  var observer = new MutationObserver(function(mutations){
-    mutations.forEach(function(mutation){ transformCalendar(); });
-  });
-  var config = { attributes: true, childList: true, characterData: true};
-  var cb = document.querySelector('.js-archive-module-calendar-container');
-  observer.observe(cb, config);
-}
+﻿google.setOnLoadCallback(initTransformCalendar);
 
 function initTransformCalendar() {
   window.addEventListener("DOMContentLoaded", function(){
     setTimeout("transformNotify();", 200);
   }, false);
   
-  var $in = $('<input type="button" value="一覧表示" />');
-  $in.on('click',function() {
+  var $input = $(' <input type="button" value="一覧表示" />');
+  $input.on('click',function() {
     var $selector = $('select.js-archive-module-calendar-selector');
     var $date = $selector.find('option:selected');
     var year = $date.data('year');
@@ -30,6 +20,15 @@ function initTransformCalendar() {
   $selector.after($in);
 
   transformCalendar();
+}
+
+function transformNotify(){
+  var observer = new MutationObserver(function(mutations){
+    mutations.forEach(function(mutation){ transformCalendar(); });
+  });
+  var config = { attributes: true, childList: true, characterData: true};
+  var cb = document.querySelector('.js-archive-module-calendar-container');
+  observer.observe(cb, config);
 }
 
 function transformCalendar() {
