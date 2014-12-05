@@ -5,7 +5,7 @@ function initTransformCalendar() {
     setTimeout("transformNotify();", 200);
   }, false);
   
-  var $input = $(' <input type="button" value="一覧表示" />');
+  var $input = $('<input type="button" value="一覧表示" />');
   $input.on('click',function() {
     var $selector = $('select.js-archive-module-calendar-selector');
     var $date = $selector.find('option:selected');
