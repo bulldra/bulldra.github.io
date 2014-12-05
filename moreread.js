@@ -1,6 +1,6 @@
 function initRecentEntriesMoreRead(l, i) {
    $r = $('.recent-entries-item');
-   $r.slice(l + 1).hide();
+   $r.slice(l).hide();
    $r.slice(0, l).fadeIn('normal');
    
    $('.recent-entries-allow').remove();
