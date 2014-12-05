@@ -11,7 +11,6 @@ function transformNotify(){
 }
 
 function initTransformCalendar() {
-  var $c = $('.archive-module-calendar');
   window.addEventListener("DOMContentLoaded", function(){
     setTimeout("transformNotify();", 200);
   }, false);
@@ -25,10 +24,11 @@ function initTransformCalendar() {
     var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + month);
     location.href = url;
   }, false);
-  $c.append($in);
   
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
+  $selector.after($in);
+
   transformCalendar();
 }
 
