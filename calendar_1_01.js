@@ -17,7 +17,7 @@ function initTransformCalendar() {
   
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
-  $selector.after($in);
+  $selector.after($input);
 
   transformCalendar();
 }
