@@ -5,19 +5,8 @@ function initTransformCalendar() {
     setTimeout("transformNotify();", 200);
   }, false);
   
-  var $input = $('<input type="button" value="一覧表示" />');
-  $input.on('click',function() {
-    var $selector = $('select.js-archive-module-calendar-selector');
-    var $date = $selector.find('option:selected');
-    var year = $date.data('year');
-    var month = $date.data('month');
-    var url = Hatena.Diary.URLGenerator.user_blog_url('/archive/' + year + '/' + month);
-    location.href = url;
-  }, false);
-  
   var $selector = $('select.js-archive-module-calendar-selector');
   $selector.change(function () { transformNotify(); });
-  $selector.after($input);
 
   transformCalendar();
 }
