@@ -712,13 +712,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	list-style-type: none !important;
 }
 
-
-.hatena-urllist li {
-  padding: 8px 0;
-  border-bottom: 1px dashed #c7dce3;
-  line-height: 1.5;
-}
-
 .hatena-module-archive .hatena-module-body {
 	font-size: 100%;
 }
