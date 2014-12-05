@@ -614,9 +614,14 @@ ul, ol {
 	padding: 10px 9px 9px 10px;
 }
 
+
+.hatena-module-recent-entries .hatena-urllist li:first-child,.hatena-module-entries-access-ranking .hatena-urllist li:first-child {
+  border-top: none;
+}
+
 .hatena-module-recent-entries .hatena-urllist li,.hatena-module-entries-access-ranking .hatena-urllist li {
   padding: 8px 0px;
-  border-bottom: 1px dashed #c7dce3;
+  border-top: 1px dashed #c7dce3;
   line-height: 1.5;
   font-size:80%;
 }
