@@ -1130,7 +1130,7 @@ div #breadcrumb div a {
 	color: #fff;
 }
 
-.background { 
+.background-parallax { 
   background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png');
   background-color: transparent; 
   background-repeat: repeat;
@@ -1139,7 +1139,7 @@ div #breadcrumb div a {
   height: 300%;
   top: 0;
   left: 0;
-  z-index: -20000000;
+  z-index: -1;
 }
 
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
