@@ -8,4 +8,6 @@ function setParallax() {
     $bg.css('top', -(scrolled * 0.1) + 'px');
   });
 }
+setParallax();
+
 
