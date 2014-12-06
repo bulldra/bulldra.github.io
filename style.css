@@ -1139,8 +1139,40 @@ div #breadcrumb div a {
   height: 300%;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: -100;
 }
+
+.hatena-module-category li  {
+	display: inline-block;
+	margin-bottom: -2px;
+}
+
+.hatena-module-category li a {
+    border-radius:10px;
+	display: block;
+	float: left;
+	color: #fff;
+	background: #c73140;
+	padding: 5px 10px;
+	margin-bottom: 5px;
+	margin-left: 2px;
+	font-size: 85%;
+	max-width: 100%;
+	word-wrap: normal; /* for IE */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.hatena-module-category li a:hover {
+	text-decoration: none;
+	background: #c73140;
+	-webkit-transform: scale(1.3,1.3);
+	transform: scale(1.3,1.3);
+	box-shadow: 0 0 3px 1px #999;
+}
+
+
 
 
 body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20140501/20140501195436.png'); background-repeat: repeat; background-color:transparent; background-attachment: fixed; background-position: left top;}
