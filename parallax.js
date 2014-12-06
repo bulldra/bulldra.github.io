@@ -1,6 +1,3 @@
-google.load("jquery", "1.7.1");
-google.setOnLoadCallback(setParallax);
-
 function setParallax() {
   var $div = $('<div class="background-parallax"></div>');
   $div.appendTo('body');
