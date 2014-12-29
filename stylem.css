@@ -23,6 +23,13 @@ div.adzone {
   background: #eee;
 }
 
+header.entry-header {
+  background: #811;
+  color: #fff;
+  margin:3px -10px 3px 0px;
+  padding: 0 10px 0 10px;
+}
+
 .entry-title  {
   background: #811;
   color: #fff;
@@ -47,15 +54,15 @@ div.adzone {
 }
 
 #blog-description {
-	margin-top: 5px;
-	margin-left: 10px;
-	font-size: 120%;
-	display: inline-block;
-    font-family: HuiFontP109;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 120%;
+  display: inline-block;
+  font-family: HuiFontP109;
 }
 
 #blog-description a {
-    color: #333;
+  color: #333;
 }
 
 .page-about .entry-content img.profile-icon {
@@ -65,9 +72,8 @@ div.adzone {
 }
 
 .page-about .subscription-count {
-	display:block;
-	margin-bottom:10px;
-
+  display:block;
+  margin-bottom:10px;
 }
 
 div.snsshare {
@@ -76,16 +82,5 @@ div.snsshare {
 
 .snsshare a {
   width: 100% !important;
-}
-
-.background { 
-  background-color: transparent; 
-  background-repeat: repeat;
-  position: fixed;
-  width: 100%;
-  height: 300%;
-  top: 0;
-  left: 0;
-  z-index: -1;
 }
 
