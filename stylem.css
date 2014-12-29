@@ -42,6 +42,12 @@ header.entry-header {
   color: #fff;
 }
 
+
+.entry-title a,.categories, .categories a {
+  font-weight: bold;
+  color: #fff;
+}
+
 #title {
    font-size: 230%;
    display: inline-block;
