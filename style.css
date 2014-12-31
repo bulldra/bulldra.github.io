@@ -70,8 +70,9 @@
 }
 
 #global-menu {
+  margin-left:-10px;
   padding:0px 0px 10px 0px;
-  text-align:left;
+  text-align:center;
 }
 
 #global-menu ul li {
