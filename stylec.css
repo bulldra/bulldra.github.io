@@ -42,8 +42,8 @@ div.snsshare_foot {
   color: #ffffff;
   text-decoration: none;
   opacity: 0.6 !important;
-  -webkit-animation: rotateLink 0.5s;
-  animation: rotateLink 0.5s;
+  -webkit-animation: rotateLink 0.7s;
+  animation: rotateLink 0.7s;
 }
 
 @-webkit-keyframes rotateLink {
