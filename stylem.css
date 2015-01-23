@@ -31,6 +31,7 @@ header.entry-header {
 }
 
 .entry-title  {
+  font-size:100%;
   background: #811;
   color: #fff;
   margin:3px -10px 3px -10px;
