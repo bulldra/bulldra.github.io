@@ -8,7 +8,6 @@
     font-style: normal;
 }
 
-
 .hand-write {
   font-family:HuiFontP109;
   font-size:120%
@@ -16,6 +15,10 @@
 
 div.snsshare_foot {
   height: 156px !important;
+}
+
+.snsshare {
+  margin-top: 10px;
 }
 
 .snsshare a {
