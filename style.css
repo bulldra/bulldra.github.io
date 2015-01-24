@@ -13,6 +13,11 @@
   font-size:120%
 }
 
+
+div.snsshare {
+  height: 78px;
+}
+
 div.snsshare_foot {
   height: 156px !important;
 }
