@@ -100,10 +100,10 @@ function writeGatchaCategory(id) {
       if(hrefc.indexOf('-') >= 0) {
         continue;
       }
-      var o = createOption(e.link.replace(blogURL + '/archive/category/', ''), e.title);
-      s.appendChild(o);
-      console.log(s);    
+      var o = createOption(e.link.replace(blogURL + '/category/', ''), e.title);
+      s.appendChild(o); 
     }
+     console.log(s);
 
     var flag = false;
     var gatchaCategory = document.getElementById(id + 'mode');    
@@ -199,8 +199,6 @@ function runGatcha(id) {
 }
 
 function runCommonGatcha(id, rss) {
-  console.log(relRssUrl);
-
   var fetchNum = document.getElementById(id +'inGatchaNum').value;
   var feed = new google.feeds.Feed(rss);
   feed.setNumEntries(50);
