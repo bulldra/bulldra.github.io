@@ -109,13 +109,13 @@ function writeGatchaCategory(id) {
     for (var idx = 0; idx < s.options.length; idx++) {
       if (s.options[idx].value == gatchaCategory.value) {
         s.options[idx].selected = true;
-	flag =true;
-	break;
+	      flag =true;
+	      break;
       }
     }
 
     if(!flag && gatchaCategory.value != null && gatchaCategory.value != '') {
-      var value = gatchaCategory.value.replace(blogURL + '/category/', '')
+      var value = gatchaCategory.value.replace(blogURL + '/archive/category/', '')
       var o = createOption(value, decodeURI(value));
       s.appendChild(o);      
       o.selected = true;
