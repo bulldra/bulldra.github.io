@@ -18,7 +18,7 @@ function writeGatcha(fetchNum, id, mode, header, isFeed) {
          var href = categoryElements[idx].href;
 	 var hrefc = href.replace(getBlogUrl(),'');
 	 console.log(hrefc);
-         if (hrefc.indexOf('-') < 0 && href.indexOf(getBlogUrl() + '/category/') >= 0) {
+         if (hrefc.indexOf('-') < 0 && href.indexOf(getBlogUrl() + '/archive/category/') >= 0) {
            rootCategoryElements.push(categoryElements[idx]);
          }
        }
@@ -96,10 +96,11 @@ function writeGatchaCategory(id) {
 
     for(var idx = 0; idx < entries.length; idx++) {
       var e = entries[idx];
-      if(e.link.indexOf('-') >= 0) {
+      var hrefc = e.link.replace(getBlogUrl(),'');
+      if(hrefc.indexOf('-') >= 0) {
         continue;
       }
-      var o = createOption(e.link.replace(blogURL + '/category/', ''), e.title);
+      var o = createOption(e.link.replace(blogURL + '/archive/category/', ''), e.title);
       s.appendChild(o);      
     }
 
