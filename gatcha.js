@@ -16,8 +16,8 @@ function writeGatcha(fetchNum, id, mode, header, isFeed) {
        var rootCategoryElements = new Array();
        for (var idx = 0; idx < categoryElements.length; idx++) {
          var href = categoryElements[idx].href;
-	 var hrefc = href.replace(getBlogUrl(),'');
-	 console.log(hrefc);
+	       var hrefc = href.replace(getBlogUrl(),'');
+	       console.log(hrefc);
          if (hrefc.indexOf('-') < 0 && href.indexOf(getBlogUrl() + '/archive/category/') >= 0) {
            rootCategoryElements.push(categoryElements[idx]);
          }
@@ -29,13 +29,13 @@ function writeGatcha(fetchNum, id, mode, header, isFeed) {
 
   var categoryHref = ''; 
   if(categoryElement !== undefined && categoryElement != null) {
-	categoryHref = categoryElement.href.replace(getBlogUrl() + '/category/','');
+	  categoryHref = categoryElement.href.replace(getBlogUrl() + '/archive/category/','');
   } else if(mode == 'all') {
-	categoryHref = 'gatcha-all'; 
+	  categoryHref = 'gatcha-all'; 
   } else if(mode == 'recent') {
-	categoryHref = 'gatcha-new';
+	  categoryHref = 'gatcha-new';
   } else {
-	categoryHref = ''; 
+	  categoryHref = ''; 
   }
   
   if(header !== undefined && header != null) {
