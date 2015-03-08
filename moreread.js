@@ -8,6 +8,7 @@ function initRecentEntriesMoreRead(l, i) {
    var $button = $('<li class="recent-entries-allow">▼MORE</li>');
    $button.on('click', function(){ recentEntriesMoreRead(0, l, i); });
    $('.recent-entries').append($button);
+   setTimeout("recentEntriesMoreRead(0," + l + "," + i ")",3000);
 }
 
 function recentEntriesMoreRead(s, l, i) {
@@ -25,6 +26,5 @@ function recentEntriesMoreRead(s, l, i) {
      $button.on('click', function(){ recentEntriesMoreRead(s + i, l ,i); });
    }
    $('.recent-entries').append($button);
+  setTimeout("recentEntriesMoreRead(0," + l + "," + i ")",3000);
 }
-
-
