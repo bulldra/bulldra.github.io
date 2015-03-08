@@ -1,6 +1,6 @@
 function initRecentEntriesMoreRead(l, i) {
    $r = $('.recent-entries-item');
-   $r.slice(l).hide();
+   $r.slice(l).fadeOut('normal');
    $r.slice(0, l).fadeIn('normal');
    
    $('.recent-entries-allow').remove();
@@ -13,7 +13,7 @@ function initRecentEntriesMoreRead(l, i) {
 
 function recentEntriesMoreRead(s, l, i) {
    $r = $('.recent-entries-item');
-   $r.slice(0, s + i).hide();
+   $r.slice(0, s + i).fadeOut('normal');
    $r.slice(s + l, s + l + i).fadeIn('normal');
 
    $('.recent-entries-allow').remove();
