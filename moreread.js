@@ -12,6 +12,7 @@ function initRecentEntriesMoreRead(l, i) {
 }
 
 function recentEntriesMoreRead(s, l, i) {
+   console.log("recentEntriesMoreRead(" + (s + i) "," + l + "," + i ")");
    $r = $('.recent-entries-item');
    $r.slice(0, s + i).hide();
    $r.slice(s + l, s + l + i).fadeIn('normal');
@@ -26,5 +27,5 @@ function recentEntriesMoreRead(s, l, i) {
      $button.on('click', function(){ recentEntriesMoreRead(s + i, l ,i); });
    }
    $('.recent-entries').append($button);
-  setTimeout("recentEntriesMoreRead(0," + l + "," + i ")",3000);
+   setTimeout("recentEntriesMoreRead(" + (s + i) "," + l + "," + i ")",3000);
 }
