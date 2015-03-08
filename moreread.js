@@ -26,5 +26,5 @@ function recentEntriesMoreRead(s, l, i) {
      $button.on('click', function(){ recentEntriesMoreRead(s + i, l ,i); });
    }
    $('.recent-entries').append($button);
-   setTimeout("recentEntriesMoreRead(" + (s + i) + "," + l + "," + i ")",3000);
+   setTimeout("recentEntriesMoreRead(" + (s + i) + "," + l + "," + i + ")",3000);
 }
