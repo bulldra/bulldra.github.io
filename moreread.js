@@ -12,7 +12,6 @@ function initRecentEntriesMoreRead(l, i) {
 }
 
 function recentEntriesMoreRead(s, l, i) {
-   console.log("recentEntriesMoreRead(" + (s + i) "," + l + "," + i ")");
    $r = $('.recent-entries-item');
    $r.slice(0, s + i).hide();
    $r.slice(s + l, s + l + i).fadeIn('normal');
