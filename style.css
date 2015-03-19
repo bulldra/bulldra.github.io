@@ -602,7 +602,7 @@ ul, ol {
 
 .hatena-star-container {
 	margin-left: 0px;
-	margin-bottom 0px;
+	margin-bottom: 0px;
 	display: none;
 }
 
@@ -702,20 +702,19 @@ ul, ol {
 }
 
 .archive-module-button {
-	position: absolute;
-	width: 38px;
-	height: 38px;
-	line-height: 38px;
-	background: #efefef;
-	text-align: center;
-	cursor: pointer;
-	border-bottom: solid 1px #ddd;
-
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  background: #efefef;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: solid 1px #ddd;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .archive-module-month {
@@ -1252,13 +1251,17 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
   color:#800;
   background-color:#ccc;
   border: solid 1px #000;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .hatena-module-recent-entries .hatena-urllist .recent-entries-allow:hover {
   color:#600;
   background-color:#aaa;
 }
-
 
 /*
  * 使用させていただいたアイコン「Zocial」の著作権はSam Collins氏にあります
@@ -1286,4 +1289,45 @@ line-height: 1em;
 margin-left: .2em;
 }
 .icons-pocket:before { content: '\e800'; }
+
+.hatena-module-category li  {
+	display: inline-block;
+}
+
+.hatena-module-category li a {
+  background:url(http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141206/20141206113849.png) no-repeat 50% 0%;
+	background-size:cover;
+    font-size:90%;
+	display: block;
+	float: left;
+	padding: 12px 10px 5px 10px;
+	word-wrap: normal; /* for IE */
+	text-overflow: ellipsis;
+	overflow: hidden;
+    color:#fff;
+    margin:2px 4px 2px 0px;
+	-webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -ms-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;  
+    text-align:center;
+}
+
+.hatena-module-category li a:hover {
+  text-decoration: none;
+  -moz-transform:scale(1.2,1.2);
+  -webkit-transform:scale(1.2,1.2);
+  -o-transform:scale(1.2,1.2);
+  opacity: 1.0 !Important;
+  z-index:999;
+}
+
+img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
+}
+
 
