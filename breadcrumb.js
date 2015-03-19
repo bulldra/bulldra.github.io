@@ -78,12 +78,12 @@ function writeCategoryBreadCrumb() {
     if(categoryResult.length > 0 && categories != null) { 
       categories.innerHTML = '';
       for(var idx = 0; idx < categoryResult.length; idx++) {
-      　if(categories !=null && categoryResult[idx] != null) {
+        if(categories !=null && categoryResult[idx] != null) {
           categories.appendChild(categoryResult[idx]);
           if(idx < categoryResult.length -1) {
             categories.appendChild(document.createElement('br'));
           }
-    　  }
+        }
       }
     }
   }
