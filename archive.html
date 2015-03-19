@@ -1,0 +1,1133 @@
+
+<!DOCTYPE html>
+<html
+  lang="ja"
+  data-avail-langs="ja en"
+
+  data-page="entry"
+  data-static-domain="http://hatenablog.com"
+  data-blog="bulldra.hatenablog.com"
+  data-blogs-uri-base="http://bulldra.hatenablog.com"
+  data-globalheader-color="b"
+  data-globalheader-type="pc"
+  data-author="bulldra"
+  data-version="e46d2158d34a594af33ff7715f117a26"
+  data-blog-comments-top-is-new=""
+  data-device="pc"
+
+  
+   data-hide-header="1"
+  
+
+  data-admin-domain="http://blog.hatena.ne.jp"
+
+  data-brand="hatenablog"
+
+
+  data-has-touch-view="1"
+  
+
+  itemscope
+   itemtype="http://schema.org/Article"
+
+  >
+  <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    
+    
+    
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=7; IE=9; IE=10; IE=11" />
+    <title>サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた - 太陽がまぶしかったから</title>
+
+    
+
+    
+      <link rel="canonical" href="http://bulldra.hatenablog.com/entry/more-read-list"/>
+    
+
+    <meta itemprop="name" content="サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた - 太陽がまぶしかったから"/>
+    
+      <meta itemprop="image" content="http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141205/20141205215302.jpg"/>
+    
+
+    <meta property="og:title" content="サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた - 太陽がまぶしかったから"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:url" content="http://bulldra.hatenablog.com/entry/more-read-list"/>
+    
+      <meta property="og:image" content="http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141205/20141205215302.jpg"/>
+    
+      <meta property="og:description" content="もっと読む記事リスト 「サイドバーの記事一覧から過去記事のリンクをザーッと見れたら便利なのにな」って思うわけですよ！ サイドバーから過去記事すべてを参照したい！「もっと読む記事リスト」の提案 - 空想の伝説 id:goule さんの記事を読みました。確かにサイドバーの記事一覧からいっぱい見られると便利そうですね。実は作ろうとした事があるのですが、AJAXでやろうとするとアイキャッチ画像の取得が意外に面倒だったり、表示速度的な問題があって放り投げていました。ブログカード形式はサイドバーに適さないですし。 それで代替案を考えたのですが、標準の最新記事モジュールの限界である20記事分を取得してスクリ…" />
+    <meta property="og:site_name" content="http://bulldra.hatenablog.com/"/>
+      <meta property="article:published_time" content="1417784294" />
+        <meta property="article:author" content="100008080773904" />
+        <meta property="article:tag" content="プログラミング" />
+        <meta property="article:tag" content="プログラミング-はてなブログカスタマイズ" />      <meta name="twitter:card" content="summary" />      <meta name="twitter:title" content="サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた - 太陽がまぶしかったから" />      <meta name="twitter:description" content="もっと読む記事リスト 「サイドバーの記事一覧から過去記事のリンクをザーッと見れたら便利なのにな」って思うわけですよ！ サイドバーから過去記事すべてを参照したい！「もっと読む記事リスト」の提案 - 空想の伝説 id:goule さんの記事を読みました。確かにサイドバーの記事一覧からいっぱい見られると便利そうですね。実は作…" />      <meta name="twitter:app:name:iphone" content="はてなブログアプリ" />
+      <meta name="twitter:app:id:iphone" content="583299321" />
+      <meta name="twitter:app:url:iphone" content="hatenablog:///open?uri=http%3A%2F%2Fbulldra.hatenablog.com%2Fentry%2Fmore-read-list" />      <meta name="twitter:site" content="@bulldra" />        <meta name="google-site-verification" content="tg62QzKPT7hjx1TXnPFMff3m7y6qJioZ0erUb0tUjwc">        <meta name="msvalidate.01" content="1246CA7C21D75C68820EB3A10B8D7F50">
+      <link rel="author" href="https://plus.google.com/106264520077407812079">
+    
+      <meta name="description" content="もっと読む記事リスト 「サイドバーの記事一覧から過去記事のリンクをザーッと見れたら便利なのにな」って思うわけですよ！ サイドバーから過去記事すべてを参照したい！「もっと読む記事リスト」の提案 - 空想の伝説 id:goule さんの記事を読みました。確かにサイドバーの記事一覧からいっぱい見られると便利そうですね。実は作…">
+    
+<script type="text/javascript">
+// <!--
+
+if (~navigator.userAgent.indexOf('Mac OS X')) {
+  document.write('<style type="text/css">html, body { font-family: \x27Helvetica\x27, \x27Arial\x27, \x27ヒラギノ角ゴ Pro W3\x27, \x27Hiragino Kaku Gothic Pro\x27, sans-serif; } </style>');
+} else {
+  document.write('<style type="text/css">html, body { font-family: \x27Helvetica\x27, \x27Arial\x27, \x27メイリオ\x27, \x27Meiryo\x27, \x27MS PGothic\x27, sans-serif; } </style>');
+}
+
+// -->
+</script>
+
+<!--[if lt IE 9]>
+<script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!--[if IE]>
+<script type="text/javascript" src="/js/vendor/excanvas/excanvas.js"></script>
+<![endif]-->
+
+
+    <link rel="shortcut icon" href="http://cdn.image.st-hatena.com/image/favicon/6c72a2b1ebd908ff7577fc660b0c5c50368774e0/version=1/http%3A%2F%2Fcdn.mogile.archive.st-hatena.com%2Fv1%2Fimage%2Fbulldra%2F302450856549793518.jpg">
+    <link rel="icon" sizes="192x192" href="http://cdn.image.st-hatena.com/image/square/1cb09c344656ce27c68b552fc10b07456ab1551f/backend=imagemagick;height=192;version=1;width=192/http%3A%2F%2Fcdn.mogile.archive.st-hatena.com%2Fv1%2Fimage%2Fbulldra%2F302450856549793518.jpg">
+    <link rel="alternate" type="application/atom+xml" title="Atom" href="http://bulldra.hatenablog.com/feed"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS2.0" href="http://bulldra.hatenablog.com/rss"/>
+    <link rel="alternate" type="application/json+oembed" href="http://hatenablog.com/oembed?url=http%3A%2F%2Fbulldra.hatenablog.com%2Fentry%2Fmore-read-list&format=json" title="oEmbed Profile of サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた"/>
+    <link rel="alternate" type="text/xml+oembed" href="http://hatenablog.com/oembed?url=http%3A%2F%2Fbulldra.hatenablog.com%2Fentry%2Fmore-read-list&format=xml" title="oEmbed Profile of サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた"/>    <link rel="author" href="http://www.hatena.ne.jp/bulldra/">
+
+      <link rel="stylesheet" type="text/css" href="http://hatenablog.com/.shared.css:e46d2158d34a594af33ff7715f117a26:/css/theme/base.css,/css/prettify.css,/css/globalheader.css?version=e46d2158d34a594af33ff7715f117a26"/>
+      <link rel="stylesheet" type="text/css" href="http://hatenablog.com/-/blog_style/12704830469097403785/b81cf61fb6561312233d0ef87cf3906ca3801f21"/>    <script>    </script>
+
+    
+    <style>
+      div#google_afc_user,
+      div#google_afc_user_container_0,
+      div#google_afc_user_container_1,
+      div#google_afc_user_container_2,
+      div#google_afc_user_container_3,
+      div#google_afc_user_container_4,
+      div#google_afc_user_container_5,
+      div.google_afc_image,
+      div.google_afc_blocklink {
+          display: block !important;
+      }
+    </style>
+
+    
+  </head>
+
+  <body class="page-entry  enable-top-editarea enable-bottom-editarea customized-background-image  category-プログラミング category-プログラミング-はてなブログカスタマイズ globalheader-off ">
+    <!-- Google Universal Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29716941-6', 'auto', {'name': 'HatenaBlogTracker'});
+  ga('HatenaBlogTracker.require', 'displayfeatures');
+  ga('HatenaBlogTracker.send', 'pageview');
+
+</script>
+<!-- End Google Universal Analytics -->
+
+    
+    <div id="header-container">
+     <div id="sp-suggest" style="display: none;"><a id="sp-suggest-link" href="#">スマートフォン用の表示で見る</a></div>
+    </div>
+
+    <div class="select_star_button_container" style="display: none;">
+      <img src="http://hatenablog.com/images/theme/hatena-star-quote-box.png?version=e46d2158d34a594af33ff7715f117a26" title="引用スターをつける" class="select_star_button" />
+      <img src="http://hatenablog.com/images/theme/hatena-star-quote-star.png?version=e46d2158d34a594af33ff7715f117a26" title="引用スターをつける" class="select_star_button select_star_star">
+    </div>
+
+    <div class="message-box" id="select-star-message-box" style="display: none;">
+      スターをつけました
+    </div>
+
+    <div id="globalheader-container" style="display: none">
+  <iframe id="globalheader" height="37" frameborder="0" allowTransparency="true"></iframe>
+</div>
+
+
+    <div id="container">
+      <div id="container-inner">
+        <header id="blog-title" data-brand="hatenablog">
+  <div id="blog-title-inner" >
+    <h1 id="title"><a href="http://bulldra.hatenablog.com/">太陽がまぶしかったから</a></h1>
+    
+      <h2 id="blog-description">C&#39;etait a cause du soleil.</h2>
+    
+  </div>
+</header>
+
+        
+          <div id="top-editarea">
+            <link href="http://bulldra.github.io/stylec.css" rel="stylesheet" type="text/css">
+<link href="http://bulldra.github.io/style.css" rel="stylesheet" type="text/css">
+
+<style>
+.my_adslot { width: 300px; height: 250px; }
+@media(min-width: 500px) { .my_adslot { width: 300px; height: 250px; } }
+@media(min-width: 800px) { .my_adslot { width: 728px; height: 90px; } }
+</style>
+
+
+<script src="https://www.google.com/jsapi"></script>
+<script src="http://bulldra.github.io/commons.js" charset="utf-8"></script>
+<script src="http://bulldra.github.io/sitemap.js" charset="utf-8"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://bulldra.github.io/gatcha.js" charset="utf-8"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<div id='global-menu'>
+<ul>
+   <li><a href='http://bulldra.hatenablog.com'>ホーム</a></li>
+   <li><a href='http://bulldra.hatenablog.com/entry/about' rel="nofollow">自己紹介</a></li>
+    <li><a href='http://bulldra.hatenablog.com/entry/book-store' rel="nofollow">書店</a></li>
+   <li><a href='http://bulldra.hatenablog.com/entry/program' rel="nofollow">プログラム</a></li>
+   <li><a href='http://bulldra.hatenablog.com/archive/category/%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3' rel="nofollow">イベント</a></li>
+    <li><a href='http://bulldra.hatenablog.com/entry/ranking' rel="nofollow">人気記事</a>
+   <li><a href='javascript:void(0)' onClick="jumpRandomEntry(false)" rel="nofollow">ランダム</a></li>
+</ul>
+</div>
+          </div>
+        
+        
+
+
+
+
+<div id="content" class="hfeed"
+  
+  >
+  <div id="content-inner">
+    <div id="wrapper">
+      <div id="main">
+        <div id="main-inner">
+          
+            
+            <!-- google_ad_section_start -->
+            <!-- rakuten_ad_target_begin -->
+            
+              
+                <article class="entry hentry js-entry-article date-first autopagerize_page_element chars-2000 words-100 mode-markdown entry-odd" id="entry-8454420450076223190" data-keyword-campaign="" data-uuid="8454420450076223190">
+  <div class="entry-inner">
+    <header class="entry-header">
+      <div class="date first">
+        <a href="http://bulldra.hatenablog.com/entries/2014/12/05" rel="nofollow">
+          <time pubdate datetime="2014-12-05T12:58:14Z" title="2014-12-05T12:58:14Z">
+            <span class="date-year">2014</span><span class="hyphen">-</span><span class="date-month">12</span><span class="hyphen">-</span><span class="date-day">05</span>
+          </time>
+        </a>
+      </div>
+      <h1 class="entry-title">
+        <a href="http://bulldra.hatenablog.com/entry/more-read-list" class="entry-title-link bookmark">サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた</a>
+      </h1>
+      
+      <div class="categories ">
+        
+        <a href="http://bulldra.hatenablog.com/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0">プログラミング</a>
+        
+        <a href="http://bulldra.hatenablog.com/category/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0-%E3%81%AF%E3%81%A6%E3%81%AA%E3%83%96%E3%83%AD%E3%82%B0%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA">プログラミング-はてなブログカスタマイズ</a>
+        
+      </div>
+      
+        <div class="customized-header">
+          <div class="entry-header-html"><div class="header-ad">
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:15px"
+     data-ad-client="ca-pub-7530392025880753"
+     data-ad-slot="4650863335"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+<style>
+.header-ad {
+ position:absolute;
+ top:5px;
+}
+
+.entry-header {
+    padding-top:22px !Important;
+}
+</style>
+</div>
+        </div>
+      
+    </header>
+    <div class="entry-content">
+
+      
+        <p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/bulldra/20141205215302" class="hatena-fotolife" itemprop="url"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141205/20141205215302.jpg" alt="f:id:bulldra:20141205215302j:image:w500" title="f:id:bulldra:20141205215302j:image:w500" class="hatena-fotolife" style="width:500px" itemprop="image"></a></span></p>
+
+<h1>もっと読む記事リスト</h1>
+
+<blockquote><p>「サイドバーの記事一覧から過去記事のリンクをザーッと見れたら便利なのにな」って思うわけですよ！</p></blockquote>
+
+<p><iframe src="http://goule.hatenablog.com/embed/2014/11/19/203409" title="サイドバーから過去記事すべてを参照したい！「もっと読む記事リスト」の提案 - 空想の伝説" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"><a href="http://goule.hatenablog.com/entry/2014/11/19/203409">サイドバーから過去記事すべてを参照したい！「もっと読む記事リスト」の提案 - 空想の伝説</a></iframe></p>
+
+<p>　<a href="http://blog.hatena.ne.jp/goule/" class="hatena-id-icon"><img src="http://cdn1.www.st-hatena.com/users/go/goule/profile.gif" width="16" height="16" alt="" class="hatena-id-icon">id:goule</a> さんの記事を読みました。確かにサイドバーの記事一覧からいっぱい見られると便利そうですね。実は作ろうとした事があるのですが、AJAXでやろうとするとアイキャッチ画像の取得が意外に面倒だったり、表示速度的な問題があって放り投げていました。ブログカード形式はサイドバーに適さないですし。</p>
+
+<p>　それで代替案を考えたのですが、標準の最新記事モジュールの限界である20記事分を取得してスクリプトで表示・非表示を切り替えることで擬似的に「もっと読む記事リスト」を実現させてみました。実行イメージは以下の通りです。</p>
+
+<p><a href="https://vine.co/v/Ov2ZvX31jgX">https://vine.co/v/Ov2ZvX31jgX</a></p>
+
+<h1>設置方法</h1>
+
+<p>　デザイン画面のサイドバーの「最新記事」を「表示件数20件」で作成します。</p>
+
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/bulldra/20141205212104" class="hatena-fotolife" itemprop="url"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/b/bulldra/20141205/20141205212104.jpg" alt="f:id:bulldra:20141205212104j:image:w500" title="f:id:bulldra:20141205212104j:image:w500" class="hatena-fotolife" style="width:500px" itemprop="image"></a></span></p>
+
+<p>　フッタ部分に以下の記述を追加します。</p>
+
+<pre class="code lang-javascript" data-lang="javascript" data-unlink>&lt;script src=<span class="synConstant">&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;</span>&gt;&lt;/script&gt;
+&lt;script src=<span class="synConstant">&quot;http://bulldra.github.io/moreread.js&quot;</span> charset=<span class="synConstant">&quot;utf-8&quot;</span>&gt;&lt;/script&gt;
+&lt;script type=<span class="synConstant">&quot;text/javascript&quot;</span>&gt;
+initRecentEntriesMoreRead(8, 3); <span class="synComment">/* 表示件数,移動件数 */</span>
+&lt;/script&gt;
+</pre>
+
+
+<p>　CSSに以下の記述を追加します。使用しているブログデザインに合わせて修正してください。</p>
+
+<pre class="code lang-css" data-lang="css" data-unlink><span class="synIdentifier">.hatena-module-recent-entries</span> <span class="synIdentifier">.hatena-urllist</span> <span class="synStatement">li</span>  <span class="synIdentifier">{</span>
+  <span class="synType">padding</span>: <span class="synConstant">8px</span> <span class="synConstant">0px</span>;
+  <span class="synType">border-top</span>: <span class="synConstant">1px</span> <span class="synType">dashed</span> <span class="synConstant">#c7dce3</span>;
+  <span class="synType">line-height</span>: <span class="synConstant">1.5</span>;
+  <span class="synType">font-size</span>:<span class="synConstant">80%</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.hatena-module-recent-entries</span> <span class="synIdentifier">.hatena-urllist</span> <span class="synStatement">li</span>:<span class="synPreProc">first-child</span> <span class="synIdentifier">{</span>
+  <span class="synType">border-top</span>: <span class="synType">none</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.hatena-module-recent-entries</span> <span class="synIdentifier">.hatena-urllist</span> <span class="synIdentifier">.recent-entries-allow</span> <span class="synIdentifier">{</span>
+  <span class="synType">text-align</span>:<span class="synType">center</span>;
+  <span class="synType">color</span>:<span class="synConstant">#800</span>;
+  <span class="synType">background-color</span>:<span class="synConstant">#ccc</span>;
+  <span class="synType">border</span>: <span class="synType">solid</span> <span class="synConstant">1px</span> <span class="synConstant">#000</span>;
+<span class="synIdentifier">}</span>
+
+<span class="synIdentifier">.hatena-module-recent-entries</span> <span class="synIdentifier">.hatena-urllist</span> <span class="synIdentifier">.recent-entries-allow</span>:<span class="synPreProc">hover</span> <span class="synIdentifier">{</span>
+  <span class="synType">color</span>:<span class="synConstant">#600</span>;
+  <span class="synType">background-color</span>:<span class="synConstant">#aaa</span>;
+<span class="synIdentifier">}</span>
+</pre>
+
+
+<h1>まとめ</h1>
+
+<p>　以上のように設定する事でサイドバーから過去記事を辿れる「もっと読む記事リスト」が実現できます。20記事分までの「なんちゃって実装」ですが、そこまで連打する人も少ないかなーとも。最初から20記事を展開しているとサイドバーが長くなりすぎてしまいますが、必要に応じて辿ってもらう事で過去記事にたどり着いてもらいやすくなることが期待できますね。</p>
+
+<p>　<a href="http://blog.hatena.ne.jp/goule/" class="hatena-id-icon"><img src="http://cdn1.www.st-hatena.com/users/go/goule/profile.gif" width="16" height="16" alt="" class="hatena-id-icon">id:goule</a> さんは表示記事の日付とタイトルをリスト化するプラグインを作成されています。便利！</p>
+
+<p><iframe src="http://goule.hatenablog.com/embed/2014/12/03/085556" title="コピペで簡単！はてなブログの記事を見やすくするプラグインを作りました - 空想の伝説" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;"><a href="http://goule.hatenablog.com/entry/2014/12/03/085556">コピペで簡単！はてなブログの記事を見やすくするプラグインを作りました - 空想の伝説</a></iframe></p>
+
+<p><div class="hatena-asin-detail"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774167975/bulldra-22/"><img src="http://ecx.images-amazon.com/images/I/51HWbI8tsnL._SL160_.jpg" class="hatena-asin-detail-image" alt="JavaScriptエンジニア養成読本 [Webアプリ開発の定番構成Backbone.js+CoffeeScript+Gruntを1冊で習得! ] (Software Design plus)" title="JavaScriptエンジニア養成読本 [Webアプリ開発の定番構成Backbone.js+CoffeeScript+Gruntを1冊で習得! ] (Software Design plus)"></a><div class="hatena-asin-detail-info"><p class="hatena-asin-detail-title"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/4774167975/bulldra-22/">JavaScriptエンジニア養成読本 [Webアプリ開発の定番構成Backbone.js+CoffeeScript+Gruntを1冊で習得! ] (Software Design plus)</a></p><ul><li><span class="hatena-asin-detail-label">作者:</span> 吾郷協,山田順久,竹馬光太郎,和智大二郎</li><li><span class="hatena-asin-detail-label">出版社/メーカー:</span> 技術評論社</li><li><span class="hatena-asin-detail-label">発売日:</span> 2014/10/18</li><li><span class="hatena-asin-detail-label">メディア:</span> 大型本</li><li><a href="http://d.hatena.ne.jp/asin/4774167975/bulldra-22" target="_blank">この商品を含むブログ (3件) を見る</a></li></ul></div><div class="hatena-asin-detail-foot"></div></div></p>
+
+      
+    </div>
+    <footer class="entry-footer">
+      <p class="entry-footer-section">
+        <span class="author vcard"><span class="fn" data-load-nickname="1" data-user-name="bulldra">bulldra</span></span>
+        <span class="entry-footer-time"><a href="http://bulldra.hatenablog.com/entry/more-read-list"><time data-relative datetime="2014-12-05T12:58:14Z" title="2014-12-05T12:58:14Z" pubdate class="updated">2014-12-05 21:58</time></a></span>
+      </p>
+      <div class="hatena-star-container">
+      </div>
+      <div class="hatena-star-metadata" style="display: none">
+        <a class="hatena-star-permalink" href="http://bulldra.hatenablog.com/entry/more-read-list">サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた</a>
+      </div>
+
+      
+<div class="social-buttons">
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+      
+
+      <div class="customized-footer">
+
+        
+
+          
+
+          
+
+          
+            <div class="entry-footer-html"><div class="snsshare">
+  <a class="share_bookmark" href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/more-read-list" target="_blank"><i class="blogicon-bookmark lg"></i> はてなブックマーク</a>
+  <a class="share_tw" href="https://twitter.com/intent/tweet?url=http://bulldra.hatenablog.com/entry/more-read-list&text=サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた" target="_blank"><i class="blogicon-twitter lg"></i> Twitterでシェア</a>
+  <a class="share_fb" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbulldra.hatenablog.com%2Fentry%2Fmore-read-list" target="_blank"><i class="blogicon-facebook lg"></i> Facebookでシェア</a>
+    <a class="share_rss" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fbulldra.hatenablog.com%2Ffeed" target="_blank"><i class="blogicon-rss lg"></i> Feedlyでフォロー</a>
+</div>
+
+<ins class="adsbygoogle my_adslot"
+     style="display:inline-block"
+     data-ad-client="ca-pub-7530392025880753"
+     data-ad-slot="9514741734"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<script type="text/javascript">
+writeGatcha(3,'entryGatcha','category','あわせて読みたい', true);
+google.setOnLoadCallback(function(){ writeGatchaCategory('entryGatcha') } );
+</script>
+
+<ins class="adsbygoogle my_adslot"
+     style="display:inline-block"
+     data-ad-client="ca-pub-7530392025880753"
+     data-ad-slot="5224142933"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<span class="hatena-module-foot"><h3>更新情報をチェック</h3></span>
+
+<div style="border:solid 1px #ccc; padding:5px 10px; margin-bottom:10px;">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-like-box" data-href="https://www.facebook.com/pages/&#x592a;&#x967d;&#x304c;&#x307e;&#x3076;&#x3057;&#x304b;&#x3063;&#x305f;&#x304b;&#x3089;/546898975425711" data-width="720" data-height="180" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+
+<a href="https://twitter.com/bulldra" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@bulldraさんをフォロー</a>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</div>
+
+<!-- Rakuten Widget FROM HERE --><script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="08b76079.0b756594.08b7607a.416204ed";rakuten_items="ctsmatch";rakuten_genreId=0;rakuten_size="728x90";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="on";rakuten_auto_mode="on";rakuten_genre_title="off";rakuten_recommend="on";</script><script type="text/javascript" src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script><!-- Rakuten Widget TO HERE -->
+
+<div id="breadcrumb"></div>
+
+
+<div class="snsshare snsshare_foot">
+  <a class="share_bookmark" href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/more-read-list" target="_blank"><i class="blogicon-bookmark lg"></i> はてなブックマーク</a>
+  <a class="share_tw" href="https://twitter.com/intent/tweet?url=http://bulldra.hatenablog.com/entry/more-read-list&text=サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた" target="_blank"><i class="blogicon-twitter lg"></i> Twitterでシェア</a>
+  <a class="share_fb" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fbulldra.hatenablog.com%2Fentry%2Fmore-read-list" target="_blank"><i class="blogicon-facebook lg"></i> Facebookでシェア</a>
+    <a class="share_rss" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fbulldra.hatenablog.com%2Ffeed" target="_blank"><i class="blogicon-rss lg"></i> Feedlyでフォロー</a>
+  <a href='http://bulldra.hatenablog.com/entry/ranking' rel="nofollow" class="action_ranking"><i class='blogicon-star'></i> 人気記事を表示</a>
+   <a href='javascript:void(0)' onClick="jumpRandomEntry(false)" rel="nofollow" class="action_random"><i class='blogicon-help-alt'></i> 記事をランダム表示</a>
+</div>
+</div>
+          
+        
+      </div>
+
+    </footer>
+  </div>
+</article>
+
+                
+
+                
+                  
+                  
+                  <div class="permalink pager">
+                    
+                    
+                      
+                      <span class="pager-next">
+                        <a href="http://bulldra.hatenablog.com/entry/buy-2014" rel="next">
+                          物欲が基本的に少ないはずの僕が2014年に…
+                          <span class="pager-arrow"> »</span>
+                        </a>
+                      </span>
+                    
+                  </div>
+                
+
+              
+            
+            <!-- rakuten_ad_target_end -->
+            <!-- google_ad_section_end -->
+
+            
+          
+        </div>
+      </div>
+
+      
+      <aside id="box1">
+        <div id="box1-inner">
+        </div>
+      </aside>
+
+    </div><!-- #wrapper -->
+
+    <aside id="box2">
+  <div id="box2-inner">
+    
+      
+
+<div class="hatena-module hatena-module-profile">
+  <div class="hatena-module-title">
+    プロフィール
+  </div>
+  <div class="hatena-module-body">
+    
+    <a href="http://bulldra.hatenablog.com/about" class="profile-icon-link">
+      <img src="http://cdn1.www.st-hatena.com/users/bu/bulldra/profile.gif"
+      alt="id:bulldra" class="profile-icon" />
+    </a>
+    
+
+    
+    <span class="id">
+      <a href="http://bulldra.hatenablog.com/about" class="hatena-id-link"><span data-load-nickname="1" data-user-name="bulldra">id:bulldra</span></a>
+      
+  
+    
+    
+      <a href="http://blog.hatena.ne.jp/guide/pro" title="はてなブログPro"><i class="icon-pro" /></i></a>
+    
+  
+
+
+    </span>
+    
+
+    
+    <div class="profile-description">
+      <p>Le Cahier du Étranger.<br />
+<i class="blogicon-mail"></i> <a href="mailto:bulldra@gmail.com">bulldra@gmail.com</a><br />
+<a href='http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fbulldra.hatenablog.com%2Ffeed'  target='blank'><img id='feedlyFollow' src='http://s3.feedly.com/img/follows/feedly-follow-rectangle-volume-small_2x.png' alt='follow us in feedly' width='66' height='20'></a> <a href='http://b.hatena.ne.jp/bulldra/follow.follow' target='_blank'><img src=' http://cdn-ak.f.st-hatena.com/images/fotolife/k/kouas1100/20131102/20131102201930.png ' alt='はてブ' width='66'></a> <br />
+<a href="http://bulldra.hatenablog.com/entry/about" class="hatena-profile-button"><i class="blogicon-search"></i> 詳細プロフィールを見る</a></p>
+
+    </div>
+    
+
+    
+    <div class="hatena-follow-button-box btn-subscribe">
+      <a href="#" class="hatena-follow-button">
+        <span class="subscribing">
+          <span class="foreground">購読中です</span>
+          <span class="background">読者をやめる</span>
+        </span>
+        <span class="unsubscribing" data-track-name="profile-widget-subscribe-button" data-track-once>
+          <span class="foreground">読者になる</span>
+          <span class="background">読者になる</span>
+        </span>
+      </a>
+      <div class="subscription-count-box">
+        <i></i>
+        <u></u>
+        <span class="subscription-count">
+        </span>
+      </div>
+    </div>
+    
+
+    
+    <div class="hatena-follow-button-box btn-facebook-follow">
+      <a href="https://www.facebook.com/addfriend.php?id=100008080773904" class="facebook-follow-button">
+        友達になる
+      </a>
+    </div>
+    
+
+    
+
+    
+    <div class="hatena-follow-button-box btn-twitter">
+      <a href="https://twitter.com/bulldra" class="twitter-follow-button" data-show-count="false" data-lang="ja">
+        @bulldraをフォロー
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+    
+      <div class="hatena-module hatena-module-recent-entries ">
+  <div class="hatena-module-title">
+    <a href="http://bulldra.hatenablog.com/archive">
+      新着記事
+    </a>
+  </div>
+  <div class="hatena-module-body">
+    <ul class="recent-entries hatena-urllist urllist-with-thumbnails">
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/more-read-list">            <img alt="サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた" src="http://cdn.image.st-hatena.com/image/square/409d97282fb44c364dd4144cbca36de6c0dedf3a/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141205%2F20141205215302.jpg" class="urllist-image recent-entries-image" title="サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/more-read-list" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/more-read-list" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/more-read-list" alt="はてなブックマーク - サイドバーから過去記事を辿れる「もっと読む記事リスト」を作ってみた" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/buy-2014">            <img alt="物欲が基本的に少ないはずの僕が2014年に買って生活が変わったモノ5選" src="http://cdn.image.st-hatena.com/image/square/b2734852fcf5a741ff3bdbd3eddea94600b5e0b2/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Ffarm6.staticflickr.com%2F5089%2F5297175933_8fe14a3175.jpg" class="urllist-image recent-entries-image" title="物欲が基本的に少ないはずの僕が2014年に買って生活が変わったモノ5選" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/buy-2014" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">物欲が基本的に少ないはずの僕が2014年に買って生活が変わったモノ5選        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/buy-2014" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/buy-2014" alt="はてなブックマーク - 物欲が基本的に少ないはずの僕が2014年に買って生活が変わったモノ5選" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/program-2014">            <img alt="はてなブログを勝手に進化させるスクリプト5選2014年版" src="http://cdn.image.st-hatena.com/image/square/28ddbf820a73b78846b27e99394cd184350ed295/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Ffarm3.staticflickr.com%2F2326%2F2378867408_4cc90791d6.jpg" class="urllist-image recent-entries-image" title="はてなブログを勝手に進化させるスクリプト5選2014年版" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/program-2014" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">はてなブログを勝手に進化させるスクリプト5選2014年版        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/program-2014" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/program-2014" alt="はてなブックマーク - はてなブログを勝手に進化させるスクリプト5選2014年版" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/entry-2014">            <img alt="このブログの月間MVPエントリで「人として軸がブレている」2014年を振り返る" src="http://cdn.image.st-hatena.com/image/square/684e976455ccfd64eebbbb42ed8d2dd992aba22f/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Ffarm4.staticflickr.com%2F3382%2F3528381016_ec56319e07.jpg" class="urllist-image recent-entries-image" title="このブログの月間MVPエントリで「人として軸がブレている」2014年を振り返る" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/entry-2014" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">このブログの月間MVPエントリで「人として軸がブレている」2014年を振り返る        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/entry-2014" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/entry-2014" alt="はてなブックマーク - このブログの月間MVPエントリで「人として軸がブレている」2014年を振り返る" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/book-2014">            <img alt="2014年に読んで「ほんのちょっと」だけ人生が変わった5冊の本" src="http://cdn.image.st-hatena.com/image/square/123179e0aa9bd405da68496666775b748d44b84f/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Ffarm9.staticflickr.com%2F8183%2F8145424627_247ceb1c22.jpg" class="urllist-image recent-entries-image" title="2014年に読んで「ほんのちょっと」だけ人生が変わった5冊の本" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/book-2014" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">2014年に読んで「ほんのちょっと」だけ人生が変わった5冊の本        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/book-2014" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/book-2014" alt="はてなブックマーク - 2014年に読んで「ほんのちょっと」だけ人生が変わった5冊の本" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/who-is-ranking-2014">            <img alt="Alexa亡き後にサブドメイントラフィックが表示できる『who.is』ではてなブログ村PVランキング2014年版を作ってみた" src="http://cdn.image.st-hatena.com/image/square/3b44974ab72d94f441175a875735d3b5c8be34ed/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Ffarm8.staticflickr.com%2F7527%2F15535126387_2a2dd33cb9.jpg" class="urllist-image recent-entries-image" title="Alexa亡き後にサブドメイントラフィックが表示できる『who.is』ではてなブログ村PVランキング2014年版を作ってみた" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/who-is-ranking-2014" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">Alexa亡き後にサブドメイントラフィックが表示できる『who.is』ではてなブログ村PVランキング2014年版を作ってみた        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/who-is-ranking-2014" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/who-is-ranking-2014" alt="はてなブックマーク - Alexa亡き後にサブドメイントラフィックが表示できる『who.is』ではてなブログ村PVランキング2014年版を作ってみた" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/archive-tweet">            <img alt="はてなブログで全記事からランダムで記事名付き定期ツイートをさせる方法" src="http://cdn.image.st-hatena.com/image/square/a217536376f6d90d4eddce8c0cc2cd850dc6c09b/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141201%2F20141201065918.jpg" class="urllist-image recent-entries-image" title="はてなブログで全記事からランダムで記事名付き定期ツイートをさせる方法" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/archive-tweet" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">はてなブログで全記事からランダムで記事名付き定期ツイートをさせる方法        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/archive-tweet" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/archive-tweet" alt="はてなブックマーク - はてなブログで全記事からランダムで記事名付き定期ツイートをさせる方法" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/blog-201411">            <img alt="月刊まぶしかったから2014年11月号〜Skype読書会を開催してSEOやJQueryを学びつつの自意識語り" src="http://cdn.image.st-hatena.com/image/square/31e2fabb53c1c56dcf560b9a84851f8c21e24513/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F517DY83N0PL.SX400.jpg" class="urllist-image recent-entries-image" title="月刊まぶしかったから2014年11月号〜Skype読書会を開催してSEOやJQueryを学びつつの自意識語り" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/blog-201411" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">月刊まぶしかったから2014年11月号〜Skype読書会を開催してSEOやJQueryを学びつつの自意識語り        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/blog-201411" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/blog-201411" alt="はてなブックマーク - 月刊まぶしかったから2014年11月号〜Skype読書会を開催してSEOやJQueryを学びつつの自意識語り" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/dodesyo-onsen">            <img alt="水曜どうでしょうディレクター対談『腹を割って話した』で語られた「自分にとっての温泉を掘る」話" src="http://cdn.image.st-hatena.com/image/square/ba6976311b8100deccd4cd18d86315f96afce4d2/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51tdAYq8vEL.SX400.jpg" class="urllist-image recent-entries-image" title="水曜どうでしょうディレクター対談『腹を割って話した』で語られた「自分にとっての温泉を掘る」話" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/dodesyo-onsen" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">水曜どうでしょうディレクター対談『腹を割って話した』で語られた「自分にとっての温泉を掘る」話        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/dodesyo-onsen" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/dodesyo-onsen" alt="はてなブックマーク - 水曜どうでしょうディレクター対談『腹を割って話した』で語られた「自分にとっての温泉を掘る」話" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/katsumata">            <img alt="僕は勝俣になって｢そんな美味しいわけが…｣「アッコさんすげぇ！」と言いながら死んでいきたい" src="http://cdn.image.st-hatena.com/image/square/2d329efcba4a899f85f764051a1b35af9c38e475/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51Vc7OFxGBL.jpg" class="urllist-image recent-entries-image" title="僕は勝俣になって｢そんな美味しいわけが…｣「アッコさんすげぇ！」と言いながら死んでいきたい" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/katsumata" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">僕は勝俣になって｢そんな美味しいわけが…｣「アッコさんすげぇ！」と言いながら死んでいきたい        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/katsumata" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/katsumata" alt="はてなブックマーク - 僕は勝俣になって｢そんな美味しいわけが…｣「アッコさんすげぇ！」と言いながら死んでいきたい" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/my-first-hatena">            <img alt="指定したブログの「はじめてのはてな」を発掘するページを作ったよ" src="http://cdn.image.st-hatena.com/image/square/001b0527219320e65b2334eaa3660332f6695756/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51b8Bnmo%2BDL.SX400.jpg" class="urllist-image recent-entries-image" title="指定したブログの「はじめてのはてな」を発掘するページを作ったよ" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/my-first-hatena" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">指定したブログの「はじめてのはてな」を発掘するページを作ったよ        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/my-first-hatena" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/my-first-hatena" alt="はてなブックマーク - 指定したブログの「はじめてのはてな」を発掘するページを作ったよ" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/sitemap-random-jquery">            <img alt="サイトマップを読み取って「初めてのはてな」や「ランダムな記事」へリンクするJavaScript" src="http://cdn.image.st-hatena.com/image/square/6c750c3e0b9ad82bed71dbf046c1c6d4b775324e/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141129%2F20141129111013.jpg" class="urllist-image recent-entries-image" title="サイトマップを読み取って「初めてのはてな」や「ランダムな記事」へリンクするJavaScript" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/sitemap-random-jquery" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">サイトマップを読み取って「初めてのはてな」や「ランダムな記事」へリンクするJavaScript        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/sitemap-random-jquery" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/sitemap-random-jquery" alt="はてなブックマーク - サイトマップを読み取って「初めてのはてな」や「ランダムな記事」へリンクするJavaScript" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/iketara-iku">            <img alt="人間関係10連ガチャ社会において「行けたら行くよー♪」と言いがちなクズからの言い分" src="http://cdn.image.st-hatena.com/image/square/c1ade5b5982c96a88c096dd17688243a1953fae9/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F81tsN0NsR%2BL.SX400.jpg" class="urllist-image recent-entries-image" title="人間関係10連ガチャ社会において「行けたら行くよー♪」と言いがちなクズからの言い分" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/iketara-iku" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">人間関係10連ガチャ社会において「行けたら行くよー♪」と言いがちなクズからの言い分        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/iketara-iku" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/iketara-iku" alt="はてなブックマーク - 人間関係10連ガチャ社会において「行けたら行くよー♪」と言いがちなクズからの言い分" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/just-delete-me">            <img alt="表示しているWebサービスの解約難易度と解約ページを表示するChrome拡張『Just Delete Me』で解約作業が捗る" src="http://cdn.image.st-hatena.com/image/square/224142895dd3df7e2b44f706526d23999466de89/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141125%2F20141125183324.jpg" class="urllist-image recent-entries-image" title="表示しているWebサービスの解約難易度と解約ページを表示するChrome拡張『Just Delete Me』で解約作業が捗る" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/just-delete-me" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">表示しているWebサービスの解約難易度と解約ページを表示するChrome拡張『Just Delete Me』で解約作業が捗る        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/just-delete-me" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/just-delete-me" alt="はてなブックマーク - 表示しているWebサービスの解約難易度と解約ページを表示するChrome拡張『Just Delete Me』で解約作業が捗る" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/ranking-page-open">            <img alt="はてなブログでアクセス／ブクマ数の自動更新ランキングページを作ろう" src="http://cdn.image.st-hatena.com/image/square/12ac28b6d991f4f80c3044a3f13eeddf65905954/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141125%2F20141125083557.jpg" class="urllist-image recent-entries-image" title="はてなブログでアクセス／ブクマ数の自動更新ランキングページを作ろう" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/ranking-page-open" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">はてなブログでアクセス／ブクマ数の自動更新ランキングページを作ろう        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/ranking-page-open" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/ranking-page-open" alt="はてなブックマーク - はてなブログでアクセス／ブクマ数の自動更新ランキングページを作ろう" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/namida-wo-nagasanai">            <img alt="「家から出ない技術」を身に付ければ「嫌われる勇気」なんていらない" src="http://cdn.image.st-hatena.com/image/square/9b87eae2708daf8794ecdb1a7b1d024dd23bba5a/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fecx.images-amazon.com%2Fimages%2FI%2F51pfi-lM-HL.SX400.jpg" class="urllist-image recent-entries-image" title="「家から出ない技術」を身に付ければ「嫌われる勇気」なんていらない" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/namida-wo-nagasanai" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">「家から出ない技術」を身に付ければ「嫌われる勇気」なんていらない        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/namida-wo-nagasanai" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/namida-wo-nagasanai" alt="はてなブックマーク - 「家から出ない技術」を身に付ければ「嫌われる勇気」なんていらない" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/parallax-scroll">            <img alt="はてなブログで「パララックススクロール」を実現する" src="http://cdn.image.st-hatena.com/image/square/0faf5c4aeba8fb3325ac8ce8a9830c72f9b4a253/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141124%2F20141124100758.jpg" class="urllist-image recent-entries-image" title="はてなブログで「パララックススクロール」を実現する" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/parallax-scroll" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">はてなブログで「パララックススクロール」を実現する        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/parallax-scroll" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/parallax-scroll" alt="はてなブックマーク - はてなブログで「パララックススクロール」を実現する" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/read-together-rss">            <img alt="「あわせて読みたい」にカテゴリ別RSSの購読ボタンをつけました" src="http://cdn.image.st-hatena.com/image/square/9cae9ed3d25acab3953abfe8e0dc8e7fac68fc09/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141123%2F20141123164245.jpg" class="urllist-image recent-entries-image" title="「あわせて読みたい」にカテゴリ別RSSの購読ボタンをつけました" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/read-together-rss" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">「あわせて読みたい」にカテゴリ別RSSの購読ボタンをつけました        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/read-together-rss" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/read-together-rss" alt="はてなブックマーク - 「あわせて読みたい」にカテゴリ別RSSの購読ボタンをつけました" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/viral-share-button">            <img alt="はてなブログにバイラルメディア風シェアボタンを設置する" src="http://cdn.image.st-hatena.com/image/square/0f2e5426b68c5b53f90a012d8819b8bb74782582/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141123%2F20141123112155.jpg" class="urllist-image recent-entries-image" title="はてなブログにバイラルメディア風シェアボタンを設置する" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/viral-share-button" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">はてなブログにバイラルメディア風シェアボタンを設置する        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/viral-share-button" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/viral-share-button" alt="はてなブックマーク - はてなブログにバイラルメディア風シェアボタンを設置する" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+    
+    <li class="urllist-item recent-entries-item">
+      <div class="urllist-item-inner recent-entries-item-inner">
+                  <a class="urllist-image-link recent-entries-image-link" href="http://bulldra.hatenablog.com/entry/icon-font">            <img alt="はてなブログで標準的に利用可能なアイコン絵文字フォント一覧" src="http://cdn.image.st-hatena.com/image/square/e76137e3ec01267d176bc4b2e95e29d5a6a38ece/backend=imagemagick;height=100;version=1;width=100/http%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fb%2Fbulldra%2F20141122%2F20141122195414.jpg" class="urllist-image recent-entries-image" title="はてなブログで標準的に利用可能なアイコン絵文字フォント一覧" width="100">
+          </a>
+        
+        <a href="http://bulldra.hatenablog.com/entry/icon-font" class="urllist-title-link recent-entries-title-link          urllist-title recent-entries-title        ">はてなブログで標準的に利用可能なアイコン絵文字フォント一覧        </a>
+                  <a href="http://b.hatena.ne.jp/entry/http://bulldra.hatenablog.com/entry/icon-font" class="bookmark-widget-counter">
+            <img src="//b.st-hatena.com/entry/image/http://bulldra.hatenablog.com/entry/icon-font" alt="はてなブックマーク - はてなブログで標準的に利用可能なアイコン絵文字フォント一覧" />
+          </a>
+        
+
+              </div>
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+    
+      
+
+<div class="hatena-module hatena-module-archive" data-archive-type="calendar" data-archive-url="http://bulldra.hatenablog.com/archive">
+  <div class="hatena-module-title">
+    <a href="http://bulldra.hatenablog.com/archive">記事カレンダー</a>
+  </div>
+  <div class="hatena-module-body">
+  </div>
+</div>
+
+    
+      
+<div class="hatena-module hatena-module-html">
+    <div class="hatena-module-title">ikedakana.書店</div>
+  <div class="hatena-module-body">
+    <div style="margin-left:-5px">
+<script type="text/javascript"><!--
+amazon_ad_tag="bulldra-22"; 
+amazon_ad_width="300"; 
+amazon_ad_height="250"; 
+amazon_color_background="F9F9F9"; 
+amazon_color_border="880000"; 
+amazon_color_logo="FFFFFF"; 
+amazon_color_link="880000"; 
+amazon_ad_logo="hide"; 
+amazon_ad_link_target="new"; 
+amazon_ad_title="ikedakana.書店"; //--></script>
+<script type="text/javascript" src="http://ir-jp.amazon-adsystem.com/s/asw.js"></script>
+</div>
+
+<form action="http://www.google.co.jp/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-7530392025880753:7790594937" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="15" />
+    <input type="submit" name="sa" value="検索" />
+  </div>
+</form>
+
+<script type="text/javascript" src="http://www.google.co.jp/coop/cse/brand?form=cse-search-box&amp;lang=ja"></script>
+
+<script type="text/javascript" src="http://www.google.com/cse/query_renderer.js"></script>
+<div id="queries"></div>
+<script src="http://www.google.com/cse/api/partner-pub-7530392025880753/cse/7790594937/queries/js?oe=UTF-8&amp;callback=(new+PopularQueryRenderer(document.getElementById(%22queries%22))).render"></script>
+
+  </div>
+</div>
+
+    
+    
+  </div>
+</aside>
+
+  </div>
+</div>
+
+
+
+
+
+
+        
+          <div id="bottom-editarea">
+            <script src="http://bulldra.github.io/breadcrumb.js" charset="utf-8"></script>
+<script src="http://bulldra.github.io/vine.js" charset="utf-8"></script>
+<script src="http://bulldra.github.io/adsensearchive.js" charset="utf-8"></script>
+<script src="http://bulldra.github.io/parallax.js" charset="utf-8"></script>
+<script src="http://bulldra.github.io/moreread.js" charset="utf-8"></script>
+<script src="calendar_1_01.js" charset="utf-8"></script>
+<script async src="https://platform.vine.co/static/scripts/embed.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://wms-fe.amazon-adsystem.com/20070822/JP/js/link-enhancer-common.js?tag=bulldra-22"></script>
+
+<style>
+.archive_adslot { width: 320px; height: 50px; }
+.archive_pr { font-size: 12px; }
+@media(min-width: 800px) { 
+  .archive_adslot { width: 728px; height: 90px; }
+  .archive_pr { font-size: 13px;  margin-top:20px; }
+}
+</style>
+
+<script type="text/javascript">
+runVineEmbed(480, 300, 480);
+addLinkProfile('http://bulldra.hatenablog.com/entry/about');
+setEmbedWidth(728);
+addLinkHatenaModule('ikedakana.書店','http://bulldra.hatenablog.com/entry/book-store','book-store');
+addLinkHatenaModule('注目記事','http://bulldra.hatenablog.com/entry/ranking','recent');
+initRecentEntriesMoreRead(8, 3);
+
+addAdsenseArchive("ca-pub-7530392025880753","5224142933","9514741734","スポンサーリンク");
+
+function replaceEmbedUrl() {
+  var a = document.querySelectorAll('iframe');
+  if(a != null) {
+    for(var i = 0; i < a.length; i++) {
+      if(a[i].src.match(/http:\/\/www\.ikedakana\.com\/embed\/.+/)) {
+          a[i].src = a[i].src.replace('www.ikedakana', 'bulldra.hatenablog');
+      }
+    }
+  }
+}
+replaceEmbedUrl();
+</script>
+
+          </div>
+        
+      </div>
+    </div>
+
+    
+
+    
+
+    
+
+    <script type="text/javascript" src="https://platform.twitter.com/widgets.js"></script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {"parsetags": "explicit"}
+</script>
+<script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+
+<script type="text/javascript" src="http://hatenablog.com/js?version=e46d2158d34a594af33ff7715f117a26"></script>
+
+<script type="text/javascript" src="http://hatenablog.com/js/texts-ja.js?version=e46d2158d34a594af33ff7715f117a26"></script>
+
+
+  <script type="text/javascript">Hatena.Diary.loadGlobalHeader()</script>
+
+
+
+
+
+    
+
+    
+       <script id="google-analytics-script" type="text/javascript">
+var _gaq = _gaq || [];
+
+(function($){
+
+  // 現在のドメイン
+  
+    
+    
+      
+      var current_domain = "hatenablog.com".split(":")[0];
+    
+  
+
+  
+    _gaq.push(['_setAccount', 'UA-33256981-2']);
+    _gaq.push(['_trackPageview']);
+  
+
+  
+
+   
+   _gaq.push(['all._setAccount', 'UA-7855606-1']);
+   _gaq.push(['all._setDomainName', current_domain]);
+   _gaq.push(['all._setSampleRate', '10']);
+   _gaq.push(['all._trackPageview']);
+
+  
+    _gaq.push(['a._setAccount', 'UA-29716941-5']);
+    _gaq.push(['a._setDomainName', current_domain]);
+    _gaq.push(['a._setCustomVar', 1, 'PageId', document.documentElement.getAttribute('data-page'), 3 /* page-level */]);
+      var keywordCampaigns = [];
+      $('.js-entry-article').each(function (index, element) {
+        var keywords = $(element).data('keywordCampaign').split(' ');
+        keywords = _.filter(keywords, function (keyword) { return keyword.length > 0 });
+        keywordCampaigns = keywordCampaigns.concat(keywords);
+      });
+      if (keywordCampaigns.length > 0) {
+        _gaq.push(['a._setCustomVar', 3, 'KeywordCampaign', keywordCampaigns[0], 3 /* page-level */]);
+      }
+      _gaq.push(['a._trackPageview']);
+  
+    _gaq.push(['b._setAccount', 'UA-29716941-2']);
+    _gaq.push(['b._setDomainName', current_domain]);
+    _gaq.push(['b._setCustomVar', 1, 'PageId', document.documentElement.getAttribute('data-page'), 3 /* page-level */]);
+      var keywordCampaigns = [];
+      $('.js-entry-article').each(function (index, element) {
+        var keywords = $(element).data('keywordCampaign').split(' ');
+        keywords = _.filter(keywords, function (keyword) { return keyword.length > 0 });
+        keywordCampaigns = keywordCampaigns.concat(keywords);
+      });
+      if (keywordCampaigns.length > 0) {
+        _gaq.push(['b._setCustomVar', 3, 'KeywordCampaign', keywordCampaigns[0], 3 /* page-level */]);
+      }
+      _gaq.push(['b._trackPageview']);
+  
+
+  $(function () {
+      $(document).delegate('[data-track-event="click"]', 'click', function () {
+          
+          _gaq.push([ 'a._trackEvent', 'Blogs', 'Click', this.getAttribute('data-track-key') ]);
+          
+          _gaq.push([ 'b._trackEvent', 'Blogs', 'Click', this.getAttribute('data-track-key') ]);
+          
+      });
+  });
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  var available_domains = ["blog.hatena.ne.jp"];
+  
+    available_domains.push("hatenablog.com".split(":")[0]);
+  
+    available_domains.push("hatenablog.jp".split(":")[0]);
+  
+    available_domains.push("hateblo.jp".split(":")[0]);
+  
+    available_domains.push("hatenadiary.com".split(":")[0]);
+  
+    available_domains.push("hatenadiary.jp".split(":")[0]);
+  
+  $('a').on('click', function() {
+    // 同じドメインならスキップ
+    if ( !this.hostname || this.hostname.indexOf(current_domain) != -1 ) return;
+
+    var cross_domain = false;
+    for (var i = 0, len = available_domains.length; i < len; i++) {
+      if (this.hostname.indexOf(available_domains[i]) != -1) cross_domain = true;
+    }
+    if ( cross_domain ) {
+      
+      _gaq.push(['a._link', this.href]);
+      
+      _gaq.push(['b._link', this.href]);
+      
+    }
+  });
+
+})(jQuery);
+</script>
+
+       
+  <script id="hatena-counter-script" type="text/javascript"><!--
+      hatena_counter_name = "bulldra";
+      hatena_counter_id = "101";
+      hatena_counter_ref = document.referrer+"";
+      hatena_counter_screen = screen.width + "x" + screen.height+","+screen.colorDepth;
+  //--></script>
+  <script type="text/javascript" src="http://counter.hatena.ne.jp/js/counter.js"></script>
+  <noscript><img src="http://counter.hatena.ne.jp/bulldra/101" border="0" alt="counter"></noscript>
+
+
+    
+
+  </body>
+</html>
+
+
