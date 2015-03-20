@@ -1230,6 +1230,8 @@ body{ background-image: url('http://cdn-ak.f.st-hatena.com/images/fotolife/b/bul
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .hatena-module-recent-entries .hatena-urllist .recent-entries-allow:hover {
