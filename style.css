@@ -65,20 +65,6 @@ div #breadcrumb div {
 	font-size: 13px;
 }
 
-.recent-entries-item {
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -o-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  padding-right:5px !Important;
-}
-
-.recent-entries-item:hover {
-  margin-left:5px;
-  padding-right:0px !Important;
-}
-
-
 .hatena-bookmark-bookmark-panel {
    z-index:10350001 !important;
 }
