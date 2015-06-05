@@ -147,9 +147,9 @@ function runGatcha(id) {
   switchGatchButton(false, id);
   var s = document.getElementById(id + 'inGatchaCategory');
   var si = s.selectedIndex;
-  if(si== 1) {
+  if(si== 0) {
 	  runRareGatcha(id);
-  } else if(si == 2) {
+  } else if(si == 1) {
 	  runNewGatcha(id);
   } else {
 	  runCategoryGatcha(id, s.value);
