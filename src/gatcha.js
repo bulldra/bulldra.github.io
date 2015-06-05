@@ -30,8 +30,6 @@ function writeGatcha(fetchNum, id, mode, header, isFeed) {
   var categoryHref = ''; 
   if(categoryElement !== undefined && categoryElement != null) {
 	  categoryHref = categoryElement.href.replace(getBlogUrl() + '/archive/category/','');
-  } else if(mode == 'all') {
-	  categoryHref = 'gatcha-all'; 
   } else if(mode == 'recent') {
 	  categoryHref = 'gatcha-new';
   } else {
@@ -68,7 +66,6 @@ function writeForm(id, categoryHref, fetchNum, isFeed) {
     document.write('<input type="hidden" id="'+ id + 'mode" value="' + categoryHref + '" />');
     
     var s = document.getElementById(id + 'inGatchaCategory');
-    s.appendChild(createOption('gatcha-all','全て'));
     s.appendChild(createOption('gatcha-rare','人気'));
     s.appendChild(createOption('gatcha-new','最新'));
     s.selectedIndex = 1;
@@ -80,50 +77,14 @@ function writeGatchaCategory(id) {
   }
 
   var blogURL = getBlogUrl();
-  var relRssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?'
-    + '&blog=' + blogURL
-    + '&_id=31da73e0525591d9dd0c0702856a3b5b&_render=rss';
-
-  var feed = new google.feeds.Feed(relRssUrl);
-  feed.setNumEntries(100);
-  feed.load(function(result) {
-    var s = document.getElementById(id + 'inGatchaCategory');
+  var s = document.getElementById(id + 'inGatchaCategory');   
+  var gatchaCategory = document.getElementById(id + 'mode');    
+  var value = gatchaCategory.value.replace(blogURL + '/archive/category/', '')
+  var o = createOption(value, decodeURI(value));
+  s.appendChild(o);      
+  o.selected = true;
     
-    var entries = new Array();
-    if (!result.error && result.feed.entries.length > 0) {
-      entries = result.feed.entries;
-    }
-
-    for(var idx = 0; idx < entries.length; idx++) {
-      var e = entries[idx];
-      var hrefc = e.link.replace(getBlogUrl(),'');
-      if(hrefc.indexOf('-') >= 0) {
-        continue;
-      }
-      var o = createOption(e.link.replace(blogURL + '/category/', ''), e.title);
-      s.appendChild(o); 
-    }
-     console.log(s);
-
-    var flag = false;
-    var gatchaCategory = document.getElementById(id + 'mode');    
-    for (var idx = 0; idx < s.options.length; idx++) {
-      if (s.options[idx].value == gatchaCategory.value) {
-        s.options[idx].selected = true;
-	      flag =true;
-	      break;
-      }
-    }
-
-    if(!flag && gatchaCategory.value != null && gatchaCategory.value != '') {
-      var value = gatchaCategory.value.replace(blogURL + '/archive/category/', '')
-      var o = createOption(value, decodeURI(value));
-      s.appendChild(o);      
-      o.selected = true;
-    }
-    
-    runGatcha(id);
-  });
+  runGatcha(id);
 }
 
 function createOption(value, name) {
@@ -234,36 +195,4 @@ function runCategoryGatcha(id, categoryName) {
   runCommonGatcha(id, relRssUrl);
 }
 
-function runNormalGatcha(id) {
-  var fetchNum = document.getElementById(id +'inGatchaNum').value;
-  var maxNum = 10;
-  var blogUrl = getBlogUrl();
-
-  var feeds = new Array();
-  for (var i = 1; i <= maxNum; i++) {
-    var rssUrl = 'http://pipes.yahoo.com/pipes/pipe.run?url='
-            + encodeURIComponent(blogUrl + '/sitemap.xml?page=' + i)
-            + '&_id=f48751a13b81b177ba69aa786f7354bf&_render=rss'
-    feeds.push(new google.feeds.Feed(rssUrl));
-  }
-
-  var entries = new Array();
-  var c = 0;
-  for(var i = 0; i < feeds.length; i++) {
-    feeds[i].setNumEntries(100);
-    feeds[i].load(function(result) {
-        if (result.error || result.feed.entries.length == 0) {
-          ;
-        } else {
-          entries = entries.concat(result.feed.entries);
-        }
-
-	if(++c == feeds.length) {
-          entries = removeThisEntry(entries);
-          var span = document.getElementById(id + 'gachaSpan');
-          createOwnHtml(span, null, entries, null, fetchNum);
-	}
-    });
-  }
-}
 
