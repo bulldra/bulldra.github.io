@@ -1300,4 +1300,74 @@ img.emoji {
    vertical-align: -0.1em;
 }
 
+.hatena-urllist {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2px;
+}
+
+.hatena-urllist li {
+  border-bottom: 0;
+  line-height: 1.5;
+  position: relative;
+  margin-bottom: 1px;
+}
+
+.hatena-urllist li a {
+  text-decoration: none;
+}
+
+.urllist-item-inner.recent-entries-item-inner,.urllist-item-inner.entries-access-ranking-item-inner {
+  height: 100%;
+}
+
+.urllist-with-thumbnails li .urllist-image, img.urllist-image.entries-access-ranking-image {
+  margin: 0;
+  padding: 0;
+  top: 0px;
+  left: 0;
+}
+
+a.urllist-title-link.recent-entries-title-link.urllist-title.recent-entries-title,a.urllist-title-link.entries-access-ranking-title-link.urllist-title.entries-access-ranking-title {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  word-break: break-all;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 5%;
+  background: rgba(77, 77, 77, 0.62);
+  color: rgba(255, 255, 255, 0.985);
+  font-size: 15px !important;
+  text-align: left;
+  text-shadow: -1px 1px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+a.urllist-title-link.recent-entries-title-link.urllist-title.recent-entries-title:hover,a.urllist-title-link.entries-access-ranking-title-link.urllist-title.entries-access-ranking-title:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: transparent;
+  text-shadow: none;
+  padding-top: 30px;
+  text-decoration: none;
+}
+
+a.bookmark-widget-counter img {
+position: absolute;
+right: 5px;
+bottom: 5px;
+}
+
+.tabelog-info-box {
+  border:solid 1px #ccc;
+  padding:10px;
+  border-radius:5px;
+}
 
