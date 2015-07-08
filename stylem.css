@@ -112,8 +112,7 @@ div.snsshare {
   margin-bottom:10px;
 }
 
-.snsshare a {
-  width: 50%;
+div.snsshare a {
   margin-bottom: 0px;
   padding: 8px 0;
   float: left;
@@ -124,13 +123,13 @@ div.snsshare {
   display: inline-block;
   text-decoration: none;
 }
-
-a.share_bookmark_head { background-color: #008FDE; }
 .snsshare a.share_fb { background-color: #3B5998; }
 .snsshare a.share_tw { background-color: #00ACEE; }
 .snsshare a.share_bookmark { background-color: #008FDE; }
 .snsshare a.share_rss { background-color: #70CA3B; }
 .snsshare a.share_pocket { background-color: #EE4257; }
+
+a.share_bookmark_head { background-color: #008FDE; color: #ffffff !important; }
 
 div #breadcrumb div {
 	display: inline;
