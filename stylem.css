@@ -125,12 +125,7 @@ div.snsshare {
   text-decoration: none;
 }
 
-.snsshare a:hover {
-  color: #ffffff;
-  text-decoration: none;
-  opacity: 0.6 !important;
-}
-
+.snshead a.share_bookmark { background-color: #008FDE; }
 .snsshare a.share_fb { background-color: #3B5998; }
 .snsshare a.share_tw { background-color: #00ACEE; }
 .snsshare a.share_bookmark { background-color: #008FDE; }
