@@ -125,7 +125,7 @@ div.snsshare {
   text-decoration: none;
 }
 
-.snshead a.share_bookmark { background-color: #008FDE; }
+a.share_bookmark_head { background-color: #008FDE; }
 .snsshare a.share_fb { background-color: #3B5998; }
 .snsshare a.share_tw { background-color: #00ACEE; }
 .snsshare a.share_bookmark { background-color: #008FDE; }
