@@ -25,27 +25,13 @@ div.snsshare {
   font-size: 24px;
   font-weight: bold;
   color: #ffffff !important;
+  text-decoration: none;
   text-align: center;
   display: inline-block;
-  text-decoration: none;
 }
 
 .snsshare a:hover {
-  color: #ffffff;
-  text-decoration: none;
   opacity: 0.8 !important;
-  -webkit-animation: rotateLink 1s;
-  animation: rotateLink 1s;
-}
-
-@-webkit-keyframes rotateLink {
-  from { -webkit-transform: rotateY(0deg); transform: rotateY(0deg);}
-  to { -webkit-transform: rotateY(360deg); transform: rotateY(360deg);}
-}
-
-@keyframes rotateLink {
-  from { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
-  to { -webkit-transform: rotateY(360deg); transform: rotateY(360deg);}
 }
 
 .snsshare a.share_fb { background-color: #3B5998; }
