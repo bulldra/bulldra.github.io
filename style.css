@@ -17,10 +17,6 @@ div.snsshare {
   height: 124px;
 }
 
-div.snsshare_foot {
-  height: 166px !important;
-}
-
 .snsshare a {
   width: 50%;
   margin-bottom: 0px;
@@ -37,9 +33,9 @@ div.snsshare_foot {
 .snsshare a:hover {
   color: #ffffff;
   text-decoration: none;
-  opacity: 0.6 !important;
-  -webkit-animation: rotateLink 0.7s;
-  animation: rotateLink 0.7s;
+  opacity: 0.8 !important;
+  -webkit-animation: rotateLink 1s;
+  animation: rotateLink 1s;
 }
 
 @-webkit-keyframes rotateLink {
