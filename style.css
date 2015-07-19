@@ -100,13 +100,13 @@ div #breadcrumb div {
 }
 
 #global-menu {
-  margin-left:-10px;
+  margin-left:-40px;
   padding:0px 0px 10px 0px;
   text-align:center;
 }
 
 #global-menu ul li {
-  width: 145px;
+  width: 124px;
   float: left;
 }
 
