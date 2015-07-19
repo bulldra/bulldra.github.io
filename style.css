@@ -47,10 +47,6 @@ div #breadcrumb div {
 	font-size: 13px;
 }
 
-.hatena-bookmark-bookmark-panel {
-   z-index:10350001 !important;
-}
-
 .foot {
   width:100%;
   text-align:left;
@@ -110,7 +106,7 @@ div #breadcrumb div {
 }
 
 #global-menu ul li {
-  width: 115px;
+  width: 135px;
   float: left;
 }
 
@@ -767,41 +763,39 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	float: right;
 }
 
-/* Index-Page */
 .page-index .pager-next a , .page-search .pager-next a , .page-category-category_name .pager-next a, .page-entries-year-month-day .pager-next a {
-	display: block;
-	width: 758px;
-	text-align: center;
-	background: #850505;
-	margin: auto;
-	padding: 12px 0;
-	font-size: 100%;
-	color: #fff;
+  display: block;
+  width: 758px;
+  text-align: center;
+  background: #850505;
+  margin: auto;
+  padding: 12px 0;
+  font-size: 100%;
+  color: #fff;
 }
 
 .pager-next a:hover, .pager-prev a:hover {
-	text-decoration: none;
-	box-shadow: inset 0px 1px 12px #666;
-	text-shadow:  0 0 3px #000;
-	opacity: 0.8;
+  text-decoration: none;
+  box-shadow: inset 0px 1px 12px #666;
+  text-shadow:  0 0 3px #000;
+  opacity: 0.8;
 }
 
 .page-archive #main-inner:before {
-	content: "Archive";
-	display: block;
-	width: 720px;
-	margin-left: -20px;
-	margin-top: -10px;
-	padding: 10px 20px;
-	background: #880000;
-	color: #fff;
-	font-size: 120%;
-   border-radius: 5px 5px 0px 0px;
-   -moz-border-radius: 5px 5px 0px 0px;
-   -webkit-border-radius: 5px 5px 0px 0px;
-   box-shadow: 0 0 5px #111;
+  content: "Archive";
+  display: block;
+  width: 720px;
+  margin-left: -20px;
+  margin-top: -10px;
+  padding: 10px 20px;
+  background: #880000;
+  color: #fff;
+  font-size: 120%;
+  border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
+  box-shadow: 0 0 5px #111;
 }
-
 
 .page-archive #main-inner {
 	padding: 10px 20px;
@@ -933,27 +927,27 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 }
 
 .page-about #main dt:before {
-	content: "■ ";
-	color: #ce0c0c;
+  content: "■ ";
+  color: #ce0c0c;
 }
 
 .page-about #main .entry-content {
-	padding: 10px 20px;
+  padding: 10px 20px;
 }
 
 .page-about #main .entry-content:before {
-	content: "About";
-	display: block;
-	width: 742px;
-	margin-left: -20px;
-	margin-top: -10px;
-	padding: 10px 10px;
-	background: #880000;
-	color: #fff;
-	font-size: 120%;
-   border-radius: 5px 5px 0px 0px;
-   -moz-border-radius: 5px 5px 0px 0px;
-   -webkit-border-radius: 5px 5px 0px 0px;
+  content: "About";
+  display: block;
+  width: 742px;
+  margin-left: -20px;
+  margin-top: -10px;
+  padding: 10px 10px;
+  background: #880000;
+  color: #fff;
+  font-size: 120%;
+  border-radius: 5px 5px 0px 0px;
+  -moz-border-radius: 5px 5px 0px 0px;
+  -webkit-border-radius: 5px 5px 0px 0px;
 }
 
 .page-about .subscription-count {
@@ -965,7 +959,6 @@ a.archive-module-year-title:hover, a.archive-module-month-title:hover, .archive-
 	padding-right: 20px;
 	padding-top: 10px;
 }
-
 
 .no-entry .entry-content h1 {
 	margin: 0.5em 0;
@@ -1342,9 +1335,9 @@ a.urllist-title-link.recent-entries-title-link.urllist-title.recent-entries-titl
 }
 
 a.bookmark-widget-counter img {
-position: absolute;
-right: 5px;
-bottom: 5px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
 }
 
 .tabelog-info-box {
