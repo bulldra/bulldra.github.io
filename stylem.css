@@ -107,6 +107,7 @@ div.snsshare {
 
 div.snsshare a {
   width: 25% !important;
+  height: 100%;
   margin-bottom: 8px;
   padding: 0;
   float: left;
