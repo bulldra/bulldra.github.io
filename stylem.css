@@ -101,13 +101,12 @@ header.entry-header {
 
 div.snsshare {
   width: 100%;
-  height: 42px;
-  margin-bottom:5px;
+  height: 32px;
 }
 
 div.snsshare a {
   width: 25% !important;
-  height: 100%;
+  height: 32px%;
   margin-bottom: 8px;
   padding: 0;
   float: left;
