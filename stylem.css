@@ -108,7 +108,7 @@ div.snsshare {
 div.snsshare a {
   width: 25% !important;
   margin-bottom: 8px;
-  padding: 8px 0;
+  padding: 0;
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -120,9 +120,7 @@ div.snsshare a {
 .snsshare a.share_fb { background-color: #3B5998; }
 .snsshare a.share_tw { background-color: #00ACEE; }
 .snsshare a.share_bookmark { background-color: #008FDE; }
-.snsshare a.share_rss { background-color: #70CA3B; }
 .snsshare a.share_pocket { background-color: #EE4257; }
-
 a.share_bookmark_head { color: #ffffff !important; }
 
 div #breadcrumb div {
