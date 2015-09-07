@@ -99,15 +99,10 @@ header.entry-header {
   font-size:120%
 }
 
-div.snsshare {
-  width: 100%;
-  height: 42px;
-  margin-bottom:5px;
-}
-
 div.snsshare a {
   width: 25% !important;
   padding-top:6px;
+  margin-bottom:10px;
   height:36px;
   padding: 0;
   float: left;
