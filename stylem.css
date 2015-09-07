@@ -80,9 +80,6 @@ header.entry-header {
   margin-bottom:10px;
 }
 
-.snsshare a {
-  width: 25% !important;
-}
 
 /*
 .hatena-star-container {
@@ -109,8 +106,9 @@ div.snsshare {
 }
 
 div.snsshare a {
+  width: 25% !important;
   margin-bottom: 0px;
-  padding: 8px 0;
+  padding: 8px;
   float: left;
   font-size: 24px;
   font-weight: bold;
