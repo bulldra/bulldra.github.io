@@ -48,7 +48,6 @@ if(typeof blockAdBlock !== 'undefined') {
     var $content = $(".entry-content");
     console.log($content)
     var html = $content.html();
-    html = html.replace(/<script>.+?<script>/,"")
     for (var key in replaceList) {
       html = html.replace(new RegExp(key,"g") , replaceList[key] + "。ちなみに、" + uso800[Math.floor(Math.random() * uso800.length)]);
     }
