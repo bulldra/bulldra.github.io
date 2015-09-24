@@ -1,8 +1,18 @@
 <html>
 <head>
 <script src="http://bulldra.github.io/blockadblock.js">
-<script>
+</head>
+<body>
 
+<div id="notdetected" class="alert alert-dismissible alert-warning" style="display: none;">
+で、で、でたーアドブロックをつかってないやーつ
+</div>
+<div id="detected" class="alert alert-dismissible alert-info" style="display: none;">
+で、で、でたーアドブロックをつかってるやーつ
+</div>
+
+
+<script>
 function adBlockNotDetected() {
   $('#notdetected').show();
   $('#detected').hide();
@@ -20,15 +30,6 @@ if(typeof blockAdBlock === 'undefined') {
     blockAdBlock.onNotDetected(adBlockNotDetected);
 }
 </script>
-</head>
-<body>
-
-<div id="notdetected" class="alert alert-dismissible alert-warning" style="display: none;">
-で、で、でたーアドブロックをつかってないやーつ
-</div>
-<div id="detected" class="alert alert-dismissible alert-info" style="display: none;">
-で、で、でたーアドブロックをつかってるやーつ
-</div>
 
 </body>
 </html>
