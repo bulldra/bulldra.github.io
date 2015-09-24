@@ -1,34 +1,46 @@
 <html>
 <head>
-<script src="http://bulldra.github.io/blockadblock.js">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://bulldra.github.io/blockadblock.js"></script>
 </head>
+
 <body>
 
-<div id="notdetected" class="alert alert-dismissible alert-warning" style="display: none;">
-で、で、でたーアドブロックをつかってないやーつ
+<div class="pub_300x250" style="width:300px;height:250px;background:#ccc">広告</div>
+<br/>
+
+<div id="notdetected" style="display: none;">
+で、で、でた～wwwアドブロックを使わない奴～
 </div>
-<div id="detected" class="alert alert-dismissible alert-info" style="display: none;">
-で、で、でたーアドブロックをつかってるやーつ
+<div id="detected" style="display: none;">
+で、で、でた～wwwアドブロックを使奴～
 </div>
 
 
-<script>
-function adBlockNotDetected() {
-  $('#notdetected').show();
-  $('#detected').hide();
-}
 
-function adBlockDetected() {
-  $('#detected').show();
-  $('#notdetected').hide();
-}
-
+<script type="text/javascript">
 if(typeof blockAdBlock === 'undefined') {
-    adBlockDetected();
+    $('#detected').show();
+    $('#notdetected').hide();
+　　console.log("アドブロック処理失敗");
 } else {
-    blockAdBlock.onDetected(adBlockDetected);
-    blockAdBlock.onNotDetected(adBlockNotDetected);
+  blockAdBlock.onDetected(function(){ 
+    $('#detected').show();
+    $('#notdetected').hide();
+    console.log("アドブロックあり");
+   });
+
+  blockAdBlock.onNotDetected(function(){
+    $('#notdetected').show();
+    $('#detected').hide();
+　　console.log("アドブロックなし");
+  });
+
+  blockAdBlock.setOption({
+    debug: true
+  });
 }
+
 </script>
 
 </body>
