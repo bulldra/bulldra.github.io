@@ -1,6 +1,6 @@
 if(typeof blockAdBlock !== 'undefined') {
   blockAdBlock.onDetected(function(){ 
-    console.log("アドブロックあり");
+    console.log("アドブロックつけとるやん");
     var replaceList = {
       "する。" : "スルー",
       "である。" : "であるねん",
@@ -14,12 +14,13 @@ if(typeof blockAdBlock !== 'undefined') {
       "思った。" : "思ってん",
       "だけど。" : "やけど",
       "だろうけど。" : "やろうけど",
-      "けれど。" : "やけど",
+      "あるけれど。" : "あるんやけど",
       "だろう。" : "やろう",
       "よい。" : "ええねん",
       "かもしれない。" : "かしらん",
       "います。" : "いるねん",
-      "った。" : "ったるねん"
+      "った。" : "ったるねん",
+      "わけだ。" : "わけや",
     };
 
     var uso800 = [
