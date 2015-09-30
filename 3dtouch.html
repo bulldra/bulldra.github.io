@@ -1,0 +1,37 @@
+<html>
+  <body>
+    
+<div class="ftouch" style="background-color:#ccc; height:250px; width:300px;">ここをギュッと押す</div>
+
+<script type="text/javascript">
+{
+var ftouch= document.getElementsByClassName("ftouch")[0];
+
+ftouch.addEventListener("mousedown", function(e) {
+  console.log("mousedown" + ftouch.innerText);
+  ftouch.innerText = "mousdown";
+
+  var force = e["webkitForce"];
+  console.log(force );
+  if(force === undefined) {
+    ftouch.innerText ="iPhone 6sじゃないやつは帰れ"
+  }
+
+  if (force >= MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN&& force < MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
+    ftouch.innerText = "クリック";
+  } else if (force >= MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
+    ftouch.innerText = "牛「ギュー」";
+  }
+
+});
+
+ftouch.addEventListener("mouseup", function(e) {
+  console.log("mouseup");
+  ftouch.innerText = "ここをギュッと押す";
+});
+}
+
+</script>
+</body>
+</html>
+
