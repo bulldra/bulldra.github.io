@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<input type="button" class="ftouch" style="background-color:#ccc; height:250px; width:300px;" value="ここをギュッと押す" />
+<div type="button" class="ftouch" style="background-color:#ccc; height:50%; width:50%;">ここをギュッと押す</div>
 
 <script type="text/javascript">
 {
@@ -25,16 +25,16 @@
     }
     
     if(force === undefined) {
-      ftouch.value ="対応してないやつは帰れ"
+      ftouch.innerText ="対応してないやつは帰れ"
     } else if (force >= MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN&& force < MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
-      ftouch.value = "クリック";
+      ftouch.innerText = "クリック";
     } else if (force >= MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
-      ftouch.value = "牛「ギュー」";
+      ftouch.innerText = "牛「ギュー」";
     }
   });
 
   ftouch.addEventListener(upEvent, function(e) {
-    ftouch.value = "ここをギュッと押す";
+    ftouch.innerText = "ここをギュッと押す";
   });
 }
 
