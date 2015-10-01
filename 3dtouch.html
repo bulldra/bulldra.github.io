@@ -15,9 +15,8 @@
   
   var ftouch= document.getElementsByClassName("ftouch")[0];
   ftouch.addEventListener(downEvent, function(e) {
-    var touch = event.touches[0];
-    
     var force = undefined;
+    var touch = event.touches[0];
     if (touch) {
       force = touch.force;
     } else { 
