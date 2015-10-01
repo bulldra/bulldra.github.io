@@ -21,7 +21,8 @@
     } else { 
       force = e["webkitForce"];
     }
-    
+    ftouch.innerText ="e"
+     
     if(force === undefined) {
       ftouch.innerText ="対応してないやつは帰れ"
     } else if (force >= MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN&& force < MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
