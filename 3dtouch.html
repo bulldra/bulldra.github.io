@@ -5,30 +5,29 @@
 
 <script type="text/javascript">
 {
-var ftouch= document.getElementsByClassName("ftouch")[0];
-
-ftouch.addEventListener("mousedown", function(e) {
-  console.log("mousedown" + ftouch.value);
-  ftouch.value = "mousdown";
-
-  var force = e["webkitForce"];
-  console.log(force );
-  if(force === undefined) {
-    ftouch.value ="iPhone 6sじゃないやつは帰れ"
+  var downEvent = "mousedown";
+	var endEvent = "mouseup";
+  var ua =navigator.userAgent;
+  if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
+	  downEvent = "touchstart";
+	  upEvent   = "touchend";
   }
+  
+  var ftouch= document.getElementsByClassName("ftouch")[0];
+  ftouch.addEventListener(downEvent, function(e) {
+    var force = e["webkitForce"];
+    if(force === undefined) {
+      ftouch.value ="iPhone 6sじゃないやつは帰れ"
+    } else if (force >= MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN&& force < MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
+      ftouch.value = "クリック";
+    } else if (force >= MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
+      ftouch.value = "牛「ギュー」";
+    }
+  });
 
-  if (force >= MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN&& force < MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
-    ftouch.value = "クリック";
-  } else if (force >= MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
-    ftouch.value = "牛「ギュー」";
-  }
-
-});
-
-ftouch.addEventListener("mouseup", function(e) {
-  console.log("mouseup");
-  ftouch.value = "ここをギュッと押す";
-});
+  ftouch.addEventListener(upEvent, function(e) {
+    ftouch.value = "ここをギュッと押す";
+  });
 }
 
 </script>
