@@ -15,9 +15,17 @@
   
   var ftouch= document.getElementsByClassName("ftouch")[0];
   ftouch.addEventListener(downEvent, function(e) {
-    var force = e["webkitForce"];
+    var touch = event.touches[0];
+    
+    var force = undefined;
+    if (touch) {
+      force = touch.force;
+    } else 
+      force = e["webkitForce"];
+    }
+    
     if(force === undefined) {
-      ftouch.value ="iPhone 6sじゃないやつは帰れ"
+      ftouch.value ="対応してないやつは帰れ"
     } else if (force >= MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN&& force < MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
       ftouch.value = "クリック";
     } else if (force >= MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
