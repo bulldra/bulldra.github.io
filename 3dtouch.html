@@ -6,11 +6,11 @@
 <script type="text/javascript">
 {
   var downEvent = "mousedown";
-	var endEvent = "mouseup";
+  var upEvent = "mouseup";
   var ua =navigator.userAgent;
   if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
-	  downEvent = "touchstart";
-	  upEvent   = "touchend";
+    downEvent = "touchstart";
+    upEvent   = "touchend";
   }
   
   var ftouch= document.getElementsByClassName("ftouch")[0];
