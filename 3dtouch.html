@@ -13,19 +13,54 @@
     if (e.touches) {
       force = e.touches[0].force || 0;
     }
-     
+    
     if(force === undefined) {
       ftouch.innerText ="対応してないやつは帰れ"
-    } else if (force >= 0.5) {
-      ftouch.innerText = "牛「ギュー」 " + force;
-    } else {
-      ftouch.innerText = "それは弱い" + force;
+    } else{
+      ftouch.innerText = force;
+      ftouch.style.backgoround-color = getHeatMapColor(0,1000, force * 1000);
+
     }
   }
   
   ftouch.addEventListener('touchstart', forceEvent);
   ftouch.addEventListener('touchmove', forceEvent);
   ftouch.addEventListener('touchend', function(e) { ftouch.innerText = "ここをギュッと押す"; });
+  
+  
+  function getHeatMapColor( min, max, value) {
+
+    var pos = (value - min)/(max - min) * 6.0;
+    var ipos =  parseInt(pos);
+   	var diff = pos - ipos;
+    var add = parseInt(255 * diff);
+    var color = 0x000000;
+
+	if ( pos < 1) {
+		color = (0x000000) | add; // BLACK
+	}
+	else if ( pos < 2) {
+		color = (0x0000FF) | add<<8; // BULE
+	}
+	else if ( pos < 3) {
+		color = (0x00FF00) | (255 - add); // GREEN
+	}
+	else if ( pos < 4) {
+		color = (0x00FF00) | add<<16; // GREEN
+	}
+	else if ( pos < 5) {
+		color = (0xFF0000) | (255 - add)<<8; // RED
+	}
+	else if ( pos < 6) {
+		color = (0xFF0000) | add<<8 | add; // RED
+	}
+	
+	var r = (color & 0xff0000) >> 16;
+	var g = (color & 0xff00) >> 8;
+	var b = (color & 0xff);
+    return "rgb("+ r +","+ g +","+ b +")";
+}
+  
 }
 
 </script>
