@@ -22,10 +22,10 @@
      
     if(force === undefined) {
       ftouch.innerText ="対応してないやつは帰れ"
-    } else if (force) {
+    } else if (force >= 0.5) {
       ftouch.innerText = "牛「ギュー」";
     } else {
-      ftouch.innerText = "クリック";
+      ftouch.innerText = "それは弱い";
     }
   });
 
