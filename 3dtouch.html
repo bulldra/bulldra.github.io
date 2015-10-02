@@ -17,18 +17,15 @@
   ftouch.addEventListener(downEvent, function(e) {
     var force = undefined;
     if (e.touches) {
-      force = e.touches[0].force;
-    } else { 
-      force = e["webkitForce"];
+      force = e.touches[0].force || 0;;
     }
-    ftouch.innerText ="e"
      
     if(force === undefined) {
       ftouch.innerText ="対応してないやつは帰れ"
-    } else if (force >= MouseEvent.WEBKIT_FORCE_AT_MOUSE_DOWN&& force < MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
-      ftouch.innerText = "クリック";
-    } else if (force >= MouseEvent.WEBKIT_FORCE_AT_FORCE_MOUSE_DOWN) {
+    } else if (force) {
       ftouch.innerText = "牛「ギュー」";
+    } else {
+      ftouch.innerText = "クリック";
     }
   });
 
