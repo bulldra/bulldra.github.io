@@ -5,16 +5,10 @@
 
 <script type="text/javascript">
 {
-  var downEvent = "mousedown";
-  var upEvent = "mouseup";
-  var ua =navigator.userAgent;
-  if(ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1 || ua.indexOf('iPod')  > -1){
-    downEvent = "touchstart";
-    upEvent   = "touchend";
-  }
-  
+
   var ftouch= document.getElementsByClassName("ftouch")[0];
-  ftouch.addEventListener(downEvent, function(e) {
+  
+  function force(e) {
     var force = undefined;
     if (e.touches) {
       force = e.touches[0].force;
@@ -22,16 +16,16 @@
      
     if(force === undefined) {
       ftouch.innerText ="対応してないやつは帰れ"
-    } else if (force >= 0.4) {
+    } else if (force >= 0.5) {
       ftouch.innerText = "牛「ギュー」";
     } else {
       ftouch.innerText = "それは弱い";
     }
-  });
-
-  ftouch.addEventListener(upEvent, function(e) {
-    ftouch.innerText = "ここをギュッと押す";
-  });
+  }
+  
+  ftouch.addEventListener('touchstart', force);
+  ftouch.addEventListener('touchmove', force);
+  ftouch.addEventListener('touchend', function(e) { ftouch.innerText = "ここをギュッと押す"; });
 }
 
 </script>
