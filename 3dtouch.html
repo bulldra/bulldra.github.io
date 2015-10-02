@@ -8,23 +8,23 @@
 
   var ftouch= document.getElementsByClassName("ftouch")[0];
   
-  function force(e) {
+  function forceEvent(e) {
     var force = undefined;
     if (e.touches) {
-      force = e.touches[0].force;
+      force = e.touches[0].force || 0;
     }
      
     if(force === undefined) {
       ftouch.innerText ="対応してないやつは帰れ"
     } else if (force >= 0.5) {
-      ftouch.innerText = "牛「ギュー」";
+      ftouch.innerText = "牛「ギュー」 " + force;
     } else {
-      ftouch.innerText = "それは弱い";
+      ftouch.innerText = "それは弱い" + force;
     }
   }
   
-  ftouch.addEventListener('touchstart', force);
-  ftouch.addEventListener('touchmove', force);
+  ftouch.addEventListener('touchstart', forceEvent);
+  ftouch.addEventListener('touchmove', forceEvent);
   ftouch.addEventListener('touchend', function(e) { ftouch.innerText = "ここをギュッと押す"; });
 }
 
