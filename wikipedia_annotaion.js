@@ -51,7 +51,7 @@ function callbackWikipediaApi(args) {
       console.log('text is null');
       continue;
     }
-    var ptn = new RegExp('/' r.title +  '/g');
+    var ptn = new RegExp('/' + r.title +  '/g');
     objs[a].innerHTML = text.replace(ptn, r.title + '<sup title="' + r.body + '">*</sup>');
     console.log(objs[a].innerHTML);
   }
