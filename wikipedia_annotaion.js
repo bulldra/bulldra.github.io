@@ -73,6 +73,7 @@ function callbackWikipediaApi(args) {
       continue;
     }
     var ptn = new RegExp('\{\{('+r.title + ')\}\}','g');
-    wikipediaAnnotationText[a] = text.replace(ptn,  r.title + '<sup title="' + r.body + '"><a href="' + r.url + '"'>※</a></sup>');
+    var rep = r.title + '<sup title="' + r.body + '"><a href="' + r.url + '">※</a></sup>'
+    wikipediaAnnotationText[a] = text.replace(ptn, rep);
   }
 }
