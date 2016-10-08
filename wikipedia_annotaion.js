@@ -9,7 +9,7 @@ function execWikipediaAnnotation() {
   for(var a in objs) { 
     var segs = segmenter.segment(objs[a].innerText);
      for(var b in segs) {
-       if(segs[b].length >= 3) {
+       if(segs[b].length >= 2) {
          word_set.add(segs[b]);
        }
      }
@@ -50,8 +50,9 @@ function callbackWikipediaApi(args) {
     if(text == null || text.length <= 1) {
       console.log('text is null');
       continue;
-    }    
-    objs[a].innerHTML = text.replace(r.title, r.title + '<sup title="' + r.body + '">※</sup>', 'g');
+    }
+    var ptn = new RegExp('/' r.title +  '/g');
+    objs[a].innerHTML = text.replace(ptn, r.title + '<sup title="' + r.body + '">*</sup>');
     console.log(objs[a].innerHTML);
   }
 }
