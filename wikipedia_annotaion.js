@@ -1,3 +1,12 @@
+#
+
+<span class="wikipedia_annotaion">
+　ブログにかいた文章への注釈をWikipediaから自動生成するスクリプトを作ってみた。本文に対して簡単な形態素解析を行って単語ごとにWikipediaに問い合わせて注釈を生成する仕組み。
+</span>
+
+<script type="text/javascript" src="//bulldra.github.io/tiny_segmenter-0.2.js"></script>
+<script type="text/javascript">
+var wikipediaAnnotationText = [];
 function execWikipediaAnnotation() {
   var word_set = new Set();
   var segmenter = new TinySegmenter(); 
@@ -6,19 +15,48 @@ function execWikipediaAnnotation() {
      return;
    }
 
-  for(var a in objs) { 
+  for(var a in objs) {
+    wikipediaAnnotationText.push(objs[a].innerHTML);
     var segs = segmenter.segment(objs[a].innerText);
      for(var b in segs) {
-       if(segs[b].length >= 2) {
-         word_set.add(segs[b]);
+       if((    segs[b].match(/^[\u30A0-\u30FF]+$/)  && segs[b].length >= 3 )
+           || (segs[b].match(/^[\x20-\x7E]+$/)  && segs[b].length >= 3)
+           || (segs[b].match(/^[一-龠]+$/)  && segs[b].length >= 2))
+      {
+         var r = new RegExp('([^\{][^\{])' + segs[b] + '([^\}][^\}])');
+         wikipediaAnnotationText[a] = wikipediaAnnotationText[a].replace(r, '$1{{'+ segs[b] + '}}$2');
+         word_set.add(segs[b]);         
        }
      }
   }
-
+  console.log(wikipediaAnnotationText);
   console.log(word_set);
   for (let word of word_set) {
     callWikipediaApi(word);
   }
+
+  setTimeout(
+    function(){
+      console.log('timeout');
+      for(var a in wikipediaAnnotationText) {
+        var text = wikipediaAnnotationText[a];
+        if(text == null || text.length <= 1) {
+          console.log('text is null');
+          continue;
+        }
+        var ptn = new RegExp('\{\{([^\}]*)\}\}','g');
+        wikipediaAnnotationText[a] = text.replace(ptn,  '$1');
+      }
+      console.log(wikipediaAnnotationText);
+      var objs = document.getElementsByClassName('wikipedia_annotaion');
+      if(objs == null || objs.length == 0) {
+        return;
+      }
+
+      for(var a in objs) {
+          objs[a].innerHTML = wikipediaAnnotationText[a];
+      }
+   }, 1000);
 }
 
 function callWikipediaApi(q) {
@@ -33,26 +71,18 @@ function callWikipediaApi(q) {
 
 function callbackWikipediaApi(args) {
   if(args == null || args.length == 0 || args[0] == null) {
-    console.log('args is null');
     return;
   }
   var r = args[0];
-
-  var objs = document.getElementsByClassName('wikipedia_annotaion');
-  if(objs == null || objs.length == 0) {
-    console.log('objs is null');
-    return;
-  }
-  console.log(objs)
-  for(var a in objs) {
-    console.log(objs[a].innerHTML);
-    var text = objs[a].innerHTML;
+  for(var a in wikipediaAnnotationText) {
+    var text = wikipediaAnnotationText[a];
     if(text == null || text.length <= 1) {
       console.log('text is null');
       continue;
     }
-    var ptn = new RegExp('/' + r.title +  '/g');
-    objs[a].innerHTML = text.replace(ptn, r.title + '<sup title="' + r.body + '">*</sup>');
-    console.log(objs[a].innerHTML);
+    var ptn = new RegExp('\{\{('+r.title + ')\}\}','g');
+    wikipediaAnnotationText[a] = text.replace(ptn,  r.title + '<sup title="' + r.body + '">※</sup>');
   }
 }
+</script>
+<script type="text/javascript">execWikipediaAnnotation();</script>
