@@ -48,7 +48,7 @@ function execWikipediaAnnotation() {
       for(var a in objs) {
           objs[a].innerHTML = wikipediaAnnotationText[a];
       }
-   }, 1000);
+   }, 5000);
 }
 
 function callWikipediaApi(q) {
