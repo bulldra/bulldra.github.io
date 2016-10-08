@@ -1,11 +1,3 @@
-#
-
-<span class="wikipedia_annotaion">
-　ブログにかいた文章への注釈をWikipediaから自動生成するスクリプトを作ってみた。本文に対して簡単な形態素解析を行って単語ごとにWikipediaに問い合わせて注釈を生成する仕組み。
-</span>
-
-<script type="text/javascript" src="//bulldra.github.io/tiny_segmenter-0.2.js"></script>
-<script type="text/javascript">
 var wikipediaAnnotationText = [];
 function execWikipediaAnnotation() {
   var word_set = new Set();
@@ -84,5 +76,3 @@ function callbackWikipediaApi(args) {
     wikipediaAnnotationText[a] = text.replace(ptn,  r.title + '<sup title="' + r.body + '">※</sup>');
   }
 }
-</script>
-<script type="text/javascript">execWikipediaAnnotation();</script>
