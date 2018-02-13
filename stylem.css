@@ -27,7 +27,7 @@ header.entry-header {
 }
 
 .entry-title  {
-  font-size:16px !Important;
+  font-size:18px !Important;
   background: #811;
   color: #fff;
   margin:3px -10px 3px -10px;
@@ -40,6 +40,23 @@ header.entry-header {
   color: #fff;
 }
 
+.entry-content {
+  font-size:16px !Important;	
+}
+
+.head_share_bookmark{
+  color: #ffffff !important;
+  font-size:80%;
+  position:absolute;
+  top: 5px;
+  right: 5px;
+  font-weight: bold;
+}
+
+.kaerebalink-box {
+  padding: 10px 10px 0px 10px;
+  border: solid 1px #ccc;
+}
 
 .entry-title a,.categories, .categories a {
   font-weight: bold;
